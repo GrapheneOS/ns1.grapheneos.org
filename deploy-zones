@@ -1,0 +1,18 @@
+#!/bin/bash
+
+servers=(
+    ns1.grapheneos.org
+    ns2.grapheneos.org
+)
+
+for server in ${servers[@]}; do
+    echo $server
+
+    remote=root@$server
+
+    rsync -pcv --chmod=F644 pdns.conf $remote:/etc/powerdns/pdns.conf
+    rsync -pcv --chmod=F644 zones.yaml $remote:/etc/powerdns/zones.yaml
+    ssh $remote pdns_control reload
+
+    echo
+done

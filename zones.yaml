@@ -49,6 +49,256 @@ domains:
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: "v=spf1 -all"
 
+  - domain: grapheneos.ca
+    ttl: 3600
+    records:
+      grapheneos.ca:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.ca"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: b0eb1a78fb9fb370"
+        - txt: "facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45"
+      _443._tcp.grapheneos.ca:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.ca:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.www.grapheneos.ca:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _dmarc.grapheneos.ca:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ca; ruf=mailto:dmarc@grapheneos.ca"
+      _mta-sts.grapheneos.ca:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.ca:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ca"
+      default._domainkey.grapheneos.ca:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.grapheneos.ca:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.ca:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
+  - domain: grapheneos.com
+    ttl: 3600
+    records:
+      grapheneos.com:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.com"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: 8e2110b9a3772add"
+        - txt: "facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts"
+      _443._tcp.grapheneos.com:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.com:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.www.grapheneos.com:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _dmarc.grapheneos.com:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.com; ruf=mailto:dmarc@grapheneos.com"
+      _mta-sts.grapheneos.com:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.com:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.com"
+      default._domainkey.grapheneos.com:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.grapheneos.com:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.com:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
+  - domain: grapheneos.info
+    ttl: 3600
+    records:
+      grapheneos.info:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.info"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: d21cd9edcd378afd"
+        - txt: "facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35"
+      _443._tcp.grapheneos.info:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.info:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.www.grapheneos.info:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _dmarc.grapheneos.info:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.info; ruf=mailto:dmarc@grapheneos.info"
+      _mta-sts.grapheneos.info:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.info:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.info"
+      default._domainkey.grapheneos.info:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.grapheneos.info:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.info:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
+  - domain: grapheneos.net
+    ttl: 3600
+    records:
+      grapheneos.net:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.net"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: 814effb141ae35dc"
+        - txt: "facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh"
+      _443._tcp.grapheneos.net:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.net:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.www.grapheneos.net:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _dmarc.grapheneos.net:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
+      _mta-sts.grapheneos.net:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.net:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
+      default._domainkey.grapheneos.net:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.grapheneos.net:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.net:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
+  - domain: grapheneos.page
+    ttl: 3600
+    records:
+      grapheneos.page:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.page"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: ec2761b2472a4ab4"
+        - txt: "facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg"
+      _443._tcp.grapheneos.page:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.page:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.www.grapheneos.page:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _dmarc.grapheneos.page:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
+      _mta-sts.grapheneos.page:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.page:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"
+      default._domainkey.grapheneos.page:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.grapheneos.page:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.page:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
   - domain: releases.grapheneos.org
     ttl: 3600
     records:

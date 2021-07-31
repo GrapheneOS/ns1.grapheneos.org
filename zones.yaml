@@ -77,6 +77,16 @@ domains:
         # 3.releases.grapheneos.org
         - a: 141.94.71.72
         - aaaa: 2001:41d0:304:200::a687
+      # Asia
+      as.geo.releases.grapheneos.org:
+        - mx: 0 .
+        - txt: "v=spf1 -all"
+        # 0.releases.grapheneos.org
+        - a: 167.114.114.114
+        - aaaa: 2607:5300:201:3100::6210
+        # 1.releases.grapheneos.org
+        - a: 51.79.74.15
+        - aaaa: 2607:5300:205:200::2441
       # Europe
       eu.geo.releases.grapheneos.org:
         - mx: 0 .

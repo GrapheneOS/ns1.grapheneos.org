@@ -14,7 +14,7 @@ domains:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
       regioncheck.releases.grapheneos.org:
-        - txt: "ip: %ip, co: %co, cc: %cc, cn: %cn, re: %re"
+        - txt: "ip: %ip, country: %cc, continent: %cn, region: %re"
 
       # Egypt
       eg.as.geo.releases.grapheneos.org:

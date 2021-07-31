@@ -1,4 +1,54 @@
 domains:
+  - domain: grapheneos.app
+    ttl: 3600
+    records:
+      grapheneos.app:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.app"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: 7aae471af36dc967"
+        - txt: "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"
+      _443._tcp.grapheneos.app:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.app:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.www.grapheneos.app:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _dmarc.grapheneos.app:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.app; ruf=mailto:dmarc@grapheneos.app"
+      _mta-sts.grapheneos.app:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.app:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
+      default._domainkey.grapheneos.app:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.grapheneos.app:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.app:
+        - a: 192.99.43.50
+        - a: 51.222.26.187
+        - aaaa: 2607:5300:201:3100::1aae
+        - aaaa: 2607:5300:205:200::37e3
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
   - domain: releases.grapheneos.org
     ttl: 3600
     records:

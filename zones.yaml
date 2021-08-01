@@ -2,11 +2,24 @@ domains:
   - domain: grapheneos.network
     ttl: 3600
     records:
+      0.grapheneos.network:
+        - a: &0_network_a 51.79.54.68
+        - aaaa: &0_network_aaaa 2607:5300:205:200::b44
+        - mx: 0 .
+        - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
+        - txt: "v=spf1 -all"
+      1.grapheneos.network:
+        - a: &1_network_a 51.222.159.48
+        - aaaa: &1_network_aaaa 2607:5300:205:200::3f46
+        - mx: 0 .
+        - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
+        - txt: "v=spf1 -all"
+
       grapheneos.network:
-        - a: 51.79.54.68
-        - a: 51.222.159.48
-        - aaaa: 2607:5300:205:200::b44
-        - aaaa: 2607:5300:205:200::3f46
+        - a: *0_network_a
+        - a: *1_network_a
+        - aaaa: *0_network_aaaa
+        - aaaa: *1_network_aaaa
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.network"
@@ -32,37 +45,24 @@ domains:
       default._domainkey.grapheneos.network:
         - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
       connectivitycheck.grapheneos.network: &network_subdomain
-        - a: 51.79.54.68
-        - a: 51.222.159.48
-        - aaaa: 2607:5300:205:200::b44
-        - aaaa: 2607:5300:205:200::3f46
+        - a: *0_network_a
+        - a: *1_network_a
+        - aaaa: *0_network_aaaa
+        - aaaa: *1_network_aaaa
         - mx: 0 .
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: "v=spf1 -all"
       mta-sts.grapheneos.network: *network_subdomain
       www.grapheneos.network: *network_subdomain
 
-      0.grapheneos.network:
-        - a: 51.79.54.68
-        - aaaa: 2607:5300:205:200::b44
-        - mx: 0 .
-        - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
-        - txt: "v=spf1 -all"
-      1.grapheneos.network:
-        - a: 51.222.159.48
-        - aaaa: 2607:5300:205:200::3f46
-        - mx: 0 .
-        - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
-        - txt: "v=spf1 -all"
-
   - domain: grapheneos.online
     ttl: 3600
     records:
       grapheneos.online:
-        - a: 51.79.54.68
-        - a: 51.222.159.48
-        - aaaa: 2607:5300:205:200::b44
-        - aaaa: 2607:5300:205:200::3f46
+        - a: *0_network_a
+        - a: *1_network_a
+        - aaaa: *0_network_aaaa
+        - aaaa: *1_network_aaaa
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.online"

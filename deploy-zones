@@ -27,7 +27,10 @@ for server in ${servers[@]}; do
     sed -i "s/{ipv4}/${ipv4[$server]}/g; s/{ipv6}/${ipv6[$server]}/g" pdns.conf.tmp
     rsync -pcv --chmod=F644 pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
     rsync -pcv --chmod=F644 zones.yaml $remote:/etc/powerdns/zones.yaml
-    ssh $remote pdns_control reload
+    # need to restart rather than reloading for arbitrary configuration changes
+    ssh $remote systemctl restart pdns
+    # space out restarts so clients don't get multiple failures
+    sleep 5
 
     echo
 done

@@ -120,48 +120,18 @@ domains:
       _443._tcp.releases.grapheneos.org:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
-      # Egypt
-      eg.as.geo.releases.grapheneos.org:
+      # Default (North America)
+      default.geo.releases.grapheneos.org: &releases_north_america
         - mx: 0 .
         - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
-      # India
-      in.as.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
-      # Israel
-      il.as.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
-      # Russia
-      ru.as.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
-      # Turkey
-      tr.as.geo.releases.grapheneos.org:
+        # 0.releases.grapheneos.org
+        - a: 167.114.114.114
+        - aaaa: 2607:5300:201:3100::6210
+        # 1.releases.grapheneos.org
+        - a: 51.79.74.15
+        - aaaa: 2607:5300:205:200::2441
+      # Europe
+      eu.geo.releases.grapheneos.org: &releases_europe
         - mx: 0 .
         - txt: "v=spf1 -all"
         # 2.releases.grapheneos.org
@@ -172,46 +142,20 @@ domains:
         - aaaa: 2001:41d0:304:200::a687
 
       # Africa
-      af.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
+      af.geo.releases.grapheneos.org: *releases_europe
       # Asia
-      as.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 0.releases.grapheneos.org
-        - a: 167.114.114.114
-        - aaaa: 2607:5300:201:3100::6210
-        # 1.releases.grapheneos.org
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:205:200::2441
-      # Europe
-      eu.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
+      as.geo.releases.grapheneos.org: *releases_north_america
 
-      # Fallback
-      generic.geo.releases.grapheneos.org:
-        - mx: 0 .
-        - txt: "v=spf1 -all"
-        # 0.releases.grapheneos.org
-        - a: 167.114.114.114
-        - aaaa: 2607:5300:201:3100::6210
-        # 1.releases.grapheneos.org
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:205:200::2441
+      # Egypt
+      eg.as.geo.releases.grapheneos.org: *releases_europe
+      # India
+      in.as.geo.releases.grapheneos.org: *releases_europe
+      # Israel
+      il.as.geo.releases.grapheneos.org: *releases_europe
+      # Russia
+      ru.as.geo.releases.grapheneos.org: *releases_europe
+      # Turkey
+      tr.as.geo.releases.grapheneos.org: *releases_europe
 
       # Beauharnois
       0.releases.grapheneos.org:
@@ -242,7 +186,7 @@ domains:
         - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
         - txt: "v=spf1 -all"
     services:
-      releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "generic.geo.releases.grapheneos.org" ]
+      releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
 
   - domain: seamlessupdate.app
     ttl: 3600

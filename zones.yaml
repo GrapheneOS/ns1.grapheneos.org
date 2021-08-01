@@ -110,6 +110,35 @@ domains:
   - domain: releases.grapheneos.org
     ttl: 3600
     records:
+      # Beauharnois
+      0.releases.grapheneos.org:
+        - a: &0_releases_a 167.114.114.114
+        - aaaa: &0_releases_aaaa 2607:5300:201:3100::6210
+        - mx: 0 .
+        - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
+        - txt: "v=spf1 -all"
+      # Beauharnois
+      1.releases.grapheneos.org:
+        - a: &1_releases_a 51.79.74.15
+        - aaaa: &1_releases_aaaa 2607:5300:205:200::2441
+        - mx: 0 .
+        - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
+        - txt: "v=spf1 -all"
+      # Gravelines
+      2.releases.grapheneos.org:
+        - a: &2_releases_a 141.94.71.158
+        - aaaa: &2_releases_aaaa 2001:41d0:304:200::14ff
+        - mx: 0 .
+        - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
+        - txt: "v=spf1 -all"
+      # Gravelines
+      3.releases.grapheneos.org:
+        - a: &3_releases_a 141.94.71.72
+        - aaaa: &3_releases_aaaa 2001:41d0:304:200::a687
+        - mx: 0 .
+        - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
+        - txt: "v=spf1 -all"
+
       releases.grapheneos.org:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
@@ -125,22 +154,18 @@ domains:
       default.geo.releases.grapheneos.org: &releases_north_america
         - mx: 0 .
         - txt: "v=spf1 -all"
-        # 0.releases.grapheneos.org
-        - a: 167.114.114.114
-        - aaaa: 2607:5300:201:3100::6210
-        # 1.releases.grapheneos.org
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:205:200::2441
+        - a: *0_releases_a
+        - a: *1_releases_a
+        - aaaa: *0_releases_aaaa
+        - aaaa: *1_releases_aaaa
       # Europe
       eu.geo.releases.grapheneos.org: &releases_europe
         - mx: 0 .
         - txt: "v=spf1 -all"
-        # 2.releases.grapheneos.org
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        # 3.releases.grapheneos.org
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
+        - a: *2_releases_a
+        - a: *3_releases_a
+        - aaaa: *2_releases_aaaa
+        - aaaa: *3_releases_aaaa
 
       # Africa
       af.geo.releases.grapheneos.org: *releases_europe
@@ -157,35 +182,6 @@ domains:
       ru.as.geo.releases.grapheneos.org: *releases_europe
       # Turkey
       tr.as.geo.releases.grapheneos.org: *releases_europe
-
-      # Beauharnois
-      0.releases.grapheneos.org:
-        - a: 167.114.114.114
-        - aaaa: 2607:5300:201:3100::6210
-        - mx: 0 .
-        - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
-        - txt: "v=spf1 -all"
-      # Beauharnois
-      1.releases.grapheneos.org:
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:205:200::2441
-        - mx: 0 .
-        - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
-        - txt: "v=spf1 -all"
-      # Gravelines
-      2.releases.grapheneos.org:
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
-        - mx: 0 .
-        - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
-        - txt: "v=spf1 -all"
-      # Gravelines
-      3.releases.grapheneos.org:
-        - a: 141.94.71.72
-        - aaaa: 2001:41d0:304:200::a687
-        - mx: 0 .
-        - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
-        - txt: "v=spf1 -all"
     services:
       releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
 
@@ -196,10 +192,10 @@ domains:
       ns2.seamlessupdate.app: *ns2
 
       seamlessupdate.app:
-        - a: 167.114.114.114
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:201:3100::6210
-        - aaaa: 2607:5300:205:200::2441
+        - a: *0_releases_a
+        - a: *1_releases_a
+        - aaaa: *0_releases_aaaa
+        - aaaa: *1_releases_aaaa
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: 0 iodef "mailto:caa@seamlessupdate.app"
@@ -221,10 +217,10 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
       default._domainkey.seamlessupdate.app: *grapheneos_dkim
       mta-sts.seamlessupdate.app: &seamlessupdate_subdomain
-        - a: 167.114.114.114
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:201:3100::6210
-        - aaaa: 2607:5300:205:200::2441
+        - a: *0_releases_a
+        - a: *1_releases_a
+        - aaaa: *0_releases_aaaa
+        - aaaa: *1_releases_aaaa
         - mx: 0 .
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: "v=spf1 -all"

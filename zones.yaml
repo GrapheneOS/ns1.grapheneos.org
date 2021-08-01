@@ -1,4 +1,64 @@
 domains:
+  - domain: grapheneos.online
+    ttl: 3600
+    records:
+      grapheneos.online:
+        - a: 51.79.54.68
+        - a: 51.222.159.48
+        - aaaa: 2607:5300:205:200::b44
+        - aaaa: 2607:5300:205:200::3f46
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+        - caa: 0 iodef "mailto:caa@grapheneos.online"
+        - mx: 0 mail.grapheneos.org
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: f5675cd6f4757892"
+        - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
+      _443._tcp.grapheneos.online:
+        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+      _443._tcp.connectivitycheck.grapheneos.online:
+        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+      _443._tcp.mta-sts.grapheneos.online:
+        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+      _443._tcp.www.grapheneos.online:
+        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+      _dmarc.grapheneos.online:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.online; ruf=mailto:dmarc@grapheneos.online"
+      _mta-sts.grapheneos.online:
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.grapheneos.online:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
+      default._domainkey.grapheneos.online:
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      connectivitycheck.grapheneos.online:
+        - a: 51.79.54.68
+        - a: 51.222.159.48
+        - aaaa: 2607:5300:205:200::b44
+        - aaaa: 2607:5300:205:200::3f46
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      mta-sts.grapheneos.online:
+        - a: 51.79.54.68
+        - a: 51.222.159.48
+        - aaaa: 2607:5300:205:200::b44
+        - aaaa: 2607:5300:205:200::3f46
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      www.grapheneos.online:
+        - a: 51.79.54.68
+        - a: 51.222.159.48
+        - aaaa: 2607:5300:205:200::b44
+        - aaaa: 2607:5300:205:200::3f46
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+
   - domain: releases.grapheneos.org
     ttl: 3600
     records:

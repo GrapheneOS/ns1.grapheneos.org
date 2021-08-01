@@ -2,6 +2,13 @@ domains:
   - domain: grapheneos.network
     ttl: 3600
     records:
+      ns1.grapheneos.network: &ns1
+        - a: 51.222.14.6
+        - aaaa: 2607:5300:205:200::29e8
+      ns2.grapheneos.network: &ns2
+        - a: 141.94.71.48
+        - aaaa: 2001:41d0:304:200::528
+
       0.grapheneos.network:
         - a: &0_network_a 51.79.54.68
         - aaaa: &0_network_aaaa 2607:5300:205:200::b44
@@ -24,9 +31,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.network"
         - mx: &grapheneos_mx 0 mail.grapheneos.org
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.network.
+        - ns: ns2.grapheneos.network.
+        - soa: ns1.grapheneos.network. hostmaster.grapheneos.network. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: b3fce6bedf3d57f9"
@@ -58,6 +65,9 @@ domains:
   - domain: grapheneos.online
     ttl: 3600
     records:
+      ns1.grapheneos.online: *ns1
+      ns2.grapheneos.online: *ns2
+
       grapheneos.online:
         - a: *0_network_a
         - a: *1_network_a
@@ -67,9 +77,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.online"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.online.
+        - ns: ns2.grapheneos.online.
+        - soa: ns1.grapheneos.online. hostmaster.grapheneos.online. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: f5675cd6f4757892"
@@ -182,6 +192,9 @@ domains:
   - domain: seamlessupdate.app
     ttl: 3600
     records:
+      ns1.seamlessupdate.app: *ns1
+      ns2.seamlessupdate.app: *ns2
+
       seamlessupdate.app:
         - a: 167.114.114.114
         - a: 51.79.74.15
@@ -191,9 +204,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: 0 iodef "mailto:caa@seamlessupdate.app"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.seamlessupdate.app.
+        - ns: ns2.seamlessupdate.app.
+        - soa: ns1.seamlessupdate.app. hostmaster.seamlessupdate.app. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: cba8ef4619bc43f5"
@@ -240,6 +253,9 @@ domains:
   - domain: grapheneos.app
     ttl: 3600
     records:
+      ns1.grapheneos.app: *ns1
+      ns2.grapheneos.app: *ns2
+
       grapheneos.app:
         - a: &0_grapheneos_a 192.99.43.50
         - a: &1_grapheneos_a 51.222.26.187
@@ -249,9 +265,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.app"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.app.
+        - ns: ns2.grapheneos.app.
+        - soa: ns1.grapheneos.app. hostmaster.grapheneos.app. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
@@ -279,6 +295,9 @@ domains:
   - domain: grapheneos.ca
     ttl: 3600
     records:
+      ns1.grapheneos.ca: *ns1
+      ns2.grapheneos.ca: *ns2
+
       grapheneos.ca:
         - a: *0_grapheneos_a
         - a: *1_grapheneos_a
@@ -288,9 +307,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.ca"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.ca.
+        - ns: ns2.grapheneos.ca.
+        - soa: ns1.grapheneos.ca. hostmaster.grapheneos.ca. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b0eb1a78fb9fb370"
@@ -310,6 +329,9 @@ domains:
   - domain: grapheneos.com
     ttl: 3600
     records:
+      ns1.grapheneos.com: *ns1
+      ns2.grapheneos.com: *ns2
+
       grapheneos.com:
         - a: *0_grapheneos_a
         - a: *1_grapheneos_a
@@ -319,9 +341,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.com"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.com.
+        - ns: ns2.grapheneos.com.
+        - soa: ns1.grapheneos.com. hostmaster.grapheneos.com. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 8e2110b9a3772add"
@@ -341,6 +363,9 @@ domains:
   - domain: grapheneos.info
     ttl: 3600
     records:
+      ns1.grapheneos.info: *ns1
+      ns2.grapheneos.info: *ns2
+
       grapheneos.info:
         - a: *0_grapheneos_a
         - a: *1_grapheneos_a
@@ -350,9 +375,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.info"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.info.
+        - ns: ns2.grapheneos.info.
+        - soa: ns1.grapheneos.info. hostmaster.grapheneos.info. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: d21cd9edcd378afd"
@@ -372,6 +397,9 @@ domains:
   - domain: grapheneos.net
     ttl: 3600
     records:
+      ns1.grapheneos.net: *ns1
+      ns2.grapheneos.net: *ns2
+
       grapheneos.net:
         - a: *0_grapheneos_a
         - a: *1_grapheneos_a
@@ -381,9 +409,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.net"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.net.
+        - ns: ns2.grapheneos.net.
+        - soa: ns1.grapheneos.net. hostmaster.grapheneos.net. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 814effb141ae35dc"
@@ -403,6 +431,9 @@ domains:
   - domain: grapheneos.page
     ttl: 3600
     records:
+      ns1.grapheneos.page: *ns1
+      ns2.grapheneos.page: *ns2
+
       grapheneos.page:
         - a: *0_grapheneos_a
         - a: *1_grapheneos_a
@@ -412,9 +443,9 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.page"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org.
-        - ns: ns2.grapheneos.org.
-        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - ns: ns1.grapheneos.page.
+        - ns: ns2.grapheneos.page.
+        - soa: ns1.grapheneos.page. hostmaster.grapheneos.page. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *grapheneos_spf
         - txt: "yandex-verification: ec2761b2472a4ab4"

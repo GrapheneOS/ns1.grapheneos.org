@@ -28,7 +28,7 @@ domains:
         - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
       _dmarc.grapheneos.network:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
-      _mta-sts.grapheneos.network:
+      _mta-sts.grapheneos.network: &_mta-sts
         - txt: "v=STSv1; id=1585551802"
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
@@ -87,8 +87,7 @@ domains:
         - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
       _dmarc.grapheneos.online:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.online; ruf=mailto:dmarc@grapheneos.online"
-      _mta-sts.grapheneos.online:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.online: *_mta-sts
       _smtp._tls.grapheneos.online:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
       default._domainkey.grapheneos.online:
@@ -215,8 +214,7 @@ domains:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
       _dmarc.seamlessupdate.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
-      _mta-sts.seamlessupdate.app:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.seamlessupdate.app: *_mta-sts
       _smtp._tls.seamlessupdate.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
       default._domainkey.seamlessupdate.app:
@@ -278,8 +276,7 @@ domains:
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _dmarc.grapheneos.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.app; ruf=mailto:dmarc@grapheneos.app"
-      _mta-sts.grapheneos.app:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.app: *_mta-sts
       _smtp._tls.grapheneos.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
       default._domainkey.grapheneos.app:
@@ -328,8 +325,7 @@ domains:
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _dmarc.grapheneos.ca:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ca; ruf=mailto:dmarc@grapheneos.ca"
-      _mta-sts.grapheneos.ca:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.ca: *_mta-sts
       _smtp._tls.grapheneos.ca:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ca"
       default._domainkey.grapheneos.ca:
@@ -378,8 +374,7 @@ domains:
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _dmarc.grapheneos.com:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.com; ruf=mailto:dmarc@grapheneos.com"
-      _mta-sts.grapheneos.com:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.com: *_mta-sts
       _smtp._tls.grapheneos.com:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.com"
       default._domainkey.grapheneos.com:
@@ -428,8 +423,7 @@ domains:
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _dmarc.grapheneos.info:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.info; ruf=mailto:dmarc@grapheneos.info"
-      _mta-sts.grapheneos.info:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.info: *_mta-sts
       _smtp._tls.grapheneos.info:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.info"
       default._domainkey.grapheneos.info:
@@ -478,8 +472,7 @@ domains:
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _dmarc.grapheneos.net:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
-      _mta-sts.grapheneos.net:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.net: *_mta-sts
       _smtp._tls.grapheneos.net:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
       default._domainkey.grapheneos.net:
@@ -528,8 +521,7 @@ domains:
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _dmarc.grapheneos.page:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
-      _mta-sts.grapheneos.page:
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.page: *_mta-sts
       _smtp._tls.grapheneos.page:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"
       default._domainkey.grapheneos.page:

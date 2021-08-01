@@ -189,7 +189,7 @@ domains:
         - aaaa: 2607:5300:205:200::2441
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: 0 iodef "mailto:caa@seamlessupdate.app"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.

@@ -221,7 +221,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
       default._domainkey.seamlessupdate.app:
         - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
-      mta-sts.seamlessupdate.app:
+      mta-sts.seamlessupdate.app: &seamlessupdate_subdomain
         - a: 167.114.114.114
         - a: 51.79.74.15
         - aaaa: 2607:5300:201:3100::6210
@@ -229,14 +229,7 @@ domains:
         - mx: 0 .
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: "v=spf1 -all"
-      www.seamlessupdate.app:
-        - a: 167.114.114.114
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:201:3100::6210
-        - aaaa: 2607:5300:205:200::2441
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+      www.seamlessupdate.app: *seamlessupdate_subdomain
 
   - domain: staging.grapheneos.org
     ttl: 3600

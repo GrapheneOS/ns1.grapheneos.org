@@ -59,6 +59,15 @@ domains:
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: "v=spf1 -all"
 
+  - domain: geoip.grapheneos.org
+    ttl: 60
+    records:
+      geoip.grapheneos.org:
+        - ns: ns1.grapheneos.org.
+        - ns: ns2.grapheneos.org.
+        - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
+        - txt: "ip: %ip, country: %cc, continent: %cn, region: %re"
+
   - domain: releases.grapheneos.org
     ttl: 3600
     records:
@@ -72,9 +81,6 @@ domains:
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
       _443._tcp.releases.grapheneos.org:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
-
-      regioncheck.releases.grapheneos.org:
-        - txt: "ip: %ip, country: %cc, continent: %cn, region: %re"
 
       # Egypt
       eg.as.geo.releases.grapheneos.org:

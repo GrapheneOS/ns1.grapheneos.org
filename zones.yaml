@@ -18,14 +18,11 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
-      _443._tcp.grapheneos.network:
+      _443._tcp.grapheneos.network: &network_tlsa
         - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-      _443._tcp.connectivitycheck.grapheneos.network:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-      _443._tcp.mta-sts.grapheneos.network:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-      _443._tcp.www.grapheneos.network:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+      _443._tcp.connectivitycheck.grapheneos.network: *network_tlsa
+      _443._tcp.mta-sts.grapheneos.network: *network_tlsa
+      _443._tcp.www.grapheneos.network: *network_tlsa
       _dmarc.grapheneos.network:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
       _mta-sts.grapheneos.network: &_mta-sts
@@ -77,14 +74,10 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: f5675cd6f4757892"
         - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
-      _443._tcp.grapheneos.online:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-      _443._tcp.connectivitycheck.grapheneos.online:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-      _443._tcp.mta-sts.grapheneos.online:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-      _443._tcp.www.grapheneos.online:
-        - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+      _443._tcp.grapheneos.online: *network_tlsa
+      _443._tcp.connectivitycheck.grapheneos.online: *network_tlsa
+      _443._tcp.mta-sts.grapheneos.online: *network_tlsa
+      _443._tcp.www.grapheneos.online: *network_tlsa
       _dmarc.grapheneos.online:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.online; ruf=mailto:dmarc@grapheneos.online"
       _mta-sts.grapheneos.online: *_mta-sts
@@ -116,7 +109,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-      _443._tcp.releases.grapheneos.org:
+      _443._tcp.releases.grapheneos.org: &releases_tlsa
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
       # Default (North America)
@@ -206,12 +199,9 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
-      _443._tcp.seamlessupdate.app:
-        - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
-      _443._tcp.mta-sts.seamlessupdate.app:
-        - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
-      _443._tcp.www.seamlessupdate.app:
-        - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
+      _443._tcp.seamlessupdate.app: *releases_tlsa
+      _443._tcp.mta-sts.seamlessupdate.app: *releases_tlsa
+      _443._tcp.www.seamlessupdate.app: *releases_tlsa
       _dmarc.seamlessupdate.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
       _mta-sts.seamlessupdate.app: *_mta-sts
@@ -268,12 +258,10 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: 7aae471af36dc967"
         - txt: "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"
-      _443._tcp.grapheneos.app:
+      _443._tcp.grapheneos.app: &grapheneos_tlsa
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.app:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.www.grapheneos.app:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.app: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.app: *grapheneos_tlsa
       _dmarc.grapheneos.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.app; ruf=mailto:dmarc@grapheneos.app"
       _mta-sts.grapheneos.app: *_mta-sts
@@ -317,12 +305,9 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: b0eb1a78fb9fb370"
         - txt: "facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45"
-      _443._tcp.grapheneos.ca:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.ca:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.www.grapheneos.ca:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.grapheneos.ca: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.ca: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.ca: *grapheneos_tlsa
       _dmarc.grapheneos.ca:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ca; ruf=mailto:dmarc@grapheneos.ca"
       _mta-sts.grapheneos.ca: *_mta-sts
@@ -366,12 +351,9 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: 8e2110b9a3772add"
         - txt: "facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts"
-      _443._tcp.grapheneos.com:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.com:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.www.grapheneos.com:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.grapheneos.com: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.com: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.com: *grapheneos_tlsa
       _dmarc.grapheneos.com:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.com; ruf=mailto:dmarc@grapheneos.com"
       _mta-sts.grapheneos.com: *_mta-sts
@@ -415,12 +397,9 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: d21cd9edcd378afd"
         - txt: "facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35"
-      _443._tcp.grapheneos.info:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.info:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.www.grapheneos.info:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.grapheneos.info: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.info: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.info: *grapheneos_tlsa
       _dmarc.grapheneos.info:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.info; ruf=mailto:dmarc@grapheneos.info"
       _mta-sts.grapheneos.info: *_mta-sts
@@ -464,12 +443,9 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: 814effb141ae35dc"
         - txt: "facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh"
-      _443._tcp.grapheneos.net:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.net:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.www.grapheneos.net:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.grapheneos.net: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.net: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.net: *grapheneos_tlsa
       _dmarc.grapheneos.net:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
       _mta-sts.grapheneos.net: *_mta-sts
@@ -513,12 +489,9 @@ domains:
         - txt: "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: ec2761b2472a4ab4"
         - txt: "facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg"
-      _443._tcp.grapheneos.page:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.page:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.www.grapheneos.page:
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.grapheneos.page: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.page: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.page: *grapheneos_tlsa
       _dmarc.grapheneos.page:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
       _mta-sts.grapheneos.page: *_mta-sts

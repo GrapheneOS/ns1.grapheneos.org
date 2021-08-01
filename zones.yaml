@@ -42,7 +42,7 @@ domains:
         - txt: "v=STSv1; id=1585551802"
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
-      default._domainkey.grapheneos.network:
+      default._domainkey.grapheneos.network: &grapheneos_dkim
         - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
       connectivitycheck.grapheneos.network: &network_subdomain
         - a: *0_network_a
@@ -83,8 +83,7 @@ domains:
       _mta-sts.grapheneos.online: *_mta-sts
       _smtp._tls.grapheneos.online:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
-      default._domainkey.grapheneos.online:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.online: *grapheneos_dkim
       connectivitycheck.grapheneos.online: *network_subdomain
       mta-sts.grapheneos.online: *network_subdomain
       www.grapheneos.online: *network_subdomain
@@ -207,8 +206,7 @@ domains:
       _mta-sts.seamlessupdate.app: *_mta-sts
       _smtp._tls.seamlessupdate.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
-      default._domainkey.seamlessupdate.app:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.seamlessupdate.app: *grapheneos_dkim
       mta-sts.seamlessupdate.app: &seamlessupdate_subdomain
         - a: 167.114.114.114
         - a: 51.79.74.15
@@ -267,8 +265,7 @@ domains:
       _mta-sts.grapheneos.app: *_mta-sts
       _smtp._tls.grapheneos.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
-      default._domainkey.grapheneos.app:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.app: *grapheneos_dkim
       mta-sts.grapheneos.app: &grapheneos_subdomain
         - a: *0_grapheneos_a
         - a: *1_grapheneos_a
@@ -306,8 +303,7 @@ domains:
       _mta-sts.grapheneos.ca: *_mta-sts
       _smtp._tls.grapheneos.ca:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ca"
-      default._domainkey.grapheneos.ca:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.ca: *grapheneos_dkim
       mta-sts.grapheneos.ca: *grapheneos_subdomain
       www.grapheneos.ca: *grapheneos_subdomain
 
@@ -338,8 +334,7 @@ domains:
       _mta-sts.grapheneos.com: *_mta-sts
       _smtp._tls.grapheneos.com:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.com"
-      default._domainkey.grapheneos.com:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.com: *grapheneos_dkim
       mta-sts.grapheneos.com: *grapheneos_subdomain
       www.grapheneos.com: *grapheneos_subdomain
 
@@ -370,8 +365,7 @@ domains:
       _mta-sts.grapheneos.info: *_mta-sts
       _smtp._tls.grapheneos.info:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.info"
-      default._domainkey.grapheneos.info:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.info: *grapheneos_dkim
       mta-sts.grapheneos.info: *grapheneos_subdomain
       www.grapheneos.info: *grapheneos_subdomain
 
@@ -402,8 +396,7 @@ domains:
       _mta-sts.grapheneos.net: *_mta-sts
       _smtp._tls.grapheneos.net:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
-      default._domainkey.grapheneos.net:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.net: *grapheneos_dkim
       mta-sts.grapheneos.net: *grapheneos_subdomain
       www.grapheneos.net: *grapheneos_subdomain
 
@@ -434,7 +427,6 @@ domains:
       _mta-sts.grapheneos.page: *_mta-sts
       _smtp._tls.grapheneos.page:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"
-      default._domainkey.grapheneos.page:
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.page: *grapheneos_dkim
       mta-sts.grapheneos.page: *grapheneos_subdomain
       www.grapheneos.page: *grapheneos_subdomain

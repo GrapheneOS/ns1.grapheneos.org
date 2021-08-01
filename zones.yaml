@@ -23,7 +23,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.network"
-        - mx: 0 mail.grapheneos.org
+        - mx: &grapheneos_mx 0 mail.grapheneos.org
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -66,7 +66,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.online"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -191,7 +191,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -250,7 +250,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.app"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -290,7 +290,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.ca"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -322,7 +322,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.com"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -354,7 +354,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.info"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -386,7 +386,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.net"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
@@ -418,7 +418,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.page"
-        - mx: 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org.
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60

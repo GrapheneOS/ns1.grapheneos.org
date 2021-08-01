@@ -28,7 +28,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
       _443._tcp.grapheneos.network: &network_tlsa
@@ -71,7 +71,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: f5675cd6f4757892"
         - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
       _443._tcp.grapheneos.online: *network_tlsa
@@ -196,7 +196,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
       _443._tcp.seamlessupdate.app: *releases_tlsa
@@ -255,7 +255,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
         - txt: "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"
       _443._tcp.grapheneos.app: &grapheneos_tlsa
@@ -295,7 +295,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: b0eb1a78fb9fb370"
         - txt: "facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45"
       _443._tcp.grapheneos.ca: *grapheneos_tlsa
@@ -327,7 +327,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: 8e2110b9a3772add"
         - txt: "facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts"
       _443._tcp.grapheneos.com: *grapheneos_tlsa
@@ -359,7 +359,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: d21cd9edcd378afd"
         - txt: "facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35"
       _443._tcp.grapheneos.info: *grapheneos_tlsa
@@ -391,7 +391,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: 814effb141ae35dc"
         - txt: "facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh"
       _443._tcp.grapheneos.net: *grapheneos_tlsa
@@ -423,7 +423,7 @@ domains:
         - ns: ns2.grapheneos.org.
         - soa: ns1.grapheneos.org. hostmaster.grapheneos.org. 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: ec2761b2472a4ab4"
         - txt: "facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg"
       _443._tcp.grapheneos.page: *grapheneos_tlsa

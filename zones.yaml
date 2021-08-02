@@ -244,7 +244,7 @@ domains:
       _443._tcp.staging.grapheneos.org:
         - tlsa: 3 1 1 8ee2957d1c024669dbed9b38a0d6e6e5612da57e304c70707e33fb398249e811
 
-  # reserved grapheneos.tld domains
+  # reserved grapheneos.tld domains and vanadium.app
 
   - domain: grapheneos.app
     ttl: 3600
@@ -457,3 +457,37 @@ domains:
       default._domainkey.grapheneos.page: *grapheneos_dkim
       mta-sts.grapheneos.page: *grapheneos_subdomain
       www.grapheneos.page: *grapheneos_subdomain
+
+  - domain: vanadium.app
+    ttl: 3600
+    records:
+      ns1.vanadium.app: *ns1
+      ns2.vanadium.app: *ns2
+
+      vanadium.app:
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@vanadium.app"
+        - mx: *grapheneos_mx
+        - ns: ns1.vanadium.app
+        - ns: ns2.vanadium.app
+        - soa: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: *grapheneos_spf
+        - txt: "yandex-verification: 369dbb9acc84cb72"
+        - txt: "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"
+      _443._tcp.vanadium.app: *grapheneos_tlsa
+      _443._tcp.mta-sts.vanadium.app: *grapheneos_tlsa
+      _443._tcp.www.vanadium.app: *grapheneos_tlsa
+      _dmarc.vanadium.app:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
+      _mta-sts.vanadium.app: *_mta-sts
+      _smtp._tls.vanadium.app:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@vanadium.app"
+      default._domainkey.vanadium.app: *grapheneos_dkim
+      mta-sts.vanadium.app: *grapheneos_subdomain
+      www.vanadium.app: *grapheneos_subdomain

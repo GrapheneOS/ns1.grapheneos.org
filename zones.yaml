@@ -1,13 +1,62 @@
 domains:
+  - domain: attestation.app
+    ttl: 3600
+    records:
+      ns1.attestation.app: &ns1
+        - a: 51.222.14.6
+        - aaaa: 2607:5300:205:200::29e8
+      ns2.attestation.app: &ns2
+        - a: 141.94.71.48
+        - aaaa: 2001:41d0:304:200::528
+
+      attestation.app:
+        - a: &attestation_a 51.79.50.249
+        - aaaa: &attestation_aaaa 2607:5300:205:200::86a
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+        - caa: 0 iodef "mailto:caa@attestation.app"
+        - mx: &grapheneos_mx 0 mail.grapheneos.org
+        - ns: ns1.attestation.app
+        - ns: ns2.attestation.app
+        - soa: ns1.attestation.app hostmaster.attestation.app 0 3600 1800 86400 60
+        - sshfp: 4 2 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
+        - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
+        - txt: "yandex-verification: aafc5b649d6fa07d"
+        - txt: "facebook-domain-verification=lpm1vi7wir750kl6fdcqe6zvstql25"
+      _443._tcp.attestation.app: &attestation_tlsa
+        - tlsa: 3 1 1 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
+      _443._tcp.mta-sts.attestation.app: *attestation_tlsa
+      _443._tcp.www.attestation.app: *attestation_tlsa
+      _dmarc.attestation.app:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
+      _mta-sts.attestation.app: &_mta-sts
+        - txt: "v=STSv1; id=1585551802"
+      _smtp._tls.attestation.app:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
+      default._domainkey.attestation.app: &grapheneos_dkim
+        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      mta-sts.attestation.app: &attestation_subdomain
+        - a: *attestation_a
+        - aaaa: *attestation_aaaa
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
+      staging.attestation.app:
+        - a: 51.79.54.178
+        - aaaa: 2607:5300:205:200::1585
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065354"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255334"
+        - caa: 0 iodef "mailto:caa@attestation.app"
+        - mx: 0 .
+        - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
+        - txt: "v=spf1 -all"
+      www.attestation.app: *attestation_subdomain
+
   - domain: grapheneos.network
     ttl: 3600
     records:
-      ns1.grapheneos.network: &ns1
-        - a: 51.222.14.6
-        - aaaa: 2607:5300:205:200::29e8
-      ns2.grapheneos.network: &ns2
-        - a: 141.94.71.48
-        - aaaa: 2001:41d0:304:200::528
+      ns1.grapheneos.network: *ns1
+      ns2.grapheneos.network: *ns2
 
       0.grapheneos.network:
         - a: &0_network_a 51.79.54.68
@@ -30,12 +79,12 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.network"
-        - mx: &grapheneos_mx 0 mail.grapheneos.org
+        - mx: *grapheneos_mx
         - ns: ns1.grapheneos.network
         - ns: ns2.grapheneos.network
         - soa: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 86400 60
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
+        - txt: *grapheneos_spf
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
       _443._tcp.grapheneos.network: &network_tlsa
@@ -45,12 +94,10 @@ domains:
       _443._tcp.www.grapheneos.network: *network_tlsa
       _dmarc.grapheneos.network:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
-      _mta-sts.grapheneos.network: &_mta-sts
-        - txt: "v=STSv1; id=1585551802"
+      _mta-sts.grapheneos.network: *_mta-sts
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
-      default._domainkey.grapheneos.network: &grapheneos_dkim
-        - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+      default._domainkey.grapheneos.network: *grapheneos_dkim
       connectivitycheck.grapheneos.network: &network_subdomain
         - a: *0_network_a
         - a: *1_network_a

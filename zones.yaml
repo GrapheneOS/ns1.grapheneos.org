@@ -5,15 +5,15 @@ domains:
       ns1.attestation.app: &ns1
         - a: 51.222.14.6
         - aaaa: 2607:5300:205:200::29e8
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+        - mx: &null_mx 0 .
+        - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: &null_spf "v=spf1 -all"
       ns2.attestation.app: &ns2
         - a: 141.94.71.48
         - aaaa: 2001:41d0:304:200::528
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
       attestation.app:
         - a: &attestation_a 51.79.50.249
@@ -44,18 +44,18 @@ domains:
       mta-sts.attestation.app: &attestation_subdomain
         - a: *attestation_a
         - aaaa: *attestation_aaaa
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
       staging.attestation.app:
         - a: 51.79.54.178
         - aaaa: 2607:5300:205:200::1585
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065354"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255334"
         - caa: 0 iodef "mailto:caa@attestation.app"
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
       www.attestation.app: *attestation_subdomain
 
   - domain: grapheneos.network
@@ -67,15 +67,15 @@ domains:
       0.grapheneos.network:
         - a: &0_network_a 51.79.54.68
         - aaaa: &0_network_aaaa 2607:5300:205:200::b44
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
       1.grapheneos.network:
         - a: &1_network_a 51.222.159.48
         - aaaa: &1_network_aaaa 2607:5300:205:200::3f46
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
 
       grapheneos.network:
         - a: *0_network_a
@@ -89,7 +89,7 @@ domains:
         - ns: ns1.grapheneos.network
         - ns: ns2.grapheneos.network
         - soa: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
@@ -109,9 +109,9 @@ domains:
         - a: *1_network_a
         - aaaa: *0_network_aaaa
         - aaaa: *1_network_aaaa
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
       mta-sts.grapheneos.network: *network_subdomain
       www.grapheneos.network: *network_subdomain
 
@@ -133,7 +133,7 @@ domains:
         - ns: ns1.grapheneos.online
         - ns: ns2.grapheneos.online
         - soa: ns1.grapheneos.online hostmaster.grapheneos.online 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: f5675cd6f4757892"
         - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
@@ -167,30 +167,30 @@ domains:
       0.releases.grapheneos.org:
         - a: &0_releases_a 167.114.114.114
         - aaaa: &0_releases_aaaa 2607:5300:201:3100::6210
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
       # Beauharnois
       1.releases.grapheneos.org:
         - a: &1_releases_a 51.79.74.15
         - aaaa: &1_releases_aaaa 2607:5300:205:200::2441
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
       # Gravelines
       2.releases.grapheneos.org:
         - a: &2_releases_a 141.94.71.158
         - aaaa: &2_releases_aaaa 2001:41d0:304:200::14ff
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
       # Gravelines
       3.releases.grapheneos.org:
         - a: &3_releases_a 141.94.71.72
         - aaaa: &3_releases_aaaa 2001:41d0:304:200::a687
-        - mx: 0 .
+        - mx: *null_mx
         - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
 
       releases.grapheneos.org:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
@@ -199,22 +199,22 @@ domains:
         - ns: ns1.grapheneos.org
         - ns: ns2.grapheneos.org
         - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
       _443._tcp.releases.grapheneos.org: &releases_tlsa
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
       # Default (North America)
       default.geo.releases.grapheneos.org: &releases_north_america
-        - mx: 0 .
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - txt: *null_spf
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
       # Europe
       eu.geo.releases.grapheneos.org: &releases_europe
-        - mx: 0 .
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - txt: *null_spf
         - a: *2_releases_a
         - a: *3_releases_a
         - aaaa: *2_releases_aaaa
@@ -256,7 +256,7 @@ domains:
         - ns: ns1.seamlessupdate.app
         - ns: ns2.seamlessupdate.app
         - soa: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
@@ -274,9 +274,9 @@ domains:
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
   - domain: staging.grapheneos.org
@@ -290,10 +290,10 @@ domains:
         - caa: 0 iodef "mailto:caa@grapheneos.org"
         - ns: ns1.grapheneos.org
         - ns: ns2.grapheneos.org
-        - mx: 0 .
+        - mx: *null_mx
         - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
         - sshfp: 4 2 53cad9a5b09cb717be8d1cbc1e68b02c75fa41fd996b583d6feed81282589c61
-        - txt: "v=spf1 -all"
+        - txt: *null_spf
       _443._tcp.staging.grapheneos.org:
         - tlsa: 3 1 1 8ee2957d1c024669dbed9b38a0d6e6e5612da57e304c70707e33fb398249e811
 
@@ -317,7 +317,7 @@ domains:
         - ns: ns1.grapheneos.app
         - ns: ns2.grapheneos.app
         - soa: ns1.grapheneos.app hostmaster.grapheneos.app 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
         - txt: "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"
@@ -336,9 +336,9 @@ domains:
         - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
         - aaaa: *1_grapheneos_aaaa
-        - mx: 0 .
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        - txt: "v=spf1 -all"
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
       www.grapheneos.app: *grapheneos_subdomain
 
   - domain: grapheneos.ca
@@ -359,7 +359,7 @@ domains:
         - ns: ns1.grapheneos.ca
         - ns: ns2.grapheneos.ca
         - soa: ns1.grapheneos.ca hostmaster.grapheneos.ca 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b0eb1a78fb9fb370"
         - txt: "facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45"
@@ -393,7 +393,7 @@ domains:
         - ns: ns1.grapheneos.com
         - ns: ns2.grapheneos.com
         - soa: ns1.grapheneos.com hostmaster.grapheneos.com 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 8e2110b9a3772add"
         - txt: "facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts"
@@ -427,7 +427,7 @@ domains:
         - ns: ns1.grapheneos.info
         - ns: ns2.grapheneos.info
         - soa: ns1.grapheneos.info hostmaster.grapheneos.info 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: d21cd9edcd378afd"
         - txt: "facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35"
@@ -461,7 +461,7 @@ domains:
         - ns: ns1.grapheneos.net
         - ns: ns2.grapheneos.net
         - soa: ns1.grapheneos.net hostmaster.grapheneos.net 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 814effb141ae35dc"
         - txt: "facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh"
@@ -495,7 +495,7 @@ domains:
         - ns: ns1.grapheneos.page
         - ns: ns2.grapheneos.page
         - soa: ns1.grapheneos.page hostmaster.grapheneos.page 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: ec2761b2472a4ab4"
         - txt: "facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg"
@@ -529,7 +529,7 @@ domains:
         - ns: ns1.vanadium.app
         - ns: ns2.vanadium.app
         - soa: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 86400 60
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 369dbb9acc84cb72"
         - txt: "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"

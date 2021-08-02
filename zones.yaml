@@ -32,6 +32,8 @@ domains:
       _443._tcp.attestation.app: &attestation_tlsa
         - tlsa: 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
       _443._tcp.mta-sts.attestation.app: *attestation_tlsa
+      _443._tcp.staging.attestation.app:
+        - tlsa: 3 1 1 eb080e3b28e6a4493229f354ebc4d43a297547e5a106223543a02d2f15e01d26
       _443._tcp.www.attestation.app: *attestation_tlsa
       _dmarc.attestation.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"

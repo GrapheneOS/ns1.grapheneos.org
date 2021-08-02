@@ -19,7 +19,7 @@ domains:
         - a: &attestation_a 51.79.50.249
         - aaaa: &attestation_aaaa 2607:5300:205:200::86a
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
         - caa: 0 iodef "mailto:caa@attestation.app"
         - mx: &grapheneos_mx 0 mail.grapheneos.org
         - ns: ns1.attestation.app

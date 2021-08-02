@@ -5,9 +5,15 @@ domains:
       ns1.attestation.app: &ns1
         - a: 51.222.14.6
         - aaaa: 2607:5300:205:200::29e8
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
       ns2.attestation.app: &ns2
         - a: 141.94.71.48
         - aaaa: 2001:41d0:304:200::528
+        - mx: 0 .
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: "v=spf1 -all"
 
       attestation.app:
         - a: &attestation_a 51.79.50.249

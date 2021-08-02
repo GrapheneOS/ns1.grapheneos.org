@@ -281,6 +281,24 @@ domains:
         - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
+  - domain: apps.grapheneos.org
+    ttl: 3600
+    records:
+      apps.grapheneos.org:
+        - a: 51.222.140.199
+        - aaaa: 2607:5300:205:200::39fe
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130213730"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271370"
+        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - mx: *null_mx
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
+        - txt: *null_spf
+      _443._tcp.staging.grapheneos.org:
+        - tlsa: 3 1 1 f6611f6a33ee81b4ac7584c9b1663d5ff806da424300282184860434a5846824
+
   - domain: staging.grapheneos.org
     ttl: 3600
     records:

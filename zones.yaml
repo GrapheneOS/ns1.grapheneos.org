@@ -296,7 +296,7 @@ domains:
         - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
         - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
         - txt: *null_spf
-      _443._tcp.staging.grapheneos.org:
+      _443._tcp.apps.grapheneos.org:
         - tlsa: 3 1 1 f6611f6a33ee81b4ac7584c9b1663d5ff806da424300282184860434a5846824
 
   - domain: staging.grapheneos.org

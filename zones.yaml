@@ -207,20 +207,20 @@ domains:
 
       # Default (North America)
       default.geo.releases.grapheneos.org: &releases_north_america
-        - mx: *null_mx
-        - txt: *null_spf
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
-      # Europe
-      eu.geo.releases.grapheneos.org: &releases_europe
         - mx: *null_mx
         - txt: *null_spf
+      # Europe
+      eu.geo.releases.grapheneos.org: &releases_europe
         - a: *2_releases_a
         - a: *3_releases_a
         - aaaa: *2_releases_aaaa
         - aaaa: *3_releases_aaaa
+        - mx: *null_mx
+        - txt: *null_spf
 
       # Africa
       af.geo.releases.grapheneos.org: *releases_europe

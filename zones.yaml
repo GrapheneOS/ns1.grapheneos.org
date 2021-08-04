@@ -240,6 +240,43 @@ domains:
     services:
       releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
 
+  - domain: apps.grapheneos.org
+    ttl: 3600
+    records:
+      apps.grapheneos.org:
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
+        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: *null_sshfp
+      _443._tcp.apps.grapheneos.org:
+        - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
+
+      # Default (North America)
+      default.geo.apps.grapheneos.org: *releases_north_america
+      # Europe
+      eu.geo.apps.grapheneos.org: *releases_europe
+
+      # Africa
+      af.geo.apps.grapheneos.org: *releases_europe
+      # Asia
+      as.geo.apps.grapheneos.org: *releases_north_america
+
+      # Egypt
+      eg.as.geo.apps.grapheneos.org: *releases_europe
+      # India
+      in.as.geo.apps.grapheneos.org: *releases_europe
+      # Israel
+      il.as.geo.apps.grapheneos.org: *releases_europe
+      # Russia
+      ru.as.geo.apps.grapheneos.org: *releases_europe
+      # Turkey
+      tr.as.geo.apps.grapheneos.org: *releases_europe
+    services:
+      apps.grapheneos.org: [ "%cc.%cn.geo.apps.grapheneos.org", "%cn.geo.apps.grapheneos.org", "default.geo.apps.grapheneos.org" ]
+
   - domain: seamlessupdate.app
     ttl: 3600
     records:
@@ -280,24 +317,6 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
-
-  - domain: apps.grapheneos.org
-    ttl: 3600
-    records:
-      apps.grapheneos.org:
-        - a: 51.222.140.199
-        - aaaa: 2607:5300:205:200::39fe
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130213730"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271370"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - ns: ns1.grapheneos.org
-        - ns: ns2.grapheneos.org
-        - mx: *null_mx
-        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
-        - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
-        - txt: *null_spf
-      _443._tcp.apps.grapheneos.org:
-        - tlsa: 3 1 1 f6611f6a33ee81b4ac7584c9b1663d5ff806da424300282184860434a5846824
 
   - domain: staging.grapheneos.org
     ttl: 3600

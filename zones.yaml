@@ -284,10 +284,6 @@ domains:
       ns2.seamlessupdate.app: *ns2
 
       seamlessupdate.app:
-        - a: *0_releases_a
-        - a: *1_releases_a
-        - aaaa: *0_releases_aaaa
-        - aaaa: *1_releases_aaaa
         - caa: *releases_caa
         - caa: *releases_caa_staging
         - caa: *releases_iodef
@@ -296,7 +292,6 @@ domains:
         - ns: ns2.seamlessupdate.app
         - soa: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 86400 60
         - sshfp: *null_sshfp
-        - txt: *grapheneos_spf
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
       _443._tcp.seamlessupdate.app: *releases_tlsa
@@ -317,6 +312,39 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
+
+      # Default (North America)
+      default.geo.seamlessupdate.app: &seamlessupdate_north_america
+        - a: *0_releases_a
+        - a: *1_releases_a
+        - aaaa: *0_releases_aaaa
+        - aaaa: *1_releases_aaaa
+        - txt: *grapheneos_spf
+      # Europe
+      eu.geo.seamlessupdate.app: &seamlessupdate_europe
+        - a: *2_releases_a
+        - a: *3_releases_a
+        - aaaa: *2_releases_aaaa
+        - aaaa: *3_releases_aaaa
+        - txt: *grapheneos_spf
+
+      # Africa
+      af.geo.seamlessupdate.app: *seamlessupdate_europe
+      # Asia
+      as.geo.seamlessupdate.app: *seamlessupdate_north_america
+
+      # Egypt
+      eg.as.geo.seamlessupdate.app: *seamlessupdate_europe
+      # India
+      in.as.geo.seamlessupdate.app: *seamlessupdate_europe
+      # Israel
+      il.as.geo.seamlessupdate.app: *seamlessupdate_europe
+      # Russia
+      ru.as.geo.seamlessupdate.app: *seamlessupdate_europe
+      # Turkey
+      tr.as.geo.seamlessupdate.app: *seamlessupdate_europe
+    services:
+      seamlessupdate.app: [ "%cc.%cn.geo.seamlessupdate.app", "%cn.geo.seamlessupdate.app", "default.geo.seamlessupdate.app" ]
 
   - domain: staging.grapheneos.org
     ttl: 3600

@@ -10,7 +10,6 @@ servers=(
 declare -A ipv4=(
     [ns1.grapheneos.org]=51.222.14.6
     [ns2.grapheneos.org]=141.94.71.48
-
 )
 
 declare -A ipv6=(

@@ -6,14 +6,14 @@ servers=(
     ns2.grapheneos.org
 )
 
-rsync -r root@ns1.grapheneos.org:/etc/powerdns/keys/ keys
+rsync -rv root@ns1.grapheneos.org:/etc/powerdns/keys/ keys
 
 for server in ${servers[@]}; do
     echo $server
 
     remote=root@$server
 
-    rsync -rp --chmod=D755,F644 keys/ root@$server:/etc/powerdns/keys
+    rsync -rpv --chmod=D755,F644 keys/ root@$server:/etc/powerdns/keys
     # need to restart rather than reloading for arbitrary configuration changes
     ssh $remote systemctl restart pdns
     # space out restarts so clients don't get multiple failures

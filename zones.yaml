@@ -291,7 +291,7 @@ domains:
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
         - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - mx: *null_mx
+        - mx: *grapheneos_mx
         - sshfp: 4 2 d1b93a338e6f278148354f32e89839664593b3a8db5bfb5537009e147506545b
         - txt: *grapheneos_spf
       _25._tcp.mail.grapheneos.org:

@@ -419,30 +419,9 @@ domains:
         - sshfp: *null_sshfp
       _443._tcp.apps.grapheneos.org:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
-
-      # Default (North America)
-      default.geo.apps.grapheneos.org: *releases_north_america
-      # Europe
-      eu.geo.apps.grapheneos.org: *releases_europe
-
-      # Africa
-      af.geo.apps.grapheneos.org: *releases_europe
-      # Asia
-      as.geo.apps.grapheneos.org: *releases_north_america
-
-      # Egypt
-      eg.as.geo.apps.grapheneos.org: *releases_europe
-      # India
-      in.as.geo.apps.grapheneos.org: *releases_europe
-      # Israel
-      il.as.geo.apps.grapheneos.org: *releases_europe
-      # Russia
-      ru.as.geo.apps.grapheneos.org: *releases_europe
-      # Turkey
-      tr.as.geo.apps.grapheneos.org: *releases_europe
     services:
       releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
-      apps.grapheneos.org: [ "%cc.%cn.geo.apps.grapheneos.org", "%cn.geo.apps.grapheneos.org", "default.geo.apps.grapheneos.org" ]
+      apps.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
 
   - domain: seamlessupdate.app
     ttl: 3600

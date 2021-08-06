@@ -160,19 +160,64 @@ domains:
       ns1.grapheneos.org: *ns1
       ns2.grapheneos.org: *ns2
 
+      0.grapheneos.org:
+        - a: &0_grapheneos_a 192.99.43.50
+        - aaaa: &0_grapheneos_aaaa 2607:5300:201:3100::1aae
+        - mx: *null_mx
+        - sshfp: 4 2 f4b0eaeff529404ae27322e09b8d0c5f5235ef4b9496bcbd334b22604d355ce3
+        - txt: *null_spf
+
+      1.grapheneos.org:
+        - a: &1_grapheneos_a 51.222.26.187
+        - aaaa: &1_grapheneos_aaaa 2607:5300:205:200::37e3
+        - mx: *null_mx
+        - sshfp: 4 2 abfebd1e9e49e7187df5a99e5442314b6379bfa2485e5bd5fa90af2a336b11dc
+        - txt: *null_spf
+
       grapheneos.org:
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
+        - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - mx: 0 mail.grapheneos.org
         - ns: ns1.grapheneos.org
         - ns: ns2.grapheneos.org
         - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
+        - txt: "yandex-verification: 10fdf27f68b946c5"
+        - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
+      _443._tcp.grapheneos.org: &grapheneos_tlsa
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.mta-sts.grapheneos.org: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.org: *grapheneos_tlsa
+      _dmarc.grapheneos.org:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
+      _mta-sts.grapheneos.org: *_mta-sts
+      _smtp._tls.grapheneos.org:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
+      default._domainkey.grapheneos.org: *grapheneos_dkim
+      mta-sts.grapheneos.org: &grapheneos_subdomain
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      www.grapheneos.org: *grapheneos_subdomain
 
   - domain: www.grapheneos.org
     ttl: 3600
     records:
       www.grapheneos.org:
-        - a: &0_grapheneos_a 192.99.43.50
-        - a: &1_grapheneos_a 51.222.26.187
-        - aaaa: &0_grapheneos_aaaa 2607:5300:201:3100::1aae
-        - aaaa: &1_grapheneos_aaaa 2607:5300:205:200::37e3
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
         - mx: *null_mx
         - ns: ns1.grapheneos.org
         - ns: ns2.grapheneos.org
@@ -477,8 +522,8 @@ domains:
         - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
         - aaaa: *1_grapheneos_aaaa
-        - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
-        - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: *grapheneos_caa
+        - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.app"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.app
@@ -488,8 +533,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
         - txt: "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"
-      _443._tcp.grapheneos.app: &grapheneos_tlsa
-        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+      _443._tcp.grapheneos.app: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.app: *grapheneos_tlsa
       _443._tcp.www.grapheneos.app: *grapheneos_tlsa
       _dmarc.grapheneos.app:
@@ -498,14 +542,7 @@ domains:
       _smtp._tls.grapheneos.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
       default._domainkey.grapheneos.app: *grapheneos_dkim
-      mta-sts.grapheneos.app: &grapheneos_subdomain
-        - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
+      mta-sts.grapheneos.app: *grapheneos_subdomain
       www.grapheneos.app: *grapheneos_subdomain
 
   - domain: grapheneos.ca

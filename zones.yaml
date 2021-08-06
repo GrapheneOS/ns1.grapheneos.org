@@ -320,7 +320,7 @@ domains:
       seamlessupdate.app:
         - caa: *releases_caa
         - caa: *releases_caa_staging
-        - caa: *releases_iodef
+        - caa: 0 iodef "mailto:caa@seamlessupdate.app"
         - mx: *grapheneos_mx
         - ns: ns1.seamlessupdate.app
         - ns: ns2.seamlessupdate.app

@@ -153,6 +153,18 @@ domains:
       mta-sts.grapheneos.online: *network_subdomain
       www.grapheneos.online: *network_subdomain
 
+  # not used yet
+  - domain: grapheneos.org
+    ttl: 3600
+    records:
+      ns1.grapheneos.org: *ns1
+      ns2.grapheneos.org: *ns2
+
+      grapheneos.org:
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+
   - domain: www.grapheneos.org
     ttl: 3600
     records:

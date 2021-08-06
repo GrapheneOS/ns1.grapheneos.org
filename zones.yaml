@@ -153,6 +153,40 @@ domains:
       mta-sts.grapheneos.online: *network_subdomain
       www.grapheneos.online: *network_subdomain
 
+  - domain: www.grapheneos.org
+    ttl: 3600
+    records:
+      www.grapheneos.org:
+        - a: &0_grapheneos_a 192.99.43.50
+        - a: &1_grapheneos_a 51.222.26.187
+        - aaaa: &0_grapheneos_aaaa 2607:5300:201:3100::1aae
+        - aaaa: &1_grapheneos_aaaa 2607:5300:205:200::37e3
+        - mx: *null_mx
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      _443._tcp.www.grapheneos.org:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+
+  - domain: mta-sts.grapheneos.org
+    ttl: 3600
+    records:
+      mta-sts.grapheneos.org:
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
+        - mx: *null_mx
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      _443._tcp.mta-sts.grapheneos.org:
+        - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
+
   - domain: geoip.grapheneos.org
     ttl: 60
     records:
@@ -391,10 +425,10 @@ domains:
       ns2.grapheneos.app: *ns2
 
       grapheneos.app:
-        - a: &0_grapheneos_a 192.99.43.50
-        - a: &1_grapheneos_a 51.222.26.187
-        - aaaa: &0_grapheneos_aaaa 2607:5300:201:3100::1aae
-        - aaaa: &1_grapheneos_aaaa 2607:5300:205:200::37e3
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.app"

@@ -416,6 +416,42 @@ domains:
       _443._tcp.time.grapheneos.org:
         - tlsa: 3 1 1 e9c1fe9198abb0aebc002f01cea02c63bc4422ae14594c6229af33a851342180
 
+  - domain: element.grapheneos.org
+    ttl: 3600
+    records:
+      element.grapheneos.org:
+        - a: &matrix_a 51.79.51.42
+        - aaaa: &matrix_aaaa 2607:5300:205:200::26e1
+        - caa: &matrix_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
+        - caa: &matrix_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
+        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - mx: *null_mx
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - txt: *null_spf
+      _443._tcp.element.grapheneos.org:
+        - tlsa: 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
+
+  - domain: matrix.grapheneos.org
+    ttl: 3600
+    records:
+      matrix.grapheneos.org:
+        - a: *matrix_a
+        - aaaa: *matrix_aaaa
+        - caa: *matrix_caa
+        - caa: *matrix_caa_staging
+        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - ns: ns1.grapheneos.org
+        - ns: ns2.grapheneos.org
+        - mx: *null_mx
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - sshfp: 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
+        - txt: *null_spf
+      _443._tcp.matrix.grapheneos.org:
+        - tlsa: 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
+
   # reserved grapheneos.tld domains and vanadium.app
 
   - domain: grapheneos.app

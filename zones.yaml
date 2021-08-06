@@ -86,7 +86,7 @@ domains:
         - aaaa: *1_network_aaaa
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
-        - caa: &network_caa_iodef 0 iodef "mailto:caa@grapheneos.network"
+        - caa: 0 iodef "mailto:caa@grapheneos.network"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.network
         - ns: ns2.grapheneos.network
@@ -130,7 +130,7 @@ domains:
         - aaaa: *1_network_aaaa
         - caa: *network_caa
         - caa: *network_caa_staging
-        - caa: *network_caa_iodef
+        - caa: 0 iodef "mailto:caa@grapheneos.online"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.online
         - ns: ns2.grapheneos.online
@@ -397,7 +397,7 @@ domains:
         - aaaa: &1_grapheneos_aaaa 2607:5300:205:200::37e3
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
-        - caa: &grapheneos_caa_iodef 0 iodef "mailto:caa@grapheneos.app"
+        - caa: 0 iodef "mailto:caa@grapheneos.app"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.app
         - ns: ns2.grapheneos.app
@@ -439,7 +439,7 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: *grapheneos_caa_iodef
+        - caa: 0 iodef "mailto:caa@grapheneos.ca"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.ca
         - ns: ns2.grapheneos.ca
@@ -473,7 +473,7 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: *grapheneos_caa_iodef
+        - caa: 0 iodef "mailto:caa@grapheneos.com"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.com
         - ns: ns2.grapheneos.com
@@ -507,7 +507,7 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: *grapheneos_caa_iodef
+        - caa: 0 iodef "mailto:caa@grapheneos.info"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.info
         - ns: ns2.grapheneos.info
@@ -541,7 +541,7 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: *grapheneos_caa_iodef
+        - caa: 0 iodef "mailto:caa@grapheneos.net"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.net
         - ns: ns2.grapheneos.net
@@ -575,7 +575,7 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: *grapheneos_caa_iodef
+        - caa: 0 iodef "mailto:caa@grapheneos.page"
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.page
         - ns: ns2.grapheneos.page
@@ -609,7 +609,7 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: *grapheneos_caa_iodef
+        - caa: 0 iodef "mailto:caa@vanadium.app"
         - mx: *grapheneos_mx
         - ns: ns1.vanadium.app
         - ns: ns2.vanadium.app

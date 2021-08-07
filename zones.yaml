@@ -182,26 +182,20 @@ domains:
         - txt: *null_spf
 
       1.grapheneos.org:
-        - a: &1_grapheneos_a 51.222.26.187
-        - aaaa: &1_grapheneos_aaaa 2607:5300:205:200::37e3
+        - a: &1_grapheneos_a 51.178.136.41
+        - aaaa: &1_grapheneos_aaaa 2001:41d0:304:200::a087
         - mx: *null_mx
-        - sshfp: 4 2 abfebd1e9e49e7187df5a99e5442314b6379bfa2485e5bd5fa90af2a336b11dc
+        - sshfp: 4 2 b3eced499fc208feaa1bc3d59d9f4819edea1a7f5ef04b3e1035435f70a38cc1
         - txt: *null_spf
 
       grapheneos.org:
-        - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - mx: 0 mail.grapheneos.org
         - ns: ns1.grapheneos.org
         - ns: ns2.grapheneos.org
         - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
         - sshfp: *null_sshfp
-        - txt: *grapheneos_spf
         - txt: "yandex-verification: 10fdf27f68b946c5"
         - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
       _443._tcp.grapheneos.org: &grapheneos_tlsa
@@ -217,17 +211,13 @@ domains:
       default._domainkey.grapheneos.org: *grapheneos_dkim
       mta-sts.grapheneos.org: &grapheneos_subdomain
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       mta-sts.mail.grapheneos.org:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.org"
@@ -235,6 +225,35 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
       www.grapheneos.org: *grapheneos_subdomain
+
+      # Default (North America)
+      default.geo.grapheneos.org: &grapheneos_north_america
+        - a: *0_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - mx: 0 mail.grapheneos.org
+        - txt: *grapheneos_spf
+      # Europe
+      eu.geo.grapheneos.org: &grapheneos_europe
+        - a: *1_grapheneos_a
+        - aaaa: *1_grapheneos_aaaa
+        - mx: 0 mail.grapheneos.org
+        - txt: *grapheneos_spf
+
+      # Africa
+      af.geo.grapheneos.org: *grapheneos_europe
+      # Asia
+      as.geo.grapheneos.org: *grapheneos_north_america
+
+      # Egypt
+      eg.as.geo.grapheneos.org: *grapheneos_europe
+      # India
+      in.as.geo.grapheneos.org: *grapheneos_europe
+      # Israel
+      il.as.geo.grapheneos.org: *grapheneos_europe
+      # Russia
+      ru.as.geo.grapheneos.org: *grapheneos_europe
+      # Turkey
+      tr.as.geo.grapheneos.org: *grapheneos_europe
 
       staging.grapheneos.org:
         - a: 51.222.140.11
@@ -420,6 +439,7 @@ domains:
       _443._tcp.apps.grapheneos.org:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
     services:
+      grapheneos.org: [ "%cc.%cn.geo.grapheneos.org", "%cn.geo.grapheneos.org", "default.geo.grapheneos.org" ]
       releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
       apps.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
 
@@ -502,9 +522,7 @@ domains:
 
       grapheneos.app:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.app"
@@ -536,9 +554,7 @@ domains:
 
       grapheneos.ca:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.ca"
@@ -570,9 +586,7 @@ domains:
 
       grapheneos.com:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.com"
@@ -604,9 +618,7 @@ domains:
 
       grapheneos.info:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.info"
@@ -638,9 +650,7 @@ domains:
 
       grapheneos.net:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.net"
@@ -672,9 +682,7 @@ domains:
 
       grapheneos.ovh:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.ovh"
@@ -706,9 +714,7 @@ domains:
 
       grapheneos.page:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.page"
@@ -740,9 +746,7 @@ domains:
 
       vanadium.app:
         - a: *0_grapheneos_a
-        - a: *1_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
-        - aaaa: *1_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@vanadium.app"

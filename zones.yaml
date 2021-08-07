@@ -664,6 +664,40 @@ domains:
       mta-sts.grapheneos.net: *grapheneos_subdomain
       www.grapheneos.net: *grapheneos_subdomain
 
+  - domain: grapheneos.ovh
+    ttl: 3600
+    records:
+      ns1.grapheneos.ovh: *ns1
+      ns2.grapheneos.ovh: *ns2
+
+      grapheneos.ovh:
+        - a: *0_grapheneos_a
+        - a: *1_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - aaaa: *1_grapheneos_aaaa
+        - caa: *grapheneos_caa
+        - caa: *grapheneos_caa_staging
+        - caa: 0 iodef "mailto:caa@grapheneos.ovh"
+        - mx: *grapheneos_mx
+        - ns: ns1.grapheneos.ovh
+        - ns: ns2.grapheneos.ovh
+        - soa: ns1.grapheneos.ovh hostmaster.grapheneos.ovh 0 3600 1800 86400 60
+        - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
+        - txt: "yandex-verification: 2c5aa8a634826b6c"
+        - txt: "facebook-domain-verification=1qtzmy9esw4w7k6k69zmpl9teqbdcu"
+      _443._tcp.grapheneos.ovh: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.ovh: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.ovh: *grapheneos_tlsa
+      _dmarc.grapheneos.ovh:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ovh; ruf=mailto:dmarc@grapheneos.ovh"
+      _mta-sts.grapheneos.ovh: *_mta-sts
+      _smtp._tls.grapheneos.ovh:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ovh"
+      default._domainkey.grapheneos.ovh: *grapheneos_dkim
+      mta-sts.grapheneos.ovh: *grapheneos_subdomain
+      www.grapheneos.ovh: *grapheneos_subdomain
+
   - domain: grapheneos.page
     ttl: 3600
     records:

@@ -3,14 +3,22 @@ domains:
     ttl: 3600
     records:
       ns1.attestation.app: &ns1
-        - a: &ns1_a 51.222.14.6
-        - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
+        - a: &ns1_a
+            content: 51.222.14.6
+            ttl: &ns_ttl 86400
+        - aaaa: &ns1_aaaa
+            content: 2607:5300:205:200::29e8
+            ttl: *ns_ttl
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: &null_spf "v=spf1 -all"
       ns2.attestation.app: &ns2
-        - a: &ns2_a 141.94.71.48
-        - aaaa: &ns2_aaaa 2001:41d0:304:200::528
+        - a: &ns2_a
+            content: 141.94.71.48
+            ttl: *ns_ttl
+        - aaaa: &ns2_aaaa
+            content: 2001:41d0:304:200::528
+            ttl: *ns_ttl
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -22,9 +30,15 @@ domains:
         - caa: &attestation_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
         - caa: 0 iodef "mailto:caa@attestation.app"
         - mx: &grapheneos_mx 0 mail.grapheneos.org
-        - ns: ns1.attestation.app
-        - ns: ns2.attestation.app
-        - soa: ns1.attestation.app hostmaster.attestation.app 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.attestation.app
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.attestation.app
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.attestation.app hostmaster.attestation.app 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: 4 2 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: aafc5b649d6fa07d"
@@ -88,9 +102,15 @@ domains:
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.network"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.network
-        - ns: ns2.grapheneos.network
-        - soa: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.network
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.network
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b3fce6bedf3d57f9"
@@ -132,9 +152,15 @@ domains:
         - caa: *network_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.online"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.online
-        - ns: ns2.grapheneos.online
-        - soa: ns1.grapheneos.online hostmaster.grapheneos.online 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.online
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.online
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.online hostmaster.grapheneos.online 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: f5675cd6f4757892"
@@ -193,9 +219,15 @@ domains:
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: 0 iodef "mailto:caa@grapheneos.org"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.org
-        - ns: ns2.grapheneos.org
-        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.org
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.org
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: 10fdf27f68b946c5"
         - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
@@ -439,9 +471,15 @@ domains:
         - caa: *releases_caa_staging
         - caa: 0 iodef "mailto:caa@seamlessupdate.app"
         - mx: *grapheneos_mx
-        - ns: ns1.seamlessupdate.app
-        - ns: ns2.seamlessupdate.app
-        - soa: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.seamlessupdate.app
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.seamlessupdate.app
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
@@ -512,9 +550,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.app"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.app
-        - ns: ns2.grapheneos.app
-        - soa: ns1.grapheneos.app hostmaster.grapheneos.app 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.app
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.app
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.app hostmaster.grapheneos.app 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
@@ -544,9 +588,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.ca"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.ca
-        - ns: ns2.grapheneos.ca
-        - soa: ns1.grapheneos.ca hostmaster.grapheneos.ca 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.ca
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.ca
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.ca hostmaster.grapheneos.ca 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b0eb1a78fb9fb370"
@@ -576,9 +626,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.com"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.com
-        - ns: ns2.grapheneos.com
-        - soa: ns1.grapheneos.com hostmaster.grapheneos.com 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.com
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.com
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.com hostmaster.grapheneos.com 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 8e2110b9a3772add"
@@ -608,9 +664,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.info"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.info
-        - ns: ns2.grapheneos.info
-        - soa: ns1.grapheneos.info hostmaster.grapheneos.info 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.info
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.info
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.info hostmaster.grapheneos.info 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: d21cd9edcd378afd"
@@ -640,9 +702,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.net"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.net
-        - ns: ns2.grapheneos.net
-        - soa: ns1.grapheneos.net hostmaster.grapheneos.net 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.net
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.net
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.net hostmaster.grapheneos.net 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 814effb141ae35dc"
@@ -672,9 +740,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.ovh"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.ovh
-        - ns: ns2.grapheneos.ovh
-        - soa: ns1.grapheneos.ovh hostmaster.grapheneos.ovh 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.ovh
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.ovh
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.ovh hostmaster.grapheneos.ovh 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 2c5aa8a634826b6c"
@@ -704,9 +778,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.page"
         - mx: *grapheneos_mx
-        - ns: ns1.grapheneos.page
-        - ns: ns2.grapheneos.page
-        - soa: ns1.grapheneos.page hostmaster.grapheneos.page 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.grapheneos.page
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.grapheneos.page
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.grapheneos.page hostmaster.grapheneos.page 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: ec2761b2472a4ab4"
@@ -736,9 +816,15 @@ domains:
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@vanadium.app"
         - mx: *grapheneos_mx
-        - ns: ns1.vanadium.app
-        - ns: ns2.vanadium.app
-        - soa: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 86400 3600
+        - ns:
+            content: ns1.vanadium.app
+            ttl: *ns_ttl
+        - ns:
+            content: ns2.vanadium.app
+            ttl: *ns_ttl
+        - soa:
+            content: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 86400 3600
+            ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 369dbb9acc84cb72"

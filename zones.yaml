@@ -287,7 +287,7 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: *null_spf
-      _443._tcp.element.grapheneos.org:
+      _443._tcp.element.grapheneos.org: &matrix_tlsa
         - tlsa: 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
 
       matrix.grapheneos.org:
@@ -299,8 +299,7 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
         - txt: *null_spf
-      _443._tcp.matrix.grapheneos.org:
-        - tlsa: 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
+      _443._tcp.matrix.grapheneos.org: *matrix_tlsa
 
       mail.grapheneos.org:
         - a: 51.222.17.218
@@ -312,12 +311,10 @@ domains:
         - mx: *grapheneos_mx
         - sshfp: 4 2 d1b93a338e6f278148354f32e89839664593b3a8db5bfb5537009e147506545b
         - txt: *grapheneos_spf
-      _25._tcp.mail.grapheneos.org:
+      _25._tcp.mail.grapheneos.org: &mail_tlsa
         - tlsa: 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
-      _465._tcp.mail.grapheneos.org:
-        - tlsa: 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
-      _993._tcp.mail.grapheneos.org:
-        - tlsa: 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
+      _465._tcp.mail.grapheneos.org: *mail_tlsa
+      _993._tcp.mail.grapheneos.org: *mail_tlsa
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
 
       # legacy
@@ -435,8 +432,7 @@ domains:
         - caa: *releases_caa_staging
         - caa: *releases_iodef
         - sshfp: *null_sshfp
-      _443._tcp.apps.grapheneos.org:
-        - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
+      _443._tcp.apps.grapheneos.org: *releases_tlsa
     services:
       grapheneos.org: [ "%cc.%cn.geo.grapheneos.org", "%cn.geo.grapheneos.org", "default.geo.grapheneos.org" ]
       releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]

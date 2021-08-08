@@ -330,7 +330,7 @@ domains:
       _443._tcp.attestation.grapheneos.org: *attestation_tlsa
 
       # legacy
-      connectivity.grapheneos.org:
+      connectivity.grapheneos.org: &legacy_network_subdomain
         - a: *0_network_a
         - a: *1_network_a
         - aaaa: *0_network_aaaa
@@ -344,17 +344,7 @@ domains:
       _443._tcp.connectivity.grapheneos.org: *network_tlsa
 
       # legacy
-      connectivitycheck.grapheneos.org:
-        - a: *0_network_a
-        - a: *1_network_a
-        - aaaa: *0_network_aaaa
-        - aaaa: *1_network_aaaa
-        - caa: *network_caa
-        - caa: *network_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
+      connectivitycheck.grapheneos.org: *legacy_network_subdomain
       _443._tcp.connectivitycheck.grapheneos.org: *network_tlsa
 
       # Beauharnois

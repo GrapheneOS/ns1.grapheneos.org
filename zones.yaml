@@ -24,7 +24,7 @@ domains:
         - mx: &grapheneos_mx 0 mail.grapheneos.org
         - ns: ns1.attestation.app
         - ns: ns2.attestation.app
-        - soa: ns1.attestation.app hostmaster.attestation.app 0 3600 1800 86400 60
+        - soa: ns1.attestation.app hostmaster.attestation.app 0 3600 1800 86400 3600
         - sshfp: 4 2 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: aafc5b649d6fa07d"
@@ -90,7 +90,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.network
         - ns: ns2.grapheneos.network
-        - soa: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b3fce6bedf3d57f9"
@@ -134,7 +134,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.online
         - ns: ns2.grapheneos.online
-        - soa: ns1.grapheneos.online hostmaster.grapheneos.online 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.online hostmaster.grapheneos.online 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: f5675cd6f4757892"
@@ -195,7 +195,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.org
         - ns: ns2.grapheneos.org
-        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: "yandex-verification: 10fdf27f68b946c5"
         - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
@@ -441,7 +441,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.seamlessupdate.app
         - ns: ns2.seamlessupdate.app
-        - soa: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 86400 60
+        - soa: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
@@ -514,7 +514,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.app
         - ns: ns2.grapheneos.app
-        - soa: ns1.grapheneos.app hostmaster.grapheneos.app 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.app hostmaster.grapheneos.app 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
@@ -546,7 +546,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.ca
         - ns: ns2.grapheneos.ca
-        - soa: ns1.grapheneos.ca hostmaster.grapheneos.ca 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.ca hostmaster.grapheneos.ca 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b0eb1a78fb9fb370"
@@ -578,7 +578,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.com
         - ns: ns2.grapheneos.com
-        - soa: ns1.grapheneos.com hostmaster.grapheneos.com 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.com hostmaster.grapheneos.com 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 8e2110b9a3772add"
@@ -610,7 +610,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.info
         - ns: ns2.grapheneos.info
-        - soa: ns1.grapheneos.info hostmaster.grapheneos.info 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.info hostmaster.grapheneos.info 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: d21cd9edcd378afd"
@@ -642,7 +642,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.net
         - ns: ns2.grapheneos.net
-        - soa: ns1.grapheneos.net hostmaster.grapheneos.net 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.net hostmaster.grapheneos.net 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 814effb141ae35dc"
@@ -674,7 +674,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.ovh
         - ns: ns2.grapheneos.ovh
-        - soa: ns1.grapheneos.ovh hostmaster.grapheneos.ovh 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.ovh hostmaster.grapheneos.ovh 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 2c5aa8a634826b6c"
@@ -706,7 +706,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.grapheneos.page
         - ns: ns2.grapheneos.page
-        - soa: ns1.grapheneos.page hostmaster.grapheneos.page 0 3600 1800 86400 60
+        - soa: ns1.grapheneos.page hostmaster.grapheneos.page 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: ec2761b2472a4ab4"
@@ -738,7 +738,7 @@ domains:
         - mx: *grapheneos_mx
         - ns: ns1.vanadium.app
         - ns: ns2.vanadium.app
-        - soa: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 86400 60
+        - soa: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 86400 3600
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 369dbb9acc84cb72"

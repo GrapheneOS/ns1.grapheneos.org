@@ -156,13 +156,13 @@ domains:
   - domain: grapheneos.org
     ttl: 3600
     records:
-      ns1.grapheneos.org: &ns1
+      ns1.grapheneos.org:
         - a: *ns1_a
         - aaaa: *ns1_aaaa
         - mx: *null_mx
         - sshfp: 4 2 794c40da3d66e29d3e5738ffdd7cc4d9008502872a32bc8daef68d14f0316a90
         - txt: *null_spf
-      ns2.grapheneos.org: &ns2
+      ns2.grapheneos.org:
         - a: *ns2_a
         - aaaa: *ns2_aaaa
         - mx: *null_mx

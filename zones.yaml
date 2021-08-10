@@ -37,7 +37,7 @@ domains:
             content: ns2.attestation.app
             ttl: *ns_ttl
         - soa:
-            content: ns1.attestation.app hostmaster.attestation.app 0 3600 1800 1209600 3600
+            content: ns1.attestation.app hostmaster.attestation.app {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: 4 2 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
@@ -109,7 +109,7 @@ domains:
             content: ns2.grapheneos.network
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.network hostmaster.grapheneos.network 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.network hostmaster.grapheneos.network {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -159,7 +159,7 @@ domains:
             content: ns2.grapheneos.online
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.online hostmaster.grapheneos.online 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.online hostmaster.grapheneos.online {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -226,7 +226,7 @@ domains:
             content: ns2.grapheneos.org
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.org hostmaster.grapheneos.org 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.org hostmaster.grapheneos.org {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: 10fdf27f68b946c5"
@@ -480,7 +480,7 @@ domains:
             content: ns2.seamlessupdate.app
             ttl: *ns_ttl
         - soa:
-            content: ns1.seamlessupdate.app hostmaster.seamlessupdate.app 0 3600 1800 1209600 3600
+            content: ns1.seamlessupdate.app hostmaster.seamlessupdate.app {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: cba8ef4619bc43f5"
@@ -559,7 +559,7 @@ domains:
             content: ns2.grapheneos.app
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.app hostmaster.grapheneos.app 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.app hostmaster.grapheneos.app {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -598,7 +598,7 @@ domains:
             content: ns2.grapheneos.ca
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.ca hostmaster.grapheneos.ca 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.ca hostmaster.grapheneos.ca {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -637,7 +637,7 @@ domains:
             content: ns2.grapheneos.com
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.com hostmaster.grapheneos.com 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.com hostmaster.grapheneos.com {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -676,7 +676,7 @@ domains:
             content: ns2.grapheneos.info
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.info hostmaster.grapheneos.info 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.info hostmaster.grapheneos.info {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -715,7 +715,7 @@ domains:
             content: ns2.grapheneos.net
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.net hostmaster.grapheneos.net 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.net hostmaster.grapheneos.net {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -754,7 +754,7 @@ domains:
             content: ns2.grapheneos.ovh
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.ovh hostmaster.grapheneos.ovh 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.ovh hostmaster.grapheneos.ovh {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -793,7 +793,7 @@ domains:
             content: ns2.grapheneos.page
             ttl: *ns_ttl
         - soa:
-            content: ns1.grapheneos.page hostmaster.grapheneos.page 0 3600 1800 1209600 3600
+            content: ns1.grapheneos.page hostmaster.grapheneos.page {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
@@ -832,7 +832,7 @@ domains:
             content: ns2.vanadium.app
             ttl: *ns_ttl
         - soa:
-            content: ns1.vanadium.app hostmaster.vanadium.app 0 3600 1800 1209600 3600
+            content: ns1.vanadium.app hostmaster.vanadium.app {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf

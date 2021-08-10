@@ -17,6 +17,20 @@ declare -A ipv6=(
     [ns2.grapheneos.org]=2001:41d0:304:200::528
 )
 
+old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date +"%Y%m%d00"))
+serial=$(date +"%Y%m%d")
+if [[ ${old_serial:0:8} = ${serial} ]]; then
+    old_sequence=${old_serial:8:2}
+    old_sequence=${old_sequence##0}
+    [[ $old_sequence -eq 99 ]] && old_sequence=0
+    serial+=$(printf %02d $(( $old_sequence + 1 )))
+else
+    serial+=01
+fi
+echo serial: $serial
+echo
+echo -n $serial > serial.txt
+
 for server in ${servers[@]}; do
     echo $server
 
@@ -25,7 +39,9 @@ for server in ${servers[@]}; do
     cp pdns.conf pdns.conf.tmp
     sed -i "s/{ipv4}/${ipv4[$server]}/g; s/{ipv6}/${ipv6[$server]}/g" pdns.conf.tmp
     rsync -pcv --chmod=F644 pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
-    rsync -pcv --chmod=F644 zones.yaml $remote:/etc/powerdns/zones.yaml
+    cp zones.yaml zones.yaml.tmp
+    sed -i "s/{serial}/$serial/g; s/{serial}/$serial/g" zones.yaml.tmp
+    rsync -pcv --chmod=F644 zones.yaml.tmp $remote:/etc/powerdns/zones.yaml
     # need to restart rather than reloading for arbitrary configuration changes
     ssh $remote systemctl restart pdns
     # space out restarts so clients don't get multiple failures

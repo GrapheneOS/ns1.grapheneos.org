@@ -272,22 +272,6 @@ domains:
         - aaaa: *1_grapheneos_aaaa
         - txt: *grapheneos_spf
 
-      # Africa
-      af.geo.grapheneos.org: *grapheneos_europe
-      # Asia
-      as.geo.grapheneos.org: *grapheneos_north_america
-
-      # Egypt
-      eg.as.geo.grapheneos.org: *grapheneos_europe
-      # India
-      in.as.geo.grapheneos.org: *grapheneos_europe
-      # Israel
-      il.as.geo.grapheneos.org: *grapheneos_europe
-      # Russia
-      ru.as.geo.grapheneos.org: *grapheneos_europe
-      # Turkey
-      tr.as.geo.grapheneos.org: *grapheneos_europe
-
       staging.grapheneos.org:
         - a: 51.222.140.11
         - aaaa: 2607:5300:205:200::a23
@@ -435,22 +419,6 @@ domains:
         - mx: *null_mx
         - txt: *null_spf
 
-      # Africa
-      af.geo.releases.grapheneos.org: *releases_europe
-      # Asia
-      as.geo.releases.grapheneos.org: *releases_north_america
-
-      # Egypt
-      eg.as.geo.releases.grapheneos.org: *releases_europe
-      # India
-      in.as.geo.releases.grapheneos.org: *releases_europe
-      # Israel
-      il.as.geo.releases.grapheneos.org: *releases_europe
-      # Russia
-      ru.as.geo.releases.grapheneos.org: *releases_europe
-      # Turkey
-      tr.as.geo.releases.grapheneos.org: *releases_europe
-
       apps.grapheneos.org:
         - caa: *releases_caa
         - caa: *releases_caa_staging
@@ -458,9 +426,9 @@ domains:
         - sshfp: *null_sshfp
       _443._tcp.apps.grapheneos.org: *releases_tlsa
     services:
-      grapheneos.org: [ "%cc.%cn.geo.grapheneos.org", "%cn.geo.grapheneos.org", "na.geo.grapheneos.org" ]
-      releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org" ]
-      apps.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org" ]
+      grapheneos.org: "%mp.geo.grapheneos.org"
+      releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
+      apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
 
   - domain: seamlessupdate.app
     ttl: 3600
@@ -518,24 +486,8 @@ domains:
         - aaaa: *2_releases_aaaa
         - aaaa: *3_releases_aaaa
         - txt: *grapheneos_spf
-
-      # Africa
-      af.geo.seamlessupdate.app: *seamlessupdate_europe
-      # Asia
-      as.geo.seamlessupdate.app: *seamlessupdate_north_america
-
-      # Egypt
-      eg.as.geo.seamlessupdate.app: *seamlessupdate_europe
-      # India
-      in.as.geo.seamlessupdate.app: *seamlessupdate_europe
-      # Israel
-      il.as.geo.seamlessupdate.app: *seamlessupdate_europe
-      # Russia
-      ru.as.geo.seamlessupdate.app: *seamlessupdate_europe
-      # Turkey
-      tr.as.geo.seamlessupdate.app: *seamlessupdate_europe
     services:
-      seamlessupdate.app: [ "%cc.%cn.geo.seamlessupdate.app", "%cn.geo.seamlessupdate.app", "na.geo.seamlessupdate.app" ]
+      seamlessupdate.app: "%mp.geo.seamlessupdate.app"
 
   # reserved grapheneos.tld domains and vanadium.app
 
@@ -850,3 +802,21 @@ domains:
       default._domainkey.vanadium.app: *grapheneos_dkim
       mta-sts.vanadium.app: *grapheneos_subdomain
       www.vanadium.app: *grapheneos_subdomain
+mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
+custom_mapping:
+  # Africa
+  af: eu
+  # Egypt
+  as-eg: eu
+  # India
+  as-in: eu
+  # Israel
+  as-il: eu
+  # Russia
+  as-ru: eu
+  # Turkey
+  as-tr: eu
+  # Europe
+  eu: eu
+  # North America
+  na: na

@@ -241,6 +241,8 @@ domains:
       _mta-sts.grapheneos.org: *_mta-sts
       _smtp._tls.grapheneos.org:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
+      default._bimi.grapheneos.org: &grapheneos_bimi
+        - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
       default._domainkey.grapheneos.org: *grapheneos_dkim
       mta-sts.grapheneos.org: &grapheneos_subdomain
         - a: *0_grapheneos_a
@@ -347,6 +349,7 @@ domains:
         - tlsa: 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
       _465._tcp.mail.grapheneos.org: *mail_tlsa
       _993._tcp.mail.grapheneos.org: *mail_tlsa
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
 
       # legacy
@@ -571,6 +574,7 @@ domains:
       _mta-sts.grapheneos.app: *_mta-sts
       _smtp._tls.grapheneos.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.app: *grapheneos_dkim
       mta-sts.grapheneos.app: *grapheneos_subdomain
       www.grapheneos.app: *grapheneos_subdomain
@@ -609,6 +613,7 @@ domains:
       _mta-sts.grapheneos.ca: *_mta-sts
       _smtp._tls.grapheneos.ca:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ca"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.ca: *grapheneos_dkim
       mta-sts.grapheneos.ca: *grapheneos_subdomain
       www.grapheneos.ca: *grapheneos_subdomain
@@ -647,6 +652,7 @@ domains:
       _mta-sts.grapheneos.com: *_mta-sts
       _smtp._tls.grapheneos.com:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.com"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.com: *grapheneos_dkim
       mta-sts.grapheneos.com: *grapheneos_subdomain
       www.grapheneos.com: *grapheneos_subdomain
@@ -685,6 +691,7 @@ domains:
       _mta-sts.grapheneos.info: *_mta-sts
       _smtp._tls.grapheneos.info:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.info"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.info: *grapheneos_dkim
       mta-sts.grapheneos.info: *grapheneos_subdomain
       www.grapheneos.info: *grapheneos_subdomain
@@ -723,6 +730,7 @@ domains:
       _mta-sts.grapheneos.net: *_mta-sts
       _smtp._tls.grapheneos.net:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.net: *grapheneos_dkim
       mta-sts.grapheneos.net: *grapheneos_subdomain
       www.grapheneos.net: *grapheneos_subdomain
@@ -761,6 +769,7 @@ domains:
       _mta-sts.grapheneos.ovh: *_mta-sts
       _smtp._tls.grapheneos.ovh:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ovh"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.ovh: *grapheneos_dkim
       mta-sts.grapheneos.ovh: *grapheneos_subdomain
       www.grapheneos.ovh: *grapheneos_subdomain
@@ -799,6 +808,7 @@ domains:
       _mta-sts.grapheneos.page: *_mta-sts
       _smtp._tls.grapheneos.page:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.page: *grapheneos_dkim
       mta-sts.grapheneos.page: *grapheneos_subdomain
       www.grapheneos.page: *grapheneos_subdomain
@@ -837,6 +847,7 @@ domains:
       _mta-sts.vanadium.app: *_mta-sts
       _smtp._tls.vanadium.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@vanadium.app"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.vanadium.app: *grapheneos_dkim
       mta-sts.vanadium.app: *grapheneos_subdomain
       www.vanadium.app: *grapheneos_subdomain

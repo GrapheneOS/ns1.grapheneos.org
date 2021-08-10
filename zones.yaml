@@ -261,8 +261,8 @@ domains:
         - txt: *null_spf
       www.grapheneos.org: *grapheneos_subdomain
 
-      # Default (North America)
-      default.geo.grapheneos.org: &grapheneos_north_america
+      # North America
+      na.geo.grapheneos.org: &grapheneos_north_america
         - a: *0_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
         - txt: *grapheneos_spf
@@ -418,8 +418,8 @@ domains:
       _443._tcp.releases.grapheneos.org: &releases_tlsa
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
-      # Default (North America)
-      default.geo.releases.grapheneos.org: &releases_north_america
+      # North America
+      na.geo.releases.grapheneos.org: &releases_north_america
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
@@ -458,9 +458,9 @@ domains:
         - sshfp: *null_sshfp
       _443._tcp.apps.grapheneos.org: *releases_tlsa
     services:
-      grapheneos.org: [ "%cc.%cn.geo.grapheneos.org", "%cn.geo.grapheneos.org", "default.geo.grapheneos.org" ]
-      releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
-      apps.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "default.geo.releases.grapheneos.org" ]
+      grapheneos.org: [ "%cc.%cn.geo.grapheneos.org", "%cn.geo.grapheneos.org", "na.geo.grapheneos.org" ]
+      releases.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org" ]
+      apps.grapheneos.org: [ "%cc.%cn.geo.releases.grapheneos.org", "%cn.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org" ]
 
   - domain: seamlessupdate.app
     ttl: 3600
@@ -504,8 +504,8 @@ domains:
         - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
-      # Default (North America)
-      default.geo.seamlessupdate.app: &seamlessupdate_north_america
+      # North America
+      na.geo.seamlessupdate.app: &seamlessupdate_north_america
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
@@ -535,7 +535,7 @@ domains:
       # Turkey
       tr.as.geo.seamlessupdate.app: *seamlessupdate_europe
     services:
-      seamlessupdate.app: [ "%cc.%cn.geo.seamlessupdate.app", "%cn.geo.seamlessupdate.app", "default.geo.seamlessupdate.app" ]
+      seamlessupdate.app: [ "%cc.%cn.geo.seamlessupdate.app", "%cn.geo.seamlessupdate.app", "na.geo.seamlessupdate.app" ]
 
   # reserved grapheneos.tld domains and vanadium.app
 

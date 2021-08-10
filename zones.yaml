@@ -337,7 +337,6 @@ domains:
 
       mail.grapheneos.org:
         - a: 51.222.17.218
-        - a: 51.161.8.140
         - aaaa: 2607:5300:205:200::94f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"

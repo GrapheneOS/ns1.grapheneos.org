@@ -806,16 +806,42 @@ mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:
   # Africa
   af: eu
+  # United Arab Emirates
+  as-ae: eu
+  # Bahrain
+  as-bh: eu
   # Egypt
   as-eg: eu
   # India
   as-in: eu
   # Israel
   as-il: eu
+  # Iraq
+  as-iq: eu
+  # Iran
+  as-ir: eu
+  # Jordan
+  as-jo: eu
+  # Kuwait
+  as-kw: eu
+  # Lebanon
+  as-lb: eu
+  # Oman
+  as-om: eu
+  # Palestine
+  as-ps: eu
+  # Qatar
+  as-qa: eu
   # Russia
   as-ru: eu
+  # Saudi Arabia
+  as-sa: eu
+  # Syria
+  as-sy: eu
   # Turkey
   as-tr: eu
+  # Yemen
+  as-ye: eu
   # Europe
   eu: eu
   # North America

@@ -17,6 +17,7 @@ declare -A ipv6=(
     [ns2.grapheneos.org]=2001:41d0:304:200::528
 )
 
+# use YYYYMMDDSS SOA serial format
 old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date +"%Y%m%d00"))
 serial=$(date +"%Y%m%d")
 if [[ ${old_serial:0:8} = ${serial} ]]; then

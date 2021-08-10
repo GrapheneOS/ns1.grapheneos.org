@@ -808,10 +808,16 @@ custom_mapping:
   af: eu
   # United Arab Emirates
   as-ae: eu
+  # Armenia
+  as-am: eu
+  # Azerbaijan
+  as-az: eu
   # Bahrain
   as-bh: eu
   # Egypt
   as-eg: eu
+  # Georgia
+  as-ge: eu
   # India
   as-in: eu
   # Israel

@@ -3,16 +3,19 @@
 set -o errexit -o nounset -o pipefail
 
 servers=(
+    staging.ns1.grapheneos.org
     ns1.grapheneos.org
     ns2.grapheneos.org
 )
 
 declare -A ipv4=(
+    [staging.ns1.grapheneos.org]=51.222.140.199
     [ns1.grapheneos.org]=51.222.14.6
     [ns2.grapheneos.org]=141.94.71.48
 )
 
 declare -A ipv6=(
+    [staging.ns1.grapheneos.org]=2607:5300:205:200::39fe
     [ns1.grapheneos.org]=2607:5300:205:200::29e8
     [ns2.grapheneos.org]=2001:41d0:304:200::528
 )

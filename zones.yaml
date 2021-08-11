@@ -224,6 +224,13 @@ domains:
         - sshfp: 4 2 437bb62fc1a1b6e74941592cac896203353fef1e1538104caa22672a8bf889c3
         - txt: *null_spf
 
+      staging.ns1.grapheneos.org:
+        - a: 51.222.140.199
+        - aaaa: 2607:5300:205:200::39fe
+        - mx: *null_mx
+        - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
+        - txt: *null_spf
+
       geoip.grapheneos.org:
         - txt:
             content: "ip: %ip, country: %cc, continent: %cn, region: %re"

@@ -87,17 +87,13 @@ domains:
         - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
         - txt: *null_spf
       1.grapheneos.network:
-        - a: &1_network_a 51.222.159.48
-        - aaaa: &1_network_aaaa 2607:5300:205:200::3f46
+        - a: &1_network_a 146.59.144.170
+        - aaaa: &1_network_aaaa 2001:41d0:304:200:0:0:0:df95
         - mx: *null_mx
-        - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
+        - sshfp: 4 2 a8a737ae20b5900dd2b6836fc74f37e2da8e3eb29ddb980d853aa2bc65bfe729
         - txt: *null_spf
 
       grapheneos.network:
-        - a: *0_network_a
-        - a: *1_network_a
-        - aaaa: *0_network_aaaa
-        - aaaa: *1_network_aaaa
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: 0 iodef "mailto:caa@grapheneos.network"
@@ -112,7 +108,6 @@ domains:
             content: ns1.grapheneos.network hostmaster.grapheneos.network {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
-        - txt: *grapheneos_spf
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
       _443._tcp.grapheneos.network: &network_tlsa
@@ -126,16 +121,40 @@ domains:
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
       default._domainkey.grapheneos.network: *grapheneos_dkim
-      connectivitycheck.grapheneos.network: &network_subdomain
+      connectivitycheck.grapheneos.network: []
+      mta-sts.grapheneos.network: []
+      www.grapheneos.network: []
+
+      # North America
+      na.geo.grapheneos.network: &network_north_america
         - a: *0_network_a
-        - a: *1_network_a
         - aaaa: *0_network_aaaa
+        - txt: *grapheneos_spf
+      # Europe
+      eu.geo.grapheneos.network: &network_europe
+        - a: *1_network_a
+        - aaaa: *1_network_aaaa
+        - txt: *grapheneos_spf
+
+      # North America
+      na.geo.subdomain.grapheneos.network: &network_subdomain_north_america
+        - a: *0_network_a
+        - aaaa: *0_network_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      # Europe
+      eu.geo.subdomain.grapheneos.network: &network_subdomain_europe
+        - a: *1_network_a
         - aaaa: *1_network_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      mta-sts.grapheneos.network: *network_subdomain
-      www.grapheneos.network: *network_subdomain
+    services:
+      grapheneos.network: "%mp.geo.grapheneos.network"
+      connectivitycheck.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
+      mta-sts.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
+      www.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
 
   - domain: grapheneos.online
     ttl: 3600
@@ -144,10 +163,6 @@ domains:
       ns2.grapheneos.online: *ns2
 
       grapheneos.online:
-        - a: *0_network_a
-        - a: *1_network_a
-        - aaaa: *0_network_aaaa
-        - aaaa: *1_network_aaaa
         - caa: *network_caa
         - caa: *network_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.online"
@@ -162,7 +177,6 @@ domains:
             content: ns1.grapheneos.online hostmaster.grapheneos.online {serial} 3600 1800 1209600 3600
             ttl: *ns_ttl
         - sshfp: *null_sshfp
-        - txt: *grapheneos_spf
         - txt: "yandex-verification: f5675cd6f4757892"
         - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
       _443._tcp.grapheneos.online: *network_tlsa
@@ -175,9 +189,24 @@ domains:
       _smtp._tls.grapheneos.online:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
       default._domainkey.grapheneos.online: *grapheneos_dkim
-      connectivitycheck.grapheneos.online: *network_subdomain
-      mta-sts.grapheneos.online: *network_subdomain
-      www.grapheneos.online: *network_subdomain
+      connectivitycheck.grapheneos.online: []
+      mta-sts.grapheneos.online: []
+      www.grapheneos.online: []
+
+      # North America
+      na.geo.grapheneos.online: *network_north_america
+      # Europe
+      eu.geo.grapheneos.online: *network_europe
+
+      # North America
+      na.geo.subdomain.grapheneos.online: *network_subdomain_north_america
+      # Europe
+      eu.geo.subdomain.grapheneos.online: *network_subdomain_europe
+    services:
+      grapheneos.online: "%mp.geo.grapheneos.online"
+      connectivitycheck.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
+      mta-sts.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
+      www.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
 
   - domain: grapheneos.org
     ttl: 3600

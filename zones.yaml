@@ -514,14 +514,14 @@ domains:
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
       # North America
-      na.geo.seamlessupdate.app: &seamlessupdate_north_america
+      na.geo.seamlessupdate.app:
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
         - txt: *grapheneos_spf
       # Europe
-      eu.geo.seamlessupdate.app: &seamlessupdate_europe
+      eu.geo.seamlessupdate.app:
         - a: *2_releases_a
         - a: *3_releases_a
         - aaaa: *2_releases_aaaa

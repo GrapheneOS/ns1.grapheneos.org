@@ -1,6 +1,6 @@
 domains:
   - domain: attestation.app
-    ttl: 3600
+    ttl: &default_ttl 3600
     records:
       ns1.attestation.app: &ns1
         - a: &ns1_a
@@ -75,7 +75,7 @@ domains:
       www.attestation.app: *attestation_subdomain
 
   - domain: grapheneos.network
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.network: *ns1
       ns2.grapheneos.network: *ns2
@@ -157,7 +157,7 @@ domains:
       www.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
 
   - domain: grapheneos.online
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.online: *ns1
       ns2.grapheneos.online: *ns2
@@ -209,7 +209,7 @@ domains:
       www.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
 
   - domain: grapheneos.org
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.org:
         - a: *ns1_a
@@ -469,7 +469,7 @@ domains:
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
 
   - domain: seamlessupdate.app
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.seamlessupdate.app: *ns1
       ns2.seamlessupdate.app: *ns2
@@ -530,7 +530,7 @@ domains:
   # reserved grapheneos.tld domains and vanadium.app
 
   - domain: grapheneos.app
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.app: *ns1
       ns2.grapheneos.app: *ns2
@@ -569,7 +569,7 @@ domains:
       www.grapheneos.app: *grapheneos_subdomain
 
   - domain: grapheneos.ca
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.ca: *ns1
       ns2.grapheneos.ca: *ns2
@@ -608,7 +608,7 @@ domains:
       www.grapheneos.ca: *grapheneos_subdomain
 
   - domain: grapheneos.com
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.com: *ns1
       ns2.grapheneos.com: *ns2
@@ -647,7 +647,7 @@ domains:
       www.grapheneos.com: *grapheneos_subdomain
 
   - domain: grapheneos.info
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.info: *ns1
       ns2.grapheneos.info: *ns2
@@ -686,7 +686,7 @@ domains:
       www.grapheneos.info: *grapheneos_subdomain
 
   - domain: grapheneos.net
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.net: *ns1
       ns2.grapheneos.net: *ns2
@@ -725,7 +725,7 @@ domains:
       www.grapheneos.net: *grapheneos_subdomain
 
   - domain: grapheneos.ovh
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.ovh: *ns1
       ns2.grapheneos.ovh: *ns2
@@ -764,7 +764,7 @@ domains:
       www.grapheneos.ovh: *grapheneos_subdomain
 
   - domain: grapheneos.page
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.grapheneos.page: *ns1
       ns2.grapheneos.page: *ns2
@@ -803,7 +803,7 @@ domains:
       www.grapheneos.page: *grapheneos_subdomain
 
   - domain: vanadium.app
-    ttl: 3600
+    ttl: *default_ttl
     records:
       ns1.vanadium.app: *ns1
       ns2.vanadium.app: *ns2

@@ -356,7 +356,9 @@ domains:
       _443._tcp.matrix.grapheneos.org: *matrix_tlsa
 
       mail.grapheneos.org:
-        - a: 51.222.17.218
+        - a: # floating IP
+            content: 51.222.17.218
+            ttl: 86400
         - aaaa: 2607:5300:205:200::94f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"

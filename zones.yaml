@@ -5,20 +5,20 @@ domains:
       ns1.attestation.app: &ns1
         - a: &ns1_a
             content: 51.222.14.6
-            ttl: &ns_ttl 86400
+            ttl: &stable_ttl 86400
         - aaaa: &ns1_aaaa
             content: 2607:5300:205:200::29e8
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: &null_spf "v=spf1 -all"
       ns2.attestation.app: &ns2
         - a: &ns2_a
             content: 141.94.71.48
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - aaaa: &ns2_aaaa
             content: 2001:41d0:304:200::528
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -31,16 +31,16 @@ domains:
         - caa: 0 iodef "mailto:caa@attestation.app"
         - mx: &grapheneos_mx
             content: 0 mail.grapheneos.org
-            ttl: 86400
+            ttl: *stable_ttl
         - ns:
             content: ns1.attestation.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.attestation.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.attestation.app hostmaster.attestation.app {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: 4 2 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: "yandex-verification: aafc5b649d6fa07d"
@@ -104,13 +104,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.network
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.network
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.network hostmaster.grapheneos.network {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
@@ -173,13 +173,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.online
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.online
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.online hostmaster.grapheneos.online {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: f5675cd6f4757892"
         - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
@@ -262,13 +262,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.org
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.org
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.org hostmaster.grapheneos.org {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: 10fdf27f68b946c5"
         - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
@@ -363,7 +363,7 @@ domains:
       mail.grapheneos.org:
         - a: # floating IP
             content: 51.222.17.218
-            ttl: 86400
+            ttl: *stable_ttl
         - aaaa: 2607:5300:205:200::94f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
@@ -486,13 +486,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.seamlessupdate.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.seamlessupdate.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.seamlessupdate.app hostmaster.seamlessupdate.app {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
@@ -549,13 +549,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.app hostmaster.grapheneos.app {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 7aae471af36dc967"
@@ -588,13 +588,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.ca
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.ca
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.ca hostmaster.grapheneos.ca {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: b0eb1a78fb9fb370"
@@ -627,13 +627,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.com
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.com
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.com hostmaster.grapheneos.com {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 8e2110b9a3772add"
@@ -666,13 +666,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.info
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.info
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.info hostmaster.grapheneos.info {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: d21cd9edcd378afd"
@@ -705,13 +705,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.net
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.net
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.net hostmaster.grapheneos.net {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 814effb141ae35dc"
@@ -744,13 +744,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.ovh
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.ovh
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.ovh hostmaster.grapheneos.ovh {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 2c5aa8a634826b6c"
@@ -783,13 +783,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.page
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.grapheneos.page
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.grapheneos.page hostmaster.grapheneos.page {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: ec2761b2472a4ab4"
@@ -822,13 +822,13 @@ domains:
         - mx: *grapheneos_mx
         - ns:
             content: ns1.vanadium.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - ns:
             content: ns2.vanadium.app
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - soa:
             content: ns1.vanadium.app hostmaster.vanadium.app {serial} 3600 1800 1209600 3600
-            ttl: *ns_ttl
+            ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: *grapheneos_spf
         - txt: "yandex-verification: 369dbb9acc84cb72"

@@ -29,7 +29,9 @@ domains:
         - caa: &attestation_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
         - caa: &attestation_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
         - caa: 0 iodef "mailto:caa@attestation.app"
-        - mx: &grapheneos_mx 0 mail.grapheneos.org
+        - mx: &grapheneos_mx
+            content: 0 mail.grapheneos.org
+            ttl: 86400
         - ns:
             content: ns1.attestation.app
             ttl: *ns_ttl

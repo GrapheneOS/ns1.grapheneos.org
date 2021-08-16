@@ -4,7 +4,7 @@ domains:
     records:
       ns1.attestation.app: &ns1
         - a: &ns1_a
-            content: 51.222.14.6
+            content: 144.217.195.151
             ttl: &stable_ttl 86400
         - aaaa: &ns1_aaaa
             content: 2607:5300:205:200::29e8
@@ -14,7 +14,7 @@ domains:
         - txt: &null_spf "v=spf1 -all"
       ns2.attestation.app: &ns2
         - a: &ns2_a
-            content: 141.94.71.48
+            content: 46.105.58.84
             ttl: *stable_ttl
         - aaaa: &ns2_aaaa
             content: 2001:41d0:304:200::528

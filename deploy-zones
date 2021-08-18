@@ -10,8 +10,8 @@ servers=(
 
 declare -A ipv4=(
     [staging.ns1.grapheneos.org]=51.222.140.199
-    [ns1.grapheneos.org]="144.217.195.151 51.222.14.6"
-    [ns2.grapheneos.org]="46.105.58.84 141.94.71.48"
+    [ns1.grapheneos.org]=144.217.195.151
+    [ns2.grapheneos.org]=46.105.58.84
 )
 
 declare -A ipv6=(

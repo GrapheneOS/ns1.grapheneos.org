@@ -904,8 +904,12 @@ custom_mapping:
   as-ir: eu
   # Jordan
   as-jo: eu
+  # Kyrgyzstan
+  as-kg: eu
   # Kuwait
   as-kw: eu
+  # Kazakhstan
+  as-kz: eu
   # Lebanon
   as-lb: eu
   # Oman
@@ -920,8 +924,14 @@ custom_mapping:
   as-sa: eu
   # Syria
   as-sy: eu
+  # Tajikistan
+  as-tj: eu
+  # Turkmenistan
+  as-tm: eu
   # Turkey
   as-tr: eu
+  # Uzbekistan
+  as-uz: eu
   # Yemen
   as-ye: eu
   # Europe

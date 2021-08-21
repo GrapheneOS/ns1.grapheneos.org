@@ -34,8 +34,8 @@ declare -A ipv6=(
 )
 
 # use YYYYMMDDSS SOA serial format
-old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date +"%Y%m%d00"))
-serial=$(date +"%Y%m%d")
+old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date -u +"%Y%m%d00"))
+serial=$(date -u +"%Y%m%d")
 if [[ ${old_serial:0:8} = ${serial} ]]; then
     old_sequence=${old_serial:8:2}
     old_sequence=${old_sequence##0}

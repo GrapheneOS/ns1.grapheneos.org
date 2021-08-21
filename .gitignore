@@ -2,3 +2,4 @@ keys
 pdns.conf.tmp
 zones.yaml.tmp
 serial.txt
+GeoIP.conf

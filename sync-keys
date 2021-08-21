@@ -14,10 +14,6 @@ for server in ${servers[@]}; do
     remote=root@$server
 
     rsync -rcpv --chmod=D755,F644 keys/ root@$server:/etc/powerdns/keys
-    # need to restart rather than reloading for arbitrary configuration changes
-    ssh $remote systemctl restart pdns
-    # space out restarts so clients don't get multiple failures
-    sleep 5
 
     echo
 done

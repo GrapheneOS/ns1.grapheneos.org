@@ -431,28 +431,36 @@ domains:
 
       # Beauharnois
       0.releases.grapheneos.org:
-        - a: &0_releases_a 167.114.114.114
+        - a: &0_releases_a # floating IP
+            content: 142.4.204.63
+            ttl: *stable_ttl
         - aaaa: &0_releases_aaaa 2607:5300:201:3100::6210
         - mx: *null_mx
         - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
         - txt: *null_spf
       # Beauharnois
       1.releases.grapheneos.org:
-        - a: &1_releases_a 51.79.74.15
+        - a: &1_releases_a # floating IP
+            content: 142.4.205.198
+            ttl: *stable_ttl
         - aaaa: &1_releases_aaaa 2607:5300:205:200::2441
         - mx: *null_mx
         - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
         - txt: *null_spf
       # Gravelines
       2.releases.grapheneos.org:
-        - a: &2_releases_a 141.94.71.158
+        - a: &2_releases_a # floating IP
+            content: 51.255.149.102
+            ttl: *stable_ttl
         - aaaa: &2_releases_aaaa 2001:41d0:304:200::14ff
         - mx: *null_mx
         - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
         - txt: *null_spf
       # Gravelines
       3.releases.grapheneos.org:
-        - a: &3_releases_a 141.94.71.72
+        - a: &3_releases_a # floating IP
+            content: 51.255.119.223
+            ttl: *stable_ttl
         - aaaa: &3_releases_aaaa 2001:41d0:304:200::a687
         - mx: *null_mx
         - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4

@@ -343,17 +343,16 @@ domains:
         - tlsa: 3 1 1 8ee2957d1c024669dbed9b38a0d6e6e5612da57e304c70707e33fb398249e811
 
       time.grapheneos.org:
-        - a: 51.222.141.59
-        - aaaa: 2607:5300:205:200::3afd
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130059358"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20254858"
+        - caa: *network_caa
+        - caa: *network_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
-        - mx: *null_mx
-        - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
-        - txt: *null_spf
-      _443._tcp.time.grapheneos.org:
-        - tlsa: 3 1 1 e9c1fe9198abb0aebc002f01cea02c63bc4422ae14594c6229af33a851342180
+      _443._tcp.time.grapheneos.org: *network_tlsa
+
+      # North America
+      na.geo.time.grapheneos.org: *network_subdomain_north_america
+      # Europe
+      eu.geo.time.grapheneos.org: *network_subdomain_europe
 
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
@@ -503,6 +502,7 @@ domains:
       grapheneos.org: "%mp.geo.grapheneos.org"
       releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
+      time.grapheneos.org: "%mp.geo.time.grapheneos.org"
 
   - domain: seamlessupdate.app
     ttl: *default_ttl

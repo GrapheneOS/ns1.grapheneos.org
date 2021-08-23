@@ -90,7 +90,7 @@ domains:
       # Beauharnois
       0.grapheneos.network:
         - a: &0_network_a # floating IP
-            content: 51.222.17.138
+            content: 167.114.34.100
             ttl: *stable_ttl
         - aaaa: &0_network_aaaa 2607:5300:205:200::b44
         - mx: *null_mx

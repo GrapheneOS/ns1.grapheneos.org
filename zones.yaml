@@ -382,7 +382,7 @@ domains:
 
       mail.grapheneos.org:
         - a: # floating IP
-            content: 51.222.17.218
+            content: 192.99.98.22
             ttl: *stable_ttl
         - aaaa: 2607:5300:205:200::94f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"

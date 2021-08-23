@@ -238,10 +238,10 @@ domains:
         - txt: *null_spf
 
       staging.ns1.grapheneos.org:
-        - a: 51.222.140.199
-        - aaaa: 2607:5300:205:200::39fe
+        - a: 51.222.141.59
+        - aaaa: 2607:5300:205:200::3afd
         - mx: *null_mx
-        - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
+        - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
         - txt: *null_spf
 
       geoip.grapheneos.org:

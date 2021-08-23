@@ -22,13 +22,13 @@ servers=(
 )
 
 declare -A ipv4=(
-    [staging.ns1.grapheneos.org]=51.222.140.199
+    [staging.ns1.grapheneos.org]=51.222.141.59
     [ns1.grapheneos.org]=144.217.195.151
     [ns2.grapheneos.org]=46.105.58.84
 )
 
 declare -A ipv6=(
-    [staging.ns1.grapheneos.org]=2607:5300:205:200::39fe
+    [staging.ns1.grapheneos.org]=2607:5300:205:200::3afd
     [ns1.grapheneos.org]=2607:5300:205:200::29e8
     [ns2.grapheneos.org]=2001:41d0:304:200::528
 )

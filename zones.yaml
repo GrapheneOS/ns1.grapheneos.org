@@ -300,22 +300,12 @@ domains:
         - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
       default._domainkey.grapheneos.org: *grapheneos_dkim
       mta-sts.grapheneos.org: &grapheneos_subdomain
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - https: *https
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
       mta-sts.mail.grapheneos.org:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
       www.grapheneos.org: *grapheneos_subdomain
 
       # North America
@@ -328,6 +318,21 @@ domains:
         - a: *1_grapheneos_a
         - aaaa: *1_grapheneos_aaaa
         - txt: *grapheneos_spf
+
+      # North America
+      na.geo.subdomain.grapheneos.org: &grapheneos_subdomain_north_america
+        - a: *0_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      # Europe
+      eu.geo.subdomain.grapheneos.org: &grapheneos_subdomain_europe
+        - a: *1_grapheneos_a
+        - aaaa: *1_grapheneos_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
       staging.grapheneos.org:
         - a: 51.222.140.11
@@ -500,6 +505,9 @@ domains:
       _443._tcp.apps.grapheneos.org: *releases_tlsa
     services:
       grapheneos.org: "%mp.geo.grapheneos.org"
+      www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
+      mta-sts.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
+      mta-sts.mail.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       time.grapheneos.org: "%mp.geo.time.grapheneos.org"
@@ -574,8 +582,6 @@ domains:
       ns2.grapheneos.app: *ns2
 
       grapheneos.app:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.app"
@@ -607,6 +613,15 @@ domains:
       mta-sts.grapheneos.app: *grapheneos_subdomain
       www.grapheneos.app: *grapheneos_subdomain
 
+      na.geo.grapheneos.app: *grapheneos_north_america
+      eu.geo.grapheneos.app: *grapheneos_europe
+      na.geo.subdomain.grapheneos.app: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.app: *grapheneos_subdomain_europe
+    services:
+      grapheneos.app: "%mp.geo.grapheneos.app"
+      www.grapheneos.app: "%mp.geo.subdomain.grapheneos.app"
+      mta-sts.grapheneos.app: "%mp.geo.subdomain.grapheneos.app"
+
   - domain: grapheneos.ca
     ttl: *default_ttl
     records:
@@ -614,8 +629,6 @@ domains:
       ns2.grapheneos.ca: *ns2
 
       grapheneos.ca:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.ca"
@@ -647,6 +660,15 @@ domains:
       mta-sts.grapheneos.ca: *grapheneos_subdomain
       www.grapheneos.ca: *grapheneos_subdomain
 
+      na.geo.grapheneos.ca: *grapheneos_north_america
+      eu.geo.grapheneos.ca: *grapheneos_europe
+      na.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_europe
+    services:
+      grapheneos.ca: "%mp.geo.grapheneos.ca"
+      www.grapheneos.ca: "%mp.geo.subdomain.grapheneos.ca"
+      mta-sts.grapheneos.ca: "%mp.geo.subdomain.grapheneos.ca"
+
   - domain: grapheneos.com
     ttl: *default_ttl
     records:
@@ -654,8 +676,6 @@ domains:
       ns2.grapheneos.com: *ns2
 
       grapheneos.com:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.com"
@@ -687,6 +707,15 @@ domains:
       mta-sts.grapheneos.com: *grapheneos_subdomain
       www.grapheneos.com: *grapheneos_subdomain
 
+      na.geo.grapheneos.com: *grapheneos_north_america
+      eu.geo.grapheneos.com: *grapheneos_europe
+      na.geo.subdomain.grapheneos.com: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.com: *grapheneos_subdomain_europe
+    services:
+      grapheneos.com: "%mp.geo.grapheneos.com"
+      www.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
+      mta-sts.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
+
   - domain: grapheneos.info
     ttl: *default_ttl
     records:
@@ -694,8 +723,6 @@ domains:
       ns2.grapheneos.info: *ns2
 
       grapheneos.info:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.info"
@@ -727,6 +754,15 @@ domains:
       mta-sts.grapheneos.info: *grapheneos_subdomain
       www.grapheneos.info: *grapheneos_subdomain
 
+      na.geo.grapheneos.info: *grapheneos_north_america
+      eu.geo.grapheneos.info: *grapheneos_europe
+      na.geo.subdomain.grapheneos.info: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.info: *grapheneos_subdomain_europe
+    services:
+      grapheneos.info: "%mp.geo.grapheneos.info"
+      www.grapheneos.info: "%mp.geo.subdomain.grapheneos.info"
+      mta-sts.grapheneos.info: "%mp.geo.subdomain.grapheneos.info"
+
   - domain: grapheneos.net
     ttl: *default_ttl
     records:
@@ -734,8 +770,6 @@ domains:
       ns2.grapheneos.net: *ns2
 
       grapheneos.net:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.net"
@@ -767,6 +801,15 @@ domains:
       mta-sts.grapheneos.net: *grapheneos_subdomain
       www.grapheneos.net: *grapheneos_subdomain
 
+      na.geo.grapheneos.net: *grapheneos_north_america
+      eu.geo.grapheneos.net: *grapheneos_europe
+      na.geo.subdomain.grapheneos.net: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.net: *grapheneos_subdomain_europe
+    services:
+      grapheneos.net: "%mp.geo.grapheneos.net"
+      www.grapheneos.net: "%mp.geo.subdomain.grapheneos.net"
+      mta-sts.grapheneos.net: "%mp.geo.subdomain.grapheneos.net"
+
   - domain: grapheneos.ovh
     ttl: *default_ttl
     records:
@@ -774,8 +817,6 @@ domains:
       ns2.grapheneos.ovh: *ns2
 
       grapheneos.ovh:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.ovh"
@@ -807,6 +848,15 @@ domains:
       mta-sts.grapheneos.ovh: *grapheneos_subdomain
       www.grapheneos.ovh: *grapheneos_subdomain
 
+      na.geo.grapheneos.ovh: *grapheneos_north_america
+      eu.geo.grapheneos.ovh: *grapheneos_europe
+      na.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_europe
+    services:
+      grapheneos.ovh: "%mp.geo.grapheneos.ovh"
+      www.grapheneos.ovh: "%mp.geo.subdomain.grapheneos.ovh"
+      mta-sts.grapheneos.ovh: "%mp.geo.subdomain.grapheneos.ovh"
+
   - domain: grapheneos.page
     ttl: *default_ttl
     records:
@@ -814,8 +864,6 @@ domains:
       ns2.grapheneos.page: *ns2
 
       grapheneos.page:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.page"
@@ -847,6 +895,15 @@ domains:
       mta-sts.grapheneos.page: *grapheneos_subdomain
       www.grapheneos.page: *grapheneos_subdomain
 
+      na.geo.grapheneos.page: *grapheneos_north_america
+      eu.geo.grapheneos.page: *grapheneos_europe
+      na.geo.subdomain.grapheneos.page: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.page: *grapheneos_subdomain_europe
+    services:
+      grapheneos.page: "%mp.geo.grapheneos.page"
+      www.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
+      mta-sts.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
+
   - domain: vanadium.app
     ttl: *default_ttl
     records:
@@ -854,8 +911,6 @@ domains:
       ns2.vanadium.app: *ns2
 
       vanadium.app:
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: 0 iodef "mailto:caa@vanadium.app"
@@ -886,6 +941,15 @@ domains:
       default._domainkey.vanadium.app: *grapheneos_dkim
       mta-sts.vanadium.app: *grapheneos_subdomain
       www.vanadium.app: *grapheneos_subdomain
+
+      na.geo.vanadium.app: *grapheneos_north_america
+      eu.geo.vanadium.app: *grapheneos_europe
+      na.geo.subdomain.vanadium.app: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.vanadium.app: *grapheneos_subdomain_europe
+    services:
+      vanadium.app: "%mp.geo.vanadium.app"
+      www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
+      mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
 mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:
   # Africa

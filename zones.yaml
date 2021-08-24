@@ -133,6 +133,8 @@ domains:
       _mta-sts.grapheneos.network: *_mta-sts
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
+      default._bimi.grapheneos.network: &grapheneos_bimi
+        - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
       default._domainkey.grapheneos.network: *grapheneos_dkim
       connectivitycheck.grapheneos.network: []
       mta-sts.grapheneos.network: []
@@ -201,6 +203,7 @@ domains:
       _mta-sts.grapheneos.online: *_mta-sts
       _smtp._tls.grapheneos.online:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
+      default._bimi.grapheneos.online: *grapheneos_bimi
       default._domainkey.grapheneos.online: *grapheneos_dkim
       connectivitycheck.grapheneos.online: []
       mta-sts.grapheneos.online: []
@@ -296,8 +299,7 @@ domains:
       _mta-sts.grapheneos.org: *_mta-sts
       _smtp._tls.grapheneos.org:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
-      default._bimi.grapheneos.org: &grapheneos_bimi
-        - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
+      default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.org: *grapheneos_dkim
       mta-sts.grapheneos.org: &grapheneos_subdomain
         - https: *https

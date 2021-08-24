@@ -463,7 +463,6 @@ domains:
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: &releases_iodef 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
-        - sshfp: *null_sshfp
       _443._tcp.releases.grapheneos.org: &releases_tlsa
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
@@ -473,6 +472,7 @@ domains:
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
         - mx: *null_mx
+        - sshfp: *null_sshfp
         - txt: *null_spf
       eu.geo.releases.grapheneos.org: &releases_europe
         - a: *2_releases_a
@@ -480,6 +480,7 @@ domains:
         - aaaa: *2_releases_aaaa
         - aaaa: *3_releases_aaaa
         - mx: *null_mx
+        - sshfp: *null_sshfp
         - txt: *null_spf
 
       apps.grapheneos.org:
@@ -532,14 +533,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
       default._domainkey.seamlessupdate.app: *grapheneos_dkim
       mta-sts.seamlessupdate.app: &seamlessupdate_subdomain
-        - a: *0_releases_a
-        - a: *1_releases_a
-        - aaaa: *0_releases_aaaa
-        - aaaa: *1_releases_aaaa
         - https: *https
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
       na.geo.seamlessupdate.app:
@@ -554,8 +548,13 @@ domains:
         - aaaa: *2_releases_aaaa
         - aaaa: *3_releases_aaaa
         - txt: *grapheneos_spf
+
+      na.geo.subdomain.seamlessupdate.app: *releases_north_america
+      eu.geo.subdomain.seamlessupdate.app: *releases_europe
     services:
       seamlessupdate.app: "%mp.geo.seamlessupdate.app"
+      www.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
+      mta-sts.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
 
   # reserved grapheneos.tld domains and vanadium.app
 

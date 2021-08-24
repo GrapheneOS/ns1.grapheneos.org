@@ -140,25 +140,21 @@ domains:
       mta-sts.grapheneos.network: []
       www.grapheneos.network: []
 
-      # North America
       na.geo.grapheneos.network: &network_north_america
         - a: *0_network_a
         - aaaa: *0_network_aaaa
         - txt: *grapheneos_spf
-      # Europe
       eu.geo.grapheneos.network: &network_europe
         - a: *1_network_a
         - aaaa: *1_network_aaaa
         - txt: *grapheneos_spf
 
-      # North America
       na.geo.subdomain.grapheneos.network: &network_subdomain_north_america
         - a: *0_network_a
         - aaaa: *0_network_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      # Europe
       eu.geo.subdomain.grapheneos.network: &network_subdomain_europe
         - a: *1_network_a
         - aaaa: *1_network_aaaa
@@ -209,14 +205,10 @@ domains:
       mta-sts.grapheneos.online: []
       www.grapheneos.online: []
 
-      # North America
       na.geo.grapheneos.online: *network_north_america
-      # Europe
       eu.geo.grapheneos.online: *network_europe
 
-      # North America
       na.geo.subdomain.grapheneos.online: *network_subdomain_north_america
-      # Europe
       eu.geo.subdomain.grapheneos.online: *network_subdomain_europe
     services:
       grapheneos.online: "%mp.geo.grapheneos.online"
@@ -310,25 +302,21 @@ domains:
         - https: *https
       www.grapheneos.org: *grapheneos_subdomain
 
-      # North America
       na.geo.grapheneos.org: &grapheneos_north_america
         - a: *0_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
         - txt: *grapheneos_spf
-      # Europe
       eu.geo.grapheneos.org: &grapheneos_europe
         - a: *1_grapheneos_a
         - aaaa: *1_grapheneos_aaaa
         - txt: *grapheneos_spf
 
-      # North America
       na.geo.subdomain.grapheneos.org: &grapheneos_subdomain_north_america
         - a: *0_grapheneos_a
         - aaaa: *0_grapheneos_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      # Europe
       eu.geo.subdomain.grapheneos.org: &grapheneos_subdomain_europe
         - a: *1_grapheneos_a
         - aaaa: *1_grapheneos_aaaa
@@ -356,9 +344,7 @@ domains:
         - https: *https
       _443._tcp.time.grapheneos.org: *network_tlsa
 
-      # North America
       na.geo.time.grapheneos.org: *network_subdomain_north_america
-      # Europe
       eu.geo.time.grapheneos.org: *network_subdomain_europe
 
       element.grapheneos.org:
@@ -481,7 +467,6 @@ domains:
       _443._tcp.releases.grapheneos.org: &releases_tlsa
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
-      # North America
       na.geo.releases.grapheneos.org: &releases_north_america
         - a: *0_releases_a
         - a: *1_releases_a
@@ -489,7 +474,6 @@ domains:
         - aaaa: *1_releases_aaaa
         - mx: *null_mx
         - txt: *null_spf
-      # Europe
       eu.geo.releases.grapheneos.org: &releases_europe
         - a: *2_releases_a
         - a: *3_releases_a
@@ -558,14 +542,12 @@ domains:
         - txt: *null_spf
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
-      # North America
       na.geo.seamlessupdate.app:
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
         - txt: *grapheneos_spf
-      # Europe
       eu.geo.seamlessupdate.app:
         - a: *2_releases_a
         - a: *3_releases_a

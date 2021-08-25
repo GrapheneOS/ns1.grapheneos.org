@@ -3,7 +3,7 @@ domains:
     ttl: &default_ttl 3600
     records:
       ns1.attestation.app: &ns1
-        - a: &ns1_a
+        - a: &ns1_a # floating IP
             content: 144.217.195.151
             ttl: &stable_ttl 86400
         - aaaa: &ns1_aaaa
@@ -13,7 +13,7 @@ domains:
         - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: &null_spf "v=spf1 -all"
       ns2.attestation.app: &ns2
-        - a: &ns2_a
+        - a: &ns2_a # floating IP
             content: 46.105.58.84
             ttl: *stable_ttl
         - aaaa: &ns2_aaaa

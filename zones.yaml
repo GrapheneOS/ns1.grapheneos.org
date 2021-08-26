@@ -162,10 +162,10 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
     services:
-      grapheneos.network: "%mp.geo.grapheneos.network"
-      connectivitycheck.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
-      mta-sts.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
-      www.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
+      grapheneos.network: ["%mp.geo.grapheneos.network", "na.geo.grapheneos.network"]
+      connectivitycheck.grapheneos.network: ["%mp.geo.subdomain.grapheneos.network", "na.geo.subdomain.grapheneos.network"]
+      mta-sts.grapheneos.network: ["%mp.geo.subdomain.grapheneos.network", "na.geo.subdomain.grapheneos.network"]
+      www.grapheneos.network: ["%mp.geo.subdomain.grapheneos.network", "na.geo.subdomain.grapheneos.network"]
 
   - domain: grapheneos.online
     ttl: *default_ttl
@@ -211,10 +211,10 @@ domains:
       na.geo.subdomain.grapheneos.online: *network_subdomain_north_america
       eu.geo.subdomain.grapheneos.online: *network_subdomain_europe
     services:
-      grapheneos.online: "%mp.geo.grapheneos.online"
-      connectivitycheck.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
-      mta-sts.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
-      www.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
+      grapheneos.online: ["%mp.geo.grapheneos.online", "na.geo.grapheneos.online"]
+      connectivitycheck.grapheneos.online: ["%mp.geo.subdomain.grapheneos.online", "na.geo.subdomain.grapheneos.online"]
+      mta-sts.grapheneos.online: ["%mp.geo.subdomain.grapheneos.online", "na.geo.subdomain.grapheneos.online"]
+      www.grapheneos.online: ["%mp.geo.subdomain.grapheneos.online", "na.geo.subdomain.grapheneos.online"]
 
   - domain: grapheneos.org
     ttl: *default_ttl
@@ -261,6 +261,15 @@ domains:
         - aaaa: &1_grapheneos_aaaa 2001:41d0:304:200::a087
         - mx: *null_mx
         - sshfp: 4 2 b3eced499fc208feaa1bc3d59d9f4819edea1a7f5ef04b3e1035435f70a38cc1
+        - txt: *null_spf
+      # Singapore
+      2.grapheneos.org:
+        - a: &2_grapheneos_a # floating IP
+            content: 51.79.181.222
+            ttl: *stable_ttl
+        - aaaa: &2_grapheneos_aaaa 2402:1f00:8000:800:0:0:0:25ba
+        - mx: *null_mx
+        - sshfp: 4 2 d207f58d59bac7959609dda2d51edaf1fd13d49e4833b39085f194b16a6737ef
         - txt: *null_spf
 
       grapheneos.org:
@@ -310,6 +319,10 @@ domains:
         - a: *1_grapheneos_a
         - aaaa: *1_grapheneos_aaaa
         - txt: *grapheneos_spf
+      as-east.geo.grapheneos.org: &grapheneos_singapore
+        - a: *2_grapheneos_a
+        - aaaa: *2_grapheneos_aaaa
+        - txt: *grapheneos_spf
 
       na.geo.subdomain.grapheneos.org: &grapheneos_subdomain_north_america
         - a: *0_grapheneos_a
@@ -320,6 +333,12 @@ domains:
       eu.geo.subdomain.grapheneos.org: &grapheneos_subdomain_europe
         - a: *1_grapheneos_a
         - aaaa: *1_grapheneos_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      as-east.geo.subdomain.grapheneos.org: &grapheneos_subdomain_singapore
+        - a: *2_grapheneos_a
+        - aaaa: *2_grapheneos_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -495,9 +514,9 @@ domains:
       www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       mta-sts.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       mta-sts.mail.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
-      releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
-      apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
-      time.grapheneos.org: "%mp.geo.time.grapheneos.org"
+      releases.grapheneos.org: ["%mp.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org"]
+      apps.grapheneos.org: ["%mp.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org"]
+      time.grapheneos.org: ["%mp.geo.time.grapheneos.org", "na.geo.time.grapheneos.org"]
 
   - domain: seamlessupdate.app
     ttl: *default_ttl
@@ -552,9 +571,9 @@ domains:
       na.geo.subdomain.seamlessupdate.app: *releases_north_america
       eu.geo.subdomain.seamlessupdate.app: *releases_europe
     services:
-      seamlessupdate.app: "%mp.geo.seamlessupdate.app"
-      www.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
-      mta-sts.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
+      seamlessupdate.app: ["%mp.geo.seamlessupdate.app", "na.geo.seamlessupdate.app"]
+      www.seamlessupdate.app: ["%mp.geo.subdomain.seamlessupdate.app", "na.geo.subdomain.seamlessupdate.app"]
+      mta-sts.seamlessupdate.app: ["%mp.geo.subdomain.seamlessupdate.app", "na.geo.subdomain.seamlessupdate.app"]
 
   # reserved grapheneos.tld domains and vanadium.app
 
@@ -598,8 +617,10 @@ domains:
 
       na.geo.grapheneos.app: *grapheneos_north_america
       eu.geo.grapheneos.app: *grapheneos_europe
+      as-east.geo.grapheneos.app: *grapheneos_singapore
       na.geo.subdomain.grapheneos.app: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.app: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.app: *grapheneos_subdomain_singapore
     services:
       grapheneos.app: "%mp.geo.grapheneos.app"
       www.grapheneos.app: "%mp.geo.subdomain.grapheneos.app"
@@ -645,8 +666,10 @@ domains:
 
       na.geo.grapheneos.ca: *grapheneos_north_america
       eu.geo.grapheneos.ca: *grapheneos_europe
+      as-east.geo.grapheneos.ca: *grapheneos_singapore
       na.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_singapore
     services:
       grapheneos.ca: "%mp.geo.grapheneos.ca"
       www.grapheneos.ca: "%mp.geo.subdomain.grapheneos.ca"
@@ -692,8 +715,10 @@ domains:
 
       na.geo.grapheneos.com: *grapheneos_north_america
       eu.geo.grapheneos.com: *grapheneos_europe
+      as-east.geo.grapheneos.com: *grapheneos_singapore
       na.geo.subdomain.grapheneos.com: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.com: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.com: *grapheneos_subdomain_singapore
     services:
       grapheneos.com: "%mp.geo.grapheneos.com"
       www.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
@@ -739,8 +764,10 @@ domains:
 
       na.geo.grapheneos.info: *grapheneos_north_america
       eu.geo.grapheneos.info: *grapheneos_europe
+      as-east.geo.grapheneos.info: *grapheneos_singapore
       na.geo.subdomain.grapheneos.info: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.info: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.info: *grapheneos_subdomain_singapore
     services:
       grapheneos.info: "%mp.geo.grapheneos.info"
       www.grapheneos.info: "%mp.geo.subdomain.grapheneos.info"
@@ -786,8 +813,10 @@ domains:
 
       na.geo.grapheneos.net: *grapheneos_north_america
       eu.geo.grapheneos.net: *grapheneos_europe
+      as-east.geo.grapheneos.net: *grapheneos_singapore
       na.geo.subdomain.grapheneos.net: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.net: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.net: *grapheneos_subdomain_singapore
     services:
       grapheneos.net: "%mp.geo.grapheneos.net"
       www.grapheneos.net: "%mp.geo.subdomain.grapheneos.net"
@@ -833,8 +862,10 @@ domains:
 
       na.geo.grapheneos.ovh: *grapheneos_north_america
       eu.geo.grapheneos.ovh: *grapheneos_europe
+      as-east.geo.grapheneos.ovh: *grapheneos_singapore
       na.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_singapore
     services:
       grapheneos.ovh: "%mp.geo.grapheneos.ovh"
       www.grapheneos.ovh: "%mp.geo.subdomain.grapheneos.ovh"
@@ -880,8 +911,10 @@ domains:
 
       na.geo.grapheneos.page: *grapheneos_north_america
       eu.geo.grapheneos.page: *grapheneos_europe
+      as-east.geo.grapheneos.page: *grapheneos_singapore
       na.geo.subdomain.grapheneos.page: *grapheneos_subdomain_north_america
       eu.geo.subdomain.grapheneos.page: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.page: *grapheneos_subdomain_singapore
     services:
       grapheneos.page: "%mp.geo.grapheneos.page"
       www.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
@@ -927,8 +960,10 @@ domains:
 
       na.geo.vanadium.app: *grapheneos_north_america
       eu.geo.vanadium.app: *grapheneos_europe
+      as-east.geo.vanadium.app: *grapheneos_singapore
       na.geo.subdomain.vanadium.app: *grapheneos_subdomain_north_america
       eu.geo.subdomain.vanadium.app: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
     services:
       vanadium.app: "%mp.geo.vanadium.app"
       www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
@@ -937,6 +972,8 @@ mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:
   # Africa
   af: eu
+  # Asia
+  as: as-east
   # United Arab Emirates
   as-ae: eu
   # Armenia
@@ -993,3 +1030,5 @@ custom_mapping:
   eu: eu
   # North America
   na: na
+  # Oceania
+  oc: as-east

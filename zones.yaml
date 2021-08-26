@@ -1021,6 +1021,8 @@ domains:
       mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
 mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:
+  # Afghanistan
+  as-af: as-south
   # Africa
   af: eu
   # Asia
@@ -1031,8 +1033,12 @@ custom_mapping:
   as-am: eu
   # Azerbaijan
   as-az: eu
+  # Bangladesh
+  as-bd: as-south
   # Bahrain
   as-bh: eu
+  # Bhutan
+  as-bt: as-south
   # Egypt
   as-eg: eu
   # Georgia
@@ -1055,8 +1061,16 @@ custom_mapping:
   as-kz: eu
   # Lebanon
   as-lb: eu
+  # Sri Lanka
+  as-lk: as-south
+  # Nepal
+  as-np: as-south
+  # Maldives
+  as-mv: as-south
   # Oman
   as-om: eu
+  # Pakistan
+  as-pk: as-south
   # Palestine
   as-ps: eu
   # Qatar

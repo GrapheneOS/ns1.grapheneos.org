@@ -392,6 +392,8 @@ domains:
 
       na.geo.time.grapheneos.org: *network_subdomain_north_america
       eu.geo.time.grapheneos.org: *network_subdomain_europe
+      as-east.geo.time.grapheneos.org: *network_subdomain_singapore
+      as-south.geo.time.grapheneos.org: *network_subdomain_singapore
 
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
@@ -543,7 +545,7 @@ domains:
       mta-sts.mail.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       releases.grapheneos.org: ["%mp.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org"]
       apps.grapheneos.org: ["%mp.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org"]
-      time.grapheneos.org: ["%mp.geo.time.grapheneos.org", "na.geo.time.grapheneos.org"]
+      time.grapheneos.org: "%mp.geo.time.grapheneos.org"
 
   - domain: seamlessupdate.app
     ttl: *default_ttl

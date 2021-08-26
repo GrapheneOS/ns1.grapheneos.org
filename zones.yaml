@@ -530,6 +530,8 @@ domains:
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
+      as-east.geo.releases.grapheneos.org: *releases_north_america
+      as-south.geo.releases.grapheneos.org: *releases_europe
 
       apps.grapheneos.org:
         - caa: *releases_caa
@@ -543,8 +545,8 @@ domains:
       www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       mta-sts.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       mta-sts.mail.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
-      releases.grapheneos.org: ["%mp.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org"]
-      apps.grapheneos.org: ["%mp.geo.releases.grapheneos.org", "na.geo.releases.grapheneos.org"]
+      releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
+      apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       time.grapheneos.org: "%mp.geo.time.grapheneos.org"
 
   - domain: seamlessupdate.app
@@ -584,25 +586,29 @@ domains:
         - https: *https
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
-      na.geo.seamlessupdate.app:
+      na.geo.seamlessupdate.app: &seamlessupdate_north_america
         - a: *0_releases_a
         - a: *1_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
         - txt: *grapheneos_spf
-      eu.geo.seamlessupdate.app:
+      eu.geo.seamlessupdate.app: &seamlessupdate_europe
         - a: *2_releases_a
         - a: *3_releases_a
         - aaaa: *2_releases_aaaa
         - aaaa: *3_releases_aaaa
         - txt: *grapheneos_spf
+      as-east.geo.seamlessupdate.app: *seamlessupdate_north_america
+      as-south.geo.seamlessupdate.app: *seamlessupdate_europe
 
       na.geo.subdomain.seamlessupdate.app: *releases_north_america
       eu.geo.subdomain.seamlessupdate.app: *releases_europe
+      as-east.geo.subdomain.seamlessupdate.app: *releases_north_america
+      as-south.geo.subdomain.seamlessupdate.app: *releases_europe
     services:
-      seamlessupdate.app: ["%mp.geo.seamlessupdate.app", "na.geo.seamlessupdate.app"]
-      www.seamlessupdate.app: ["%mp.geo.subdomain.seamlessupdate.app", "na.geo.subdomain.seamlessupdate.app"]
-      mta-sts.seamlessupdate.app: ["%mp.geo.subdomain.seamlessupdate.app", "na.geo.subdomain.seamlessupdate.app"]
+      seamlessupdate.app: "%mp.geo.seamlessupdate.app"
+      www.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
+      mta-sts.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
 
   # reserved grapheneos.tld domains and vanadium.app
 

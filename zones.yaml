@@ -105,6 +105,15 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 a8a737ae20b5900dd2b6836fc74f37e2da8e3eb29ddb980d853aa2bc65bfe729
         - txt: *null_spf
+      # Singapore
+      2.grapheneos.network:
+        - a: &2_network_a # floating IP
+            content: 51.79.181.226
+            ttl: *stable_ttl
+        - aaaa: &2_network_aaaa 2402:1f00:8000:800::e14
+        - mx: *null_mx
+        - sshfp: 4 2 57e965c3ab73bc6c39d0d83b8016498e7d327e66a0ee10f26ae69b341610ebdc
+        - txt: *null_spf
 
       grapheneos.network:
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
@@ -148,6 +157,10 @@ domains:
         - a: *1_network_a
         - aaaa: *1_network_aaaa
         - txt: *grapheneos_spf
+      as-east.geo.grapheneos.network: &network_singapore
+        - a: *2_network_a
+        - aaaa: *2_network_aaaa
+        - txt: *grapheneos_spf
 
       na.geo.subdomain.grapheneos.network: &network_subdomain_north_america
         - a: *0_network_a
@@ -161,11 +174,17 @@ domains:
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
+      as-east.geo.subdomain.grapheneos.network: &network_subdomain_singapore
+        - a: *2_network_a
+        - aaaa: *2_network_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
     services:
-      grapheneos.network: ["%mp.geo.grapheneos.network", "na.geo.grapheneos.network"]
-      connectivitycheck.grapheneos.network: ["%mp.geo.subdomain.grapheneos.network", "na.geo.subdomain.grapheneos.network"]
-      mta-sts.grapheneos.network: ["%mp.geo.subdomain.grapheneos.network", "na.geo.subdomain.grapheneos.network"]
-      www.grapheneos.network: ["%mp.geo.subdomain.grapheneos.network", "na.geo.subdomain.grapheneos.network"]
+      grapheneos.network: "%mp.geo.grapheneos.network"
+      connectivitycheck.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
+      mta-sts.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
+      www.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
 
   - domain: grapheneos.online
     ttl: *default_ttl
@@ -207,14 +226,16 @@ domains:
 
       na.geo.grapheneos.online: *network_north_america
       eu.geo.grapheneos.online: *network_europe
+      as-east.geo.grapheneos.online: *network_singapore
 
       na.geo.subdomain.grapheneos.online: *network_subdomain_north_america
       eu.geo.subdomain.grapheneos.online: *network_subdomain_europe
+      as-east.geo.subdomain.grapheneos.online: *network_subdomain_singapore
     services:
-      grapheneos.online: ["%mp.geo.grapheneos.online", "na.geo.grapheneos.online"]
-      connectivitycheck.grapheneos.online: ["%mp.geo.subdomain.grapheneos.online", "na.geo.subdomain.grapheneos.online"]
-      mta-sts.grapheneos.online: ["%mp.geo.subdomain.grapheneos.online", "na.geo.subdomain.grapheneos.online"]
-      www.grapheneos.online: ["%mp.geo.subdomain.grapheneos.online", "na.geo.subdomain.grapheneos.online"]
+      grapheneos.online: "%mp.geo.grapheneos.online"
+      connectivitycheck.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
+      mta-sts.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
+      www.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
 
   - domain: grapheneos.org
     ttl: *default_ttl

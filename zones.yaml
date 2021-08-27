@@ -487,6 +487,24 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
         - txt: *null_spf
+      # Beauharnois
+      2.releases.grapheneos.org:
+        - a: &2_releases_a # floating IP
+            content: 51.222.228.120
+            ttl: *stable_ttl
+        - aaaa: &2_releases_aaaa 2607:5300:205:200::3f46
+        - mx: *null_mx
+        - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
+        - txt: *null_spf
+      # Beauharnois
+      3.releases.grapheneos.org:
+        - a: &3_releases_a # floating IP
+            content: 51.222.228.121
+            ttl: *stable_ttl
+        - aaaa: &3_releases_aaaa 2607:5300:205:200::39fe
+        - mx: *null_mx
+        - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
+        - txt: *null_spf
       # Gravelines
       4.releases.grapheneos.org:
         - a: &4_releases_a # floating IP
@@ -517,8 +535,12 @@ domains:
       na.geo.releases.grapheneos.org: &releases_north_america
         - a: *0_releases_a
         - a: *1_releases_a
+        - a: *2_releases_a
+        - a: *3_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
+        - aaaa: *2_releases_aaaa
+        - aaaa: *3_releases_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -589,8 +611,12 @@ domains:
       na.geo.seamlessupdate.app: &seamlessupdate_north_america
         - a: *0_releases_a
         - a: *1_releases_a
+        - a: *2_releases_a
+        - a: *3_releases_a
         - aaaa: *0_releases_aaaa
         - aaaa: *1_releases_aaaa
+        - aaaa: *2_releases_aaaa
+        - aaaa: *3_releases_aaaa
         - txt: *grapheneos_spf
       eu.geo.seamlessupdate.app: &seamlessupdate_europe
         - a: *4_releases_a

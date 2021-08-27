@@ -101,7 +101,7 @@ domains:
         - a: &1_network_a # floating IP
             content: 146.59.188.59
             ttl: *stable_ttl
-        - aaaa: &1_network_aaaa 2001:41d0:304:200:0:0:0:df95
+        - aaaa: &1_network_aaaa 2001:41d0:304:200::df95
         - mx: *null_mx
         - sshfp: 4 2 a8a737ae20b5900dd2b6836fc74f37e2da8e3eb29ddb980d853aa2bc65bfe729
         - txt: *null_spf
@@ -292,7 +292,7 @@ domains:
         - a: &2_grapheneos_a # floating IP
             content: 51.79.181.222
             ttl: *stable_ttl
-        - aaaa: &2_grapheneos_aaaa 2402:1f00:8000:800:0:0:0:25ba
+        - aaaa: &2_grapheneos_aaaa 2402:1f00:8000:800::25ba
         - mx: *null_mx
         - sshfp: 4 2 d207f58d59bac7959609dda2d51edaf1fd13d49e4833b39085f194b16a6737ef
         - txt: *null_spf

@@ -398,7 +398,9 @@ domains:
       as-south.geo.time.grapheneos.org: *network_subdomain_singapore
 
       element.grapheneos.org:
-        - a: &matrix_a 51.79.51.42
+        - a: &matrix_a # floating IP
+            content: 51.222.17.122
+            ttl: *stable_ttl
         - aaaa: &matrix_aaaa 2607:5300:205:200::26e1
         - caa: &matrix_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
         - caa: &matrix_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"

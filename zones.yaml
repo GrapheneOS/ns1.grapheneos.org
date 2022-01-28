@@ -823,6 +823,57 @@ domains:
       www.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
       mta-sts.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
 
+  - domain: grapheneos.dev
+    ttl: *default_ttl
+    records:
+      ns1.grapheneos.dev: *ns1
+      ns2.grapheneos.dev: *ns2
+
+      grapheneos.dev:
+        - caa: *grapheneos_caa
+        - caa: *grapheneos_caa_staging
+        - caa: 0 iodef "mailto:caa@grapheneos.dev"
+        - https: *https
+        - mx: *grapheneos_mx
+        - ns:
+            content: ns1.grapheneos.dev
+            ttl: *stable_ttl
+        - ns:
+            content: ns2.grapheneos.dev
+            ttl: *stable_ttl
+        - soa:
+            content: ns1.grapheneos.dev hostmaster.grapheneos.dev {serial} 3600 1800 1209600 3600
+            ttl: *stable_ttl
+        - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
+        - txt: "yandex-verification: 02f9a01e328f0577"
+        - txt: "facebook-domain-verification=5rd8ccu3kjbppinfyxel6ei05sh8pq"
+      _443._tcp.grapheneos.dev: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.dev: *grapheneos_tlsa
+      _443._tcp.www.grapheneos.dev: *grapheneos_tlsa
+      _dmarc.grapheneos.dev:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.dev; ruf=mailto:dmarc@grapheneos.dev"
+      _mta-sts.grapheneos.dev: *_mta-sts
+      _smtp._tls.grapheneos.dev:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.dev"
+      default._bimi.grapheneos.dev: *grapheneos_bimi
+      default._domainkey.grapheneos.dev: *grapheneos_dkim
+      mta-sts.grapheneos.dev: *grapheneos_subdomain
+      www.grapheneos.dev: *grapheneos_subdomain
+
+      na.geo.grapheneos.dev: *grapheneos_north_america
+      eu.geo.grapheneos.dev: *grapheneos_europe
+      as-east.geo.grapheneos.dev: *grapheneos_singapore
+      as-south.geo.grapheneos.dev: *grapheneos_singapore
+      na.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_singapore
+      as-south.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_singapore
+    services:
+      grapheneos.dev: "%mp.geo.grapheneos.dev"
+      www.grapheneos.dev: "%mp.geo.subdomain.grapheneos.dev"
+      mta-sts.grapheneos.dev: "%mp.geo.subdomain.grapheneos.dev"
+
   - domain: grapheneos.info
     ttl: *default_ttl
     records:

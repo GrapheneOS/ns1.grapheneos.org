@@ -622,7 +622,7 @@ domains:
             ttl: *stable_ttl
         - sshfp: *null_sshfp
         - txt: "yandex-verification: cba8ef4619bc43f5"
-        - txt: "facebook-domain-verification=dy8ggf40s32yylbdgk1fw2nmm0njjn"
+        - txt: "facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y"
       _443._tcp.seamlessupdate.app: *releases_tlsa
       _443._tcp.mta-sts.seamlessupdate.app: *releases_tlsa
       _443._tcp.www.seamlessupdate.app: *releases_tlsa

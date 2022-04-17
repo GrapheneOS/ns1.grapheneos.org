@@ -407,6 +407,14 @@ domains:
       as-east.geo.remoteprovisioning.grapheneos.org: *network_subdomain_singapore
       as-south.geo.remoteprovisioning.grapheneos.org: *network_subdomain_singapore
 
+      google.psds.grapheneos.org: *org_network_subdomain
+      _443._tcp.google.psds.grapheneos.org: *network_tlsa
+
+      na.geo.google.psds.grapheneos.org: *network_subdomain_north_america
+      eu.geo.google.psds.grapheneos.org: *network_subdomain_europe
+      as-east.geo.google.psds.grapheneos.org: *network_subdomain_singapore
+      as-south.geo.google.psds.grapheneos.org: *network_subdomain_singapore
+
       element.grapheneos.org:
         - a: &matrix_a # floating IP
             content: 51.222.17.122
@@ -607,6 +615,7 @@ domains:
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       time.grapheneos.org: "%mp.geo.time.grapheneos.org"
       remoteprovisioning.grapheneos.org: "%mp.geo.remoteprovisioning.grapheneos.org"
+      google.psds.grapheneos.org: "%mp.geo.google.psds.grapheneos.org"
 
   - domain: seamlessupdate.app
     ttl: *default_ttl

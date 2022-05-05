@@ -13,7 +13,7 @@ for server in ${servers[@]}; do
 
     remote=root@$server
 
-    rsync -rcpv --delete --chmod=D755,F644 keys/ root@$server:/etc/powerdns/keys
+    rsync -rcpv --fsync --delete --chmod=D755,F644 keys/ root@$server:/etc/powerdns/keys
 
     echo
 done

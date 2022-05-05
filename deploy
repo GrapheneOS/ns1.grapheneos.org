@@ -2,6 +2,13 @@
 
 set -o errexit -o nounset -o pipefail
 
+touch lock
+exec {fd}< lock
+if ! flock -n $fd; then
+    echo deploy_static already locked >&2
+    exit 1
+fi
+
 reconfigure=0
 if [[ $# -eq 1 ]]; then
     if [[ $1 == reconfigure ]]; then

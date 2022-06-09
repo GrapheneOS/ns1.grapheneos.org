@@ -442,6 +442,23 @@ domains:
         - txt: *null_spf
       _443._tcp.matrix.grapheneos.org: *matrix_tlsa
 
+      discuss.grapheneos.org:
+        - a: # floating IP
+            content: 51.222.190.136
+            ttl: *stable_ttl
+        - aaaa: 2607:5300:205:200:0:0:0:3df
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
+        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - https: *https
+        - mx: *grapheneos_mx
+        - sshfp: 4 2 b83b04142bb75babeee5998309fa63cae53dc3c7915f28f0c38cd34c2e16abb1
+        - txt: *grapheneos_spf
+      _443._tcp.discuss.grapheneos.org:
+        - tlsa: 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81
+      default._bimi.discuss.grapheneos.org: *grapheneos_bimi
+      default._domainkey.discuss.grapheneos.org: *grapheneos_dkim
+
       mail.grapheneos.org:
         - a: # floating IP
             content: 192.99.98.22

@@ -23,13 +23,11 @@ elif [[ $# -ne 0 ]]; then
 fi
 
 servers=(
-    staging.ns1.grapheneos.org
     ns1.grapheneos.org
     ns2.grapheneos.org
 )
 
 declare -A addresses=(
-    [staging.ns1.grapheneos.org]="51.222.225.205 2607:5300:205:200::3afd"
     [ns1.grapheneos.org]="144.217.195.151 2607:5300:205:200::29e8"
     [ns2.grapheneos.org]="46.105.58.84 2001:41d0:304:200::528"
 )

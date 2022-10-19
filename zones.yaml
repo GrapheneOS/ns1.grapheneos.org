@@ -495,19 +495,6 @@ domains:
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
 
       # legacy
-      attestation.grapheneos.org:
-        - a: *attestation_a
-        - aaaa: *attestation_aaaa
-        - caa: *attestation_caa
-        - caa: *attestation_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - https: *https
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      _443._tcp.attestation.grapheneos.org: *attestation_tlsa
-
-      # legacy
       connectivity.grapheneos.org: &legacy_network_subdomain
         - a: *0_network_a
         - a: *1_network_a

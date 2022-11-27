@@ -1161,6 +1161,54 @@ domains:
       vanadium.app: "%mp.geo.vanadium.app"
       www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
       mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
+
+  - domain: grapheneos.social
+    ttl: *default_ttl
+    records:
+      ns1.grapheneos.social: *ns1
+      ns2.grapheneos.social: *ns2
+
+      grapheneos.social:
+        - a: &social_a 51.222.30.159
+        - aaaa: &social_aaaa 2607:5300:205:200::2706
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
+        - caa: 0 iodef "mailto:caa@grapheneos.social"
+        - https: *https
+        - mx: *grapheneos_mx
+        - ns:
+            content: ns1.grapheneos.social
+            ttl: *stable_ttl
+        - ns:
+            content: ns2.grapheneos.social
+            ttl: *stable_ttl
+        - soa:
+            content: ns1.grapheneos.social hostmaster.grapheneos.social {serial} 3600 1800 1209600 3600
+            ttl: *stable_ttl
+        - sshfp: 4 2 c22c671fa00832ded0b8d387477b9ded6f66361fb7a36ecfe78ecd328e375508
+        - txt: *grapheneos_spf
+        - txt: "yandex-verification: ec33ee307706436f"
+        - txt: "facebook-domain-verification=nn8qfg6l9xhnqkkizdgn97taizy6hj"
+      _443._tcp.grapheneos.social: &social_tlsa
+        - tlsa: 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546c81c87c8
+      _443._tcp.mta-sts.grapheneos.social: *social_tlsa
+      _443._tcp.www.grapheneos.social: *social_tlsa
+      _dmarc.grapheneos.social:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.social; ruf=mailto:dmarc@grapheneos.social"
+      _mta-sts.grapheneos.social: *_mta-sts
+      _smtp._tls.grapheneos.social:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.social"
+      default._bimi.grapheneos.social: *grapheneos_bimi
+      default._domainkey.grapheneos.social: *grapheneos_dkim
+      mta-sts.grapheneos.social: &social_subdomain
+        - a: *social_a
+        - aaaa: *social_aaaa
+        - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      www.grapheneos.social: *social_subdomain
+
 mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:
   # Afghanistan

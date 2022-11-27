@@ -74,9 +74,7 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
       staging.attestation.app:
-        - a: # floating IP
-            content: 51.222.225.203
-            ttl: *stable_ttl
+        - a: 51.79.54.178
         - aaaa: 2607:5300:205:200::1585
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065354"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255334"
@@ -264,9 +262,7 @@ domains:
         - txt: *null_spf
 
       staging.ns1.grapheneos.org:
-        - a:
-            content: 51.222.225.205
-            ttl: *stable_ttl
+        - a: 51.222.141.59
         - aaaa: 2607:5300:205:200::3afd
         - mx: *null_mx
         - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
@@ -379,9 +375,7 @@ domains:
       as-south.geo.subdomain.grapheneos.org: *grapheneos_subdomain_singapore
 
       staging.grapheneos.org:
-        - a: # floating IP
-            content: 51.222.225.204
-            ttl: *stable_ttl
+        - a: 51.222.140.11
         - aaaa: 2607:5300:205:200::a23
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065392"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255333"

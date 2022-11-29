@@ -26,9 +26,7 @@ domains:
         - txt: *null_spf
 
       attestation.app:
-        - a: &attestation_a # floating IP
-            content: 51.222.17.138
-            ttl: *stable_ttl
+        - a: &attestation_a 51.79.50.249
         - aaaa: &attestation_aaaa 2607:5300:205:200::86a
         - caa: &attestation_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
         - caa: &attestation_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"

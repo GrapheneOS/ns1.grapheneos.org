@@ -490,72 +490,56 @@ domains:
 
       # Beauharnois
       0.releases.grapheneos.org:
-        - a: &0_releases_a # floating IP
-            content: 142.4.204.63
-            ttl: *stable_ttl
+        - a: &0_releases_a 167.114.114.114
         - aaaa: &0_releases_aaaa 2607:5300:201:3100::6210
         - mx: *null_mx
         - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
         - txt: *null_spf
       # Beauharnois
       1.releases.grapheneos.org:
-        - a: &1_releases_a # floating IP
-            content: 142.4.205.198
-            ttl: *stable_ttl
+        - a: &1_releases_a 51.79.74.15
         - aaaa: &1_releases_aaaa 2607:5300:205:200::2441
         - mx: *null_mx
         - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
         - txt: *null_spf
       # Beauharnois
       2.releases.grapheneos.org:
-        - a: &2_releases_a # floating IP
-            content: 51.222.228.120
-            ttl: *stable_ttl
+        - a: &2_releases_a 51.222.159.48
         - aaaa: &2_releases_aaaa 2607:5300:205:200::3f46
         - mx: *null_mx
         - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
         - txt: *null_spf
       # Beauharnois
       3.releases.grapheneos.org:
-        - a: &3_releases_a # floating IP
-            content: 51.222.228.121
-            ttl: *stable_ttl
+        - a: &3_releases_a 51.222.140.199
         - aaaa: &3_releases_aaaa 2607:5300:205:200::39fe
         - mx: *null_mx
         - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
         - txt: *null_spf
       # Gravelines
       4.releases.grapheneos.org:
-        - a: &4_releases_a # floating IP
-            content: 51.255.149.102
-            ttl: *stable_ttl
+        - a: &4_releases_a 141.94.71.158
         - aaaa: &4_releases_aaaa 2001:41d0:304:200::14ff
         - mx: *null_mx
         - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
         - txt: *null_spf
       # Gravelines
       5.releases.grapheneos.org:
-        - a: &5_releases_a # floating IP
-            content: 51.255.119.223
-            ttl: *stable_ttl
+        - a: &5_releases_a 141.94.71.72
         - aaaa: &5_releases_aaaa 2001:41d0:304:200::a687
         - mx: *null_mx
         - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
         - txt: *null_spf
       # Frankfurt
       6.releases.grapheneos.org:
-        - a: &6_releases_a # floating IP
-            content: 51.195.34.205
-            ttl: *stable_ttl
+        - a: &6_releases_a 135.125.183.155
         - aaaa: &6_releases_aaaa 2001:41d0:701:1100::2ec9
         - mx: *null_mx
         - sshfp: 4 2 ca537ed11e7afd60844c135a5d0d41ab9298e8b90bfbd27745af64940affaaca
         - txt: *null_spf
       # Frankfurt
       7.releases.grapheneos.org:
-        - a: &7_releases_a # floating IP
-            content: 135.125.177.39
-            ttl: *stable_ttl
+        - a: &7_releases_a 141.95.0.242
         - aaaa: &7_releases_aaaa 2001:41d0:701:1100::3e56
         - mx: *null_mx
         - sshfp: 4 2 8fac012d091c6f1a5be108ed09f8ee6e9c8c442f4da1b193bd36dd740a070caa

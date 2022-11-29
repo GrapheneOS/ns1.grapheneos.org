@@ -4,23 +4,15 @@ domains:
     records:
       # Beauharnois
       ns1.attestation.app: &ns1
-        - a: &ns1_a # floating IP
-            content: 144.217.195.151
-            ttl: &stable_ttl 86400
-        - aaaa: &ns1_aaaa
-            content: 2607:5300:205:200::29e8
-            ttl: *stable_ttl
+        - a: &ns1_a 144.217.195.151
+        - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: &null_spf "v=spf1 -all"
       # Gravelines
       ns2.attestation.app: &ns2
-        - a: &ns2_a # floating IP
-            content: 46.105.58.84
-            ttl: *stable_ttl
-        - aaaa: &ns2_aaaa
-            content: 2001:41d0:304:200::528
-            ttl: *stable_ttl
+        - a: &ns2_a 46.105.58.84
+        - aaaa: &ns2_aaaa 2001:41d0:304:200::528
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -33,7 +25,7 @@ domains:
         - caa: 0 iodef "mailto:caa@attestation.app"
         - https: &https
             content: 1 . alpn=h2
-            ttl: *stable_ttl
+            ttl: &stable_ttl 86400
         - mx: &grapheneos_mx
             content: 0 mail.grapheneos.org
             ttl: *stable_ttl

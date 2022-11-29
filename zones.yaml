@@ -267,27 +267,21 @@ domains:
 
       # Beauharnois
       0.grapheneos.org:
-        - a: &0_grapheneos_a # floating IP
-            content: 198.27.89.126
-            ttl: *stable_ttl
+        - a: &0_grapheneos_a 192.99.43.50
         - aaaa: &0_grapheneos_aaaa 2607:5300:201:3100::1aae
         - mx: *null_mx
         - sshfp: 4 2 f4b0eaeff529404ae27322e09b8d0c5f5235ef4b9496bcbd334b22604d355ce3
         - txt: *null_spf
       # Gravelines
       1.grapheneos.org:
-        - a: &1_grapheneos_a # floating IP
-            content: 146.59.188.36
-            ttl: *stable_ttl
+        - a: &1_grapheneos_a 51.178.136.41
         - aaaa: &1_grapheneos_aaaa 2001:41d0:304:200::a087
         - mx: *null_mx
         - sshfp: 4 2 b3eced499fc208feaa1bc3d59d9f4819edea1a7f5ef04b3e1035435f70a38cc1
         - txt: *null_spf
       # Singapore
       2.grapheneos.org:
-        - a: &2_grapheneos_a # floating IP
-            content: 51.79.181.222
-            ttl: *stable_ttl
+        - a: &2_grapheneos_a 51.79.160.212
         - aaaa: &2_grapheneos_aaaa 2402:1f00:8000:800::25ba
         - mx: *null_mx
         - sshfp: 4 2 d207f58d59bac7959609dda2d51edaf1fd13d49e4833b39085f194b16a6737ef

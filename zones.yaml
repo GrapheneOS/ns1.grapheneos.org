@@ -453,9 +453,7 @@ domains:
         - txt: *null_spf
 
       mail.grapheneos.org:
-        - a: # floating IP
-            content: 192.99.98.22
-            ttl: *stable_ttl
+        - a: 192.99.98.22
         - aaaa: 2607:5300:205:200::94f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"

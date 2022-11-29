@@ -441,9 +441,7 @@ domains:
       _443._tcp.matrix.grapheneos.org: *matrix_tlsa
 
       discuss.grapheneos.org:
-        - a: &discuss_a # floating IP
-            content: 51.222.190.136
-            ttl: *stable_ttl
+        - a: &discuss_a 51.161.11.34
         - aaaa: &discuss_aaaa 2607:5300:205:200:0:0:0:3df
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"

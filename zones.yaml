@@ -4,14 +4,14 @@ domains:
     records:
       # Beauharnois
       ns1.attestation.app: &ns1
-        - a: &ns1_a 144.217.195.151
+        - a: &ns1_a 51.222.14.6
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         - txt: &null_spf "v=spf1 -all"
       # Gravelines
       ns2.attestation.app: &ns2
-        - a: &ns2_a 46.105.58.84
+        - a: &ns2_a 141.94.71.48
         - aaaa: &ns2_aaaa 2001:41d0:304:200::528
         - mx: *null_mx
         - sshfp: *null_sshfp

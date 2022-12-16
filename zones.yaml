@@ -318,6 +318,9 @@ domains:
         - https: *https
       www.grapheneos.org: *grapheneos_subdomain
 
+      "*.dnscheck.grapheneos.org":
+        - a: *0_grapheneos_a
+
       na.geo.grapheneos.org: &grapheneos_north_america
         - a: *0_grapheneos_a
         - aaaa: *0_grapheneos_aaaa

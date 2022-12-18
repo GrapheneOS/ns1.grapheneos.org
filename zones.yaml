@@ -320,6 +320,10 @@ domains:
 
       "*.dnscheck.grapheneos.org":
         - a: *0_grapheneos_a
+        - aaaa: *0_grapheneos_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
       na.geo.grapheneos.org: &grapheneos_north_america
         - a: *0_grapheneos_a

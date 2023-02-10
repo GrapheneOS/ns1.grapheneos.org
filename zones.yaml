@@ -7,7 +7,7 @@ domains:
         - a: &ns1_a 51.222.14.6
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
         - mx: &null_mx 0 .
-        - sshfp: &null_sshfp 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
         - txt: &null_spf "v=spf1 -all"
       # Gravelines
       ns2.attestation.app: &ns2

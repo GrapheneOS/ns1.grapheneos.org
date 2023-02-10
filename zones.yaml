@@ -415,7 +415,7 @@ domains:
         - caa: 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
         - mx: *null_mx
-        - sshfp: 4 2 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - sshfp: *null_sshfp
         - txt: *null_spf
       _443._tcp.element.grapheneos.org: &matrix_tlsa
         - tlsa: 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8

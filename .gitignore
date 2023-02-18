@@ -1,6 +1,6 @@
-keys
-pdns.conf.tmp
-zones.yaml.tmp
-serial.txt
-GeoIP.conf
-lock
+/GeoIP.conf
+/keys/
+/lock
+/pdns.conf.tmp
+/serial.txt
+/zones.yaml.tmp

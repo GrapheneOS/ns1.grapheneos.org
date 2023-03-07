@@ -407,6 +407,13 @@ domains:
       as-east.geo.broadcom.psds.grapheneos.org: *network_subdomain_singapore
       as-south.geo.broadcom.psds.grapheneos.org: *network_subdomain_singapore
 
+      qualcomm.psds.grapheneos.org: *org_network_subdomain
+      _443._tcp.qualcomm.psds.grapheneos.org: *network_tlsa
+      na.geo.qualcomm.psds.grapheneos.org: *network_subdomain_north_america
+      eu.geo.qualcomm.psds.grapheneos.org: *network_subdomain_europe
+      as-east.geo.qualcomm.psds.grapheneos.org: *network_subdomain_singapore
+      as-south.geo.qualcomm.psds.grapheneos.org: *network_subdomain_singapore
+
       supl.grapheneos.org: *org_network_subdomain
       _443._tcp.supl.grapheneos.org: *network_tlsa
       na.geo.supl.grapheneos.org: *network_subdomain_north_america
@@ -610,6 +617,7 @@ domains:
       # legacy alias for broadcom.psds.grapheneos.org
       google.psds.grapheneos.org: "%mp.geo.google.psds.grapheneos.org"
       broadcom.psds.grapheneos.org: "%mp.geo.broadcom.psds.grapheneos.org"
+      qualcomm.psds.grapheneos.org: "%mp.geo.qualcomm.psds.grapheneos.org"
       supl.grapheneos.org: "%mp.geo.supl.grapheneos.org"
 
   - domain: seamlessupdate.app

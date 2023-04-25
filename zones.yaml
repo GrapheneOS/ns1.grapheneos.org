@@ -689,7 +689,58 @@ domains:
       www.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
       mta-sts.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
 
-  # reserved grapheneos.tld domains and vanadium.app
+  - domain: vanadium.app
+    ttl: *default_ttl
+    records:
+      ns1.vanadium.app: *ns1
+      ns2.vanadium.app: *ns2
+
+      vanadium.app:
+        - caa: *grapheneos_caa
+        - caa: *grapheneos_caa_staging
+        - caa: 0 iodef "mailto:caa@vanadium.app"
+        - https: *https
+        - mx: *grapheneos_mx
+        - ns:
+            content: ns1.vanadium.app
+            ttl: *stable_ttl
+        - ns:
+            content: ns2.vanadium.app
+            ttl: *stable_ttl
+        - soa:
+            content: ns1.vanadium.app hostmaster.vanadium.app {serial} 3600 1800 1209600 3600
+            ttl: *stable_ttl
+        - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
+        - txt: "yandex-verification: 369dbb9acc84cb72"
+        - txt: "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"
+      _443._tcp.vanadium.app: *grapheneos_tlsa
+      _443._tcp.mta-sts.vanadium.app: *grapheneos_tlsa
+      _443._tcp.www.vanadium.app: *grapheneos_tlsa
+      _dmarc.vanadium.app:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
+      _mta-sts.vanadium.app: *_mta-sts
+      _smtp._tls.vanadium.app:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@vanadium.app"
+      default._bimi.vanadium.app: *grapheneos_bimi
+      default._domainkey.vanadium.app: *grapheneos_dkim
+      mta-sts.vanadium.app: *grapheneos_subdomain
+      www.vanadium.app: *grapheneos_subdomain
+
+      na.geo.vanadium.app: *grapheneos_north_america
+      eu.geo.vanadium.app: *grapheneos_europe
+      as-east.geo.vanadium.app: *grapheneos_singapore
+      as-south.geo.vanadium.app: *grapheneos_singapore
+      na.geo.subdomain.vanadium.app: *grapheneos_subdomain_north_america
+      eu.geo.subdomain.vanadium.app: *grapheneos_subdomain_europe
+      as-east.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
+      as-south.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
+    services:
+      vanadium.app: "%mp.geo.vanadium.app"
+      www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
+      mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
+
+  # reserved grapheneos.tld domains
 
   - domain: grapheneos.app
     ttl: *default_ttl
@@ -1098,57 +1149,6 @@ domains:
       grapheneos.page: "%mp.geo.grapheneos.page"
       www.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
       mta-sts.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
-
-  - domain: vanadium.app
-    ttl: *default_ttl
-    records:
-      ns1.vanadium.app: *ns1
-      ns2.vanadium.app: *ns2
-
-      vanadium.app:
-        - caa: *grapheneos_caa
-        - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@vanadium.app"
-        - https: *https
-        - mx: *grapheneos_mx
-        - ns:
-            content: ns1.vanadium.app
-            ttl: *stable_ttl
-        - ns:
-            content: ns2.vanadium.app
-            ttl: *stable_ttl
-        - soa:
-            content: ns1.vanadium.app hostmaster.vanadium.app {serial} 3600 1800 1209600 3600
-            ttl: *stable_ttl
-        - sshfp: *null_sshfp
-        - txt: *grapheneos_spf
-        - txt: "yandex-verification: 369dbb9acc84cb72"
-        - txt: "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"
-      _443._tcp.vanadium.app: *grapheneos_tlsa
-      _443._tcp.mta-sts.vanadium.app: *grapheneos_tlsa
-      _443._tcp.www.vanadium.app: *grapheneos_tlsa
-      _dmarc.vanadium.app:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
-      _mta-sts.vanadium.app: *_mta-sts
-      _smtp._tls.vanadium.app:
-        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@vanadium.app"
-      default._bimi.vanadium.app: *grapheneos_bimi
-      default._domainkey.vanadium.app: *grapheneos_dkim
-      mta-sts.vanadium.app: *grapheneos_subdomain
-      www.vanadium.app: *grapheneos_subdomain
-
-      na.geo.vanadium.app: *grapheneos_north_america
-      eu.geo.vanadium.app: *grapheneos_europe
-      as-east.geo.vanadium.app: *grapheneos_singapore
-      as-south.geo.vanadium.app: *grapheneos_singapore
-      na.geo.subdomain.vanadium.app: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.vanadium.app: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
-    services:
-      vanadium.app: "%mp.geo.vanadium.app"
-      www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
-      mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
 
   - domain: grapheneos.social
     ttl: *default_ttl

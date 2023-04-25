@@ -735,10 +735,28 @@ domains:
       eu.geo.subdomain.vanadium.app: *grapheneos_subdomain_europe
       as-east.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
       as-south.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
+
+      update.vanadium.app: *org_network_subdomain
+      _443._tcp.update.vanadium.app: *network_tlsa
+
+      na.geo.update.vanadium.app: *network_subdomain_north_america
+      eu.geo.update.vanadium.app: *network_subdomain_europe
+      as-east.geo.update.vanadium.app: *network_subdomain_singapore
+      as-south.geo.update.vanadium.app: *network_subdomain_singapore
+
+      dl.vanadium.app: *org_network_subdomain
+      _443._tcp.dl.vanadium.app: *network_tlsa
+
+      na.geo.dl.vanadium.app: *network_subdomain_north_america
+      eu.geo.dl.vanadium.app: *network_subdomain_europe
+      as-east.geo.dl.vanadium.app: *network_subdomain_singapore
+      as-south.geo.dl.vanadium.app: *network_subdomain_singapore
     services:
       vanadium.app: "%mp.geo.vanadium.app"
       www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
       mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
+      update.vanadium.app: "%mp.geo.update.vanadium.app"
+      dl.vanadium.app: "%mp.geo.dl.vanadium.app"
 
   # reserved grapheneos.tld domains
 

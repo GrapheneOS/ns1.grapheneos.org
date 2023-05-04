@@ -392,14 +392,6 @@ domains:
       as-east.geo.remoteprovisioning.grapheneos.org: *network_subdomain_singapore
       as-south.geo.remoteprovisioning.grapheneos.org: *network_subdomain_singapore
 
-      # legacy alias for broadcom.psds.grapheneos.org
-      google.psds.grapheneos.org: *org_network_subdomain
-      _443._tcp.google.psds.grapheneos.org: *network_tlsa
-      na.geo.google.psds.grapheneos.org: *network_subdomain_north_america
-      eu.geo.google.psds.grapheneos.org: *network_subdomain_europe
-      as-east.geo.google.psds.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.google.psds.grapheneos.org: *network_subdomain_singapore
-
       broadcom.psds.grapheneos.org: *org_network_subdomain
       _443._tcp.broadcom.psds.grapheneos.org: *network_tlsa
       na.geo.broadcom.psds.grapheneos.org: *network_subdomain_north_america
@@ -614,8 +606,6 @@ domains:
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       time.grapheneos.org: "%mp.geo.time.grapheneos.org"
       remoteprovisioning.grapheneos.org: "%mp.geo.remoteprovisioning.grapheneos.org"
-      # legacy alias for broadcom.psds.grapheneos.org
-      google.psds.grapheneos.org: "%mp.geo.google.psds.grapheneos.org"
       broadcom.psds.grapheneos.org: "%mp.geo.broadcom.psds.grapheneos.org"
       qualcomm.psds.grapheneos.org: "%mp.geo.qualcomm.psds.grapheneos.org"
       supl.grapheneos.org: "%mp.geo.supl.grapheneos.org"

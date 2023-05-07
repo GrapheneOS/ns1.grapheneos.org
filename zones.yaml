@@ -413,6 +413,14 @@ domains:
       as-east.geo.supl.grapheneos.org: *network_subdomain_singapore
       as-south.geo.supl.grapheneos.org: *network_subdomain_singapore
 
+      # legacy
+      connectivitycheck.grapheneos.org: *org_network_subdomain
+      _443._tcp.connectivitycheck.grapheneos.org: *network_tlsa
+      na.geo.connectivitycheck.grapheneos.org: *network_subdomain_north_america
+      eu.geo.connectivitycheck.grapheneos.org: *network_subdomain_europe
+      as-east.geo.connectivitycheck.grapheneos.org: *network_subdomain_singapore
+      as-south.geo.connectivitycheck.grapheneos.org: *network_subdomain_singapore
+
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
         - aaaa: &matrix_aaaa 2607:5300:205:200::26e1
@@ -479,20 +487,6 @@ domains:
       _993._tcp.mail.grapheneos.org: *mail_tlsa
       default._bimi.mail.grapheneos.org: *grapheneos_bimi
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
-
-      # legacy
-      connectivitycheck.grapheneos.org:
-        - a: *0_network_a
-        - a: *1_network_a
-        - aaaa: *0_network_aaaa
-        - aaaa: *1_network_aaaa
-        - caa: *network_caa
-        - caa: *network_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      _443._tcp.connectivitycheck.grapheneos.org: *network_tlsa
 
       # Beauharnois
       0.releases.grapheneos.org:
@@ -605,6 +599,7 @@ domains:
       broadcom.psds.grapheneos.org: "%mp.geo.broadcom.psds.grapheneos.org"
       qualcomm.psds.grapheneos.org: "%mp.geo.qualcomm.psds.grapheneos.org"
       supl.grapheneos.org: "%mp.geo.supl.grapheneos.org"
+      connectivitycheck.grapheneos.org: "%mp.geo.connectivitycheck.grapheneos.org" # legacy
 
   - domain: seamlessupdate.app
     ttl: *default_ttl

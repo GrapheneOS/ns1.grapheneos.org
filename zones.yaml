@@ -481,7 +481,7 @@ domains:
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
 
       # legacy
-      connectivity.grapheneos.org: &legacy_network_subdomain
+      connectivitycheck.grapheneos.org:
         - a: *0_network_a
         - a: *1_network_a
         - aaaa: *0_network_aaaa
@@ -492,10 +492,6 @@ domains:
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      _443._tcp.connectivity.grapheneos.org: *network_tlsa
-
-      # legacy
-      connectivitycheck.grapheneos.org: *legacy_network_subdomain
       _443._tcp.connectivitycheck.grapheneos.org: *network_tlsa
 
       # Beauharnois

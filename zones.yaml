@@ -319,8 +319,8 @@ domains:
       www.grapheneos.org: *grapheneos_subdomain
 
       "*.dnscheck.grapheneos.org":
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
+        - a: *ns1_a
+        - aaaa: *ns1_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf

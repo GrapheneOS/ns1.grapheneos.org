@@ -83,22 +83,22 @@ domains:
 
       # Beauharnois
       0.grapheneos.network:
-        - a: &0_network_a 51.79.54.68
-        - aaaa: &0_network_aaaa 2607:5300:205:200::b44
+        - a: 51.79.54.68
+        - aaaa: 2607:5300:205:200::b44
         - mx: *null_mx
         - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
         - txt: *null_spf
       # Gravelines
       1.grapheneos.network:
-        - a: &1_network_a 146.59.144.170
-        - aaaa: &1_network_aaaa 2001:41d0:304:200::df95
+        - a: 146.59.144.170
+        - aaaa: 2001:41d0:304:200::df95
         - mx: *null_mx
         - sshfp: 4 2 a8a737ae20b5900dd2b6836fc74f37e2da8e3eb29ddb980d853aa2bc65bfe729
         - txt: *null_spf
       # Singapore
       2.grapheneos.network:
-        - a: &2_network_a 51.79.165.181
-        - aaaa: &2_network_aaaa 2402:1f00:8000:800::e14
+        - a: 51.79.165.181
+        - aaaa: 2402:1f00:8000:800::e14
         - mx: *null_mx
         - sshfp: 4 2 57e965c3ab73bc6c39d0d83b8016498e7d327e66a0ee10f26ae69b341610ebdc
         - txt: *null_spf
@@ -138,34 +138,34 @@ domains:
       www.grapheneos.network: []
 
       na.geo.grapheneos.network: &network_north_america
-        - a: *0_network_a
-        - aaaa: *0_network_aaaa
+        - lua: &na_network_ifurlup_a A "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'51.79.54.68'}, {'146.59.144.170'}, {'51.79.165.181'}}, {backupSelector='all'})[1]"
+        - lua: &na_network_ifurlup_aaaa AAAA "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'2607:5300:205:200::b44'}, {'2001:41d0:304:200::df95'}, {'2402:1f00:8000:800::e14'}}, {backupSelector='all'})[1]"
         - txt: *grapheneos_spf
       eu.geo.grapheneos.network: &network_europe
-        - a: *1_network_a
-        - aaaa: *1_network_aaaa
+        - lua: &eu_network_ifurlup_a A "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'146.59.144.170'}, {'51.79.54.68'}, {'51.79.165.181'}}, {backupSelector='all'})[1]"
+        - lua: &eu_network_ifurlup_aaaa AAAA "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'2001:41d0:304:200::df95'}, {'2607:5300:205:200::b44'}, {'2402:1f00:8000:800::e14'}}, {backupSelector='all'})[1]"
         - txt: *grapheneos_spf
       as-east.geo.grapheneos.network: &network_singapore
-        - a: *2_network_a
-        - aaaa: *2_network_aaaa
+        - lua: &as_network_ifurlup_a A "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'51.79.165.181'}, {'51.79.54.68'}, {'146.59.144.170'}}, {backupSelector='all'})[1]"
+        - lua: &as_network_ifurlup_aaaa AAAA "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'2402:1f00:8000:800::e14'}, {'2607:5300:205:200::b44'}, {'2001:41d0:304:200::df95'}}, {backupSelector='all'})[1]"
         - txt: *grapheneos_spf
       as-south.geo.grapheneos.network: *network_singapore
 
       na.geo.subdomain.grapheneos.network: &network_subdomain_north_america
-        - a: *0_network_a
-        - aaaa: *0_network_aaaa
+        - lua: *na_network_ifurlup_a
+        - lua: *na_network_ifurlup_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       eu.geo.subdomain.grapheneos.network: &network_subdomain_europe
-        - a: *1_network_a
-        - aaaa: *1_network_aaaa
+        - lua: *eu_network_ifurlup_a
+        - lua: *eu_network_ifurlup_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       as-east.geo.subdomain.grapheneos.network: &network_subdomain_singapore
-        - a: *2_network_a
-        - aaaa: *2_network_aaaa
+        - lua: *as_network_ifurlup_a
+        - lua: *as_network_ifurlup_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -259,22 +259,22 @@ domains:
 
       # Beauharnois
       0.grapheneos.org:
-        - a: &0_grapheneos_a 192.99.43.50
-        - aaaa: &0_grapheneos_aaaa 2607:5300:201:3100::1aae
+        - a: 192.99.43.50
+        - aaaa: 2607:5300:201:3100::1aae
         - mx: *null_mx
         - sshfp: 4 2 f4b0eaeff529404ae27322e09b8d0c5f5235ef4b9496bcbd334b22604d355ce3
         - txt: *null_spf
       # Gravelines
       1.grapheneos.org:
-        - a: &1_grapheneos_a 51.178.136.41
-        - aaaa: &1_grapheneos_aaaa 2001:41d0:304:200::a087
+        - a: 51.178.136.41
+        - aaaa: 2001:41d0:304:200::a087
         - mx: *null_mx
         - sshfp: 4 2 b3eced499fc208feaa1bc3d59d9f4819edea1a7f5ef04b3e1035435f70a38cc1
         - txt: *null_spf
       # Singapore
       2.grapheneos.org:
-        - a: &2_grapheneos_a 51.79.160.212
-        - aaaa: &2_grapheneos_aaaa 2402:1f00:8000:800::25ba
+        - a: 51.79.160.212
+        - aaaa: 2402:1f00:8000:800::25ba
         - mx: *null_mx
         - sshfp: 4 2 d207f58d59bac7959609dda2d51edaf1fd13d49e4833b39085f194b16a6737ef
         - txt: *null_spf
@@ -326,34 +326,34 @@ domains:
         - txt: *null_spf
 
       na.geo.grapheneos.org: &grapheneos_north_america
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
+        - lua: &na_grapheneos_ifurlup_a A "ifurlup('https://grapheneos.org/', {{'192.99.43.50'}, {'51.178.136.41'}, {'51.79.160.212'}}, {backupSelector='all'})[1]"
+        - lua: &na_grapheneos_ifurlup_aaaa AAAA "ifurlup('https://grapheneos.org/', {{'2607:5300:201:3100::1aae'}, {'2001:41d0:304:200::a087'}, {'2402:1f00:8000:800::25ba'}}, {backupSelector='all'})[1]"
         - txt: *grapheneos_spf
       eu.geo.grapheneos.org: &grapheneos_europe
-        - a: *1_grapheneos_a
-        - aaaa: *1_grapheneos_aaaa
+        - lua: &eu_grapheneos_ifurlup_a A "ifurlup('https://grapheneos.org/', {{'51.178.136.41'}, {'192.99.43.50'}, {'51.79.160.212'}}, {backupSelector='all'})[1]"
+        - lua: &eu_grapheneos_ifurlup_aaaa AAAA "ifurlup('https://grapheneos.org/', {{'2001:41d0:304:200::a087'}, {'2607:5300:201:3100::1aae'}, {'2402:1f00:8000:800::25ba'}}, {backupSelector='all'})[1]"
         - txt: *grapheneos_spf
       as-east.geo.grapheneos.org: &grapheneos_singapore
-        - a: *2_grapheneos_a
-        - aaaa: *2_grapheneos_aaaa
+        - lua: &as_grapheneos_ifurlup_a A "ifurlup('https://grapheneos.org/', {{'51.79.160.212'}, {'192.99.43.50'}, {'51.178.136.41'}}, {backupSelector='all'})[1]"
+        - lua: &as_grapheneos_ifurlup_aaaa AAAA "ifurlup('https://grapheneos.org/', {{'2402:1f00:8000:800::25ba'}, {'2607:5300:201:3100::1aae'}, {'2001:41d0:304:200::a087'}}, {backupSelector='all'})[1]"
         - txt: *grapheneos_spf
       as-south.geo.grapheneos.org: *grapheneos_singapore
 
       na.geo.subdomain.grapheneos.org: &grapheneos_subdomain_north_america
-        - a: *0_grapheneos_a
-        - aaaa: *0_grapheneos_aaaa
+        - lua: *na_grapheneos_ifurlup_a
+        - lua: *na_grapheneos_ifurlup_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       eu.geo.subdomain.grapheneos.org: &grapheneos_subdomain_europe
-        - a: *1_grapheneos_a
-        - aaaa: *1_grapheneos_aaaa
+        - lua: *eu_grapheneos_ifurlup_a
+        - lua: *eu_grapheneos_ifurlup_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       as-east.geo.subdomain.grapheneos.org: &grapheneos_subdomain_singapore
-        - a: *2_grapheneos_a
-        - aaaa: *2_grapheneos_aaaa
+        - lua: *as_grapheneos_ifurlup_a
+        - lua: *as_grapheneos_ifurlup_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -490,57 +490,57 @@ domains:
 
       # Beauharnois
       0.releases.grapheneos.org:
-        - a: &0_releases_a 167.114.114.114
-        - aaaa: &0_releases_aaaa 2607:5300:201:3100::6210
+        - a: 167.114.114.114
+        - aaaa: 2607:5300:201:3100::6210
         - mx: *null_mx
         - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
         - txt: *null_spf
       # Beauharnois
       1.releases.grapheneos.org:
-        - a: &1_releases_a 51.79.74.15
-        - aaaa: &1_releases_aaaa 2607:5300:205:200::2441
+        - a: 51.79.74.15
+        - aaaa: 2607:5300:205:200::2441
         - mx: *null_mx
         - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
         - txt: *null_spf
       # Beauharnois
       2.releases.grapheneos.org:
-        - a: &2_releases_a 51.222.159.48
-        - aaaa: &2_releases_aaaa 2607:5300:205:200::3f46
+        - a: 51.222.159.48
+        - aaaa: 2607:5300:205:200::3f46
         - mx: *null_mx
         - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
         - txt: *null_spf
       # Beauharnois
       3.releases.grapheneos.org:
-        - a: &3_releases_a 51.222.140.199
-        - aaaa: &3_releases_aaaa 2607:5300:205:200::39fe
+        - a: 51.222.140.199
+        - aaaa: 2607:5300:205:200::39fe
         - mx: *null_mx
         - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
         - txt: *null_spf
       # Gravelines
       4.releases.grapheneos.org:
-        - a: &4_releases_a 141.94.71.158
-        - aaaa: &4_releases_aaaa 2001:41d0:304:200::14ff
+        - a: 141.94.71.158
+        - aaaa: 2001:41d0:304:200::14ff
         - mx: *null_mx
         - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
         - txt: *null_spf
       # Gravelines
       5.releases.grapheneos.org:
-        - a: &5_releases_a 141.94.71.72
-        - aaaa: &5_releases_aaaa 2001:41d0:304:200::a687
+        - a: 141.94.71.72
+        - aaaa: 2001:41d0:304:200::a687
         - mx: *null_mx
         - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
         - txt: *null_spf
       # Frankfurt
       6.releases.grapheneos.org:
-        - a: &6_releases_a 135.125.183.155
-        - aaaa: &6_releases_aaaa 2001:41d0:701:1100::2ec9
+        - a: 135.125.183.155
+        - aaaa: 2001:41d0:701:1100::2ec9
         - mx: *null_mx
         - sshfp: 4 2 ca537ed11e7afd60844c135a5d0d41ab9298e8b90bfbd27745af64940affaaca
         - txt: *null_spf
       # Frankfurt
       7.releases.grapheneos.org:
-        - a: &7_releases_a 141.95.0.242
-        - aaaa: &7_releases_aaaa 2001:41d0:701:1100::3e56
+        - a: 141.95.0.242
+        - aaaa: 2001:41d0:701:1100::3e56
         - mx: *null_mx
         - sshfp: 4 2 8fac012d091c6f1a5be108ed09f8ee6e9c8c442f4da1b193bd36dd740a070caa
         - txt: *null_spf
@@ -554,26 +554,14 @@ domains:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
       na.geo.releases.grapheneos.org: &releases_north_america
-        - a: *0_releases_a
-        - a: *1_releases_a
-        - a: *2_releases_a
-        - a: *3_releases_a
-        - aaaa: *0_releases_aaaa
-        - aaaa: *1_releases_aaaa
-        - aaaa: *2_releases_aaaa
-        - aaaa: *3_releases_aaaa
+        - lua: &na_releases_ifurlup_a A "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}, {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
+        - lua: &na_releases_ifurlup_aaaa AAAA "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}, {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       eu.geo.releases.grapheneos.org: &releases_europe
-        - a: *4_releases_a
-        - a: *5_releases_a
-        - a: *6_releases_a
-        - a: *7_releases_a
-        - aaaa: *4_releases_aaaa
-        - aaaa: *5_releases_aaaa
-        - aaaa: *6_releases_aaaa
-        - aaaa: *7_releases_aaaa
+        - lua: &eu_releases_ifurlup_a A "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}, {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
+        - lua: &eu_releases_ifurlup_aaaa AAAA "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}, {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -639,24 +627,12 @@ domains:
       www.seamlessupdate.app: *seamlessupdate_subdomain
 
       na.geo.seamlessupdate.app: &seamlessupdate_north_america
-        - a: *0_releases_a
-        - a: *1_releases_a
-        - a: *2_releases_a
-        - a: *3_releases_a
-        - aaaa: *0_releases_aaaa
-        - aaaa: *1_releases_aaaa
-        - aaaa: *2_releases_aaaa
-        - aaaa: *3_releases_aaaa
+        - lua: *na_releases_ifurlup_a
+        - lua: *na_releases_ifurlup_aaaa
         - txt: *grapheneos_spf
       eu.geo.seamlessupdate.app: &seamlessupdate_europe
-        - a: *4_releases_a
-        - a: *5_releases_a
-        - a: *6_releases_a
-        - a: *7_releases_a
-        - aaaa: *4_releases_aaaa
-        - aaaa: *5_releases_aaaa
-        - aaaa: *6_releases_aaaa
-        - aaaa: *7_releases_aaaa
+        - lua: *eu_releases_ifurlup_a
+        - lua: *eu_releases_ifurlup_aaaa
         - txt: *grapheneos_spf
       as-east.geo.seamlessupdate.app: *seamlessupdate_north_america
       as-south.geo.seamlessupdate.app: *seamlessupdate_europe

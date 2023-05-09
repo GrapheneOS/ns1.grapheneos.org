@@ -554,14 +554,14 @@ domains:
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
       na.geo.releases.grapheneos.org: &releases_north_america
-        - lua: &na_releases_ifurlup_a A "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}, {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
-        - lua: &na_releases_ifurlup_aaaa AAAA "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}, {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
+        - lua: &na_releases_ifurlup_a A "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}, {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
+        - lua: &na_releases_ifurlup_aaaa AAAA "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}, {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       eu.geo.releases.grapheneos.org: &releases_europe
-        - lua: &eu_releases_ifurlup_a A "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}, {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
-        - lua: &eu_releases_ifurlup_aaaa AAAA "; x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}, {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
+        - lua: &eu_releases_ifurlup_a A "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}, {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
+        - lua: &eu_releases_ifurlup_aaaa AAAA "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}, {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf

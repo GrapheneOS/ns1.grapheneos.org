@@ -297,6 +297,8 @@ domains:
         - sshfp: *null_sshfp
         - txt: "yandex-verification: 10fdf27f68b946c5"
         - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
+      _atproto.grapheneos.org:
+        - txt: "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
       _443._tcp.grapheneos.org: &grapheneos_tlsa
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _443._tcp.mta-sts.grapheneos.org: *grapheneos_tlsa

@@ -443,10 +443,23 @@ domains:
         - caa: *matrix_caa_staging
         - caa: 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
-        - mx: *null_mx
+        - mx: *grapheneos_mx
         - sshfp: 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
-        - txt: *null_spf
+        - txt: *grapheneos_spf
       _443._tcp.matrix.grapheneos.org: *matrix_tlsa
+      _mta-sts.matrix.grapheneos.org: *_mta-sts
+      _smtp._tls.matrix.grapheneos.org:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@matrix.grapheneos.org"
+      default._bimi.matrix.grapheneos.org: *grapheneos_bimi
+      default._domainkey.matrix.grapheneos.org: *grapheneos_dkim
+
+      mta-sts.matrix.grapheneos.org:
+        - a: *matrix_a
+        - aaaa: *matrix_aaaa
+        - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
       discuss.grapheneos.org:
         - a: &discuss_a 51.161.11.34

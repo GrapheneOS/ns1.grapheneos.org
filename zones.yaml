@@ -410,6 +410,8 @@ domains:
 
       supl.grapheneos.org: *org_network_subdomain
       _443._tcp.supl.grapheneos.org: *network_tlsa
+      _7275._tcp.supl.grapheneos.org:
+        - tlsa: 3 1 1 71615ea3c0c223a68cb3d1f1d2957d58b2aa0740db5684ff31a54381631711e7
       na.geo.supl.grapheneos.org: *network_subdomain_north_america
       eu.geo.supl.grapheneos.org: *network_subdomain_europe
       as-east.geo.supl.grapheneos.org: *network_subdomain_singapore

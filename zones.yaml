@@ -622,21 +622,11 @@ domains:
             content: ns1.grapheneos.org hostmaster.grapheneos.org {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
       "*.dnscheck.grapheneos.org":
-        - a:
-            content: *ns1_a
-            ttl: 0
-        - aaaa:
-            content: *ns1_aaaa
-            ttl: 0
-        - mx:
-            content: *null_mx
-            ttl: 0
-        - sshfp:
-            content: *null_sshfp
-            ttl: 0
-        - txt:
-            content: *null_spf
-            ttl: 0
+        - a: *ns1_a
+        - aaaa: *ns1_aaaa
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
   - domain: seamlessupdate.app
     ttl: *default_ttl

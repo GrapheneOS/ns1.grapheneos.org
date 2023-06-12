@@ -1213,14 +1213,14 @@ domains:
 
 mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:
-  # Afghanistan
-  as-af: as-south
   # Africa
   af: eu
   # Asia
   as: as-east
   # United Arab Emirates
   as-ae: eu
+  # Afghanistan
+  as-af: as-south
   # Armenia
   as-am: eu
   # Azerbaijan
@@ -1235,10 +1235,10 @@ custom_mapping:
   as-eg: eu
   # Georgia
   as-ge: eu
-  # India
-  as-in: as-south
   # Israel
   as-il: eu
+  # India
+  as-in: as-south
   # Iraq
   as-iq: eu
   # Iran
@@ -1255,10 +1255,10 @@ custom_mapping:
   as-lb: eu
   # Sri Lanka
   as-lk: as-south
-  # Nepal
-  as-np: as-south
   # Maldives
   as-mv: as-south
+  # Nepal
+  as-np: as-south
   # Oman
   as-om: eu
   # Pakistan

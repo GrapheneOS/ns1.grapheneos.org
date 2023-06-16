@@ -29,7 +29,7 @@ servers=(
 
 declare -A addresses=(
     [ns1.grapheneos.org]="51.222.14.6 2607:5300:205:200::29e8"
-    [ns2.grapheneos.org]="141.94.71.48 2001:41d0:304:200::528"
+    [ns2.grapheneos.org]="198.98.53.141 2605:6400:10:102e:95bc:89ef:2e7f:49bb"
 )
 
 # use YYYYMMDDSS SOA serial format

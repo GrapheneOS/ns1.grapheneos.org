@@ -9,10 +9,10 @@ domains:
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
         - txt: &null_spf "v=spf1 -all"
-      # Gravelines
+      # New York
       ns2.attestation.app: &ns2
-        - a: &ns2_a 141.94.71.48
-        - aaaa: &ns2_aaaa 2001:41d0:304:200::528
+        - a: &ns2_a 198.98.53.141
+        - aaaa: &ns2_aaaa 2605:6400:10:102e:95bc:89ef:2e7f:49bb
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -242,7 +242,7 @@ domains:
         - a: *ns2_a
         - aaaa: *ns2_aaaa
         - mx: *null_mx
-        - sshfp: 4 2 437bb62fc1a1b6e74941592cac896203353fef1e1538104caa22672a8bf889c3
+        - sshfp: 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
         - txt: *null_spf
 
       staging.ns1.grapheneos.org:

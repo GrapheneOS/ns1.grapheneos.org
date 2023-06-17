@@ -3,7 +3,9 @@
 set -o errexit -o nounset -o pipefail
 
 servers=(
-    ns2.grapheneos.org
+    0.ns2.grapheneos.org
+    1.ns2.grapheneos.org
+    2.ns2.grapheneos.org
 )
 
 rsync -rcv root@ns1.grapheneos.org:/etc/powerdns/keys/ keys

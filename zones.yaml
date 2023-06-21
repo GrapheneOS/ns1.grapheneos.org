@@ -60,7 +60,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
       default._domainkey.attestation.app: &grapheneos_dkim
         - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
-      mta-sts.attestation.app:
+      mta-sts.attestation.app: &mta_sts_subdomain
         - a: &mail_a 192.99.98.22
         - aaaa: &mail_aaaa 2607:5300:205:200::94f
         - caa: &mail_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
@@ -500,19 +500,13 @@ domains:
         - txt: *grapheneos_spf
       _443._tcp.discuss.grapheneos.org:
         - tlsa: 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81
+      _443._tcp.mta-sts.discuss.grapheneos.org: *mta_sts_tlsa
       _mta-sts.discuss.grapheneos.org: *_mta-sts
       _smtp._tls.discuss.grapheneos.org:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@discuss.grapheneos.org"
       default._bimi.discuss.grapheneos.org: *grapheneos_bimi
       default._domainkey.discuss.grapheneos.org: *grapheneos_dkim
-
-      mta-sts.discuss.grapheneos.org:
-        - a: *discuss_a
-        - aaaa: *discuss_aaaa
-        - https: *https
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
+      mta-sts.discuss.grapheneos.org: *mta_sts_subdomain
 
       mail.grapheneos.org:
         - a: *mail_a

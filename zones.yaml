@@ -47,7 +47,8 @@ domains:
         - txt: facebook-domain-verification=flutp8v6yshxc45wrvr6iozw08ek1j
       _443._tcp.attestation.app: &attestation_tlsa
         - tlsa: 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
-      _443._tcp.mta-sts.attestation.app: *attestation_tlsa
+      _443._tcp.mta-sts.attestation.app: &mta_sts_tlsa
+        - tlsa: 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
       _443._tcp.staging.attestation.app:
         - tlsa: 3 1 1 eb080e3b28e6a4493229f354ebc4d43a297547e5a106223543a02d2f15e01d26
       _443._tcp.www.attestation.app: *attestation_tlsa
@@ -59,9 +60,12 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
       default._domainkey.attestation.app: &grapheneos_dkim
         - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
-      mta-sts.attestation.app: &attestation_subdomain
-        - a: *attestation_a
-        - aaaa: *attestation_aaaa
+      mta-sts.attestation.app:
+        - a: &mail_a 192.99.98.22
+        - aaaa: &mail_aaaa 2607:5300:205:200::94f
+        - caa: &mail_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
+        - caa: &mail_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+        - caa: &mail_caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp
@@ -76,7 +80,13 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
         - txt: *null_spf
-      www.attestation.app: *attestation_subdomain
+      www.attestation.app:
+        - a: *attestation_a
+        - aaaa: *attestation_aaaa
+        - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
   - domain: grapheneos.network
     ttl: *default_ttl
@@ -505,18 +515,17 @@ domains:
         - txt: *null_spf
 
       mail.grapheneos.org:
-        - a: &mail_a 192.99.98.22
-        - aaaa: &mail_aaaa 2607:5300:205:200::94f
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - a: *mail_a
+        - aaaa: *mail_aaaa
+        - caa: *mail_caa
+        - caa: *mail_caa_staging
+        - caa: *mail_caa_iodef
         - mx: *grapheneos_mx
         - sshfp: 4 2 d1b93a338e6f278148354f32e89839664593b3a8db5bfb5537009e147506545b
         - txt: *grapheneos_spf
       _25._tcp.mail.grapheneos.org: &mail_tlsa
         - tlsa: 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
-      _443._tcp.mail.grapheneos.org: &mta_sts_tlsa
-        - tlsa: 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
+      _443._tcp.mail.grapheneos.org: *mta_sts_tlsa
       _443._tcp.mta-sts.mail.grapheneos.org: *mta_sts_tlsa
       _465._tcp.mail.grapheneos.org: *mail_tlsa
       _993._tcp.mail.grapheneos.org: *mail_tlsa

@@ -322,7 +322,6 @@ domains:
       _443._tcp.grapheneos.org: &grapheneos_tlsa
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
       _443._tcp.mta-sts.grapheneos.org: *grapheneos_tlsa
-      _443._tcp.mta-sts.mail.grapheneos.org: *grapheneos_tlsa
       _443._tcp.www.grapheneos.org: *grapheneos_tlsa
       _dmarc.grapheneos.org:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
@@ -332,11 +331,6 @@ domains:
       default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.org: *grapheneos_dkim
       mta-sts.grapheneos.org: &grapheneos_subdomain
-        - https: *https
-      mta-sts.mail.grapheneos.org:
-        - caa: *grapheneos_caa
-        - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
       www.grapheneos.org: *grapheneos_subdomain
 
@@ -511,8 +505,8 @@ domains:
         - txt: *null_spf
 
       mail.grapheneos.org:
-        - a: 192.99.98.22
-        - aaaa: 2607:5300:205:200::94f
+        - a: &mail_a 192.99.98.22
+        - aaaa: &mail_aaaa 2607:5300:205:200::94f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
         - caa: 0 iodef "mailto:caa@grapheneos.org"
@@ -521,10 +515,20 @@ domains:
         - txt: *grapheneos_spf
       _25._tcp.mail.grapheneos.org: &mail_tlsa
         - tlsa: 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
+      _443._tcp.mail.grapheneos.org: &mta_sts_tlsa
+        - tlsa: 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
+      _443._tcp.mta-sts.mail.grapheneos.org: *mta_sts_tlsa
       _465._tcp.mail.grapheneos.org: *mail_tlsa
       _993._tcp.mail.grapheneos.org: *mail_tlsa
       default._bimi.mail.grapheneos.org: *grapheneos_bimi
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
+      mta-sts.mail.grapheneos.org:
+        - a: *mail_a
+        - aaaa: *mail_aaaa
+        - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
       # Beauharnois
       0.releases.grapheneos.org:
@@ -617,7 +621,6 @@ domains:
       grapheneos.org: "%mp.geo.grapheneos.org"
       www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       mta-sts.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
-      mta-sts.mail.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       time.grapheneos.org: "%mp.geo.time.grapheneos.org"

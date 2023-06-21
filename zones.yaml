@@ -812,7 +812,7 @@ domains:
         - txt: facebook-domain-verification=nn8qfg6l9xhnqkkizdgn97taizy6hj
       _443._tcp.grapheneos.social: &social_tlsa
         - tlsa: 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546c81c87c8
-      _443._tcp.mta-sts.grapheneos.social: *social_tlsa
+      _443._tcp.mta-sts.grapheneos.social: *mta_sts_tlsa
       _443._tcp.www.grapheneos.social: *social_tlsa
       _dmarc.grapheneos.social:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.social; ruf=mailto:dmarc@grapheneos.social"
@@ -821,14 +821,14 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.social"
       default._bimi.grapheneos.social: *grapheneos_bimi
       default._domainkey.grapheneos.social: *grapheneos_dkim
-      mta-sts.grapheneos.social: &social_subdomain
+      mta-sts.grapheneos.social: *mta_sts_subdomain
+      www.grapheneos.social:
         - a: *social_a
         - aaaa: *social_aaaa
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      www.grapheneos.social: *social_subdomain
 
   # reserved grapheneos.tld domains
 

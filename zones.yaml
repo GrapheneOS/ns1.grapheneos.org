@@ -44,7 +44,7 @@ domains:
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: google-site-verification=N_aN03-oRkhotXYqvQqFinrMMK2W2aq73NK-Ce1kTYY
         - txt: "yandex-verification: aafc5b649d6fa07d"
-        - txt: "facebook-domain-verification=flutp8v6yshxc45wrvr6iozw08ek1j"
+        - txt: facebook-domain-verification=flutp8v6yshxc45wrvr6iozw08ek1j
       _443._tcp.attestation.app: &attestation_tlsa
         - tlsa: 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
       _443._tcp.mta-sts.attestation.app: *attestation_tlsa
@@ -123,7 +123,7 @@ domains:
         - sshfp: *null_sshfp
         - txt: google-site-verification=vrIeCpGv-UOSpkXfnoTy-zixDMTrIrJq1KRU77ctlaQ
         - txt: "yandex-verification: b3fce6bedf3d57f9"
-        - txt: "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
+        - txt: facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq
       _443._tcp.grapheneos.network: &network_tlsa
         - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
       _443._tcp.connectivitycheck.grapheneos.network: *network_tlsa
@@ -203,7 +203,7 @@ domains:
         - sshfp: *null_sshfp
         - txt: google-site-verification=rkGfZrJ1QmHSOhN0F-mu6Av1SQzxtzM1ONk76QBQ0Xo
         - txt: "yandex-verification: f5675cd6f4757892"
-        - txt: "facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303"
+        - txt: facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303
       _443._tcp.grapheneos.online: *network_tlsa
       _443._tcp.connectivitycheck.grapheneos.online: *network_tlsa
       _443._tcp.mta-sts.grapheneos.online: *network_tlsa
@@ -316,7 +316,7 @@ domains:
         - sshfp: *null_sshfp
         - txt: google-site-verification=QCDUfSSfeAUufP-H3m4f5uvhknjIZVBVVmMSDaFRdz0
         - txt: "yandex-verification: 10fdf27f68b946c5"
-        - txt: "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
+        - txt: facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2
       _atproto.grapheneos.org:
         - txt: "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
       _443._tcp.grapheneos.org: &grapheneos_tlsa
@@ -672,7 +672,7 @@ domains:
         - sshfp: *null_sshfp
         - txt: google-site-verification=aYDRbuNH4up3btfMlzLQvaHtNjCPtBwyJiMvKDr1-5M
         - txt: "yandex-verification: cba8ef4619bc43f5"
-        - txt: "facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y"
+        - txt: facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y
       _443._tcp.seamlessupdate.app: *releases_tlsa
       _443._tcp.mta-sts.seamlessupdate.app: *releases_tlsa
       _443._tcp.www.seamlessupdate.app: *releases_tlsa
@@ -731,7 +731,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=zh9p055UIIdC1M-I6zo36hEpnuiHntOHbMC2hDGXdtA
         - txt: "yandex-verification: 369dbb9acc84cb72"
-        - txt: "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"
+        - txt: facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6
       _443._tcp.vanadium.app: *grapheneos_tlsa
       _443._tcp.mta-sts.vanadium.app: *grapheneos_tlsa
       _443._tcp.www.vanadium.app: *grapheneos_tlsa
@@ -803,7 +803,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=1udi6RI56KjPtFGO38lCQImhEmY6XFxX1hVsdEK4_gw
         - txt: "yandex-verification: ec33ee307706436f"
-        - txt: "facebook-domain-verification=nn8qfg6l9xhnqkkizdgn97taizy6hj"
+        - txt: facebook-domain-verification=nn8qfg6l9xhnqkkizdgn97taizy6hj
       _443._tcp.grapheneos.social: &social_tlsa
         - tlsa: 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546c81c87c8
       _443._tcp.mta-sts.grapheneos.social: *social_tlsa
@@ -851,7 +851,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=9SR3Ol5Vtsn-T1o-SNKjdwBME_ljhDGVmA1q429Tddg
         - txt: "yandex-verification: 7aae471af36dc967"
-        - txt: "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"
+        - txt: facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a
       _443._tcp.grapheneos.app: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.app: *grapheneos_tlsa
       _443._tcp.www.grapheneos.app: *grapheneos_tlsa
@@ -903,7 +903,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=FvV0zEISHbEiaDmI2yDdc7Di7AL98pcxCdbA0PKzMeQ
         - txt: "yandex-verification: b0eb1a78fb9fb370"
-        - txt: "facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45"
+        - txt: facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45
       _443._tcp.grapheneos.ca: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.ca: *grapheneos_tlsa
       _443._tcp.www.grapheneos.ca: *grapheneos_tlsa
@@ -955,7 +955,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=HePxCrEUI7PIm4wVYWCsG1CX_uFx46ShxuPH7I5gEpE
         - txt: "yandex-verification: 8e2110b9a3772add"
-        - txt: "facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts"
+        - txt: facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts
       _443._tcp.grapheneos.com: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.com: *grapheneos_tlsa
       _443._tcp.www.grapheneos.com: *grapheneos_tlsa
@@ -1007,7 +1007,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=z2MRkqRYs_kE202cwFzY1-XSKbJPBJL-cNcmJ_nzdFI
         - txt: "yandex-verification: 02f9a01e328f0577"
-        - txt: "facebook-domain-verification=5rd8ccu3kjbppinfyxel6ei05sh8pq"
+        - txt: facebook-domain-verification=5rd8ccu3kjbppinfyxel6ei05sh8pq
       _443._tcp.grapheneos.dev: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.dev: *grapheneos_tlsa
       _443._tcp.www.grapheneos.dev: *grapheneos_tlsa
@@ -1059,7 +1059,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=sefSTaqKQvnzlSUl1sCs7xanegYWRHhoGEQ2AZgRffM
         - txt: "yandex-verification: d21cd9edcd378afd"
-        - txt: "facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35"
+        - txt: facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35
       _443._tcp.grapheneos.info: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.info: *grapheneos_tlsa
       _443._tcp.www.grapheneos.info: *grapheneos_tlsa
@@ -1111,7 +1111,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=GEHELAWc-iwNO2T9tr9ZOBHqIJxuvX9rYPtXUooJBYs
         - txt: "yandex-verification: 814effb141ae35dc"
-        - txt: "facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh"
+        - txt: facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh
       _443._tcp.grapheneos.net: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.net: *grapheneos_tlsa
       _443._tcp.www.grapheneos.net: *grapheneos_tlsa
@@ -1163,7 +1163,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=YYDICF0A2YoKcDYVvlPSTj0bEiR8DYXmw6uRwQ6fP-c
         - txt: "yandex-verification: 2c5aa8a634826b6c"
-        - txt: "facebook-domain-verification=1qtzmy9esw4w7k6k69zmpl9teqbdcu"
+        - txt: facebook-domain-verification=1qtzmy9esw4w7k6k69zmpl9teqbdcu
       _443._tcp.grapheneos.ovh: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.ovh: *grapheneos_tlsa
       _443._tcp.www.grapheneos.ovh: *grapheneos_tlsa
@@ -1215,7 +1215,7 @@ domains:
         - txt: *grapheneos_spf
         - txt: google-site-verification=iYaUQ7R43lI0InLmQDyUUeaiUVqoM5YwMJv1aCtNIp0
         - txt: "yandex-verification: ec2761b2472a4ab4"
-        - txt: "facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg"
+        - txt: facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg
       _443._tcp.grapheneos.page: *grapheneos_tlsa
       _443._tcp.mta-sts.grapheneos.page: *grapheneos_tlsa
       _443._tcp.www.grapheneos.page: *grapheneos_tlsa

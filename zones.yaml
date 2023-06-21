@@ -137,7 +137,7 @@ domains:
       _443._tcp.grapheneos.network: &network_tlsa
         - tlsa: 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
       _443._tcp.connectivitycheck.grapheneos.network: *network_tlsa
-      _443._tcp.mta-sts.grapheneos.network: *network_tlsa
+      _443._tcp.mta-sts.grapheneos.network: *mta_sts_tlsa
       _443._tcp.www.grapheneos.network: *network_tlsa
       _dmarc.grapheneos.network:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
@@ -148,7 +148,7 @@ domains:
         - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
       default._domainkey.grapheneos.network: *grapheneos_dkim
       connectivitycheck.grapheneos.network: []
-      mta-sts.grapheneos.network: []
+      mta-sts.grapheneos.network: *mta_sts_subdomain
       www.grapheneos.network: []
 
       na.geo.grapheneos.network: &network_north_america
@@ -187,7 +187,6 @@ domains:
     services:
       grapheneos.network: "%mp.geo.grapheneos.network"
       connectivitycheck.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
-      mta-sts.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
       www.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
 
   - domain: grapheneos.online
@@ -216,7 +215,7 @@ domains:
         - txt: facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303
       _443._tcp.grapheneos.online: *network_tlsa
       _443._tcp.connectivitycheck.grapheneos.online: *network_tlsa
-      _443._tcp.mta-sts.grapheneos.online: *network_tlsa
+      _443._tcp.mta-sts.grapheneos.online: *mta_sts_tlsa
       _443._tcp.www.grapheneos.online: *network_tlsa
       _dmarc.grapheneos.online:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.online; ruf=mailto:dmarc@grapheneos.online"
@@ -226,7 +225,7 @@ domains:
       default._bimi.grapheneos.online: *grapheneos_bimi
       default._domainkey.grapheneos.online: *grapheneos_dkim
       connectivitycheck.grapheneos.online: []
-      mta-sts.grapheneos.online: []
+      mta-sts.grapheneos.online: *mta_sts_subdomain
       www.grapheneos.online: []
 
       na.geo.grapheneos.online: *network_north_america
@@ -241,7 +240,6 @@ domains:
     services:
       grapheneos.online: "%mp.geo.grapheneos.online"
       connectivitycheck.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
-      mta-sts.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
       www.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
 
   - domain: grapheneos.org

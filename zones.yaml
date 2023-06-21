@@ -329,7 +329,7 @@ domains:
         - txt: "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
       _443._tcp.grapheneos.org: &grapheneos_tlsa
         - tlsa: 3 1 1 162362745255ede81d6bcbb25ba8bdcc6254cc17f39db3ad6f35d9c5ac8c19ef
-      _443._tcp.mta-sts.grapheneos.org: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.org: *mta_sts_tlsa
       _443._tcp.www.grapheneos.org: *grapheneos_tlsa
       _dmarc.grapheneos.org:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
@@ -338,9 +338,9 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
       default._bimi.grapheneos.org: *grapheneos_bimi
       default._domainkey.grapheneos.org: *grapheneos_dkim
-      mta-sts.grapheneos.org: &grapheneos_subdomain
+      mta-sts.grapheneos.org: *mta_sts_subdomain
+      www.grapheneos.org: &grapheneos_subdomain
         - https: *https
-      www.grapheneos.org: *grapheneos_subdomain
 
       dnscheck.grapheneos.org:
         - ns:
@@ -615,7 +615,6 @@ domains:
     services:
       grapheneos.org: "%mp.geo.grapheneos.org"
       www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
-      mta-sts.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       time.grapheneos.org: "%mp.geo.time.grapheneos.org"
@@ -730,7 +729,7 @@ domains:
         - txt: "yandex-verification: 369dbb9acc84cb72"
         - txt: facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6
       _443._tcp.vanadium.app: *grapheneos_tlsa
-      _443._tcp.mta-sts.vanadium.app: *grapheneos_tlsa
+      _443._tcp.mta-sts.vanadium.app: *mta_sts_tlsa
       _443._tcp.www.vanadium.app: *grapheneos_tlsa
       _dmarc.vanadium.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
@@ -739,7 +738,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@vanadium.app"
       default._bimi.vanadium.app: *grapheneos_bimi
       default._domainkey.vanadium.app: *grapheneos_dkim
-      mta-sts.vanadium.app: *grapheneos_subdomain
+      mta-sts.vanadium.app: *mta_sts_subdomain
       www.vanadium.app: *grapheneos_subdomain
 
       na.geo.vanadium.app: *grapheneos_north_america
@@ -769,7 +768,6 @@ domains:
     services:
       vanadium.app: "%mp.geo.vanadium.app"
       www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
-      mta-sts.vanadium.app: "%mp.geo.subdomain.vanadium.app"
       update.vanadium.app: "%mp.geo.update.vanadium.app"
       dl.vanadium.app: "%mp.geo.dl.vanadium.app"
 
@@ -850,7 +848,7 @@ domains:
         - txt: "yandex-verification: 7aae471af36dc967"
         - txt: facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a
       _443._tcp.grapheneos.app: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.app: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.app: *mta_sts_tlsa
       _443._tcp.www.grapheneos.app: *grapheneos_tlsa
       _dmarc.grapheneos.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.app; ruf=mailto:dmarc@grapheneos.app"
@@ -859,7 +857,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
       default._bimi.grapheneos.app: *grapheneos_bimi
       default._domainkey.grapheneos.app: *grapheneos_dkim
-      mta-sts.grapheneos.app: *grapheneos_subdomain
+      mta-sts.grapheneos.app: *mta_sts_subdomain
       www.grapheneos.app: *grapheneos_subdomain
 
       na.geo.grapheneos.app: *grapheneos_north_america
@@ -873,7 +871,6 @@ domains:
     services:
       grapheneos.app: "%mp.geo.grapheneos.app"
       www.grapheneos.app: "%mp.geo.subdomain.grapheneos.app"
-      mta-sts.grapheneos.app: "%mp.geo.subdomain.grapheneos.app"
 
   - domain: grapheneos.ca
     ttl: *default_ttl
@@ -902,7 +899,7 @@ domains:
         - txt: "yandex-verification: b0eb1a78fb9fb370"
         - txt: facebook-domain-verification=5p9lqhra1f09c7ibccdw4cfsk8lg45
       _443._tcp.grapheneos.ca: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.ca: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.ca: *mta_sts_tlsa
       _443._tcp.www.grapheneos.ca: *grapheneos_tlsa
       _dmarc.grapheneos.ca:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ca; ruf=mailto:dmarc@grapheneos.ca"
@@ -911,7 +908,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ca"
       default._bimi.grapheneos.ca: *grapheneos_bimi
       default._domainkey.grapheneos.ca: *grapheneos_dkim
-      mta-sts.grapheneos.ca: *grapheneos_subdomain
+      mta-sts.grapheneos.ca: *mta_sts_subdomain
       www.grapheneos.ca: *grapheneos_subdomain
 
       na.geo.grapheneos.ca: *grapheneos_north_america
@@ -925,7 +922,6 @@ domains:
     services:
       grapheneos.ca: "%mp.geo.grapheneos.ca"
       www.grapheneos.ca: "%mp.geo.subdomain.grapheneos.ca"
-      mta-sts.grapheneos.ca: "%mp.geo.subdomain.grapheneos.ca"
 
   - domain: grapheneos.com
     ttl: *default_ttl
@@ -954,7 +950,7 @@ domains:
         - txt: "yandex-verification: 8e2110b9a3772add"
         - txt: facebook-domain-verification=m2213h2679440pjs5xjzrvx3t7euts
       _443._tcp.grapheneos.com: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.com: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.com: *mta_sts_tlsa
       _443._tcp.www.grapheneos.com: *grapheneos_tlsa
       _dmarc.grapheneos.com:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.com; ruf=mailto:dmarc@grapheneos.com"
@@ -963,7 +959,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.com"
       default._bimi.grapheneos.com: *grapheneos_bimi
       default._domainkey.grapheneos.com: *grapheneos_dkim
-      mta-sts.grapheneos.com: *grapheneos_subdomain
+      mta-sts.grapheneos.com: *mta_sts_subdomain
       www.grapheneos.com: *grapheneos_subdomain
 
       na.geo.grapheneos.com: *grapheneos_north_america
@@ -977,7 +973,6 @@ domains:
     services:
       grapheneos.com: "%mp.geo.grapheneos.com"
       www.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
-      mta-sts.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
 
   - domain: grapheneos.dev
     ttl: *default_ttl
@@ -1006,7 +1001,7 @@ domains:
         - txt: "yandex-verification: 02f9a01e328f0577"
         - txt: facebook-domain-verification=5rd8ccu3kjbppinfyxel6ei05sh8pq
       _443._tcp.grapheneos.dev: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.dev: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.dev: *mta_sts_tlsa
       _443._tcp.www.grapheneos.dev: *grapheneos_tlsa
       _dmarc.grapheneos.dev:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.dev; ruf=mailto:dmarc@grapheneos.dev"
@@ -1015,7 +1010,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.dev"
       default._bimi.grapheneos.dev: *grapheneos_bimi
       default._domainkey.grapheneos.dev: *grapheneos_dkim
-      mta-sts.grapheneos.dev: *grapheneos_subdomain
+      mta-sts.grapheneos.dev: *mta_sts_subdomain
       www.grapheneos.dev: *grapheneos_subdomain
 
       na.geo.grapheneos.dev: *grapheneos_north_america
@@ -1029,7 +1024,6 @@ domains:
     services:
       grapheneos.dev: "%mp.geo.grapheneos.dev"
       www.grapheneos.dev: "%mp.geo.subdomain.grapheneos.dev"
-      mta-sts.grapheneos.dev: "%mp.geo.subdomain.grapheneos.dev"
 
   - domain: grapheneos.info
     ttl: *default_ttl
@@ -1058,7 +1052,7 @@ domains:
         - txt: "yandex-verification: d21cd9edcd378afd"
         - txt: facebook-domain-verification=b8i11pdgcgwhidzsw7cy9idx7gpi35
       _443._tcp.grapheneos.info: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.info: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.info: *mta_sts_tlsa
       _443._tcp.www.grapheneos.info: *grapheneos_tlsa
       _dmarc.grapheneos.info:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.info; ruf=mailto:dmarc@grapheneos.info"
@@ -1067,7 +1061,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.info"
       default._bimi.grapheneos.info: *grapheneos_bimi
       default._domainkey.grapheneos.info: *grapheneos_dkim
-      mta-sts.grapheneos.info: *grapheneos_subdomain
+      mta-sts.grapheneos.info: *mta_sts_subdomain
       www.grapheneos.info: *grapheneos_subdomain
 
       na.geo.grapheneos.info: *grapheneos_north_america
@@ -1081,7 +1075,6 @@ domains:
     services:
       grapheneos.info: "%mp.geo.grapheneos.info"
       www.grapheneos.info: "%mp.geo.subdomain.grapheneos.info"
-      mta-sts.grapheneos.info: "%mp.geo.subdomain.grapheneos.info"
 
   - domain: grapheneos.net
     ttl: *default_ttl
@@ -1110,7 +1103,7 @@ domains:
         - txt: "yandex-verification: 814effb141ae35dc"
         - txt: facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh
       _443._tcp.grapheneos.net: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.net: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.net: *mta_sts_tlsa
       _443._tcp.www.grapheneos.net: *grapheneos_tlsa
       _dmarc.grapheneos.net:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
@@ -1119,7 +1112,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
       default._bimi.grapheneos.net: *grapheneos_bimi
       default._domainkey.grapheneos.net: *grapheneos_dkim
-      mta-sts.grapheneos.net: *grapheneos_subdomain
+      mta-sts.grapheneos.net: *mta_sts_subdomain
       www.grapheneos.net: *grapheneos_subdomain
 
       na.geo.grapheneos.net: *grapheneos_north_america
@@ -1133,7 +1126,6 @@ domains:
     services:
       grapheneos.net: "%mp.geo.grapheneos.net"
       www.grapheneos.net: "%mp.geo.subdomain.grapheneos.net"
-      mta-sts.grapheneos.net: "%mp.geo.subdomain.grapheneos.net"
 
   - domain: grapheneos.ovh
     ttl: *default_ttl
@@ -1162,7 +1154,7 @@ domains:
         - txt: "yandex-verification: 2c5aa8a634826b6c"
         - txt: facebook-domain-verification=1qtzmy9esw4w7k6k69zmpl9teqbdcu
       _443._tcp.grapheneos.ovh: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.ovh: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.ovh: *mta_sts_tlsa
       _443._tcp.www.grapheneos.ovh: *grapheneos_tlsa
       _dmarc.grapheneos.ovh:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ovh; ruf=mailto:dmarc@grapheneos.ovh"
@@ -1171,7 +1163,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ovh"
       default._bimi.grapheneos.ovh: *grapheneos_bimi
       default._domainkey.grapheneos.ovh: *grapheneos_dkim
-      mta-sts.grapheneos.ovh: *grapheneos_subdomain
+      mta-sts.grapheneos.ovh: *mta_sts_subdomain
       www.grapheneos.ovh: *grapheneos_subdomain
 
       na.geo.grapheneos.ovh: *grapheneos_north_america
@@ -1185,7 +1177,6 @@ domains:
     services:
       grapheneos.ovh: "%mp.geo.grapheneos.ovh"
       www.grapheneos.ovh: "%mp.geo.subdomain.grapheneos.ovh"
-      mta-sts.grapheneos.ovh: "%mp.geo.subdomain.grapheneos.ovh"
 
   - domain: grapheneos.page
     ttl: *default_ttl
@@ -1214,7 +1205,7 @@ domains:
         - txt: "yandex-verification: ec2761b2472a4ab4"
         - txt: facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg
       _443._tcp.grapheneos.page: *grapheneos_tlsa
-      _443._tcp.mta-sts.grapheneos.page: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.page: *mta_sts_tlsa
       _443._tcp.www.grapheneos.page: *grapheneos_tlsa
       _dmarc.grapheneos.page:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
@@ -1223,7 +1214,7 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"
       default._bimi.grapheneos.page: *grapheneos_bimi
       default._domainkey.grapheneos.page: *grapheneos_dkim
-      mta-sts.grapheneos.page: *grapheneos_subdomain
+      mta-sts.grapheneos.page: *mta_sts_subdomain
       www.grapheneos.page: *grapheneos_subdomain
 
       na.geo.grapheneos.page: *grapheneos_north_america
@@ -1237,7 +1228,6 @@ domains:
     services:
       grapheneos.page: "%mp.geo.grapheneos.page"
       www.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
-      mta-sts.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
 
 mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
 custom_mapping:

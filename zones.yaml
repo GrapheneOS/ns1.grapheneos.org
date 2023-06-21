@@ -674,7 +674,7 @@ domains:
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y
       _443._tcp.seamlessupdate.app: *releases_tlsa
-      _443._tcp.mta-sts.seamlessupdate.app: *releases_tlsa
+      _443._tcp.mta-sts.seamlessupdate.app: *mta_sts_tlsa
       _443._tcp.www.seamlessupdate.app: *releases_tlsa
       _dmarc.seamlessupdate.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
@@ -682,9 +682,9 @@ domains:
       _smtp._tls.seamlessupdate.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
       default._domainkey.seamlessupdate.app: *grapheneos_dkim
-      mta-sts.seamlessupdate.app: &seamlessupdate_subdomain
+      mta-sts.seamlessupdate.app: *mta_sts_subdomain
+      www.seamlessupdate.app:
         - https: *https
-      www.seamlessupdate.app: *seamlessupdate_subdomain
 
       na.geo.seamlessupdate.app: &seamlessupdate_north_america
         - lua: *na_releases_ifurlup_a
@@ -704,7 +704,6 @@ domains:
     services:
       seamlessupdate.app: "%mp.geo.seamlessupdate.app"
       www.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
-      mta-sts.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
 
   - domain: vanadium.app
     ttl: *default_ttl

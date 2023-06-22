@@ -3,4 +3,5 @@
 /lock
 /pdns.conf.tmp
 /serial.txt
+/serial-staging.txt
 /zones.yaml.tmp

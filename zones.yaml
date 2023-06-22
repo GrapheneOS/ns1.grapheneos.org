@@ -272,13 +272,6 @@ domains:
         - sshfp: 4 2 1bc33eb5d8949b53a2a2cab1163e1ba2543506ae579c4a9e1a37b3e1a3234edd
         - txt: *null_spf
 
-      staging.ns1.grapheneos.org:
-        - a: 51.222.141.59
-        - aaaa: 2607:5300:205:200::3afd
-        - mx: *null_mx
-        - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
-        - txt: *null_spf
-
       geoip.grapheneos.org:
         - txt:
             content: "ip: %ip, country: %cc, continent: %cn, region: %re"
@@ -396,6 +389,13 @@ domains:
         - txt: *null_spf
       _443._tcp.staging.grapheneos.org:
         - tlsa: 3 1 1 8ee2957d1c024669dbed9b38a0d6e6e5612da57e304c70707e33fb398249e811
+
+      ns1.staging.grapheneos.org:
+        - a: 51.222.141.59
+        - aaaa: 2607:5300:205:200::3afd
+        - mx: *null_mx
+        - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
+        - txt: *null_spf
 
       time.grapheneos.org: &org_network_subdomain
         - caa: *network_caa

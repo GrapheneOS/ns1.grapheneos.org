@@ -80,6 +80,13 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
         - txt: *null_spf
+      ns1.staging.attestation.app: &ns_staging
+        - a: &ns_staging_a 51.222.141.59
+        - aaaa: &ns_staging_aaaa 2607:5300:205:200::3afd
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      ns2.staging.attestation.app: *ns_staging
       www.attestation.app:
         - a: *attestation_a
         - aaaa: *attestation_aaaa
@@ -391,11 +398,12 @@ domains:
         - tlsa: 3 1 1 8ee2957d1c024669dbed9b38a0d6e6e5612da57e304c70707e33fb398249e811
 
       ns1.staging.grapheneos.org:
-        - a: 51.222.141.59
-        - aaaa: 2607:5300:205:200::3afd
+        - a: *ns_staging_a
+        - aaaa: *ns_staging_aaaa
         - mx: *null_mx
         - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
         - txt: *null_spf
+      ns2.staging.grapheneos.org: *ns_staging
 
       time.grapheneos.org: &org_network_subdomain
         - caa: *network_caa

@@ -81,8 +81,8 @@ domains:
         - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
         - txt: *null_spf
       ns1.staging.attestation.app: &ns_staging
-        - a: &ns_staging_a 51.222.141.59
-        - aaaa: &ns_staging_aaaa 2607:5300:205:200::3afd
+        - a: &ns_staging_a 198.98.56.238
+        - aaaa: &ns_staging_aaaa 2605:6400:10:c41:de92:c534:326a:711a
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -401,7 +401,7 @@ domains:
         - a: *ns_staging_a
         - aaaa: *ns_staging_aaaa
         - mx: *null_mx
-        - sshfp: 4 2 f8cd6e7ddab75203c4a175e4577166877c881a89f2101c2ad087c144a33ad45b
+        - sshfp: 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81
         - txt: *null_spf
       ns2.staging.grapheneos.org: *ns_staging
 

@@ -24,7 +24,7 @@ domains:
         - aaaa: &attestation_aaaa 2607:5300:205:200::86a
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
-        - caa: 0 iodef "mailto:caa@attestation.app"
+        - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - https: &https
             content: 1 . alpn=h2
             ttl: &stable_ttl 86400
@@ -75,7 +75,7 @@ domains:
         - aaaa: 2607:5300:205:200::1585
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065354"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255334"
-        - caa: 0 iodef "mailto:caa@attestation.app"
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
@@ -126,7 +126,7 @@ domains:
       grapheneos.network:
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
-        - caa: 0 iodef "mailto:caa@grapheneos.network"
+        - caa: *caa_iodef
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.network
@@ -205,7 +205,7 @@ domains:
       grapheneos.online:
         - caa: *network_caa
         - caa: *network_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.online"
+        - caa: *caa_iodef
         - mx: *grapheneos_mx
         - ns:
             content: ns1.grapheneos.online
@@ -309,7 +309,7 @@ domains:
       grapheneos.org:
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -389,7 +389,7 @@ domains:
         - aaaa: 2607:5300:205:200::a23
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065392"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255333"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: 4 2 53cad9a5b09cb717be8d1cbc1e68b02c75fa41fd996b583d6feed81282589c61
@@ -408,7 +408,7 @@ domains:
       time.grapheneos.org: &org_network_subdomain
         - caa: *network_caa
         - caa: *network_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
       _443._tcp.time.grapheneos.org: *network_tlsa
 
@@ -461,7 +461,7 @@ domains:
         - aaaa: &matrix_aaaa 2607:5300:205:200::26e1
         - caa: &matrix_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
         - caa: &matrix_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp
@@ -474,7 +474,7 @@ domains:
         - aaaa: *matrix_aaaa
         - caa: *matrix_caa
         - caa: *matrix_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - sshfp: 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
@@ -493,7 +493,7 @@ domains:
         - aaaa: &discuss_aaaa 2607:5300:205:200:0:0:0:3df
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
-        - caa: 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - sshfp: 4 2 b83b04142bb75babeee5998309fa63cae53dc3c7915f28f0c38cd34c2e16abb1
@@ -662,7 +662,7 @@ domains:
       seamlessupdate.app:
         - caa: *releases_caa
         - caa: *releases_caa_staging
-        - caa: 0 iodef "mailto:caa@seamlessupdate.app"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -719,7 +719,7 @@ domains:
       vanadium.app:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@vanadium.app"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -790,7 +790,7 @@ domains:
         - aaaa: &social_aaaa 2607:5300:205:200::2706
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
-        - caa: 0 iodef "mailto:caa@grapheneos.social"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -838,7 +838,7 @@ domains:
       grapheneos.app:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.app"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -889,7 +889,7 @@ domains:
       grapheneos.ca:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.ca"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -940,7 +940,7 @@ domains:
       grapheneos.com:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.com"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -991,7 +991,7 @@ domains:
       grapheneos.dev:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.dev"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -1042,7 +1042,7 @@ domains:
       grapheneos.info:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.info"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -1093,7 +1093,7 @@ domains:
       grapheneos.net:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.net"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -1144,7 +1144,7 @@ domains:
       grapheneos.ovh:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.ovh"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:
@@ -1195,7 +1195,7 @@ domains:
       grapheneos.page:
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
-        - caa: 0 iodef "mailto:caa@grapheneos.page"
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - ns:

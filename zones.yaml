@@ -569,7 +569,7 @@ domains:
         - sshfp: 4 2 8fac012d091c6f1a5be108ed09f8ee6e9c8c442f4da1b193bd36dd740a070caa
         - txt: *null_spf
 
-      releases.grapheneos.org:
+      releases.grapheneos.org: &releases
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: &releases_iodef 0 iodef "mailto:caa@grapheneos.org"
@@ -592,12 +592,7 @@ domains:
       as-east.geo.releases.grapheneos.org: *releases_north_america
       as-south.geo.releases.grapheneos.org: *releases_europe
 
-      apps.grapheneos.org:
-        - caa: *releases_caa
-        - caa: *releases_caa_staging
-        - caa: *releases_iodef
-        - https: *https
-        - sshfp: *null_sshfp
+      apps.grapheneos.org: *releases
       _443._tcp.apps.grapheneos.org: *releases_tlsa
     services:
       grapheneos.org: "%mp.geo.grapheneos.org"

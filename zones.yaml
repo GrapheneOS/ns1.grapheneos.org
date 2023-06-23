@@ -412,49 +412,28 @@ domains:
         - https: *https
       _443._tcp.time.grapheneos.org: *network_tlsa
 
-      na.geo.time.grapheneos.org: *network_subdomain_north_america
-      eu.geo.time.grapheneos.org: *network_subdomain_europe
-      as-east.geo.time.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.time.grapheneos.org: *network_subdomain_singapore
-
       remoteprovisioning.grapheneos.org: *org_network_subdomain
       _443._tcp.remoteprovisioning.grapheneos.org: *network_tlsa
 
-      na.geo.remoteprovisioning.grapheneos.org: *network_subdomain_north_america
-      eu.geo.remoteprovisioning.grapheneos.org: *network_subdomain_europe
-      as-east.geo.remoteprovisioning.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.remoteprovisioning.grapheneos.org: *network_subdomain_singapore
-
       broadcom.psds.grapheneos.org: *org_network_subdomain
       _443._tcp.broadcom.psds.grapheneos.org: *network_tlsa
-      na.geo.broadcom.psds.grapheneos.org: *network_subdomain_north_america
-      eu.geo.broadcom.psds.grapheneos.org: *network_subdomain_europe
-      as-east.geo.broadcom.psds.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.broadcom.psds.grapheneos.org: *network_subdomain_singapore
 
       qualcomm.psds.grapheneos.org: *org_network_subdomain
       _443._tcp.qualcomm.psds.grapheneos.org: *network_tlsa
-      na.geo.qualcomm.psds.grapheneos.org: *network_subdomain_north_america
-      eu.geo.qualcomm.psds.grapheneos.org: *network_subdomain_europe
-      as-east.geo.qualcomm.psds.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.qualcomm.psds.grapheneos.org: *network_subdomain_singapore
 
       supl.grapheneos.org: *org_network_subdomain
       _443._tcp.supl.grapheneos.org: *network_tlsa
       _7275._tcp.supl.grapheneos.org:
         - tlsa: 3 1 1 71615ea3c0c223a68cb3d1f1d2957d58b2aa0740db5684ff31a54381631711e7
-      na.geo.supl.grapheneos.org: *network_subdomain_north_america
-      eu.geo.supl.grapheneos.org: *network_subdomain_europe
-      as-east.geo.supl.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.supl.grapheneos.org: *network_subdomain_singapore
 
       # legacy
       connectivitycheck.grapheneos.org: *org_network_subdomain
       _443._tcp.connectivitycheck.grapheneos.org: *network_tlsa
-      na.geo.connectivitycheck.grapheneos.org: *network_subdomain_north_america
-      eu.geo.connectivitycheck.grapheneos.org: *network_subdomain_europe
-      as-east.geo.connectivitycheck.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.connectivitycheck.grapheneos.org: *network_subdomain_singapore
+
+      na.geo.network.grapheneos.org: *network_subdomain_north_america
+      eu.geo.network.grapheneos.org: *network_subdomain_europe
+      as-east.geo.network.grapheneos.org: *network_subdomain_singapore
+      as-south.geo.network.grapheneos.org: *network_subdomain_singapore
 
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
@@ -625,12 +604,12 @@ domains:
       www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
       releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
       apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
-      time.grapheneos.org: "%mp.geo.time.grapheneos.org"
-      remoteprovisioning.grapheneos.org: "%mp.geo.remoteprovisioning.grapheneos.org"
-      broadcom.psds.grapheneos.org: "%mp.geo.broadcom.psds.grapheneos.org"
-      qualcomm.psds.grapheneos.org: "%mp.geo.qualcomm.psds.grapheneos.org"
-      supl.grapheneos.org: "%mp.geo.supl.grapheneos.org"
-      connectivitycheck.grapheneos.org: "%mp.geo.connectivitycheck.grapheneos.org" # legacy
+      time.grapheneos.org: "%mp.geo.network.grapheneos.org"
+      remoteprovisioning.grapheneos.org: "%mp.geo.network.grapheneos.org"
+      broadcom.psds.grapheneos.org: "%mp.geo.network.grapheneos.org"
+      qualcomm.psds.grapheneos.org: "%mp.geo.network.grapheneos.org"
+      supl.grapheneos.org: "%mp.geo.network.grapheneos.org"
+      connectivitycheck.grapheneos.org: "%mp.geo.network.grapheneos.org" # legacy
 
   # special zone without DNSSEC
   - domain: dnscheck.grapheneos.org
@@ -761,23 +740,18 @@ domains:
       update.vanadium.app: *org_network_subdomain
       _443._tcp.update.vanadium.app: *network_tlsa
 
-      na.geo.update.vanadium.app: *network_subdomain_north_america
-      eu.geo.update.vanadium.app: *network_subdomain_europe
-      as-east.geo.update.vanadium.app: *network_subdomain_singapore
-      as-south.geo.update.vanadium.app: *network_subdomain_singapore
-
       dl.vanadium.app: *org_network_subdomain
       _443._tcp.dl.vanadium.app: *network_tlsa
 
-      na.geo.dl.vanadium.app: *network_subdomain_north_america
-      eu.geo.dl.vanadium.app: *network_subdomain_europe
-      as-east.geo.dl.vanadium.app: *network_subdomain_singapore
-      as-south.geo.dl.vanadium.app: *network_subdomain_singapore
+      na.geo.network.vanadium.app: *network_subdomain_north_america
+      eu.geo.network.vanadium.app: *network_subdomain_europe
+      as-east.geo.network.vanadium.app: *network_subdomain_singapore
+      as-south.geo.network.vanadium.app: *network_subdomain_singapore
     services:
       vanadium.app: "%mp.geo.vanadium.app"
       www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
-      update.vanadium.app: "%mp.geo.update.vanadium.app"
-      dl.vanadium.app: "%mp.geo.dl.vanadium.app"
+      update.vanadium.app: "%mp.geo.network.vanadium.app"
+      dl.vanadium.app: "%mp.geo.network.vanadium.app"
 
   - domain: grapheneos.social
     ttl: *default_ttl

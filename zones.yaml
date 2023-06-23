@@ -501,6 +501,7 @@ domains:
         - caa: *mail_caa
         - caa: *mail_caa_staging
         - caa: *mail_caa_iodef
+        - https: *https
         - mx: *grapheneos_mx
         - mx: *grapheneos_mx_backup
         - sshfp: 4 2 d1b93a338e6f278148354f32e89839664593b3a8db5bfb5537009e147506545b
@@ -1116,6 +1117,7 @@ domains:
         - caa: *mail_caa
         - caa: *mail_caa_staging
         - caa: *mail_caa_iodef
+        - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf

@@ -391,14 +391,14 @@ domains:
       as-south.geo.subdomain.grapheneos.org: *grapheneos_subdomain_singapore
 
       staging.grapheneos.org:
-        - a: 51.222.140.11
-        - aaaa: 2607:5300:205:200::a23
+        - a: 199.195.250.78
+        - aaaa: 2605:6400:10:9d6:6d84:e183:acda:16d7
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065392"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255333"
         - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
-        - sshfp: 4 2 53cad9a5b09cb717be8d1cbc1e68b02c75fa41fd996b583d6feed81282589c61
+        - sshfp: 4 2 ba61a88c88b406e2266dab834c99fa4159f11c5b2d840223e2930fed5be4fcef
         - txt: *null_spf
       _443._tcp.staging.grapheneos.org:
         - tlsa: 3 1 1 8ee2957d1c024669dbed9b38a0d6e6e5612da57e304c70707e33fb398249e811

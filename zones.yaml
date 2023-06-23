@@ -31,6 +31,9 @@ domains:
         - mx: &grapheneos_mx
             content: 0 mail.grapheneos.org
             ttl: *stable_ttl
+        - mx: &grapheneos_mx_backup
+            content: 10 mail.grapheneos.net
+            ttl: *stable_ttl
         - ns:
             content: ns1.attestation.app
             ttl: *stable_ttl
@@ -128,6 +131,7 @@ domains:
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: *caa_iodef
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.network
             ttl: *stable_ttl
@@ -207,6 +211,7 @@ domains:
         - caa: *network_caa_staging
         - caa: *caa_iodef
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.online
             ttl: *stable_ttl
@@ -312,6 +317,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.org
             ttl: *stable_ttl
@@ -456,6 +462,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - sshfp: 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
         - txt: *grapheneos_spf
       _443._tcp.matrix.grapheneos.org: *matrix_tlsa
@@ -475,6 +482,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - sshfp: 4 2 b83b04142bb75babeee5998309fa63cae53dc3c7915f28f0c38cd34c2e16abb1
         - txt: *grapheneos_spf
       _443._tcp.discuss.grapheneos.org:
@@ -494,6 +502,7 @@ domains:
         - caa: *mail_caa_staging
         - caa: *mail_caa_iodef
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - sshfp: 4 2 d1b93a338e6f278148354f32e89839664593b3a8db5bfb5537009e147506545b
         - txt: *grapheneos_spf
       _25._tcp.mail.grapheneos.org: &mail_tlsa
@@ -639,6 +648,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.seamlessupdate.app
             ttl: *stable_ttl
@@ -696,6 +706,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.vanadium.app
             ttl: *stable_ttl
@@ -762,6 +773,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.social
             ttl: *stable_ttl
@@ -810,6 +822,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.app
             ttl: *stable_ttl
@@ -861,6 +874,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.ca
             ttl: *stable_ttl
@@ -912,6 +926,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.com
             ttl: *stable_ttl
@@ -963,6 +978,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.dev
             ttl: *stable_ttl
@@ -1014,6 +1030,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.info
             ttl: *stable_ttl
@@ -1065,6 +1082,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.net
             ttl: *stable_ttl
@@ -1092,6 +1110,20 @@ domains:
       mta-sts.grapheneos.net: *mta_sts_subdomain
       www.grapheneos.net: *grapheneos_subdomain
 
+      mail.grapheneos.net:
+        - a: *mail_a
+        - aaaa: *mail_aaaa
+        - caa: *mail_caa
+        - caa: *mail_caa_staging
+        - caa: *mail_caa_iodef
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+      _25._tcp.mail.grapheneos.net: *mail_tlsa
+      _443._tcp.mail.grapheneos.net: *mta_sts_tlsa
+      _465._tcp.mail.grapheneos.net: *mail_tlsa
+      _993._tcp.mail.grapheneos.net: *mail_tlsa
+
       na.geo.grapheneos.net: *grapheneos_north_america
       eu.geo.grapheneos.net: *grapheneos_europe
       as-east.geo.grapheneos.net: *grapheneos_singapore
@@ -1116,6 +1148,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.ovh
             ttl: *stable_ttl
@@ -1167,6 +1200,7 @@ domains:
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
         - ns:
             content: ns1.grapheneos.page
             ttl: *stable_ttl

@@ -606,7 +606,7 @@ domains:
       supl.grapheneos.org: "%mp.geo.network.grapheneos.org"
       connectivitycheck.grapheneos.org: "%mp.geo.network.grapheneos.org" # legacy
 
-  # special zone without DNSSEC
+  # special zone without DNSSEC since results are unused and queries are randomized
   - domain: dnscheck.grapheneos.org
     ttl: *default_ttl
     records:

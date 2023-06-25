@@ -58,7 +58,7 @@ domains:
       _dmarc.attestation.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
       _mta-sts.attestation.app: &_mta-sts
-        - txt: "v=STSv1; id=1585551802"
+        - txt: "v=STSv1; id=2023062500"
       _smtp._tls.attestation.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
       default._domainkey.attestation.app: &grapheneos_dkim

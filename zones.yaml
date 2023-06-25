@@ -512,6 +512,9 @@ domains:
       _443._tcp.mta-sts.mail.grapheneos.org: *mta_sts_tlsa
       _465._tcp.mail.grapheneos.org: *mail_tlsa
       _993._tcp.mail.grapheneos.org: *mail_tlsa
+      _mta-sts.mail.grapheneos.org: *_mta-sts
+      _smtp._tls.mail.grapheneos.org:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@mail.grapheneos.org"
       default._bimi.mail.grapheneos.org: *grapheneos_bimi
       default._domainkey.mail.grapheneos.org: *grapheneos_dkim
       mta-sts.mail.grapheneos.org:

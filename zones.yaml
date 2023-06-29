@@ -53,7 +53,7 @@ domains:
       _443._tcp.mta-sts.attestation.app: &mta_sts_tlsa
         - tlsa: 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
       _443._tcp.staging.attestation.app:
-        - tlsa: 3 1 1 eb080e3b28e6a4493229f354ebc4d43a297547e5a106223543a02d2f15e01d26
+        - tlsa: 3 1 1 25e4779bc88d9e764b052c4866e362dae2d59ddd6b67f5b4ce674684e5db9655
       _443._tcp.www.attestation.app: *attestation_tlsa
       _dmarc.attestation.app:
         - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
@@ -74,14 +74,14 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
       staging.attestation.app:
-        - a: 51.79.54.178
-        - aaaa: 2607:5300:205:200::1585
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130065354"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20255334"
+        - a: 198.98.57.157
+        - aaaa: 2605:6400:10:aa9:1c0f:44d3:da15:c0ec
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1182490537"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108989964"
         - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
-        - sshfp: 4 2 8849458431db8b3ce725bca4873cbdcb338036237973cb5799732710693944ff
+        - sshfp: 4 2 ef4b234f6dc92f2feef6e334ab38c50d299eea13bb12739fff17e8175c53573b
         - txt: *null_spf
       ns1.staging.attestation.app: &ns_staging
         - a: &ns_staging_a 198.98.56.238

@@ -127,6 +127,38 @@ domains:
         - txt: *null_spf
 
       grapheneos.network:
+        - lua: &network_lua_a "A \";
+          local ips_na = {'51.79.54.68'}
+          local ips_eu = {'146.59.144.170'}
+          local ips_sg = {'51.79.165.181'}
+          local ips
+          local cn = continentCode()
+          local cc = countryCode()
+          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+            ips = {ips_eu, ips_na, ips_sg}
+          elseif (cn == 'as' or cn == 'oc') then
+            ips = {ips_sg, ips_na, ips_eu}
+          else
+            ips = {ips_na, ips_eu, ips_sg}
+          end
+          return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
+        - lua: &network_lua_aaaa "AAAA \";
+          local ips_na = {'2607:5300:205:200::b44'}
+          local ips_eu = {'2001:41d0:304:200::df95'}
+          local ips_sg = {'2402:1f00:8000:800::e14'}
+          local ips
+          local cn = continentCode()
+          local cc = countryCode()
+          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+            ips = {ips_eu, ips_na, ips_sg}
+          elseif (cn == 'as' or cn == 'oc') then
+            ips = {ips_sg, ips_na, ips_eu}
+          else
+            ips = {ips_na, ips_eu, ips_sg}
+          end
+          return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: *caa_iodef
@@ -142,6 +174,7 @@ domains:
             content: ns1.grapheneos.network hostmaster.grapheneos.network {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
         - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
         - txt: google-site-verification=vrIeCpGv-UOSpkXfnoTy-zixDMTrIrJq1KRU77ctlaQ
         - txt: "yandex-verification: b3fce6bedf3d57f9"
         - txt: facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq
@@ -158,47 +191,14 @@ domains:
       default._bimi.grapheneos.network: &grapheneos_bimi
         - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
       default._domainkey.grapheneos.network: *grapheneos_dkim
-      connectivitycheck.grapheneos.network: []
       mta-sts.grapheneos.network: *mta_sts_subdomain
-      www.grapheneos.network: []
-
-      na.geo.grapheneos.network: &network_north_america
-        - lua: &na_network_ifurlup_a A "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'51.79.54.68'}, {'146.59.144.170'}, {'51.79.165.181'}}, {backupSelector='all'})[1]"
-        - lua: &na_network_ifurlup_aaaa AAAA "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'2607:5300:205:200::b44'}, {'2001:41d0:304:200::df95'}, {'2402:1f00:8000:800::e14'}}, {backupSelector='all'})[1]"
-        - txt: *grapheneos_spf
-      eu.geo.grapheneos.network: &network_europe
-        - lua: &eu_network_ifurlup_a A "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'146.59.144.170'}, {'51.79.54.68'}, {'51.79.165.181'}}, {backupSelector='all'})[1]"
-        - lua: &eu_network_ifurlup_aaaa AAAA "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'2001:41d0:304:200::df95'}, {'2607:5300:205:200::b44'}, {'2402:1f00:8000:800::e14'}}, {backupSelector='all'})[1]"
-        - txt: *grapheneos_spf
-      as-east.geo.grapheneos.network: &network_singapore
-        - lua: &as_network_ifurlup_a A "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'51.79.165.181'}, {'51.79.54.68'}, {'146.59.144.170'}}, {backupSelector='all'})[1]"
-        - lua: &as_network_ifurlup_aaaa AAAA "ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', {{'2402:1f00:8000:800::e14'}, {'2607:5300:205:200::b44'}, {'2001:41d0:304:200::df95'}}, {backupSelector='all'})[1]"
-        - txt: *grapheneos_spf
-      as-south.geo.grapheneos.network: *network_singapore
-
-      na.geo.subdomain.grapheneos.network: &network_subdomain_north_america
-        - lua: *na_network_ifurlup_a
-        - lua: *na_network_ifurlup_aaaa
+      connectivitycheck.grapheneos.network: &network_subdomain
+        - lua: *network_lua_a
+        - lua: *network_lua_aaaa
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      eu.geo.subdomain.grapheneos.network: &network_subdomain_europe
-        - lua: *eu_network_ifurlup_a
-        - lua: *eu_network_ifurlup_aaaa
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      as-east.geo.subdomain.grapheneos.network: &network_subdomain_singapore
-        - lua: *as_network_ifurlup_a
-        - lua: *as_network_ifurlup_aaaa
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      as-south.geo.subdomain.grapheneos.network: *network_subdomain_singapore
-    services:
-      grapheneos.network: "%mp.geo.grapheneos.network"
-      connectivitycheck.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
-      www.grapheneos.network: "%mp.geo.subdomain.grapheneos.network"
+      www.grapheneos.network: *network_subdomain
 
   - domain: grapheneos.online
     ttl: *default_ttl
@@ -207,6 +207,8 @@ domains:
       ns2.grapheneos.online: *ns2
 
       grapheneos.online:
+        - lua: *network_lua_a
+        - lua: *network_lua_aaaa
         - caa: *network_caa
         - caa: *network_caa_staging
         - caa: *caa_iodef
@@ -222,6 +224,7 @@ domains:
             content: ns1.grapheneos.online hostmaster.grapheneos.online {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
         - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
         - txt: google-site-verification=rkGfZrJ1QmHSOhN0F-mu6Av1SQzxtzM1ONk76QBQ0Xo
         - txt: "yandex-verification: f5675cd6f4757892"
         - txt: facebook-domain-verification=gp5x6ttukle4aklh6jajhaldq3v303
@@ -236,23 +239,9 @@ domains:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
       default._bimi.grapheneos.online: *grapheneos_bimi
       default._domainkey.grapheneos.online: *grapheneos_dkim
-      connectivitycheck.grapheneos.online: []
       mta-sts.grapheneos.online: *mta_sts_subdomain
-      www.grapheneos.online: []
-
-      na.geo.grapheneos.online: *network_north_america
-      eu.geo.grapheneos.online: *network_europe
-      as-east.geo.grapheneos.online: *network_singapore
-      as-south.geo.grapheneos.online: *network_singapore
-
-      na.geo.subdomain.grapheneos.online: *network_subdomain_north_america
-      eu.geo.subdomain.grapheneos.online: *network_subdomain_europe
-      as-east.geo.subdomain.grapheneos.online: *network_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.online: *network_subdomain_singapore
-    services:
-      grapheneos.online: "%mp.geo.grapheneos.online"
-      connectivitycheck.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
-      www.grapheneos.online: "%mp.geo.subdomain.grapheneos.online"
+      connectivitycheck.grapheneos.online: *network_subdomain
+      www.grapheneos.online: *network_subdomain
 
   - domain: grapheneos.org
     ttl: *default_ttl
@@ -319,6 +308,38 @@ domains:
         - txt: *null_spf
 
       grapheneos.org:
+        - lua: &grapheneos_lua_a "A \";
+          local ips_na = {'192.99.43.50'}
+          local ips_eu = {'51.178.136.41'}
+          local ips_sg = {'51.79.160.212'}
+          local ips
+          local cn = continentCode()
+          local cc = countryCode()
+          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+            ips = {ips_eu, ips_na, ips_sg}
+          elseif (cn == 'as' or cn == 'oc') then
+            ips = {ips_sg, ips_na, ips_eu}
+          else
+            ips = {ips_na, ips_eu, ips_sg}
+          end
+          return ifurlup('https://grapheneos.org/', ips, {backupSelector='all'})[1]\""
+        - lua: &grapheneos_lua_aaaa "AAAA \";
+          local ips_na = {'2607:5300:201:3100::1aae'}
+          local ips_eu = {'2001:41d0:304:200::a087'}
+          local ips_sg = {'2402:1f00:8000:800::25ba'}
+          local ips
+          local cn = continentCode()
+          local cc = countryCode()
+          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+            ips = {ips_eu, ips_na, ips_sg}
+          elseif (cn == 'as' or cn == 'oc') then
+            ips = {ips_sg, ips_na, ips_eu}
+          else
+            ips = {ips_na, ips_eu, ips_sg}
+          end
+          return ifurlup('https://grapheneos.org/', ips, {backupSelector='all'})[1]\""
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: *caa_iodef
@@ -335,6 +356,7 @@ domains:
             content: ns1.grapheneos.org hostmaster.grapheneos.org {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
         - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
         - txt: google-site-verification=QCDUfSSfeAUufP-H3m4f5uvhknjIZVBVVmMSDaFRdz0
         - txt: "yandex-verification: 10fdf27f68b946c5"
         - txt: facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2
@@ -353,7 +375,12 @@ domains:
       default._domainkey.grapheneos.org: *grapheneos_dkim
       mta-sts.grapheneos.org: *mta_sts_subdomain
       www.grapheneos.org: &grapheneos_subdomain
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
       dnscheck.grapheneos.org:
         - ns:
@@ -362,40 +389,6 @@ domains:
         - ns:
             content: ns2.grapheneos.org
             ttl: *stable_ttl
-
-      na.geo.grapheneos.org: &grapheneos_north_america
-        - lua: &na_grapheneos_ifurlup_a A "ifurlup('https://grapheneos.org/', {{'192.99.43.50'}, {'51.178.136.41'}, {'51.79.160.212'}}, {backupSelector='all'})[1]"
-        - lua: &na_grapheneos_ifurlup_aaaa AAAA "ifurlup('https://grapheneos.org/', {{'2607:5300:201:3100::1aae'}, {'2001:41d0:304:200::a087'}, {'2402:1f00:8000:800::25ba'}}, {backupSelector='all'})[1]"
-        - txt: *grapheneos_spf
-      eu.geo.grapheneos.org: &grapheneos_europe
-        - lua: &eu_grapheneos_ifurlup_a A "ifurlup('https://grapheneos.org/', {{'51.178.136.41'}, {'192.99.43.50'}, {'51.79.160.212'}}, {backupSelector='all'})[1]"
-        - lua: &eu_grapheneos_ifurlup_aaaa AAAA "ifurlup('https://grapheneos.org/', {{'2001:41d0:304:200::a087'}, {'2607:5300:201:3100::1aae'}, {'2402:1f00:8000:800::25ba'}}, {backupSelector='all'})[1]"
-        - txt: *grapheneos_spf
-      as-east.geo.grapheneos.org: &grapheneos_singapore
-        - lua: &as_grapheneos_ifurlup_a A "ifurlup('https://grapheneos.org/', {{'51.79.160.212'}, {'192.99.43.50'}, {'51.178.136.41'}}, {backupSelector='all'})[1]"
-        - lua: &as_grapheneos_ifurlup_aaaa AAAA "ifurlup('https://grapheneos.org/', {{'2402:1f00:8000:800::25ba'}, {'2607:5300:201:3100::1aae'}, {'2001:41d0:304:200::a087'}}, {backupSelector='all'})[1]"
-        - txt: *grapheneos_spf
-      as-south.geo.grapheneos.org: *grapheneos_singapore
-
-      na.geo.subdomain.grapheneos.org: &grapheneos_subdomain_north_america
-        - lua: *na_grapheneos_ifurlup_a
-        - lua: *na_grapheneos_ifurlup_aaaa
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      eu.geo.subdomain.grapheneos.org: &grapheneos_subdomain_europe
-        - lua: *eu_grapheneos_ifurlup_a
-        - lua: *eu_grapheneos_ifurlup_aaaa
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      as-east.geo.subdomain.grapheneos.org: &grapheneos_subdomain_singapore
-        - lua: *as_grapheneos_ifurlup_a
-        - lua: *as_grapheneos_ifurlup_aaaa
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      as-south.geo.subdomain.grapheneos.org: *grapheneos_subdomain_singapore
 
       staging.grapheneos.org:
         - a: 199.195.250.78
@@ -419,10 +412,15 @@ domains:
       ns2.staging.grapheneos.org: *ns_staging
 
       time.grapheneos.org: &org_network_subdomain
+        - lua: *network_lua_a
+        - lua: *network_lua_aaaa
         - caa: *network_caa
         - caa: *network_caa_staging
         - caa: *caa_iodef
         - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
       _443._tcp.time.grapheneos.org: *network_tlsa
 
       remoteprovisioning.grapheneos.org: *org_network_subdomain
@@ -442,11 +440,6 @@ domains:
       # legacy
       connectivitycheck.grapheneos.org: *org_network_subdomain
       _443._tcp.connectivitycheck.grapheneos.org: *network_tlsa
-
-      na.geo.network.grapheneos.org: *network_subdomain_north_america
-      eu.geo.network.grapheneos.org: *network_subdomain_europe
-      as-east.geo.network.grapheneos.org: *network_subdomain_singapore
-      as-south.geo.network.grapheneos.org: *network_subdomain_singapore
 
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
@@ -590,41 +583,46 @@ domains:
         - txt: *null_spf
 
       releases.grapheneos.org: &releases
+        - lua: &releases_lua_a "A \";
+          local ips_na = {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}
+          local ips_eu = {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}
+          local ips
+          local cn = continentCode()
+          local cc = countryCode()
+          local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+            ips = {ips_eu, ips_na}
+          else
+            ips = {ips_na, ips_eu}
+          end
+          local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
+          return {x[1], x[2], x[3], x[4]}\""
+        - lua: &releases_lua_aaaa "AAAA \";
+          local ips_na = {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}
+          local ips_eu = {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}
+          local ips
+          local cn = continentCode()
+          local cc = countryCode()
+          local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+            ips = {ips_eu, ips_na}
+          else
+            ips = {ips_na, ips_eu}
+          end
+          local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
+          return {x[1], x[2], x[3], x[4]}\""
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: &releases_iodef 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
       _443._tcp.releases.grapheneos.org: &releases_tlsa
         - tlsa: 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
 
-      na.geo.releases.grapheneos.org: &releases_north_america
-        - lua: &na_releases_ifurlup_a A "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}, {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
-        - lua: &na_releases_ifurlup_aaaa AAAA "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}, {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      eu.geo.releases.grapheneos.org: &releases_europe
-        - lua: &eu_releases_ifurlup_a A "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}, {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
-        - lua: &eu_releases_ifurlup_aaaa AAAA "; local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', {{'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}, {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}}, {selector='all', backupSelector='all'}); return {x[1], x[2], x[3], x[4]}"
-        - mx: *null_mx
-        - sshfp: *null_sshfp
-        - txt: *null_spf
-      as-east.geo.releases.grapheneos.org: *releases_north_america
-      as-south.geo.releases.grapheneos.org: *releases_europe
-
       apps.grapheneos.org: *releases
       _443._tcp.apps.grapheneos.org: *releases_tlsa
-    services:
-      grapheneos.org: "%mp.geo.grapheneos.org"
-      www.grapheneos.org: "%mp.geo.subdomain.grapheneos.org"
-      releases.grapheneos.org: "%mp.geo.releases.grapheneos.org"
-      apps.grapheneos.org: "%mp.geo.releases.grapheneos.org"
-      time.grapheneos.org: "%mp.geo.network.grapheneos.org"
-      remoteprovisioning.grapheneos.org: "%mp.geo.network.grapheneos.org"
-      broadcom.psds.grapheneos.org: "%mp.geo.network.grapheneos.org"
-      qualcomm.psds.grapheneos.org: "%mp.geo.network.grapheneos.org"
-      supl.grapheneos.org: "%mp.geo.network.grapheneos.org"
-      connectivitycheck.grapheneos.org: "%mp.geo.network.grapheneos.org" # legacy
 
   # special zone without DNSSEC since results are unused and queries are randomized
   - domain: dnscheck.grapheneos.org
@@ -654,6 +652,8 @@ domains:
       ns2.seamlessupdate.app: *ns2
 
       seamlessupdate.app:
+        - lua: *releases_lua_a
+        - lua: *releases_lua_aaaa
         - caa: *releases_caa
         - caa: *releases_caa_staging
         - caa: *caa_iodef
@@ -670,6 +670,7 @@ domains:
             content: ns1.seamlessupdate.app hostmaster.seamlessupdate.app {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
         - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
         - txt: google-site-verification=aYDRbuNH4up3btfMlzLQvaHtNjCPtBwyJiMvKDr1-5M
         - txt: "yandex-verification: cba8ef4619bc43f5"
         - txt: facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y
@@ -685,25 +686,9 @@ domains:
       mta-sts.seamlessupdate.app: *mta_sts_subdomain
       www.seamlessupdate.app:
         - https: *https
-
-      na.geo.seamlessupdate.app: &seamlessupdate_north_america
-        - lua: *na_releases_ifurlup_a
-        - lua: *na_releases_ifurlup_aaaa
-        - txt: *grapheneos_spf
-      eu.geo.seamlessupdate.app: &seamlessupdate_europe
-        - lua: *eu_releases_ifurlup_a
-        - lua: *eu_releases_ifurlup_aaaa
-        - txt: *grapheneos_spf
-      as-east.geo.seamlessupdate.app: *seamlessupdate_north_america
-      as-south.geo.seamlessupdate.app: *seamlessupdate_europe
-
-      na.geo.subdomain.seamlessupdate.app: *releases_north_america
-      eu.geo.subdomain.seamlessupdate.app: *releases_europe
-      as-east.geo.subdomain.seamlessupdate.app: *releases_north_america
-      as-south.geo.subdomain.seamlessupdate.app: *releases_europe
-    services:
-      seamlessupdate.app: "%mp.geo.seamlessupdate.app"
-      www.seamlessupdate.app: "%mp.geo.subdomain.seamlessupdate.app"
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
 
   - domain: vanadium.app
     ttl: *default_ttl
@@ -712,6 +697,8 @@ domains:
       ns2.vanadium.app: *ns2
 
       vanadium.app:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -745,30 +732,11 @@ domains:
       mta-sts.vanadium.app: *mta_sts_subdomain
       www.vanadium.app: *grapheneos_subdomain
 
-      na.geo.vanadium.app: *grapheneos_north_america
-      eu.geo.vanadium.app: *grapheneos_europe
-      as-east.geo.vanadium.app: *grapheneos_singapore
-      as-south.geo.vanadium.app: *grapheneos_singapore
-      na.geo.subdomain.vanadium.app: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.vanadium.app: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.vanadium.app: *grapheneos_subdomain_singapore
-
       update.vanadium.app: *org_network_subdomain
       _443._tcp.update.vanadium.app: *network_tlsa
 
       dl.vanadium.app: *org_network_subdomain
       _443._tcp.dl.vanadium.app: *network_tlsa
-
-      na.geo.network.vanadium.app: *network_subdomain_north_america
-      eu.geo.network.vanadium.app: *network_subdomain_europe
-      as-east.geo.network.vanadium.app: *network_subdomain_singapore
-      as-south.geo.network.vanadium.app: *network_subdomain_singapore
-    services:
-      vanadium.app: "%mp.geo.vanadium.app"
-      www.vanadium.app: "%mp.geo.subdomain.vanadium.app"
-      update.vanadium.app: "%mp.geo.network.vanadium.app"
-      dl.vanadium.app: "%mp.geo.network.vanadium.app"
 
   - domain: grapheneos.social
     ttl: *default_ttl
@@ -828,6 +796,8 @@ domains:
       ns2.grapheneos.app: *ns2
 
       grapheneos.app:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -861,18 +831,6 @@ domains:
       mta-sts.grapheneos.app: *mta_sts_subdomain
       www.grapheneos.app: *grapheneos_subdomain
 
-      na.geo.grapheneos.app: *grapheneos_north_america
-      eu.geo.grapheneos.app: *grapheneos_europe
-      as-east.geo.grapheneos.app: *grapheneos_singapore
-      as-south.geo.grapheneos.app: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.app: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.app: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.app: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.app: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.app: "%mp.geo.grapheneos.app"
-      www.grapheneos.app: "%mp.geo.subdomain.grapheneos.app"
-
   - domain: grapheneos.ca
     ttl: *default_ttl
     records:
@@ -880,6 +838,8 @@ domains:
       ns2.grapheneos.ca: *ns2
 
       grapheneos.ca:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -913,18 +873,6 @@ domains:
       mta-sts.grapheneos.ca: *mta_sts_subdomain
       www.grapheneos.ca: *grapheneos_subdomain
 
-      na.geo.grapheneos.ca: *grapheneos_north_america
-      eu.geo.grapheneos.ca: *grapheneos_europe
-      as-east.geo.grapheneos.ca: *grapheneos_singapore
-      as-south.geo.grapheneos.ca: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.ca: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.ca: "%mp.geo.grapheneos.ca"
-      www.grapheneos.ca: "%mp.geo.subdomain.grapheneos.ca"
-
   - domain: grapheneos.com
     ttl: *default_ttl
     records:
@@ -932,6 +880,8 @@ domains:
       ns2.grapheneos.com: *ns2
 
       grapheneos.com:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -965,18 +915,6 @@ domains:
       mta-sts.grapheneos.com: *mta_sts_subdomain
       www.grapheneos.com: *grapheneos_subdomain
 
-      na.geo.grapheneos.com: *grapheneos_north_america
-      eu.geo.grapheneos.com: *grapheneos_europe
-      as-east.geo.grapheneos.com: *grapheneos_singapore
-      as-south.geo.grapheneos.com: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.com: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.com: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.com: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.com: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.com: "%mp.geo.grapheneos.com"
-      www.grapheneos.com: "%mp.geo.subdomain.grapheneos.com"
-
   - domain: grapheneos.dev
     ttl: *default_ttl
     records:
@@ -984,6 +922,8 @@ domains:
       ns2.grapheneos.dev: *ns2
 
       grapheneos.dev:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -1017,18 +957,6 @@ domains:
       mta-sts.grapheneos.dev: *mta_sts_subdomain
       www.grapheneos.dev: *grapheneos_subdomain
 
-      na.geo.grapheneos.dev: *grapheneos_north_america
-      eu.geo.grapheneos.dev: *grapheneos_europe
-      as-east.geo.grapheneos.dev: *grapheneos_singapore
-      as-south.geo.grapheneos.dev: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.dev: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.dev: "%mp.geo.grapheneos.dev"
-      www.grapheneos.dev: "%mp.geo.subdomain.grapheneos.dev"
-
   - domain: grapheneos.info
     ttl: *default_ttl
     records:
@@ -1036,6 +964,8 @@ domains:
       ns2.grapheneos.info: *ns2
 
       grapheneos.info:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -1069,18 +999,6 @@ domains:
       mta-sts.grapheneos.info: *mta_sts_subdomain
       www.grapheneos.info: *grapheneos_subdomain
 
-      na.geo.grapheneos.info: *grapheneos_north_america
-      eu.geo.grapheneos.info: *grapheneos_europe
-      as-east.geo.grapheneos.info: *grapheneos_singapore
-      as-south.geo.grapheneos.info: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.info: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.info: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.info: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.info: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.info: "%mp.geo.grapheneos.info"
-      www.grapheneos.info: "%mp.geo.subdomain.grapheneos.info"
-
   - domain: grapheneos.net
     ttl: *default_ttl
     records:
@@ -1088,6 +1006,8 @@ domains:
       ns2.grapheneos.net: *ns2
 
       grapheneos.net:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -1136,18 +1056,6 @@ domains:
       _465._tcp.mail.grapheneos.net: *mail_tlsa
       _993._tcp.mail.grapheneos.net: *mail_tlsa
 
-      na.geo.grapheneos.net: *grapheneos_north_america
-      eu.geo.grapheneos.net: *grapheneos_europe
-      as-east.geo.grapheneos.net: *grapheneos_singapore
-      as-south.geo.grapheneos.net: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.net: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.net: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.net: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.net: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.net: "%mp.geo.grapheneos.net"
-      www.grapheneos.net: "%mp.geo.subdomain.grapheneos.net"
-
   - domain: grapheneos.ovh
     ttl: *default_ttl
     records:
@@ -1155,6 +1063,8 @@ domains:
       ns2.grapheneos.ovh: *ns2
 
       grapheneos.ovh:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -1188,18 +1098,6 @@ domains:
       mta-sts.grapheneos.ovh: *mta_sts_subdomain
       www.grapheneos.ovh: *grapheneos_subdomain
 
-      na.geo.grapheneos.ovh: *grapheneos_north_america
-      eu.geo.grapheneos.ovh: *grapheneos_europe
-      as-east.geo.grapheneos.ovh: *grapheneos_singapore
-      as-south.geo.grapheneos.ovh: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.ovh: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.ovh: "%mp.geo.grapheneos.ovh"
-      www.grapheneos.ovh: "%mp.geo.subdomain.grapheneos.ovh"
-
   - domain: grapheneos.page
     ttl: *default_ttl
     records:
@@ -1207,6 +1105,8 @@ domains:
       ns2.grapheneos.page: *ns2
 
       grapheneos.page:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
         - caa: *grapheneos_caa
         - caa: *grapheneos_caa_staging
         - caa: *caa_iodef
@@ -1239,94 +1139,3 @@ domains:
       default._domainkey.grapheneos.page: *grapheneos_dkim
       mta-sts.grapheneos.page: *mta_sts_subdomain
       www.grapheneos.page: *grapheneos_subdomain
-
-      na.geo.grapheneos.page: *grapheneos_north_america
-      eu.geo.grapheneos.page: *grapheneos_europe
-      as-east.geo.grapheneos.page: *grapheneos_singapore
-      as-south.geo.grapheneos.page: *grapheneos_singapore
-      na.geo.subdomain.grapheneos.page: *grapheneos_subdomain_north_america
-      eu.geo.subdomain.grapheneos.page: *grapheneos_subdomain_europe
-      as-east.geo.subdomain.grapheneos.page: *grapheneos_subdomain_singapore
-      as-south.geo.subdomain.grapheneos.page: *grapheneos_subdomain_singapore
-    services:
-      grapheneos.page: "%mp.geo.grapheneos.page"
-      www.grapheneos.page: "%mp.geo.subdomain.grapheneos.page"
-
-mapping_lookup_formats: ["%cn-%cc", "%cn", "na"]
-custom_mapping:
-  # Africa
-  af: eu
-  # Asia
-  as: as-east
-  # United Arab Emirates
-  as-ae: eu
-  # Afghanistan
-  as-af: as-south
-  # Armenia
-  as-am: eu
-  # Azerbaijan
-  as-az: eu
-  # Bangladesh
-  as-bd: as-south
-  # Bahrain
-  as-bh: eu
-  # Bhutan
-  as-bt: as-south
-  # Egypt
-  as-eg: eu
-  # Georgia
-  as-ge: eu
-  # Israel
-  as-il: eu
-  # India
-  as-in: as-south
-  # Iraq
-  as-iq: eu
-  # Iran
-  as-ir: eu
-  # Jordan
-  as-jo: eu
-  # Kyrgyzstan
-  as-kg: eu
-  # Kuwait
-  as-kw: eu
-  # Kazakhstan
-  as-kz: eu
-  # Lebanon
-  as-lb: eu
-  # Sri Lanka
-  as-lk: as-south
-  # Maldives
-  as-mv: as-south
-  # Nepal
-  as-np: as-south
-  # Oman
-  as-om: eu
-  # Pakistan
-  as-pk: as-south
-  # Palestine
-  as-ps: eu
-  # Qatar
-  as-qa: eu
-  # Russia
-  as-ru: eu
-  # Saudi Arabia
-  as-sa: eu
-  # Syria
-  as-sy: eu
-  # Tajikistan
-  as-tj: eu
-  # Turkmenistan
-  as-tm: eu
-  # Turkey
-  as-tr: eu
-  # Uzbekistan
-  as-uz: eu
-  # Yemen
-  as-ye: eu
-  # Europe
-  eu: eu
-  # North America
-  na: na
-  # Oceania
-  oc: as-east

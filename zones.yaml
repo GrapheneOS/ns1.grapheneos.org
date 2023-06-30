@@ -2,14 +2,14 @@ domains:
   - domain: attestation.app
     ttl: &default_ttl 3600
     records:
-      # Beauharnois
+      # OVH Beauharnois
       ns1.attestation.app: &ns1
         - a: &ns1_a 51.222.14.6
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
         - txt: &null_spf "v=spf1 -all"
-      # New York, Las Vegas and Luxembourg with anycast IPv4
+      # BuyVM New York, BuyVM Las Vegas and BuyVM Luxembourg with anycast IPv4
       ns2.attestation.app: &ns2
         - a: 198.251.90.93
         - aaaa: &ns2_aaaa_0 2605:6400:10:102e:95bc:89ef:2e7f:49bb
@@ -104,21 +104,21 @@ domains:
       ns1.grapheneos.network: *ns1
       ns2.grapheneos.network: *ns2
 
-      # Beauharnois
+      # OVH Beauharnois
       0.grapheneos.network:
         - a: 51.79.54.68
         - aaaa: 2607:5300:205:200::b44
         - mx: *null_mx
         - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
         - txt: *null_spf
-      # Gravelines
+      # OVH Gravelines
       1.grapheneos.network:
         - a: 146.59.144.170
         - aaaa: 2001:41d0:304:200::df95
         - mx: *null_mx
         - sshfp: 4 2 a8a737ae20b5900dd2b6836fc74f37e2da8e3eb29ddb980d853aa2bc65bfe729
         - txt: *null_spf
-      # Singapore
+      # OVH Singapore
       2.grapheneos.network:
         - a: 51.79.165.181
         - aaaa: 2402:1f00:8000:800::e14
@@ -289,28 +289,28 @@ domains:
             content: "ip: %ip, country: %cc, continent: %cn, region: %re"
             ttl: 60
 
-      # Beauharnois
+      # OVH Beauharnois
       0.grapheneos.org:
         - a: 192.99.43.50
         - aaaa: 2607:5300:201:3100::1aae
         - mx: *null_mx
         - sshfp: 4 2 f4b0eaeff529404ae27322e09b8d0c5f5235ef4b9496bcbd334b22604d355ce3
         - txt: *null_spf
-      # Las Vegas
+      # BuyVM Las Vegas
       1.grapheneos.org:
         - a: 209.141.35.164
         - aaaa: 2605:6400:20:1131:8088:e08:84e6:632
         - mx: *null_mx
         - sshfp: 4 2 5a17966350748c352a3a8869a9609b2b2686786cc197de30bbae5f0cc3cc96bf
         - txt: *null_spf
-      # Gravelines
+      # OVH Gravelines
       2.grapheneos.org:
         - a: 51.178.136.41
         - aaaa: 2001:41d0:304:200::a087
         - mx: *null_mx
         - sshfp: 4 2 b3eced499fc208feaa1bc3d59d9f4819edea1a7f5ef04b3e1035435f70a38cc1
         - txt: *null_spf
-      # Singapore
+      # OVH Singapore
       3.grapheneos.org:
         - a: 51.79.160.212
         - aaaa: 2402:1f00:8000:800::25ba
@@ -532,56 +532,56 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
 
-      # Beauharnois
+      # OVH Beauharnois
       0.releases.grapheneos.org:
         - a: 167.114.114.114
         - aaaa: 2607:5300:201:3100::6210
         - mx: *null_mx
         - sshfp: 4 2 26a4c9996901dc7dc2227d7e4bbfabbc73bb639bfbc1e4ac52b29e9aa967bf51
         - txt: *null_spf
-      # Beauharnois
+      # OVH Beauharnois
       1.releases.grapheneos.org:
         - a: 51.79.74.15
         - aaaa: 2607:5300:205:200::2441
         - mx: *null_mx
         - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
         - txt: *null_spf
-      # Beauharnois
+      # OVH Beauharnois
       2.releases.grapheneos.org:
         - a: 51.222.159.48
         - aaaa: 2607:5300:205:200::3f46
         - mx: *null_mx
         - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
         - txt: *null_spf
-      # Beauharnois
+      # OVH Beauharnois
       3.releases.grapheneos.org:
         - a: 51.222.140.199
         - aaaa: 2607:5300:205:200::39fe
         - mx: *null_mx
         - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
         - txt: *null_spf
-      # Gravelines
+      # OVH Gravelines
       4.releases.grapheneos.org:
         - a: 141.94.71.158
         - aaaa: 2001:41d0:304:200::14ff
         - mx: *null_mx
         - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
         - txt: *null_spf
-      # Gravelines
+      # OVH Gravelines
       5.releases.grapheneos.org:
         - a: 141.94.71.72
         - aaaa: 2001:41d0:304:200::a687
         - mx: *null_mx
         - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
         - txt: *null_spf
-      # Frankfurt
+      # OVH Frankfurt
       6.releases.grapheneos.org:
         - a: 135.125.183.155
         - aaaa: 2001:41d0:701:1100::2ec9
         - mx: *null_mx
         - sshfp: 4 2 ca537ed11e7afd60844c135a5d0d41ab9298e8b90bfbd27745af64940affaaca
         - txt: *null_spf
-      # Frankfurt
+      # OVH Frankfurt
       7.releases.grapheneos.org:
         - a: 141.95.0.242
         - aaaa: 2001:41d0:701:1100::3e56

@@ -127,38 +127,42 @@ domains:
         - txt: *null_spf
 
       grapheneos.network:
-        - lua: &network_lua_a "A \";
-          local ips_na = {'51.79.54.68'}
-          local ips_eu = {'146.59.144.170'}
-          local ips_sg = {'51.79.165.181'}
-          local ips
-          local cn = continentCode()
-          local cc = countryCode()
-          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
-          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
-            ips = {ips_eu, ips_na, ips_sg}
-          elseif (cn == 'as' or cn == 'oc') then
-            ips = {ips_sg, ips_na, ips_eu}
-          else
-            ips = {ips_na, ips_eu, ips_sg}
-          end
-          return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
-        - lua: &network_lua_aaaa "AAAA \";
-          local ips_na = {'2607:5300:205:200::b44'}
-          local ips_eu = {'2001:41d0:304:200::df95'}
-          local ips_sg = {'2402:1f00:8000:800::e14'}
-          local ips
-          local cn = continentCode()
-          local cc = countryCode()
-          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
-          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
-            ips = {ips_eu, ips_na, ips_sg}
-          elseif (cn == 'as' or cn == 'oc') then
-            ips = {ips_sg, ips_na, ips_eu}
-          else
-            ips = {ips_na, ips_eu, ips_sg}
-          end
-          return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
+        - lua: &network_lua_a
+            content: "A \";
+              local ips_na = {'51.79.54.68'}
+              local ips_eu = {'146.59.144.170'}
+              local ips_sg = {'51.79.165.181'}
+              local ips
+              local cn = continentCode()
+              local cc = countryCode()
+              local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+                ips = {ips_eu, ips_na, ips_sg}
+              elseif (cn == 'as' or cn == 'oc') then
+                ips = {ips_sg, ips_na, ips_eu}
+              else
+                ips = {ips_na, ips_eu, ips_sg}
+              end
+              return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
+            ttl: &dynamic_ttl 300
+        - lua: &network_lua_aaaa
+            content: "AAAA \";
+              local ips_na = {'2607:5300:205:200::b44'}
+              local ips_eu = {'2001:41d0:304:200::df95'}
+              local ips_sg = {'2402:1f00:8000:800::e14'}
+              local ips
+              local cn = continentCode()
+              local cc = countryCode()
+              local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+                ips = {ips_eu, ips_na, ips_sg}
+              elseif (cn == 'as' or cn == 'oc') then
+                ips = {ips_sg, ips_na, ips_eu}
+              else
+                ips = {ips_na, ips_eu, ips_sg}
+              end
+              return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
+            ttl: *dynamic_ttl
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: *caa_iodef
@@ -308,48 +312,52 @@ domains:
         - txt: *null_spf
 
       grapheneos.org:
-        - lua: &grapheneos_lua_a "A \";
-          local ips_na_east = {'192.99.43.50'}
-          local ips_na_west = {'209.141.35.164'}
-          local ips_eu = {'51.178.136.41'}
-          local ips_sg = {'51.79.160.212'}
-          local ips
-          local cn = continentCode()
-          local cc = countryCode()
-          local re = regionCode()
-          local re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}
-          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
-          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
-            ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}
-          elseif (cn == 'as' or cn == 'oc') then
-            ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}
-          elseif (cc == 'us' and re_na_west[re]) then
-            ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}
-          else
-            ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
-          end
-          return ifurlup('https://grapheneos.org/', ips, {backupSelector='all'})[1]\""
-        - lua: &grapheneos_lua_aaaa "AAAA \";
-          local ips_na_east = {'2607:5300:201:3100::1aae'}
-          local ips_na_west = {'2605:6400:20:1131:8088:e08:84e6:632'}
-          local ips_eu = {'2001:41d0:304:200::a087'}
-          local ips_sg = {'2402:1f00:8000:800::25ba'}
-          local ips
-          local cn = continentCode()
-          local cc = countryCode()
-          local re = regionCode()
-          local re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}
-          local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
-          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
-            ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}
-          elseif (cn == 'as' or cn == 'oc') then
-            ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}
-          elseif (cc == 'us' and re_na_west[re]) then
-            ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}
-          else
-            ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
-          end
-          return ifurlup('https://grapheneos.org/', ips, {backupSelector='all'})[1]\""
+        - lua: &grapheneos_lua_a
+            content: "A \";
+              local ips_na_east = {'192.99.43.50'}
+              local ips_na_west = {'209.141.35.164'}
+              local ips_eu = {'51.178.136.41'}
+              local ips_sg = {'51.79.160.212'}
+              local ips
+              local cn = continentCode()
+              local cc = countryCode()
+              local re = regionCode()
+              local re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}
+              local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+                ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}
+              elseif (cn == 'as' or cn == 'oc') then
+                ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}
+              elseif (cc == 'us' and re_na_west[re]) then
+                ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}
+              else
+                ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
+              end
+              return ifurlup('https://grapheneos.org/', ips, {backupSelector='all'})[1]\""
+            ttl: *dynamic_ttl
+        - lua: &grapheneos_lua_aaaa
+            content: "AAAA \";
+              local ips_na_east = {'2607:5300:201:3100::1aae'}
+              local ips_na_west = {'2605:6400:20:1131:8088:e08:84e6:632'}
+              local ips_eu = {'2001:41d0:304:200::a087'}
+              local ips_sg = {'2402:1f00:8000:800::25ba'}
+              local ips
+              local cn = continentCode()
+              local cc = countryCode()
+              local re = regionCode()
+              local re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}
+              local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+                ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}
+              elseif (cn == 'as' or cn == 'oc') then
+                ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}
+              elseif (cc == 'us' and re_na_west[re]) then
+                ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}
+              else
+                ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
+              end
+              return ifurlup('https://grapheneos.org/', ips, {backupSelector='all'})[1]\""
+            ttl: *dynamic_ttl
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: *caa_iodef
@@ -593,34 +601,38 @@ domains:
         - txt: *null_spf
 
       releases.grapheneos.org: &releases
-        - lua: &releases_lua_a "A \";
-          local ips_na = {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}
-          local ips_eu = {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}
-          local ips
-          local cn = continentCode()
-          local cc = countryCode()
-          local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
-          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
-            ips = {ips_eu, ips_na}
-          else
-            ips = {ips_na, ips_eu}
-          end
-          local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
-          return {x[1], x[2], x[3], x[4]}\""
-        - lua: &releases_lua_aaaa "AAAA \";
-          local ips_na = {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}
-          local ips_eu = {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}
-          local ips
-          local cn = continentCode()
-          local cc = countryCode()
-          local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
-          if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
-            ips = {ips_eu, ips_na}
-          else
-            ips = {ips_na, ips_eu}
-          end
-          local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
-          return {x[1], x[2], x[3], x[4]}\""
+        - lua: &releases_lua_a
+            content: "A \";
+              local ips_na = {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}
+              local ips_eu = {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}
+              local ips
+              local cn = continentCode()
+              local cc = countryCode()
+              local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+                ips = {ips_eu, ips_na}
+              else
+                ips = {ips_na, ips_eu}
+              end
+              local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
+              return {x[1], x[2], x[3], x[4]}\""
+            ttl: *dynamic_ttl
+        - lua: &releases_lua_aaaa
+            content: "AAAA \";
+              local ips_na = {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}
+              local ips_eu = {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}
+              local ips
+              local cn = continentCode()
+              local cc = countryCode()
+              local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
+                ips = {ips_eu, ips_na}
+              else
+                ips = {ips_na, ips_eu}
+              end
+              local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
+              return {x[1], x[2], x[3], x[4]}\""
+            ttl: *dynamic_ttl
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: &releases_iodef 0 iodef "mailto:caa@grapheneos.org"

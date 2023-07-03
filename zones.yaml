@@ -616,8 +616,8 @@ domains:
               else
                 ips = {ips_na, ips_eu}
               end
-              local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
-              return {x[1], x[2], x[3], x[4]}\""
+              local all = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
+              return {all[1], all[2], all[3], all[4]}\""
             ttl: *dynamic_ttl
         - lua: &releases_lua_aaaa
             content: "AAAA \";
@@ -632,8 +632,8 @@ domains:
               else
                 ips = {ips_na, ips_eu}
               end
-              local x = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
-              return {x[1], x[2], x[3], x[4]}\""
+              local all = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
+              return {all[1], all[2], all[3], all[4]}\""
             ttl: *dynamic_ttl
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"

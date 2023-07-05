@@ -119,7 +119,7 @@ domains:
         - sshfp: 4 2 a8a737ae20b5900dd2b6836fc74f37e2da8e3eb29ddb980d853aa2bc65bfe729
         - txt: *null_spf
       # OVH Singapore
-      2.grapheneos.network:
+      3.grapheneos.network:
         - a: 51.79.165.181
         - aaaa: 2402:1f00:8000:800::e14
         - mx: *null_mx

@@ -112,7 +112,7 @@ domains:
         - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
         - txt: *null_spf
       # OVH Gravelines
-      1.grapheneos.network:
+      2.grapheneos.network:
         - a: 146.59.144.170
         - aaaa: 2001:41d0:304:200::df95
         - mx: *null_mx

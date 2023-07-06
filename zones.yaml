@@ -111,6 +111,13 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
         - txt: *null_spf
+      # BuyVM Las Vegas
+      1.grapheneos.network:
+        - a: 209.141.37.35
+        - aaaa: 2605:6400:20:387:72d4:dab9:a369:f351
+        - mx: *null_mx
+        - sshfp: 4 2 de55978ac1bfdac3b4a4bb2743ac072e14610fbefe5fcb208f987b57ce8d1eb1
+        - txt: *null_spf
       # OVH Gravelines
       2.grapheneos.network:
         - a: 146.59.144.170

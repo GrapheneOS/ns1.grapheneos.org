@@ -8,14 +8,14 @@ servers=(
     2.ns2.grapheneos.org
 )
 
-rsync -rcv root@ns1.grapheneos.org:/etc/powerdns/keys/ keys
+rsync -rcv --fsync --preallocate root@ns1.grapheneos.org:/etc/powerdns/keys/ keys
 
 for server in ${servers[@]}; do
     echo $server
 
     remote=root@$server
 
-    rsync -rcpv --fsync --delete --chmod=D750,F640 --chown=root:powerdns keys/ root@$server:/etc/powerdns/keys
+    rsync -rcpv --delete --chmod=D750,F640 --chown=root:powerdns --fsync --preallocate keys/ root@$server:/etc/powerdns/keys
 
     echo
 done

@@ -59,15 +59,15 @@ for server in ${servers[@]}; do
     if (( reconfigure )); then
         cp pdns.conf pdns.conf.tmp
         sed -i "s/{addresses}/${addresses[$server]}/g" pdns.conf.tmp
-        rsync -pctv --fsync --chmod=F644 pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
+        rsync -pctv --chmod=F644 --fsync --preallocate pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
         rm pdns.conf.tmp
-        rsync -pctv --fsync --chmod=F644 GeoIP.conf $remote:/etc/GeoIP.conf
-        rsync -prctv --chmod=D755,F644 systemd/system/ $remote:/etc/systemd/system
+        rsync -pctv --chmod=F644 --fsync --preallocate GeoIP.conf $remote:/etc/GeoIP.conf
+        rsync -prctv --chmod=D755,F644 --fsync --preallocate systemd/system/ $remote:/etc/systemd/system
     fi
 
     cp zones.yaml zones.yaml.tmp
     sed -i "s/{serial}/$serial/g; s/{serial}/$serial/g" zones.yaml.tmp
-    rsync -pctv --fsync --chmod=F644 zones.yaml.tmp $remote:/etc/powerdns/zones.yaml
+    rsync -pctv --chmod=F644 --fsync --preallocate zones.yaml.tmp $remote:/etc/powerdns/zones.yaml
     rm zones.yaml.tmp
 
     if (( reconfigure )); then

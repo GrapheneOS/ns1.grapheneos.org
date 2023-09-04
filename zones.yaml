@@ -724,6 +724,11 @@ domains:
       default._domainkey.seamlessupdate.app: *grapheneos_dkim
       mta-sts.seamlessupdate.app: *mta_sts_subdomain
       www.seamlessupdate.app:
+        - lua: *releases_lua_a
+        - lua: *releases_lua_aaaa
+        - caa: *releases_caa
+        - caa: *releases_caa_staging
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp

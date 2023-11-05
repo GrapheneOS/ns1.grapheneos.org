@@ -96,10 +96,16 @@ domains:
       ns1.staging.attestation.app: &ns_staging
         - a: &ns_staging_a 198.98.56.238
         - aaaa: &ns_staging_aaaa 2605:6400:10:c41:de92:c534:326a:711a
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
+        - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
       ns2.staging.attestation.app: *ns_staging
+      _853._tcp.ns1.staging.attestation.app: &ns_staging_tlsa
+        - tlsa: 3 1 1 0c7449b868c722bcc5d2d6e51cca4fbdc8990776f15f09bcd88a195d56e7c4d1
+      _853._tcp.ns2.staging.attestation.app: *ns_staging_tlsa
       www.attestation.app:
         - a: *attestation_a
         - aaaa: *attestation_aaaa
@@ -464,10 +470,15 @@ domains:
       ns1.staging.grapheneos.org:
         - a: *ns_staging_a
         - aaaa: *ns_staging_aaaa
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
+        - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: *null_mx
         - sshfp: 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81
         - txt: *null_spf
       ns2.staging.grapheneos.org: *ns_staging
+      _853._tcp.ns1.staging.grapheneos.org: *ns_staging_tlsa
+      _853._tcp.ns2.staging.grapheneos.org: *ns_staging_tlsa
 
       time.grapheneos.org: &org_network_subdomain
         - lua: *network_lua_a

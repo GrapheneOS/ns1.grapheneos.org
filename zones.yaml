@@ -6,8 +6,8 @@ domains:
       ns1.attestation.app: &ns1
         - a: &ns1_a 51.222.14.6
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+        - caa: &ns1_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
+        - caa: &ns1_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
         - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
@@ -292,8 +292,8 @@ domains:
       ns1.grapheneos.org:
         - a: *ns1_a
         - aaaa: *ns1_aaaa
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+        - caa: *ns1_caa
+        - caa: *ns1_caa_staging
         - caa: *caa_iodef
         - mx: *null_mx
         - sshfp: 4 2 794c40da3d66e29d3e5738ffdd7cc4d9008502872a32bc8daef68d14f0316a90

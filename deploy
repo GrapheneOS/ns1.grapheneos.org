@@ -27,7 +27,7 @@ declare -A receiver_threads=(
 )
 
 # use YYYYMMDDSS SOA serial format
-old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date -u +"%Y%m%d00"))
+old_serial=$(cat serial-staging.txt 2>/dev/null || echo -n $(date -u +"%Y%m%d00"))
 serial=$(date -u +"%Y%m%d")
 if [[ ${old_serial:0:8} = ${serial} ]]; then
     old_sequence=${old_serial:8:2}
@@ -39,7 +39,7 @@ else
 fi
 echo serial: $serial
 echo
-echo -n $serial > serial.txt
+echo -n $serial > serial-staging.txt
 
 . servers.sh
 
@@ -64,7 +64,6 @@ for server in ${servers[@]}; do
 
     if (( reconfigure )); then
         ssh $remote 'systemctl daemon-reload && systemctl restart pdns'
-        sleep 5
     else
         ssh $remote pdns_control reload
     fi

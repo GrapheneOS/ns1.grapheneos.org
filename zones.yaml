@@ -8,6 +8,7 @@ domains:
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+        - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
         - txt: &null_spf "v=spf1 -all"
@@ -19,6 +20,7 @@ domains:
         - aaaa: &ns2_aaaa_2 2605:6400:30:ec25:102c:af6d:5be:1eb8
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
+        - caa: *caa_iodef
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
@@ -32,7 +34,7 @@ domains:
         - aaaa: &attestation_aaaa 2607:5300:205:200::86a
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
-        - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: &https
             content: 1 . alpn=h2
             ttl: &stable_ttl 86400
@@ -76,7 +78,7 @@ domains:
         - aaaa: &mail_aaaa 2607:5300:205:200::94f
         - caa: &mail_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
         - caa: &mail_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
-        - caa: &mail_caa_iodef 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp
@@ -286,6 +288,7 @@ domains:
         - aaaa: *ns1_aaaa
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+        - caa: *caa_iodef
         - mx: *null_mx
         - sshfp: 4 2 794c40da3d66e29d3e5738ffdd7cc4d9008502872a32bc8daef68d14f0316a90
         - txt: *null_spf
@@ -551,7 +554,7 @@ domains:
         - aaaa: *mail_aaaa
         - caa: *mail_caa
         - caa: *mail_caa_staging
-        - caa: *mail_caa_iodef
+        - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - mx: *grapheneos_mx_backup
@@ -1124,7 +1127,7 @@ domains:
         - aaaa: *mail_aaaa
         - caa: *mail_caa
         - caa: *mail_caa_staging
-        - caa: *mail_caa_iodef
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp

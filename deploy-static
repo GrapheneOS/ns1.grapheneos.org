@@ -11,11 +11,6 @@ if ! flock -n $fd; then
     exit 1
 fi
 
-rsync -pcv --chmod=F755 --fsync --preallocate certbot-replicate root@0.ns1.grapheneos.org:/usr/local/bin/
-rsync -pcv --chmod=F755 --fsync --preallocate certbot-replicate root@0.ns2.grapheneos.org:/usr/local/bin/
-rsync -pcv --chmod=F644 --fsync --preallocate replicate.conf root@0.ns1.grapheneos.org:/etc/systemd/system/certbot-renew.service.d/
-rsync -pcv --chmod=F644 --fsync --preallocate replicate.conf root@0.ns2.grapheneos.org:/etc/systemd/system/certbot-renew.service.d/
-
 . servers.sh
 
 for server in ${servers[@]}; do
@@ -25,11 +20,7 @@ for server in ${servers[@]}; do
 
     rm -rf nginx-tmp
     cp -a nginx nginx-tmp
-    if [[ $server == *.ns1.grapheneos.org ]]; then
-        sed -i s/{{subdomain}}/ns1/g nginx-tmp/nginx.conf
-    else
-        sed -i s/{{subdomain}}/ns2/g nginx-tmp/nginx.conf
-    fi
+    sed -i s/{{subdomain}}/ns1.staging/g nginx-tmp/nginx.conf
     gixy nginx-tmp/nginx.conf
     rsync -rpcv --chmod=D755,F644 --delete --fsync --preallocate nginx-tmp/{nginx.conf,mime.types} $remote:/etc/nginx/
     ssh $remote nginx -s reload

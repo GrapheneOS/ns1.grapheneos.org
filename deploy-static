@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+source venv/bin/activate
+
+touch nginx-lock
+exec {fd}< nginx-lock
+if ! flock -n $fd; then
+    echo already deploying >&2
+    exit 1
+fi
+
+servers=(
+    ns1.grapheneos.org
+    0.ns2.grapheneos.org
+    1.ns2.grapheneos.org
+    2.ns2.grapheneos.org
+)
+
+rsync -ptcv --chmod=F755 --fsync --preallocate certbot-replicate root@0.ns2.grapheneos.org:/usr/local/bin/
+rsync -ptcv --chmod=F644 --fsync --preallocate replicate.conf root@0.ns2.grapheneos.org:/etc/systemd/system/certbot-renew.service.d/
+
+for server in ${servers[@]}; do
+    echo $server
+
+    remote=root@$server
+
+    rm -rf nginx-tmp
+    cp -a nginx nginx-tmp
+    if [[ $server == ns1.grapheneos.org ]]; then
+        sed -i s/{{subdomain}}/ns1/g nginx-tmp/nginx.conf
+    else
+        sed -i s/{{subdomain}}/ns2/g nginx-tmp/nginx.conf
+    fi
+    gixy nginx-tmp/nginx.conf
+    rsync -rptcv --chmod=D755,F644 --delete --fsync --preallocate nginx-tmp/{nginx.conf,mime.types} $remote:/etc/nginx/
+    ssh $remote nginx -s reload
+
+    echo
+done

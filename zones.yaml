@@ -6,6 +6,8 @@ domains:
       ns1.attestation.app: &ns1
         - a: &ns1_a 51.222.14.6
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
         - txt: &null_spf "v=spf1 -all"
@@ -15,9 +17,15 @@ domains:
         - aaaa: &ns2_aaaa_0 2605:6400:10:102e:95bc:89ef:2e7f:49bb
         - aaaa: &ns2_aaaa_1 2605:6400:20:1c8f:a0c9:372d:482e:945b
         - aaaa: &ns2_aaaa_2 2605:6400:30:ec25:102c:af6d:5be:1eb8
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
+      _853._tcp.ns1.attestation.app: &ns1_tlsa
+        - tlsa: 3 1 1 1892a7db35f1a969ec5fa8aaef9fdcc7978a9bf503f7631e7e5ed65f09f7b8f1
+      _853._tcp.ns2.attestation.app: &ns2_tlsa
+        - tlsa: 3 1 1 acc175a1bd70f6608f63da1717dc2cb752ed9ea9492a890c008159cfb1a3a360
 
       attestation.app:
         - a: &attestation_a 51.79.50.249
@@ -103,6 +111,8 @@ domains:
     records:
       ns1.grapheneos.network: *ns1
       ns2.grapheneos.network: *ns2
+      _853._tcp.ns1.grapheneos.network: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.network: *ns2_tlsa
 
       # OVH Beauharnois
       0.grapheneos.network:
@@ -228,6 +238,8 @@ domains:
     records:
       ns1.grapheneos.online: *ns1
       ns2.grapheneos.online: *ns2
+      _853._tcp.ns1.grapheneos.online: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.online: *ns2_tlsa
 
       grapheneos.online:
         - lua: *network_lua_a
@@ -272,10 +284,14 @@ domains:
       ns1.grapheneos.org:
         - a: *ns1_a
         - aaaa: *ns1_aaaa
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
         - mx: *null_mx
         - sshfp: 4 2 794c40da3d66e29d3e5738ffdd7cc4d9008502872a32bc8daef68d14f0316a90
         - txt: *null_spf
       ns2.grapheneos.org: *ns2
+      _853._tcp.ns1.grapheneos.org: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.org: *ns2_tlsa
 
       0.ns2.grapheneos.org:
         - a: 198.98.53.141
@@ -689,6 +705,8 @@ domains:
     records:
       ns1.seamlessupdate.app: *ns1
       ns2.seamlessupdate.app: *ns2
+      _853._tcp.ns1.seamlessupdate.app: *ns1_tlsa
+      _853._tcp.ns2.seamlessupdate.app: *ns2_tlsa
 
       seamlessupdate.app:
         - lua: *releases_lua_a
@@ -739,6 +757,8 @@ domains:
     records:
       ns1.vanadium.app: *ns1
       ns2.vanadium.app: *ns2
+      _853._tcp.ns1.vanadium.app: *ns1_tlsa
+      _853._tcp.ns2.vanadium.app: *ns2_tlsa
 
       vanadium.app:
         - lua: *grapheneos_lua_a
@@ -787,6 +807,8 @@ domains:
     records:
       ns1.grapheneos.social: *ns1
       ns2.grapheneos.social: *ns2
+      _853._tcp.ns1.grapheneos.social: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.social: *ns2_tlsa
 
       grapheneos.social:
         - a: &social_a 51.222.30.159
@@ -838,6 +860,8 @@ domains:
     records:
       ns1.grapheneos.app: *ns1
       ns2.grapheneos.app: *ns2
+      _853._tcp.ns1.grapheneos.app: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.app: *ns2_tlsa
 
       grapheneos.app:
         - lua: *grapheneos_lua_a
@@ -880,6 +904,8 @@ domains:
     records:
       ns1.grapheneos.ca: *ns1
       ns2.grapheneos.ca: *ns2
+      _853._tcp.ns1.grapheneos.ca: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.ca: *ns2_tlsa
 
       grapheneos.ca:
         - lua: *grapheneos_lua_a
@@ -922,6 +948,8 @@ domains:
     records:
       ns1.grapheneos.com: *ns1
       ns2.grapheneos.com: *ns2
+      _853._tcp.ns1.grapheneos.com: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.com: *ns2_tlsa
 
       grapheneos.com:
         - lua: *grapheneos_lua_a
@@ -964,6 +992,8 @@ domains:
     records:
       ns1.grapheneos.dev: *ns1
       ns2.grapheneos.dev: *ns2
+      _853._tcp.ns1.grapheneos.dev: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.dev: *ns2_tlsa
 
       grapheneos.dev:
         - lua: *grapheneos_lua_a
@@ -1006,6 +1036,8 @@ domains:
     records:
       ns1.grapheneos.info: *ns1
       ns2.grapheneos.info: *ns2
+      _853._tcp.ns1.grapheneos.info: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.info: *ns2_tlsa
 
       grapheneos.info:
         - lua: *grapheneos_lua_a
@@ -1048,6 +1080,8 @@ domains:
     records:
       ns1.grapheneos.net: *ns1
       ns2.grapheneos.net: *ns2
+      _853._tcp.ns1.grapheneos.net: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.net: *ns2_tlsa
 
       grapheneos.net:
         - lua: *grapheneos_lua_a
@@ -1105,6 +1139,8 @@ domains:
     records:
       ns1.grapheneos.ovh: *ns1
       ns2.grapheneos.ovh: *ns2
+      _853._tcp.ns1.grapheneos.ovh: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.ovh: *ns2_tlsa
 
       grapheneos.ovh:
         - lua: *grapheneos_lua_a
@@ -1147,6 +1183,8 @@ domains:
     records:
       ns1.grapheneos.page: *ns1
       ns2.grapheneos.page: *ns2
+      _853._tcp.ns1.grapheneos.page: *ns1_tlsa
+      _853._tcp.ns2.grapheneos.page: *ns2_tlsa
 
       grapheneos.page:
         - lua: *grapheneos_lua_a

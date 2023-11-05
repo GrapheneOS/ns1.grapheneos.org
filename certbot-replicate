@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+status=0
+replicas=({1..2}.ns2.grapheneos.org)
+
+for replica in ${replicas[@]}; do
+    echo
+    echo Deploying to $replica
+    echo
+
+    rsync -rptvl --delete --fsync --preallocate /etc/letsencrypt/ $replica:/etc/letsencrypt &&
+        rsync -rptvl --delete  --fsync --preallocate /var/cache/certbot-ocsp-fetcher/ $replica:/var/cache/certbot-ocsp-fetcher &&
+        ssh root@$replica nginx -s reload ||
+        status=1
+done
+
+exit $status

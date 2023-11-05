@@ -1,7 +1,10 @@
 /GeoIP.conf
 /keys/
 /lock
+/nginx-lock
+/nginx-tmp
 /pdns.conf.tmp
 /serial.txt
 /serial-staging.txt
+/venv/
 /zones.yaml.tmp

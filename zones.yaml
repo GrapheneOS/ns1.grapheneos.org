@@ -6,8 +6,8 @@ domains:
       ns1.attestation.app: &ns1
         - a: &ns1_a 51.222.14.6
         - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
-        - caa: &ns1_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
-        - caa: &ns1_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+        - caa: &ns1_caa 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
+        - caa: &ns1_caa_staging 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
         - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: &null_mx 0 .
         - sshfp: &null_sshfp 4 2 0000000000000000000000000000000000000000000000000000000000000000
@@ -18,8 +18,8 @@ domains:
         - aaaa: &ns2_aaaa_0 2605:6400:10:102e:95bc:89ef:2e7f:49bb
         - aaaa: &ns2_aaaa_1 2605:6400:20:1c8f:a0c9:372d:482e:945b
         - aaaa: &ns2_aaaa_2 2605:6400:30:ec25:102c:af6d:5be:1eb8
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
         - caa: *caa_iodef
         - mx: *null_mx
         - sshfp: *null_sshfp
@@ -32,8 +32,8 @@ domains:
       attestation.app:
         - a: &attestation_a 51.79.50.249
         - aaaa: &attestation_aaaa 2607:5300:205:200::86a
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
         - caa: *caa_iodef
         - https: &https
             content: 1 . alpn=h2
@@ -76,8 +76,8 @@ domains:
       mta-sts.attestation.app: &mta_sts_subdomain
         - a: &mail_a 192.99.98.22
         - aaaa: &mail_aaaa 2607:5300:205:200::94f
-        - caa: &mail_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
-        - caa: &mail_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+        - caa: &mail_caa 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
+        - caa: &mail_caa_staging 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
         - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
@@ -86,8 +86,8 @@ domains:
       staging.attestation.app:
         - a: 198.98.57.157
         - aaaa: 2605:6400:10:aa9:1c0f:44d3:da15:c0ec
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1182490537"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108989964"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1182490537"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108989964"
         - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
@@ -96,8 +96,8 @@ domains:
       ns1.staging.attestation.app: &ns_staging
         - a: &ns_staging_a 198.98.56.238
         - aaaa: &ns_staging_aaaa 2605:6400:10:c41:de92:c534:326a:711a
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
         - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: *null_mx
         - sshfp: *null_sshfp
@@ -200,8 +200,8 @@ domains:
               end
               return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
-        - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
-        - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+        - caa: &network_caa 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+        - caa: &network_caa_staging 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
         - caa: *caa_iodef
         - mx: *grapheneos_mx
         - mx: *grapheneos_mx_backup
@@ -404,8 +404,8 @@ domains:
               end
               return ifurlup('https://grapheneos.org/robots.txt', ips, {backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
-        - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
-        - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+        - caa: &grapheneos_caa 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+        - caa: &grapheneos_caa_staging 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
@@ -457,8 +457,8 @@ domains:
       staging.grapheneos.org:
         - a: 199.195.250.78
         - aaaa: 2605:6400:10:9d6:6d84:e183:acda:16d7
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1172126677"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108221874"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1172126677"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108221874"
         - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
@@ -470,8 +470,8 @@ domains:
       ns1.staging.grapheneos.org:
         - a: *ns_staging_a
         - aaaa: *ns_staging_aaaa
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
         - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - mx: *null_mx
         - sshfp: 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81
@@ -509,8 +509,8 @@ domains:
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
         - aaaa: &matrix_aaaa 2607:5300:205:200::26e1
-        - caa: &matrix_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
-        - caa: &matrix_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
+        - caa: &matrix_caa 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
+        - caa: &matrix_caa_staging 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
         - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
@@ -542,8 +542,8 @@ domains:
       discuss.grapheneos.org:
         - a: &discuss_a 51.161.11.34
         - aaaa: &discuss_aaaa 2607:5300:205:200:0:0:0:3df
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
@@ -680,8 +680,8 @@ domains:
               local all = ifurlup('https://releases.grapheneos.org/cheetah-stable', ips, {selector='all', backupSelector='all'})
               return {all[1], all[2], all[3], all[4]}\""
             ttl: *dynamic_ttl
-        - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
-        - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
+        - caa: &releases_caa 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
+        - caa: &releases_caa_staging 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
         - caa: &releases_iodef 0 iodef "mailto:caa@grapheneos.org"
         - https: *https
         - mx: *null_mx
@@ -827,8 +827,8 @@ domains:
       grapheneos.social:
         - a: &social_a 51.222.30.159
         - aaaa: &social_aaaa 2607:5300:205:200::2706
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
-        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
+        - caa: 128 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx

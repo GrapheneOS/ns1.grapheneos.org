@@ -61,7 +61,7 @@ for server in ${servers[@]}; do
         sed -i "s/{addresses}/${addresses[$server]}/g" pdns.conf.tmp
         rsync -pctv --chmod=F644 --fsync --preallocate pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
         rm pdns.conf.tmp
-        rsync -pctv --chmod=F644 --fsync --preallocate GeoIP.conf $remote:/etc/GeoIP.conf
+        rsync -pctv --chown root:geoipupdate --chmod=F640 --fsync --preallocate GeoIP.conf $remote:/etc/GeoIP.conf
         rsync -prctv --chmod=D755,F644 --fsync --preallocate systemd/system/ $remote:/etc/systemd/system
     fi
 

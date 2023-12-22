@@ -544,7 +544,8 @@ domains:
 
       discuss.grapheneos.org:
         - a: 51.161.11.34
-        - aaaa: 2607:5300:205:200::3df
+        # IPv6 interacts badly with IP-based spam filtering
+        #- aaaa: 2607:5300:205:200::3df
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
         - caa: *caa_iodef

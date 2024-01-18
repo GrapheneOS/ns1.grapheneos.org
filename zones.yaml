@@ -4,8 +4,8 @@ domains:
     records:
       # OVH Beauharnois
       ns1.attestation.app: &ns1
-        - a: &ns1_a 51.222.14.6
-        - aaaa: &ns1_aaaa 2607:5300:205:200::29e8
+        - a: &ns1_a 51.161.34.158
+        - aaaa: &ns1_aaaa 2607:5300:205:200::eaa
         - caa: &ns1_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
         - caa: &ns1_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
         - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
@@ -296,7 +296,7 @@ domains:
         - caa: *ns1_caa_staging
         - caa: *caa_iodef
         - mx: *null_mx
-        - sshfp: 4 2 794c40da3d66e29d3e5738ffdd7cc4d9008502872a32bc8daef68d14f0316a90
+        - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
         - txt: *null_spf
       ns2.grapheneos.org: *ns2
       _853._tcp.ns1.grapheneos.org: *ns1_tlsa

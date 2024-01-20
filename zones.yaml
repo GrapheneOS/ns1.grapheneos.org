@@ -124,10 +124,10 @@ domains:
 
       # OVH Beauharnois
       0.grapheneos.network:
-        - a: 51.79.54.68
-        - aaaa: 2607:5300:205:200::b44
+        - a: 51.222.159.116
+        - aaaa: 2607:5300:205:200::2584
         - mx: *null_mx
-        - sshfp: 4 2 2ac7ab6509917bda0192b3402f4ea390b27a78e58f6bb62fa8d8b5872e93033c
+        - sshfp: 4 2 9a8876378e235a49e228664b10122a26cd42abca33ad65d995c38331e1f705a7
         - txt: *null_spf
       # BuyVM Las Vegas
       1.grapheneos.network:
@@ -154,7 +154,7 @@ domains:
       grapheneos.network:
         - lua: &network_lua_a
             content: "A \";
-              local ips_na_east = {'51.79.54.68'}
+              local ips_na_east = {'51.222.159.116'}
               local ips_na_west = {'209.141.37.35'}
               local ips_eu = {'146.59.144.170'}
               local ips_sg = {'51.79.165.181'}
@@ -178,7 +178,7 @@ domains:
             ttl: &dynamic_ttl 300
         - lua: &network_lua_aaaa
             content: "AAAA \";
-              local ips_na_east = {'2607:5300:205:200::b44'}
+              local ips_na_east = {'2607:5300:205:200::2584'}
               local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}
               local ips_eu = {'2001:41d0:304:200::df95'}
               local ips_sg = {'2402:1f00:8000:800::e14'}
@@ -328,10 +328,10 @@ domains:
 
       # OVH Beauharnois
       0.grapheneos.org:
-        - a: 192.99.43.50
-        - aaaa: 2607:5300:201:3100::1aae
+        - a: 51.222.156.101
+        - aaaa: 2607:5300:205:200::29c6
         - mx: *null_mx
-        - sshfp: 4 2 f4b0eaeff529404ae27322e09b8d0c5f5235ef4b9496bcbd334b22604d355ce3
+        - sshfp: 4 2 ef9845da6e542a593cbb666026935eb90b8eefe7b70a17d5edfc024985b39306
         - txt: *null_spf
       # BuyVM Las Vegas
       1.grapheneos.org:
@@ -358,7 +358,7 @@ domains:
       grapheneos.org:
         - lua: &grapheneos_lua_a
             content: "A \";
-              local ips_na_east = {'192.99.43.50'}
+              local ips_na_east = {'51.222.156.101'}
               local ips_na_west = {'209.141.35.164'}
               local ips_eu = {'51.178.136.41'}
               local ips_sg = {'51.79.160.212'}
@@ -382,7 +382,7 @@ domains:
             ttl: *dynamic_ttl
         - lua: &grapheneos_lua_aaaa
             content: "AAAA \";
-              local ips_na_east = {'2607:5300:201:3100::1aae'}
+              local ips_na_east = {'2607:5300:205:200::29c6'}
               local ips_na_west = {'2605:6400:20:1131:8088:e08:84e6:632'}
               local ips_eu = {'2001:41d0:304:200::a087'}
               local ips_sg = {'2402:1f00:8000:800::25ba'}

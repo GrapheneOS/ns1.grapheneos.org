@@ -543,16 +543,16 @@ domains:
       mta-sts.matrix.grapheneos.org: *mta_sts_subdomain
 
       discuss.grapheneos.org:
-        - a: 51.161.11.34
+        - a: 51.79.52.38
         # IPv6 interacts badly with IP-based spam filtering
-        #- aaaa: 2607:5300:205:200::3df
+        #- aaaa: 2607:5300:205:200::3c4
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
         - caa: *caa_iodef
         - https: *https
         - mx: *grapheneos_mx
         - mx: *grapheneos_mx_backup
-        - sshfp: 4 2 b83b04142bb75babeee5998309fa63cae53dc3c7915f28f0c38cd34c2e16abb1
+        - sshfp: 4 2 8191c5fa45eba387c4626f69cbe36d87ed23a01ae69b9f223831c1673a438f60
         - txt: *grapheneos_spf
       _443._tcp.discuss.grapheneos.org:
         - tlsa: 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81

@@ -30,8 +30,8 @@ domains:
         - tlsa: 3 1 1 acc175a1bd70f6608f63da1717dc2cb752ed9ea9492a890c008159cfb1a3a360
 
       attestation.app:
-        - a: &attestation_a 51.79.50.249
-        - aaaa: &attestation_aaaa 2607:5300:205:200::86a
+        - a: &attestation_a 51.79.66.27
+        - aaaa: &attestation_aaaa 2607:5300:205:200::7e9
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
         - caa: *caa_iodef
@@ -53,7 +53,7 @@ domains:
         - soa:
             content: ns1.attestation.app hostmaster.attestation.app {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
-        - sshfp: 4 2 fa521c18b46e8993e4def81dd804719cc74b6700889deaafb5463e645bf198ee
+        - sshfp: 4 2 3c03c6c4ebc5ca097d55d4b2941ad581e840f230a6927c58755522c0ec3e98c6
         - txt: &grapheneos_spf "v=spf1 a:mail.grapheneos.org -all"
         - txt: google-site-verification=N_aN03-oRkhotXYqvQqFinrMMK2W2aq73NK-Ce1kTYY
         - txt: "yandex-verification: aafc5b649d6fa07d"

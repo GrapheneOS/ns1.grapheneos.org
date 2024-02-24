@@ -624,10 +624,10 @@ domains:
         - txt: *null_spf
       # OVH Gravelines
       4.releases.grapheneos.org:
-        - a: 141.94.71.158
-        - aaaa: 2001:41d0:304:200::14ff
+        - a: 51.75.22.47
+        - aaaa: 2001:41d0:304:200::9f9a
         - mx: *null_mx
-        - sshfp: 4 2 fa69c477643d121d12a6f0c6ba71a6ce34cdffd59521ed5fe8c0e6fdbbde51b0
+        - sshfp: 4 2 5ef22e355aae705c78d5a885497cf9df677c4773d3574b0d2fa0b64867c71a83
         - txt: *null_spf
       # OVH Gravelines
       5.releases.grapheneos.org:
@@ -655,7 +655,7 @@ domains:
         - lua: &releases_lua_a
             content: "A \";
               local ips_na = {'167.114.114.114', '51.79.74.15', '51.222.159.48', '51.222.140.199'}
-              local ips_eu = {'141.94.71.158', '141.94.71.72', '135.125.183.155', '141.95.0.242'}
+              local ips_eu = {'51.75.22.47', '141.94.71.72', '135.125.183.155', '141.95.0.242'}
               local ips
               local cn = continentCode()
               local cc = countryCode()
@@ -671,7 +671,7 @@ domains:
         - lua: &releases_lua_aaaa
             content: "AAAA \";
               local ips_na = {'2607:5300:201:3100::6210', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::39fe'}
-              local ips_eu = {'2001:41d0:304:200::14ff', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}
+              local ips_eu = {'2001:41d0:304:200::9f9a', '2001:41d0:304:200::a687', '2001:41d0:701:1100::2ec9', '2001:41d0:701:1100::3e56'}
               local ips
               local cn = continentCode()
               local cc = countryCode()

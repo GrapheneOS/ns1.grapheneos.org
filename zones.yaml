@@ -24,10 +24,12 @@ domains:
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf
-      _853._tcp.ns1.attestation.app: &ns1_tlsa
+      _443._tcp.ns1.attestation.app: &ns1_tlsa
         - tlsa: 3 1 1 1892a7db35f1a969ec5fa8aaef9fdcc7978a9bf503f7631e7e5ed65f09f7b8f1
-      _853._tcp.ns2.attestation.app: &ns2_tlsa
+      _853._tcp.ns1.attestation.app: *ns1_tlsa
+      _443._tcp.ns2.attestation.app: &ns2_tlsa
         - tlsa: 3 1 1 acc175a1bd70f6608f63da1717dc2cb752ed9ea9492a890c008159cfb1a3a360
+      _853._tcp.ns2.attestation.app: *ns2_tlsa
 
       attestation.app:
         - a: &attestation_a 51.79.66.27
@@ -103,8 +105,10 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
       ns2.staging.attestation.app: *ns_staging
-      _853._tcp.ns1.staging.attestation.app: &ns_staging_tlsa
+      _443._tcp.ns1.staging.attestation.app: &ns_staging_tlsa
         - tlsa: 3 1 1 0c7449b868c722bcc5d2d6e51cca4fbdc8990776f15f09bcd88a195d56e7c4d1
+      _853._tcp.ns1.staging.attestation.app: *ns_staging_tlsa
+      _443._tcp.ns2.staging.attestation.app: *ns_staging_tlsa
       _853._tcp.ns2.staging.attestation.app: *ns_staging_tlsa
       www.attestation.app:
         - a: *attestation_a
@@ -119,7 +123,9 @@ domains:
     records:
       ns1.grapheneos.network: *ns1
       ns2.grapheneos.network: *ns2
+      _443._tcp.ns1.grapheneos.network: *ns1_tlsa
       _853._tcp.ns1.grapheneos.network: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.network: *ns2_tlsa
       _853._tcp.ns2.grapheneos.network: *ns2_tlsa
 
       # OVH Beauharnois
@@ -246,7 +252,9 @@ domains:
     records:
       ns1.grapheneos.online: *ns1
       ns2.grapheneos.online: *ns2
+      _443._tcp.ns1.grapheneos.online: *ns1_tlsa
       _853._tcp.ns1.grapheneos.online: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.online: *ns2_tlsa
       _853._tcp.ns2.grapheneos.online: *ns2_tlsa
 
       grapheneos.online:
@@ -299,7 +307,9 @@ domains:
         - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
         - txt: *null_spf
       ns2.grapheneos.org: *ns2
+      _443._tcp.ns1.grapheneos.org: *ns1_tlsa
       _853._tcp.ns1.grapheneos.org: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.org: *ns2_tlsa
       _853._tcp.ns2.grapheneos.org: *ns2_tlsa
 
       0.ns2.grapheneos.org:
@@ -477,7 +487,9 @@ domains:
         - sshfp: 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81
         - txt: *null_spf
       ns2.staging.grapheneos.org: *ns_staging
+      _443._tcp.ns1.staging.grapheneos.org: *ns_staging_tlsa
       _853._tcp.ns1.staging.grapheneos.org: *ns_staging_tlsa
+      _443._tcp.ns2.staging.grapheneos.org: *ns_staging_tlsa
       _853._tcp.ns2.staging.grapheneos.org: *ns_staging_tlsa
 
       time.grapheneos.org: &org_network_subdomain
@@ -723,7 +735,9 @@ domains:
     records:
       ns1.seamlessupdate.app: *ns1
       ns2.seamlessupdate.app: *ns2
+      _443._tcp.ns1.seamlessupdate.app: *ns1_tlsa
       _853._tcp.ns1.seamlessupdate.app: *ns1_tlsa
+      _443._tcp.ns2.seamlessupdate.app: *ns2_tlsa
       _853._tcp.ns2.seamlessupdate.app: *ns2_tlsa
 
       seamlessupdate.app:
@@ -775,7 +789,9 @@ domains:
     records:
       ns1.vanadium.app: *ns1
       ns2.vanadium.app: *ns2
+      _443._tcp.ns1.vanadium.app: *ns1_tlsa
       _853._tcp.ns1.vanadium.app: *ns1_tlsa
+      _443._tcp.ns2.vanadium.app: *ns2_tlsa
       _853._tcp.ns2.vanadium.app: *ns2_tlsa
 
       vanadium.app:
@@ -825,7 +841,9 @@ domains:
     records:
       ns1.grapheneos.social: *ns1
       ns2.grapheneos.social: *ns2
+      _443._tcp.ns1.grapheneos.social: *ns1_tlsa
       _853._tcp.ns1.grapheneos.social: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.social: *ns2_tlsa
       _853._tcp.ns2.grapheneos.social: *ns2_tlsa
 
       grapheneos.social:
@@ -878,7 +896,9 @@ domains:
     records:
       ns1.grapheneos.app: *ns1
       ns2.grapheneos.app: *ns2
+      _443._tcp.ns1.grapheneos.app: *ns1_tlsa
       _853._tcp.ns1.grapheneos.app: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.app: *ns2_tlsa
       _853._tcp.ns2.grapheneos.app: *ns2_tlsa
 
       grapheneos.app:
@@ -922,7 +942,9 @@ domains:
     records:
       ns1.grapheneos.ca: *ns1
       ns2.grapheneos.ca: *ns2
+      _443._tcp.ns1.grapheneos.ca: *ns1_tlsa
       _853._tcp.ns1.grapheneos.ca: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.ca: *ns2_tlsa
       _853._tcp.ns2.grapheneos.ca: *ns2_tlsa
 
       grapheneos.ca:
@@ -966,7 +988,9 @@ domains:
     records:
       ns1.grapheneos.com: *ns1
       ns2.grapheneos.com: *ns2
+      _443._tcp.ns1.grapheneos.com: *ns1_tlsa
       _853._tcp.ns1.grapheneos.com: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.com: *ns2_tlsa
       _853._tcp.ns2.grapheneos.com: *ns2_tlsa
 
       grapheneos.com:
@@ -1010,7 +1034,9 @@ domains:
     records:
       ns1.grapheneos.dev: *ns1
       ns2.grapheneos.dev: *ns2
+      _443._tcp.ns1.grapheneos.dev: *ns1_tlsa
       _853._tcp.ns1.grapheneos.dev: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.dev: *ns2_tlsa
       _853._tcp.ns2.grapheneos.dev: *ns2_tlsa
 
       grapheneos.dev:
@@ -1054,7 +1080,9 @@ domains:
     records:
       ns1.grapheneos.info: *ns1
       ns2.grapheneos.info: *ns2
+      _443._tcp.ns1.grapheneos.info: *ns1_tlsa
       _853._tcp.ns1.grapheneos.info: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.info: *ns2_tlsa
       _853._tcp.ns2.grapheneos.info: *ns2_tlsa
 
       grapheneos.info:
@@ -1098,7 +1126,9 @@ domains:
     records:
       ns1.grapheneos.net: *ns1
       ns2.grapheneos.net: *ns2
+      _443._tcp.ns1.grapheneos.net: *ns1_tlsa
       _853._tcp.ns1.grapheneos.net: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.net: *ns2_tlsa
       _853._tcp.ns2.grapheneos.net: *ns2_tlsa
 
       grapheneos.net:
@@ -1157,7 +1187,9 @@ domains:
     records:
       ns1.grapheneos.ovh: *ns1
       ns2.grapheneos.ovh: *ns2
+      _443._tcp.ns1.grapheneos.ovh: *ns1_tlsa
       _853._tcp.ns1.grapheneos.ovh: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.ovh: *ns2_tlsa
       _853._tcp.ns2.grapheneos.ovh: *ns2_tlsa
 
       grapheneos.ovh:
@@ -1201,7 +1233,9 @@ domains:
     records:
       ns1.grapheneos.page: *ns1
       ns2.grapheneos.page: *ns2
+      _443._tcp.ns1.grapheneos.page: *ns1_tlsa
       _853._tcp.ns1.grapheneos.page: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.page: *ns2_tlsa
       _853._tcp.ns2.grapheneos.page: *ns2_tlsa
 
       grapheneos.page:

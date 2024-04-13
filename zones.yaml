@@ -1075,6 +1075,52 @@ domains:
       mta-sts.grapheneos.dev: *mta_sts_subdomain
       www.grapheneos.dev: *grapheneos_subdomain
 
+  - domain: grapheneos.foundation
+    ttl: *default_ttl
+    records:
+      ns1.grapheneos.foundation: *ns1
+      ns2.grapheneos.foundation: *ns2
+      _443._tcp.ns1.grapheneos.foundation: *ns1_tlsa
+      _853._tcp.ns1.grapheneos.foundation: *ns1_tlsa
+      _443._tcp.ns2.grapheneos.foundation: *ns2_tlsa
+      _853._tcp.ns2.grapheneos.foundation: *ns2_tlsa
+
+      grapheneos.foundation:
+        - lua: *grapheneos_lua_a
+        - lua: *grapheneos_lua_aaaa
+        - caa: *grapheneos_caa
+        - caa: *grapheneos_caa_staging
+        - caa: *caa_iodef
+        - https: *https
+        - mx: *grapheneos_mx
+        - mx: *grapheneos_mx_backup
+        - ns:
+            content: ns1.grapheneos.foundation
+            ttl: *stable_ttl
+        - ns:
+            content: ns2.grapheneos.foundation
+            ttl: *stable_ttl
+        - soa:
+            content: ns1.grapheneos.foundation hostmaster.grapheneos.foundation {serial} 3600 1800 1209600 3600
+            ttl: *stable_ttl
+        - sshfp: *null_sshfp
+        - txt: *grapheneos_spf
+        - txt: google-site-verification=VVG1J1msoEquGFxLZO-xzJmk9061tN2IJwItzgf3af4
+        - txt: "yandex-verification: de4993214f5c84c0"
+        - txt: facebook-domain-verification=qtr4hnbiw0zl7g2k5640wt4jl877c2
+      _443._tcp.grapheneos.foundation: *grapheneos_tlsa
+      _443._tcp.mta-sts.grapheneos.foundation: *mta_sts_tlsa
+      _443._tcp.www.grapheneos.foundation: *grapheneos_tlsa
+      _dmarc.grapheneos.foundation:
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.foundation; ruf=mailto:dmarc@grapheneos.foundation"
+      _mta-sts.grapheneos.foundation: *_mta-sts
+      _smtp._tls.grapheneos.foundation:
+        - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.foundation"
+      default._bimi.grapheneos.foundation: *grapheneos_bimi
+      default._domainkey.grapheneos.foundation: *grapheneos_dkim
+      mta-sts.grapheneos.foundation: *mta_sts_subdomain
+      www.grapheneos.foundation: *grapheneos_subdomain
+
   - domain: grapheneos.info
     ttl: *default_ttl
     records:

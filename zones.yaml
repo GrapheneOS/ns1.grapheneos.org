@@ -333,7 +333,7 @@ domains:
 
       geoip.grapheneos.org:
         - txt:
-            content: "ip: %ip, country: %cc, continent: %cn, region: %re"
+            content: "ip: %ip, region: %re, country: %cc, continent: %cn"
             ttl: 60
 
       # OVH Beauharnois

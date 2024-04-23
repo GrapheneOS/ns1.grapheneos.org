@@ -724,8 +724,10 @@ domains:
             content: ns1.grapheneos.org hostmaster.grapheneos.org {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
       "*.dnscheck.grapheneos.org":
-        - a: 127.0.0.1
-        - aaaa: ::1
+        # RFC 5735 TEST-NET-1
+        - a: 192.0.2.1
+        # RFC 6666 Discard Prefix
+        - aaaa: 100::1
         - mx: *null_mx
         - sshfp: *null_sshfp
         - txt: *null_spf

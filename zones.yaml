@@ -518,6 +518,9 @@ domains:
       broadcom.psds.grapheneos.org: *org_network_subdomain
       _443._tcp.broadcom.psds.grapheneos.org: *network_tlsa
 
+      samsung.psds.grapheneos.org: *org_network_subdomain
+      _443._tcp.samsung.psds.grapheneos.org: *network_tlsa
+
       qualcomm.psds.grapheneos.org: *org_network_subdomain
       _443._tcp.qualcomm.psds.grapheneos.org: *network_tlsa
 

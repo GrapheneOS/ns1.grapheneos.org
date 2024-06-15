@@ -154,10 +154,10 @@ domains:
         - txt: *null_spf
       # OVH Singapore
       3.grapheneos.network:
-        - a: 51.79.165.181
-        - aaaa: 2402:1f00:8000:800::e14
+        - a: 51.79.161.36
+        - aaaa: 2402:1f00:8000:800::1949
         - mx: *null_mx
-        - sshfp: 4 2 57e965c3ab73bc6c39d0d83b8016498e7d327e66a0ee10f26ae69b341610ebdc
+        - sshfp: 4 2 ca9b96fe0da5173ee4098f02c0128dc40173036545bb47c566a9b98765dfafe6
         - txt: *null_spf
 
       grapheneos.network:
@@ -166,7 +166,7 @@ domains:
               local ips_na_east = {'51.222.159.116'}
               local ips_na_west = {'209.141.37.35'}
               local ips_eu = {'54.37.41.189'}
-              local ips_sg = {'51.79.165.181'}
+              local ips_sg = {'51.79.161.36'}
               local ips
               local cn = continentCode()
               local cc = countryCode()
@@ -190,7 +190,7 @@ domains:
               local ips_na_east = {'2607:5300:205:200::2584'}
               local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}
               local ips_eu = {'2001:41d0:304:200::b109'}
-              local ips_sg = {'2402:1f00:8000:800::e14'}
+              local ips_sg = {'2402:1f00:8000:800::1949'}
               local ips
               local cn = continentCode()
               local cc = countryCode()
@@ -363,10 +363,10 @@ domains:
         - txt: *null_spf
       # OVH Singapore
       3.grapheneos.org:
-        - a: 51.79.160.212
-        - aaaa: 2402:1f00:8000:800::25ba
+        - a: 51.79.160.50
+        - aaaa: 2402:1f00:8000:800::16d6
         - mx: *null_mx
-        - sshfp: 4 2 d207f58d59bac7959609dda2d51edaf1fd13d49e4833b39085f194b16a6737ef
+        - sshfp: 4 2 67bbc371b74adb54907bf5f5f5918c85a0a6a9b50c88050950c3a56aac334100
         - txt: *null_spf
 
       grapheneos.org:
@@ -375,7 +375,7 @@ domains:
               local ips_na_east = {'51.222.156.101'}
               local ips_na_west = {'209.141.35.164'}
               local ips_eu = {'54.37.41.188'}
-              local ips_sg = {'51.79.160.212'}
+              local ips_sg = {'51.79.160.50'}
               local ips
               local cn = continentCode()
               local cc = countryCode()
@@ -399,7 +399,7 @@ domains:
               local ips_na_east = {'2607:5300:205:200::29c6'}
               local ips_na_west = {'2605:6400:20:1131:8088:e08:84e6:632'}
               local ips_eu = {'2001:41d0:304:200::902f'}
-              local ips_sg = {'2402:1f00:8000:800::25ba'}
+              local ips_sg = {'2402:1f00:8000:800::16d6'}
               local ips
               local cn = continentCode()
               local cc = countryCode()

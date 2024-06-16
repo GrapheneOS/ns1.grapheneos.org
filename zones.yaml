@@ -661,14 +661,14 @@ domains:
         - a: 135.125.183.155
         - aaaa: 2001:41d0:701:1100::2ec9
         - mx: *null_mx
-        - sshfp: 4 2 ca537ed11e7afd60844c135a5d0d41ab9298e8b90bfbd27745af64940affaaca
+        - sshfp: 4 2 625bce6286240c1d0a9961746b23b7876a44ceaf49ffa90c29e2127dc4971fc7
         - txt: *null_spf
       # OVH Frankfurt
       7.releases.grapheneos.org:
         - a: 141.95.0.242
         - aaaa: 2001:41d0:701:1100::3e56
         - mx: *null_mx
-        - sshfp: 4 2 8fac012d091c6f1a5be108ed09f8ee6e9c8c442f4da1b193bd36dd740a070caa
+        - sshfp: 4 2 1ce631b4e4fc2e97c8f6c619ddaf09119ecc234f2c75ac2220be35a093b902fd
         - txt: *null_spf
 
       releases.grapheneos.org: &releases

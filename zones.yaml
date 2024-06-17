@@ -654,7 +654,7 @@ domains:
         - a: 141.94.71.72
         - aaaa: 2001:41d0:304:200::a687
         - mx: *null_mx
-        - sshfp: 4 2 eaeaf8fb7595096f87d43e1fbeef054786c4a1c1277451db3b7459340d818fd4
+        - sshfp: 4 2 53bb0626ca839d58c68e44739cb2b18186df979f4cc4fb4c101fdaeb2426ab8d
         - txt: *null_spf
       # OVH Frankfurt
       6.releases.grapheneos.org:

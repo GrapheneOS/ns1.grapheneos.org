@@ -633,14 +633,14 @@ domains:
         - a: 51.222.159.48
         - aaaa: 2607:5300:205:200::3f46
         - mx: *null_mx
-        - sshfp: 4 2 f6d2cb96e624847f323da082bd0a6f0c6d037f8e69602a7877e90e6f8e64bda8
+        - sshfp: 4 2 7be1b8a2a3c10fd8ae352ac495da6cf738ebf6613d01074261833bc5df59cb80
         - txt: *null_spf
       # OVH Beauharnois
       3.releases.grapheneos.org:
         - a: 51.222.140.199
         - aaaa: 2607:5300:205:200::39fe
         - mx: *null_mx
-        - sshfp: 4 2 8f9483a6ae63ba541c760a95a1e3190ce7f494cf0973cf1dad0bfc5a8356fb47
+        - sshfp: 4 2 f8fdbe0fc0c424831cd06053de9f424abbcec76e8eff86830b558b069ad5286d
         - txt: *null_spf
       # OVH Gravelines
       4.releases.grapheneos.org:

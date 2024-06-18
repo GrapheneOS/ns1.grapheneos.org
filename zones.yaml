@@ -626,7 +626,7 @@ domains:
         - a: 51.79.74.15
         - aaaa: 2607:5300:205:200::2441
         - mx: *null_mx
-        - sshfp: 4 2 fa4854bfc7c268e4f2a7ea48a4191196434963a8937ee8dc31107f160490d770
+        - sshfp: 4 2 10d95e196a4aa367d7c52c11c7b78d2d4cc12c53c4696e804efdc4fa019487b1
         - txt: *null_spf
       # OVH Beauharnois
       2.releases.grapheneos.org:

@@ -70,7 +70,7 @@ domains:
         - tlsa: 3 1 1 25e4779bc88d9e764b052c4866e362dae2d59ddd6b67f5b4ce674684e5db9655
       _443._tcp.www.attestation.app: *attestation_tlsa
       _dmarc.attestation.app:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
       _mta-sts.attestation.app: &_mta-sts
         - txt: "v=STSv1; id=2023062500"
       _smtp._tls.attestation.app:
@@ -234,7 +234,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.network: *mta_sts_tlsa
       _443._tcp.www.grapheneos.network: *network_tlsa
       _dmarc.grapheneos.network:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
       _mta-sts.grapheneos.network: *_mta-sts
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
@@ -287,7 +287,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.online: *mta_sts_tlsa
       _443._tcp.www.grapheneos.online: *network_tlsa
       _dmarc.grapheneos.online:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.online; ruf=mailto:dmarc@grapheneos.online"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.online; ruf=mailto:dmarc@grapheneos.online"
       _mta-sts.grapheneos.online: *_mta-sts
       _smtp._tls.grapheneos.online:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.online"
@@ -445,7 +445,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.org: *mta_sts_tlsa
       _443._tcp.www.grapheneos.org: *grapheneos_tlsa
       _dmarc.grapheneos.org:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
       _mta-sts.grapheneos.org: *_mta-sts
       _smtp._tls.grapheneos.org:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
@@ -777,7 +777,7 @@ domains:
       _443._tcp.mta-sts.seamlessupdate.app: *mta_sts_tlsa
       _443._tcp.www.seamlessupdate.app: *releases_tlsa
       _dmarc.seamlessupdate.app:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
       _mta-sts.seamlessupdate.app: *_mta-sts
       _smtp._tls.seamlessupdate.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
@@ -831,7 +831,7 @@ domains:
       _443._tcp.mta-sts.vanadium.app: *mta_sts_tlsa
       _443._tcp.www.vanadium.app: *grapheneos_tlsa
       _dmarc.vanadium.app:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
       _mta-sts.vanadium.app: *_mta-sts
       _smtp._tls.vanadium.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@vanadium.app"
@@ -884,7 +884,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.social: *mta_sts_tlsa
       _443._tcp.www.grapheneos.social: *social_tlsa
       _dmarc.grapheneos.social:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.social; ruf=mailto:dmarc@grapheneos.social"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.social; ruf=mailto:dmarc@grapheneos.social"
       _mta-sts.grapheneos.social: *_mta-sts
       _smtp._tls.grapheneos.social:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.social"
@@ -938,7 +938,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.app: *mta_sts_tlsa
       _443._tcp.www.grapheneos.app: *grapheneos_tlsa
       _dmarc.grapheneos.app:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.app; ruf=mailto:dmarc@grapheneos.app"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.app; ruf=mailto:dmarc@grapheneos.app"
       _mta-sts.grapheneos.app: *_mta-sts
       _smtp._tls.grapheneos.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.app"
@@ -984,7 +984,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.ca: *mta_sts_tlsa
       _443._tcp.www.grapheneos.ca: *grapheneos_tlsa
       _dmarc.grapheneos.ca:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ca; ruf=mailto:dmarc@grapheneos.ca"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.ca; ruf=mailto:dmarc@grapheneos.ca"
       _mta-sts.grapheneos.ca: *_mta-sts
       _smtp._tls.grapheneos.ca:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ca"
@@ -1030,7 +1030,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.com: *mta_sts_tlsa
       _443._tcp.www.grapheneos.com: *grapheneos_tlsa
       _dmarc.grapheneos.com:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.com; ruf=mailto:dmarc@grapheneos.com"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.com; ruf=mailto:dmarc@grapheneos.com"
       _mta-sts.grapheneos.com: *_mta-sts
       _smtp._tls.grapheneos.com:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.com"
@@ -1076,7 +1076,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.dev: *mta_sts_tlsa
       _443._tcp.www.grapheneos.dev: *grapheneos_tlsa
       _dmarc.grapheneos.dev:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.dev; ruf=mailto:dmarc@grapheneos.dev"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.dev; ruf=mailto:dmarc@grapheneos.dev"
       _mta-sts.grapheneos.dev: *_mta-sts
       _smtp._tls.grapheneos.dev:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.dev"
@@ -1122,7 +1122,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.foundation: *mta_sts_tlsa
       _443._tcp.www.grapheneos.foundation: *grapheneos_tlsa
       _dmarc.grapheneos.foundation:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.foundation; ruf=mailto:dmarc@grapheneos.foundation"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.foundation; ruf=mailto:dmarc@grapheneos.foundation"
       _mta-sts.grapheneos.foundation: *_mta-sts
       _smtp._tls.grapheneos.foundation:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.foundation"
@@ -1168,7 +1168,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.info: *mta_sts_tlsa
       _443._tcp.www.grapheneos.info: *grapheneos_tlsa
       _dmarc.grapheneos.info:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.info; ruf=mailto:dmarc@grapheneos.info"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.info; ruf=mailto:dmarc@grapheneos.info"
       _mta-sts.grapheneos.info: *_mta-sts
       _smtp._tls.grapheneos.info:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.info"
@@ -1214,7 +1214,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.net: *mta_sts_tlsa
       _443._tcp.www.grapheneos.net: *grapheneos_tlsa
       _dmarc.grapheneos.net:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
       _mta-sts.grapheneos.net: *_mta-sts
       _smtp._tls.grapheneos.net:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
@@ -1275,7 +1275,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.ovh: *mta_sts_tlsa
       _443._tcp.www.grapheneos.ovh: *grapheneos_tlsa
       _dmarc.grapheneos.ovh:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.ovh; ruf=mailto:dmarc@grapheneos.ovh"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.ovh; ruf=mailto:dmarc@grapheneos.ovh"
       _mta-sts.grapheneos.ovh: *_mta-sts
       _smtp._tls.grapheneos.ovh:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.ovh"
@@ -1321,7 +1321,7 @@ domains:
       _443._tcp.mta-sts.grapheneos.page: *mta_sts_tlsa
       _443._tcp.www.grapheneos.page: *grapheneos_tlsa
       _dmarc.grapheneos.page:
-        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
+        - txt: "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
       _mta-sts.grapheneos.page: *_mta-sts
       _smtp._tls.grapheneos.page:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"

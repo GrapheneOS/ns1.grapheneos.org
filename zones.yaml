@@ -529,6 +529,9 @@ domains:
       _7275._tcp.supl.grapheneos.org:
         - tlsa: 3 1 1 71615ea3c0c223a68cb3d1f1d2957d58b2aa0740db5684ff31a54381631711e7
 
+      gs-loc.apple.grapheneos.org: *org_network_subdomain
+      _443._tcp.gs-loc.apple.grapheneos.org: *network_tlsa
+
       element.grapheneos.org:
         - a: &matrix_a 51.79.51.42
         - aaaa: &matrix_aaaa 2607:5300:205:200::26e1

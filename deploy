@@ -63,7 +63,7 @@ for server in ${servers[@]}; do
     rm zones.yaml.tmp
 
     if (( reconfigure )); then
-        ssh $remote 'systemctl daemon-reload && systemctl restart pdns'
+        ssh $remote 'systemctl enable --now geoipupdate.timer pdns.service && systemctl daemon-reload && systemctl restart pdns'
         sleep 5
     else
         ssh $remote pdns_control reload

@@ -688,7 +688,7 @@ domains:
               else
                 ips = {ips_na, ips_eu}
               end
-              local all = ifurlup('https://releases.grapheneos.org/husky-stable', ips, {selector='all', backupSelector='all'})
+              local all = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})
               return {all[1], all[2], all[3], all[4]}\""
             ttl: *dynamic_ttl
         - lua: &releases_lua_aaaa
@@ -704,7 +704,7 @@ domains:
               else
                 ips = {ips_na, ips_eu}
               end
-              local all = ifurlup('https://releases.grapheneos.org/husky-stable', ips, {selector='all', backupSelector='all'})
+              local all = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})
               return {all[1], all[2], all[3], all[4]}\""
             ttl: *dynamic_ttl
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"

@@ -863,8 +863,8 @@ domains:
       _853._tcp.ns2.grapheneos.social: *ns2_tlsa
 
       grapheneos.social:
-        - a: &social_a 51.222.30.159
-        - aaaa: &social_aaaa 2607:5300:205:200::2706
+        - a: &social_a 51.222.159.14
+        - aaaa: &social_aaaa 2607:5300:205:200::5e3f
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
         - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
         - caa: *caa_iodef
@@ -880,7 +880,7 @@ domains:
         - soa:
             content: ns1.grapheneos.social hostmaster.grapheneos.social {serial} 3600 1800 1209600 3600
             ttl: *stable_ttl
-        - sshfp: 4 2 c22c671fa00832ded0b8d387477b9ded6f66361fb7a36ecfe78ecd328e375508
+        - sshfp: 4 2 079a217e085877ea780d77a0bf0cd4ef226b4b27b8f8b954ee7821f2a1cbaf8c
         - txt: *grapheneos_spf
         - txt: google-site-verification=1udi6RI56KjPtFGO38lCQImhEmY6XFxX1hVsdEK4_gw
         - txt: "yandex-verification: ec33ee307706436f"

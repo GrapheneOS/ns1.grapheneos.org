@@ -677,7 +677,7 @@ domains:
         - sshfp: 4 2 1ce631b4e4fc2e97c8f6c619ddaf09119ecc234f2c75ac2220be35a093b902fd
         - txt: *null_spf
       # Macarne Amsterdam
-      8.releases.grapheneos.org:
+      4.releases.grapheneos.org:
         - a: 45.90.185.33
         - aaaa: 2a14:3f87:6920:250::100
         - mx: *null_mx

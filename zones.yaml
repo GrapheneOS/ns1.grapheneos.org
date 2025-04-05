@@ -692,7 +692,7 @@ domains:
               local ips
               local cn = continentCode()
               local cc = countryCode()
-              local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, io=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
               if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
                 ips = {ips_eu, ips_na}
               else
@@ -708,7 +708,7 @@ domains:
               local ips
               local cn = continentCode()
               local cc = countryCode()
-              local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
+              local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, io=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}
               if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then
                 ips = {ips_eu, ips_na}
               else

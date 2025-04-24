@@ -655,6 +655,13 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf
         - txt: *null_spf
+      # ReliableSite Miami
+      5.releases.grapheneos.org:
+        - a: 172.96.172.37
+        - aaaa: 2605:9880:400:1100:15:1240:515:6e
+        - mx: *null_mx
+        - sshfp: 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
+        - txt: *null_spf
       # ReliableSite Los Angeles
       6.releases.grapheneos.org:
         - a: 104.194.8.203
@@ -666,9 +673,9 @@ domains:
       releases.grapheneos.org: &releases
         - lua: &releases_lua_a
             content: "A \";
-              local ips_na_east = {'51.222.15.172', '51.79.74.15', '51.222.159.48', '148.113.200.36'}
-              local ips_na_west = {'104.194.8.203', '104.194.8.203', '104.194.8.203', '104.194.8.203'}
-              local ips_eu = {'45.90.185.33', '45.90.185.33', '45.90.185.33', '45.90.185.33'}
+              local ips_na_east = {'172.96.172.37'}
+              local ips_na_west = {'104.194.8.203'}
+              local ips_eu = {'45.90.185.33'}
               local ips
               local cn = continentCode()
               local cc = countryCode()
@@ -683,14 +690,13 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu}
               end
-              local all = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})
-              return {all[1], all[2], all[3], all[4]}\""
+              return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
         - lua: &releases_lua_aaaa
             content: "AAAA \";
-              local ips_na_east = {'2607:5300:205:200::47ea', '2607:5300:205:200::2441', '2607:5300:205:200::3f46', '2607:5300:205:200::5854'}
-              local ips_na_west = {'2605:9880:200:20::113', '2605:9880:200:20::113', '2605:9880:200:20::113', '2605:9880:200:20::113'}
-              local ips_eu = {'2a14:3f87:6920:250::100', '2a14:3f87:6920:250::100', '2a14:3f87:6920:250::100', '2a14:3f87:6920:250::100'}
+              local ips_na_east = {'2605:9880:400:1100:15:1240:515:6e'}
+              local ips_na_west = {'2605:9880:200:20::113'}
+              local ips_eu = {'2a14:3f87:6920:250::100'}
               local ips
               local cn = continentCode()
               local cc = countryCode()
@@ -705,8 +711,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu}
               end
-              local all = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})
-              return {all[1], all[2], all[3], all[4]}\""
+              return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"

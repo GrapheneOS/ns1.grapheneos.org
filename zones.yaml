@@ -620,34 +620,6 @@ domains:
         - sshfp: *null_sshfp
         - txt: *null_spf
 
-      # OVH Beauharnois
-      0.releases.grapheneos.org:
-        - a: 51.222.15.172
-        - aaaa: 2607:5300:205:200::47ea
-        - mx: *null_mx
-        - sshfp: 4 2 c0dbb4399aa3e442d90a77a711f505a5a0e094c9b6df1ddf98bee27b22f27038
-        - txt: *null_spf
-      # OVH Beauharnois
-      1.releases.grapheneos.org:
-        - a: 51.79.74.15
-        - aaaa: 2607:5300:205:200::2441
-        - mx: *null_mx
-        - sshfp: 4 2 10d95e196a4aa367d7c52c11c7b78d2d4cc12c53c4696e804efdc4fa019487b1
-        - txt: *null_spf
-      # OVH Beauharnois
-      2.releases.grapheneos.org:
-        - a: 51.222.159.48
-        - aaaa: 2607:5300:205:200::3f46
-        - mx: *null_mx
-        - sshfp: 4 2 7be1b8a2a3c10fd8ae352ac495da6cf738ebf6613d01074261833bc5df59cb80
-        - txt: *null_spf
-      # OVH Beauharnois
-      3.releases.grapheneos.org:
-        - a: 148.113.200.36
-        - aaaa: 2607:5300:205:200::5854
-        - mx: *null_mx
-        - sshfp: 4 2 95e01c29f2a0b6311f18f0e413ee57b19bd4362a02177aa82c154dc6c56105c9
-        - txt: *null_spf
       # Macarne Amsterdam
       4.releases.grapheneos.org:
         - a: 45.90.185.33

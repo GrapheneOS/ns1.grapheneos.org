@@ -662,7 +662,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu}
               end
-              return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})[1]\""
+              return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]\""
             ttl: *dynamic_ttl
         - lua: &releases_lua_aaaa
             content: "AAAA \";
@@ -683,7 +683,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu}
               end
-              return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all'})[1]\""
+              return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]\""
             ttl: *dynamic_ttl
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"

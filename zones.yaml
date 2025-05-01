@@ -183,7 +183,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
               end
-              return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
+              return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]\""
             ttl: &dynamic_ttl 300
         - lua: &network_lua_aaaa
             content: "AAAA \";
@@ -207,7 +207,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
               end
-              return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {backupSelector='all'})[1]\""
+              return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
         - caa: &network_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
         - caa: &network_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
@@ -392,7 +392,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
               end
-              return ifurlup('https://grapheneos.org/robots.txt', ips, {backupSelector='all'})[1]\""
+              return ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
         - lua: &grapheneos_lua_aaaa
             content: "AAAA \";
@@ -416,7 +416,7 @@ domains:
               else
                 ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}
               end
-              return ifurlup('https://grapheneos.org/robots.txt', ips, {backupSelector='all'})[1]\""
+              return ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})[1]\""
             ttl: *dynamic_ttl
         - caa: &grapheneos_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
         - caa: &grapheneos_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"

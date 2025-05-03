@@ -300,21 +300,19 @@ domains:
   - domain: grapheneos.org
     ttl: *default_ttl
     records:
-      ns1.grapheneos.org:
-        - a: *ns1_a
-        - aaaa: *ns1_aaaa
-        - caa: *ns1_caa
-        - caa: *ns1_caa_staging
-        - caa: *caa_iodef
-        - https: *https
-        - mx: *null_mx
-        - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
-        - txt: *null_spf
+      ns1.grapheneos.org: *ns1
       ns2.grapheneos.org: *ns2
       _443._tcp.ns1.grapheneos.org: *ns1_tlsa
       _853._tcp.ns1.grapheneos.org: *ns1_tlsa
       _443._tcp.ns2.grapheneos.org: *ns2_tlsa
       _853._tcp.ns2.grapheneos.org: *ns2_tlsa
+
+      0.ns1.grapheneos.org:
+        - a: 51.161.34.158
+        - aaaa: 2607:5300:205:200::eaa
+        - mx: *null_mx
+        - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
+        - txt: *null_spf
 
       0.ns2.grapheneos.org:
         - a: 198.98.53.141

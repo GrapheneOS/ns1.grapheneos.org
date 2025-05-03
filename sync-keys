@@ -8,7 +8,7 @@ servers=(
     2.ns2.grapheneos.org
 )
 
-rsync -rcv --fsync --preallocate root@ns1.grapheneos.org:/etc/powerdns/keys/ keys
+rsync -rcv --fsync --preallocate root@0.ns1.grapheneos.org:/etc/powerdns/keys/ keys
 
 for server in ${servers[@]}; do
     echo $server

@@ -23,7 +23,7 @@ for server in ${servers[@]}; do
 
     rm -rf nginx-tmp
     cp -a nginx nginx-tmp
-    if [[ $server == ns1.grapheneos.org ]]; then
+    if [[ $server == *.ns1.grapheneos.org ]]; then
         sed -i s/{{subdomain}}/ns1/g nginx-tmp/nginx.conf
     else
         sed -i s/{{subdomain}}/ns2/g nginx-tmp/nginx.conf

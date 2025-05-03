@@ -23,7 +23,7 @@ elif [[ $# -ne 0 ]]; then
 fi
 
 declare -A receiver_threads=(
-    [ns1.grapheneos.org]=2
+    [0.ns1.grapheneos.org]=2
 )
 
 # use YYYYMMDDSS SOA serial format

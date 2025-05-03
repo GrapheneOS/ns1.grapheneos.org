@@ -307,6 +307,14 @@ domains:
       _443._tcp.ns2.grapheneos.org: *ns2_tlsa
       _853._tcp.ns2.grapheneos.org: *ns2_tlsa
 
+      # testing new anycast network for ns1.grapheneos.org
+      anycast.ns1.grapheneos.org:
+        - a: 185.187.152.9
+        - aaaa: 2a05:b0c4:1::8
+        - mx: *null_mx
+        - sshfp: *null_sshfp
+        - txt: *null_spf
+
       0.ns1.grapheneos.org:
         - a: 51.161.34.158
         - aaaa: 2607:5300:205:200::eaa

@@ -307,12 +307,14 @@ domains:
       _443._tcp.ns2.grapheneos.org: *ns2_tlsa
       _853._tcp.ns2.grapheneos.org: *ns2_tlsa
 
+      # OVH Beauharnois (anycast via Rage4 New York City)
       0.ns1.grapheneos.org:
         - a: 51.161.34.158
         - aaaa: 2607:5300:205:200::eaa
         - mx: *null_mx
         - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
         - txt: *null_spf
+      # OVH Frankfurt (anycast via Rage4 Frankfurt)
       2.ns1.grapheneos.org:
         - a: 57.129.65.223
         - aaaa: 2001:41d0:701:1100::245b
@@ -320,18 +322,21 @@ domains:
         - sshfp: 4 2 76ffed3f684b061297bbde024495366b077a6136573f3d6cc583af1bdbc9251f
         - txt: *null_spf
 
+      # BuyVM New York
       0.ns2.grapheneos.org:
         - a: 198.98.53.141
         - aaaa: *ns2_aaaa_0
         - mx: *null_mx
         - sshfp: 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
         - txt: *null_spf
+      # BuyVM Las Vegas
       1.ns2.grapheneos.org:
         - a: 205.185.124.155
         - aaaa: *ns2_aaaa_1
         - mx: *null_mx
         - sshfp: 4 2 07a7a4b03d7d7b3108e1cf028e4c10aac8ef0e140c982ed4864512ca65ae56f0
         - txt: *null_spf
+      # BuyVM Luxembourg
       2.ns2.grapheneos.org:
         - a: 107.189.3.168
         - aaaa: *ns2_aaaa_2

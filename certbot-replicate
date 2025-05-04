@@ -3,7 +3,14 @@
 set -o errexit -o nounset -o pipefail
 
 status=0
-replicas=({1..2}.ns2.grapheneos.org)
+if [[ $HOSTNAME == 0-ns1 ]]; then
+    replicas=(2.ns1.grapheneos.org)
+elif [[ $HOSTNAME == 0-ns2 ]]; then
+    replicas=({1..2}.ns2.grapheneos.org)
+else
+    echo unexpected hostname $HOSTNAME
+    exit 1
+fi
 
 for replica in ${replicas[@]}; do
     echo

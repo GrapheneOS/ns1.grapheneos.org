@@ -11,6 +11,7 @@ if ! flock -n $fd; then
     exit 1
 fi
 
+rsync -pcv --chmod=F755 --fsync --preallocate certbot-replicate root@0.ns1.grapheneos.org:/usr/local/bin/
 rsync -pcv --chmod=F755 --fsync --preallocate certbot-replicate root@0.ns2.grapheneos.org:/usr/local/bin/
 rsync -pcv --chmod=F644 --fsync --preallocate replicate.conf root@0.ns2.grapheneos.org:/etc/systemd/system/certbot-renew.service.d/
 

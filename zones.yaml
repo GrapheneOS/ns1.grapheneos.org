@@ -321,6 +321,12 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
         - txt: *null_spf
+      2.ns1.grapheneos.org:
+        - a: 57.129.65.223
+        - aaaa: 2001:41d0:701:1100::245b
+        - mx: *null_mx
+        - sshfp: 4 2 76ffed3f684b061297bbde024495366b077a6136573f3d6cc583af1bdbc9251f
+        - txt: *null_spf
 
       0.ns2.grapheneos.org:
         - a: 198.98.53.141

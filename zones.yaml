@@ -321,6 +321,13 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 76ffed3f684b061297bbde024495366b077a6136573f3d6cc583af1bdbc9251f
         - txt: *null_spf
+      # OVH Singapore (anycast via Rage4 Singapore)
+      3.ns1.grapheneos.org:
+        - a: 15.235.197.61
+        - aaaa: 2402:1f00:8000:800::3966
+        - mx: *null_mx
+        - sshfp: 4 2 ba031328000779a7c0663d39eda0351941e56649ecda737d6fdb5465d3805e8d
+        - txt: *null_spf
 
       # BuyVM New York
       0.ns2.grapheneos.org:

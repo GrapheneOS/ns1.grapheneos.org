@@ -4,6 +4,7 @@ set -o errexit -o nounset -o pipefail
 
 servers=(
     2.ns1.grapheneos.org
+    3.ns1.grapheneos.org
     0.ns2.grapheneos.org
     1.ns2.grapheneos.org
     2.ns2.grapheneos.org

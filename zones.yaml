@@ -6,8 +6,8 @@ domains:
       ns1.attestation.app: &ns1
         - a: 185.187.152.9
         - aaaa: 2a05:b0c4:1::8
-        - caa: &ns1_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
-        - caa: &ns1_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
+        - caa: 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
         - caa: &caa_iodef 0 iodef "mailto:caa@grapheneos.org"
         - https: &https
             content: 1 . alpn=h2

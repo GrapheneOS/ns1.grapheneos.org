@@ -24,6 +24,8 @@ fi
 
 declare -A receiver_threads=(
     [0.ns1.grapheneos.org]=2
+    [2.ns1.grapheneos.org]=2
+    [3.ns1.grapheneos.org]=2
 )
 
 # use YYYYMMDDSS SOA serial format

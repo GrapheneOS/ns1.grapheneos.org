@@ -1,7 +1,11 @@
-servers=(
+servers_ns1=(
     0.ns1.grapheneos.org
     2.ns1.grapheneos.org
     3.ns1.grapheneos.org
+)
+
+servers=(
+    "${servers_ns1[@]}"
     0.ns2.grapheneos.org
     1.ns2.grapheneos.org
     2.ns2.grapheneos.org

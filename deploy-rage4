@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+. servers.sh
+
+alias rsync='rsync --fsync --preallocate'
+
+for server in ${servers_ns1[@]}; do
+    echo $server
+
+    remote=root@$server
+
+    rsync -rpcv --chmod=D755,F644 iproute2 $remote:/etc/
+
+    rsync -pcv --chmod=755 rage4-zerotier-connect.$server $remote:/usr/local/bin/rage4-zerotier-connect
+
+    rsync -pcv --chmod=644 systemd/system/rage4-setup.service $remote:/etc/systemd/system/
+    rsync -pcv --chmod=755 rage4-setup.$server $remote:/usr/local/bin/rage4-setup
+
+    rsync -pcv --chmod=644 bird.conf $remote:/etc/
+    rsync -pcv --chmod=644 bird.$server.conf $remote:/etc/bird.local.conf
+    rsync -rpcv --chmod=D755,F644 systemd/system/bird.service.d $remote:/etc/systemd/system/
+
+    echo
+done

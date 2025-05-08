@@ -314,6 +314,13 @@ domains:
         - mx: *null_mx
         - sshfp: 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
         - txt: *null_spf
+      # OVH Hillsboro (anycast via Rage4 Seattle)
+      1.ns1.grapheneos.org:
+        - a: 15.204.8.153
+        - aaaa: 2604:2dc0:202:300::23a6
+        - mx: *null_mx
+        - sshfp: 4 2 6f0888de5c4ac8bbdd2b03216b37a9c48cc44fc6d7933197355b6bf556d465a3
+        - txt: *null_spf
       # OVH Frankfurt (anycast via Rage4 Frankfurt)
       2.ns1.grapheneos.org:
         - a: 57.129.65.223

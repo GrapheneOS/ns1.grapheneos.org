@@ -75,6 +75,8 @@ domains:
         - txt: "v=STSv1; id=2023062500"
       _smtp._tls.attestation.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
+      default._bimi.attestation.app: &grapheneos_bimi
+        - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
       default._domainkey.attestation.app: &grapheneos_dkim
         - txt: "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
       mta-sts.attestation.app: &mta_sts_subdomain
@@ -238,8 +240,7 @@ domains:
       _mta-sts.grapheneos.network: *_mta-sts
       _smtp._tls.grapheneos.network:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
-      default._bimi.grapheneos.network: &grapheneos_bimi
-        - txt: "v=BIMI1; l=https://grapheneos.org/bimi.svg"
+      default._bimi.grapheneos.network: *grapheneos_bimi
       default._domainkey.grapheneos.network: *grapheneos_dkim
       mta-sts.grapheneos.network: *mta_sts_subdomain
       connectivitycheck.grapheneos.network: &network_subdomain

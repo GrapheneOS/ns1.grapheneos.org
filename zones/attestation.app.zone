@@ -1,0 +1,45 @@
+$TTL 3600
+
+$INCLUDE base.zone
+
+@ IN A 51.79.66.27
+@ IN AAAA 2607:5300:205:200::7e9
+@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
+@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
+@ IN CAA 0 iodef "mailto:caa@grapheneos.org"
+@ 86400 IN HTTPS 1 . alpn=h2
+@ IN SSHFP 4 2 3c03c6c4ebc5ca097d55d4b2941ad581e840f230a6927c58755522c0ec3e98c6
+
+@ IN TXT "google-site-verification=N_aN03-oRkhotXYqvQqFinrMMK2W2aq73NK-Ce1kTYY"
+@ IN TXT "yandex-verification: aafc5b649d6fa07d"
+@ IN TXT "facebook-domain-verification=flutp8v6yshxc45wrvr6iozw08ek1j"
+
+_443._tcp IN TLSA 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
+
+_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
+_smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
+
+www IN A 51.79.66.27
+www IN AAAA 2607:5300:205:200::7e9
+www IN HTTPS 1 . alpn=h2
+www IN MX 0 .
+www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+www IN TXT "v=spf1 -all"
+
+_443._tcp.www IN TLSA 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
+
+staging IN A 198.98.57.157
+staging IN AAAA 2605:6400:10:aa9:1c0f:44d3:da15:c0ec
+staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1182490537"
+staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108989964"
+staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
+staging IN HTTPS 1 . alpn=h2
+staging IN MX 0 .
+staging IN SSHFP 4 2 ef4b234f6dc92f2feef6e334ab38c50d299eea13bb12739fff17e8175c53573b
+staging IN TXT "v=spf1 -all"
+
+_443._tcp.staging IN TLSA 3 1 1 25e4779bc88d9e764b052c4866e362dae2d59ddd6b67f5b4ce674684e5db9655
+
+$INCLUDE ns-staging.zone
+
+ns1.staging IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000

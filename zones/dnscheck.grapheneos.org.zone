@@ -1,0 +1,16 @@
+$TTL 3600
+
+@ 86400 IN SOA ns1.grapheneos.org. hostmaster.grapheneos.org. {{serial}} 3600 1800 1209600 3600
+
+@ 86400 IN NS ns1.grapheneos.org.
+@ 86400 IN NS ns2.grapheneos.org.
+
+; RFC 5735 TEST-NET-1
+* IN A 192.0.2.1
+
+; RFC 6666 Discard Prefix
+* IN AAAA 100::1
+
+* IN MX 0 .
+* IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+* IN TXT "v=spf1 -all"

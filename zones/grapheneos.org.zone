@@ -1,0 +1,821 @@
+$TTL 3600
+
+; OVH Beauharnois (anycast via Rage4 New York City)
+0.ns1 IN A 51.161.34.158
+0.ns1 IN AAAA 2607:5300:205:200::eaa
+0.ns1 IN MX 0 .
+0.ns1 IN SSHFP 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
+0.ns1 IN TXT "v=spf1 -all"
+; OVH Hillsboro (anycast via Rage4 Seattle)
+1.ns1 IN A 15.204.8.153
+1.ns1 IN AAAA 2604:2dc0:202:300::23a6
+1.ns1 IN MX 0 .
+1.ns1 IN SSHFP 4 2 6f0888de5c4ac8bbdd2b03216b37a9c48cc44fc6d7933197355b6bf556d465a3
+1.ns1 IN TXT "v=spf1 -all"
+; OVH Frankfurt (anycast via Rage4 Frankfurt)
+2.ns1 IN A 57.129.65.223
+2.ns1 IN AAAA 2001:41d0:701:1100::245b
+2.ns1 IN MX 0 .
+2.ns1 IN SSHFP 4 2 76ffed3f684b061297bbde024495366b077a6136573f3d6cc583af1bdbc9251f
+2.ns1 IN TXT "v=spf1 -all"
+; OVH Singapore (anycast via Rage4 Singapore)
+3.ns1 IN A 15.235.197.61
+3.ns1 IN AAAA 2402:1f00:8000:800::3966
+3.ns1 IN MX 0 .
+3.ns1 IN SSHFP 4 2 ba031328000779a7c0663d39eda0351941e56649ecda737d6fdb5465d3805e8d
+3.ns1 IN TXT "v=spf1 -all"
+
+; BuyVM New York
+0.ns2 IN A 198.98.53.141
+0.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
+0.ns2 IN MX 0 .
+0.ns2 IN SSHFP 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
+0.ns2 IN TXT "v=spf1 -all"
+; BuyVM Las Vegas
+1.ns2 IN A 205.185.124.155
+1.ns2 IN AAAA 2605:6400:20:1c8f:a0c9:372d:482e:945b
+1.ns2 IN MX 0 .
+1.ns2 IN SSHFP 4 2 07a7a4b03d7d7b3108e1cf028e4c10aac8ef0e140c982ed4864512ca65ae56f0
+1.ns2 IN TXT "v=spf1 -all"
+; BuyVM Luxembourg
+2.ns2 IN A 107.189.3.168
+2.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
+2.ns2 IN MX 0 .
+2.ns2 IN SSHFP 4 2 1bc33eb5d8949b53a2a2cab1163e1ba2543506ae579c4a9e1a37b3e1a3234edd
+2.ns2 IN TXT "v=spf1 -all"
+
+; OVH Beauharnois
+0 IN A 51.222.156.101
+0 IN AAAA 2607:5300:205:200::29c6
+0 IN MX 0 .
+0 IN SSHFP 4 2 ef9845da6e542a593cbb666026935eb90b8eefe7b70a17d5edfc024985b39306
+0 IN TXT "v=spf1 -all"
+; BuyVM Las Vegas
+1 IN A 209.141.35.164
+1 IN AAAA 2605:6400:20:1131:8088:e08:84e6:632
+1 IN MX 0 .
+1 IN SSHFP 4 2 5a17966350748c352a3a8869a9609b2b2686786cc197de30bbae5f0cc3cc96bf
+1 IN TXT "v=spf1 -all"
+; OVH Gravelines
+2 IN A 54.37.41.188
+2 IN AAAA 2001:41d0:304:200::902f
+2 IN MX 0 .
+2 IN SSHFP 4 2 7bb4e86336e9917eeea775b73c94a12b627e135b8fba73829b8866faf0a4075e
+2 IN TXT "v=spf1 -all"
+; OVH Singapore
+3 IN A 51.79.160.50
+3 IN AAAA 2402:1f00:8000:800::16d6
+3 IN MX 0 .
+3 IN SSHFP 4 2 67bbc371b74adb54907bf5f5f5918c85a0a6a9b50c88050950c3a56aac334100
+3 IN TXT "v=spf1 -all"
+
+$INCLUDE grapheneos-domain.zone
+
+@ IN TXT "google-site-verification=QCDUfSSfeAUufP-H3m4f5uvhknjIZVBVVmMSDaFRdz0"
+@ IN TXT "yandex-verification: 10fdf27f68b946c5"
+@ IN TXT "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
+
+_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
+_smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
+
+_atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
+
+geoip 60 IN LUA TXT ( ";"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  return 'ip: ' .. bestwho:toString() .. ', region: ' .. re .. ', country: ' .. cc .. ', continent: ' .. cn" )
+
+; special zone without DNSSEC since results are unused and queries are randomized
+dnscheck 86400 IN NS ns1.grapheneos.org.
+dnscheck 86400 IN NS ns2.grapheneos.org.
+
+; Macarne Amsterdam
+4.releases IN A 45.90.185.33
+4.releases IN AAAA 2a14:3f87:6920:250::100
+4.releases IN MX 0 .
+4.releases IN SSHFP 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf
+4.releases IN TXT "v=spf1 -all"
+; ReliableSite Miami
+5.releases IN A 172.96.172.37
+5.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
+5.releases IN MX 0 .
+5.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
+5.releases IN TXT "v=spf1 -all"
+; ReliableSite Los Angeles
+6.releases IN A 104.194.8.203
+6.releases IN AAAA 2605:9880:200:20::113
+6.releases IN MX 0 .
+6.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
+6.releases IN TXT "v=spf1 -all"
+
+releases 300 IN LUA A (";"
+"  local ips_na_east = {'172.96.172.37'}"
+"  local ips_na_west = {'104.194.8.203'}"
+"  local ips_eu = {'45.90.185.33'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, io=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west}"
+"  elseif (cn == 'as' or cn == 'oc' or (cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu}"
+"  end"
+"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]")
+releases 300 IN LUA AAAA (";"
+"  local ips_na_east = {'2605:9880:400:1100:15:1240:515:6e'}"
+"  local ips_na_west = {'2605:9880:200:20::113'}"
+"  local ips_eu = {'2a14:3f87:6920:250::100'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, io=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west}"
+"  elseif (cn == 'as' or cn == 'oc' or (cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu}"
+"  end"
+"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]")
+releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
+releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
+releases IN CAA 0 iodef "mailto:caa@grapheneos.org"
+releases 86400 IN HTTPS 1 . alpn=h2
+releases IN MX 0 .
+releases IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+releases IN TXT "v=spf1 -all"
+
+_443._tcp.releases IN TLSA 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
+
+apps 300 IN LUA A (";"
+"  local ips_na_east = {'172.96.172.37'}"
+"  local ips_na_west = {'104.194.8.203'}"
+"  local ips_eu = {'45.90.185.33'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, io=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west}"
+"  elseif (cn == 'as' or cn == 'oc' or (cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu}"
+"  end"
+"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]")
+apps 300 IN LUA AAAA (";"
+"  local ips_na_east = {'2605:9880:400:1100:15:1240:515:6e'}"
+"  local ips_na_west = {'2605:9880:200:20::113'}"
+"  local ips_eu = {'2a14:3f87:6920:250::100'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, af=true, am=true, az=true, bd=true, bh=true, bt=true, eg=true, ge=true, il=true, ['in']=true, io=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, lk=true, mv=true, np=true, om=true, pk=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west}"
+"  elseif (cn == 'as' or cn == 'oc' or (cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu}"
+"  end"
+"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]")
+apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
+apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
+apps IN CAA 0 iodef "mailto:caa@grapheneos.org"
+apps 86400 IN HTTPS 1 . alpn=h2
+apps IN MX 0 .
+apps IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+apps IN TXT "v=spf1 -all"
+
+_443._tcp.apps IN TLSA 3 1 1 e4454efd9b9b5f379cd2a7d11b3c41fc27e1fc5c2d73e1aa65755ae1c818b26a
+
+time 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+time 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+time IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+time IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+time IN CAA 0 iodef "mailto:caa@grapheneos.org"
+time IN HTTPS 1 . alpn=h2
+time IN MX 0 .
+time IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+time IN TXT "v=spf1 -all"
+
+_443._tcp.time IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+remoteprovisioning 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+remoteprovisioning 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+remoteprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+remoteprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+remoteprovisioning IN CAA 0 iodef "mailto:caa@grapheneos.org"
+remoteprovisioning IN HTTPS 1 . alpn=h2
+remoteprovisioning IN MX 0 .
+remoteprovisioning IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+remoteprovisioning IN TXT "v=spf1 -all"
+
+_443._tcp.remoteprovisioning IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+widevineprovisioning 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+widevineprovisioning 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+widevineprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+widevineprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+widevineprovisioning IN CAA 0 iodef "mailto:caa@grapheneos.org"
+widevineprovisioning IN HTTPS 1 . alpn=h2
+widevineprovisioning IN MX 0 .
+widevineprovisioning IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+widevineprovisioning IN TXT "v=spf1 -all"
+
+_443._tcp.widevineprovisioning IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+broadcom.psds 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+broadcom.psds 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+broadcom.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+broadcom.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+broadcom.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
+broadcom.psds IN HTTPS 1 . alpn=h2
+broadcom.psds IN MX 0 .
+broadcom.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+broadcom.psds IN TXT "v=spf1 -all"
+
+_443._tcp.broadcom.psds IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+samsung.psds 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+samsung.psds 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+samsung.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+samsung.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+samsung.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
+samsung.psds IN HTTPS 1 . alpn=h2
+samsung.psds IN MX 0 .
+samsung.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+samsung.psds IN TXT "v=spf1 -all"
+
+_443._tcp.samsung.psds IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+qualcomm.psds 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+qualcomm.psds 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+qualcomm.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+qualcomm.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+qualcomm.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
+qualcomm.psds IN HTTPS 1 . alpn=h2
+qualcomm.psds IN MX 0 .
+qualcomm.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+qualcomm.psds IN TXT "v=spf1 -all"
+
+_443._tcp.qualcomm.psds IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+supl 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+supl 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+supl IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+supl IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+supl IN CAA 0 iodef "mailto:caa@grapheneos.org"
+supl IN HTTPS 1 . alpn=h2
+supl IN MX 0 .
+supl IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+supl IN TXT "v=spf1 -all"
+
+_443._tcp.supl IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_7275._tcp.supl IN TLSA 3 1 1 71615ea3c0c223a68cb3d1f1d2957d58b2aa0740db5684ff31a54381631711e7
+
+nominatim 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+nominatim 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+nominatim IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+nominatim IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+nominatim IN CAA 0 iodef "mailto:caa@grapheneos.org"
+nominatim IN HTTPS 1 . alpn=h2
+nominatim IN MX 0 .
+nominatim IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+nominatim IN TXT "v=spf1 -all"
+
+_443._tcp.nominatim IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+gs-loc.apple 300 IN LUA A (";"
+"  local ips_na_east = {'51.222.159.116'}"
+"  local ips_na_west = {'209.141.37.35'}"
+"  local ips_eu = {'54.37.41.189'}"
+"  local ips_sg = {'51.79.161.36'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+gs-loc.apple 300 IN LUA AAAA ( ";"
+"  local ips_na_east = {'2607:5300:205:200::2584'}"
+"  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
+"  local ips_eu = {'2001:41d0:304:200::b109'}"
+"  local ips_sg = {'2402:1f00:8000:800::1949'}"
+"  local ips"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  local cc_eu = {ae=true, am=true, az=true, bh=true, eg=true, ge=true, il=true, iq=true, ir=true, jo=true, kg=true, kw=true, kz=true, lb=true, om=true, ps=true, qa=true, ru=true, sa=true, sy=true, tj=true, tm=true, tr=true, uz=true, ye=true}"
+"  local us_re_na_west = {ak=true, az=true, ca=true, co=true, hi=true, id=true, ks=true, mt=true, nd=true, ne=true, nm=true, nv=true, ok=true, ['or']=true, ut=true, sd=true, tx=true, wa=true, wy=true}"
+"  local ca_re_na_west = {ab=true, bc=true, nt=true, sk=true, yt=true}"
+"  if (cn == 'af' or cn == 'eu' or cc_eu[cc]) then"
+"    ips = {ips_eu, ips_na_east, ips_na_west, ips_sg}"
+"  elseif (cn == 'as' or cn == 'oc') then"
+"    ips = {ips_sg, ips_na_west, ips_na_east, ips_eu}"
+"  elseif ((cc == 'us' and us_re_na_west[re]) or (cc == 'ca' and ca_re_na_west[re]) or cc == 'mx') then"
+"    ips = {ips_na_west, ips_na_east, ips_eu, ips_sg}"
+"  else"
+"    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
+"  end"
+"  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
+gs-loc.apple IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
+gs-loc.apple IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+gs-loc.apple IN CAA 0 iodef "mailto:caa@grapheneos.org"
+gs-loc.apple IN HTTPS 1 . alpn=h2
+gs-loc.apple IN MX 0 .
+gs-loc.apple IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+gs-loc.apple IN TXT "v=spf1 -all"
+
+_443._tcp.gs-loc.apple IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+
+mail IN A 192.99.98.22
+mail IN AAAA 2607:5300:205:200::472f
+mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
+mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
+mail IN HTTPS 1 . alpn=h2
+mail 86400 IN MX 0 mail.grapheneos.org.
+mail 86400 IN MX 10 mail.grapheneos.net.
+mail IN SSHFP 4 2 d81687f26b1ef2a856585afe45e96e8e28aef4144d040ad070eb56df2267cd02
+mail IN TXT "v=spf1 a:mail.grapheneos.org -all"
+
+_25._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
+_443._tcp.mail IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
+_465._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
+_993._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
+
+default._domainkey.mail IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+
+default._bimi.mail IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
+
+_smtp._tls.mail IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@mail.grapheneos.org"
+
+_mta-sts.mail IN TXT "v=STSv1; id=2023062500"
+
+mta-sts.mail IN A 192.99.98.22
+mta-sts.mail IN AAAA 2607:5300:205:200::472f
+mta-sts.mail IN HTTPS 1 . alpn=h2
+mta-sts.mail IN MX 0 .
+mta-sts.mail IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+mta-sts.mail IN TXT "v=spf1 -all"
+
+_443._tcp.mta-sts.mail IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
+
+discuss IN A 51.79.52.38
+; IPv6 interacts badly with IP-based spam filtering
+;discuss IN AAAA 2607:5300:205:200::3c4
+discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
+discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
+discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
+discuss IN HTTPS 1 . alpn=h2
+discuss 86400 IN MX 0 mail.grapheneos.org.
+discuss 86400 IN MX 10 mail.grapheneos.net.
+discuss IN SSHFP 4 2 8191c5fa45eba387c4626f69cbe36d87ed23a01ae69b9f223831c1673a438f60
+discuss IN TXT "v=spf1 a:mail.grapheneos.org -all"
+
+_443._tcp.discuss IN TLSA 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81
+
+default._domainkey.discuss IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+
+default._bimi.discuss IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
+
+_smtp._tls.discuss IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@discuss.grapheneos.org"
+
+_mta-sts.discuss IN TXT "v=STSv1; id=2023062500"
+
+mta-sts.discuss IN A 192.99.98.22
+mta-sts.discuss IN AAAA 2607:5300:205:200::472f
+mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
+mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mta-sts.discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
+mta-sts.discuss IN HTTPS 1 . alpn=h2
+mta-sts.discuss IN MX 0 .
+mta-sts.discuss IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+mta-sts.discuss IN TXT "v=spf1 -all"
+
+_443._tcp.mta-sts.discuss IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
+
+matrix IN A 51.79.51.42
+matrix IN AAAA 2607:5300:205:200::26e1
+matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
+matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
+matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
+matrix IN HTTPS 1 . alpn=h2
+matrix 86400 IN MX 0 mail.grapheneos.org.
+matrix 86400 IN MX 10 mail.grapheneos.net.
+matrix IN SSHFP 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
+matrix IN TXT "v=spf1 a:mail.grapheneos.org -all"
+
+_443._tcp.matrix IN TLSA 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
+
+default._domainkey.matrix IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscpBvhA4SSPi2+Mdj8Ds4UB24dpeEST2hhhcm3d95rIqq0q7I7Tn39S/Mnr/ijk4a6W1V7nwMcz41JDIb1dneMJIpNlXrl79HN8wIlyxRith39VxbuohGnb5XN779uMEzJXyCPpYoffAbqSg6syzPf5VxNVRQihC62EebPjwSTlSvvT0+9oJ+Lk9Fyg00IZZt18vZJA8dJmDAuhAFvxSkzX0YzGug/N0fJXISQdMjIoSviBWzIUaLei7oDtgx0U3zhwOX3QnBQq2zxkGo4MTo5VF1dYEe3I9KC4k+Xdht3AOkXmd0AiJdMYjj2e16VOWJm3UCKPSgiY+d2Od0GMYowIDAQAB"
+
+default._bimi.matrix IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
+
+_smtp._tls.matrix IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@matrix.grapheneos.org"
+
+_mta-sts.matrix IN TXT "v=STSv1; id=2023062500"
+
+mta-sts.matrix IN A 192.99.98.22
+mta-sts.matrix IN AAAA 2607:5300:205:200::472f
+mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
+mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mta-sts.matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
+mta-sts.matrix IN HTTPS 1 . alpn=h2
+mta-sts.matrix IN MX 0 .
+mta-sts.matrix IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+mta-sts.matrix IN TXT "v=spf1 -all"
+
+_443._tcp.mta-sts.matrix IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
+
+element IN A 51.79.51.42
+element IN AAAA 2607:5300:205:200::26e1
+element IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
+element IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
+element IN CAA 0 iodef "mailto:caa@grapheneos.org"
+element IN HTTPS 1 . alpn=h2
+element IN MX 0 .
+element IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+element IN TXT "v=spf1 -all"
+
+_443._tcp.element IN TLSA 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
+
+staging IN A 199.195.250.78
+staging IN AAAA 2605:6400:10:9d6:6d84:e183:acda:16d7
+staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1172126677"
+staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108221874"
+staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
+staging IN HTTPS 1 . alpn=h2
+staging IN MX 0 .
+staging IN SSHFP 4 2 ba61a88c88b406e2266dab834c99fa4159f11c5b2d840223e2930fed5be4fcef
+staging IN TXT "v=spf1 -all"
+
+_443._tcp.staging IN TLSA 3 1 1 5df9fbeb15ef8a94396b91c08836270c897ae2499c50e27e433ce74dc9111782
+
+$INCLUDE ns-staging.zone
+
+ns1.staging IN SSHFP 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81

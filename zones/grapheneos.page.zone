@@ -1,0 +1,10 @@
+$TTL 3600
+
+$INCLUDE grapheneos-domain.zone
+
+@ IN TXT "google-site-verification=iYaUQ7R43lI0InLmQDyUUeaiUVqoM5YwMJv1aCtNIp0"
+@ IN TXT "yandex-verification: ec2761b2472a4ab4"
+@ IN TXT "facebook-domain-verification=ez8o5koslsc0e9pldnsxtpy63qmkpg"
+
+_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.page; ruf=mailto:dmarc@grapheneos.page"
+_smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.page"

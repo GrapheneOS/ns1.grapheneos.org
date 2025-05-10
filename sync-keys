@@ -19,6 +19,8 @@ for server in ${servers[@]}; do
     remote=root@$server
 
     rsync -rcpv --delete --chmod=D750,F640 --chown=root:powerdns --fsync --preallocate keys/ root@$server:/etc/powerdns/keys
+    rsync -pcv --chmod=755 --fsync --preallocate pdns-dnssec-setup $remote:/usr/local/bin/pdns-dnssec-setup
+    ssh $remote pdns-dnssec-setup
 
     echo
 done

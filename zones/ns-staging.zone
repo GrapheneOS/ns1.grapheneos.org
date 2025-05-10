@@ -1,0 +1,24 @@
+ns1.staging IN A 198.98.56.238
+ns1.staging IN AAAA 2605:6400:10:c41:de92:c534:326a:711a
+ns1.staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
+ns1.staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
+ns1.staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
+ns1.staging IN HTTPS 1 . alpn=h2
+ns1.staging IN MX 0 .
+ns1.staging IN TXT "v=spf1 -all"
+
+_443._tcp.ns1.staging IN TLSA 3 1 1 0c7449b868c722bcc5d2d6e51cca4fbdc8990776f15f09bcd88a195d56e7c4d1
+_853._tcp.ns1.staging IN TLSA 3 1 1 0c7449b868c722bcc5d2d6e51cca4fbdc8990776f15f09bcd88a195d56e7c4d1
+
+ns2.staging IN A 198.98.56.238
+ns2.staging IN AAAA 2605:6400:10:c41:de92:c534:326a:711a
+ns2.staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
+ns2.staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
+ns2.staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
+ns2.staging IN HTTPS 1 . alpn=h2
+ns2.staging IN MX 0 .
+ns2.staging IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+ns2.staging IN TXT "v=spf1 -all"
+
+_443._tcp.ns2.staging IN TLSA 3 1 1 0c7449b868c722bcc5d2d6e51cca4fbdc8990776f15f09bcd88a195d56e7c4d1
+_853._tcp.ns2.staging IN TLSA 3 1 1 0c7449b868c722bcc5d2d6e51cca4fbdc8990776f15f09bcd88a195d56e7c4d1

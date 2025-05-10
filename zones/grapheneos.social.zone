@@ -1,0 +1,29 @@
+$TTL 3600
+
+$INCLUDE base.zone
+
+@ IN A 51.222.159.14
+@ IN AAAA 2607:5300:205:200::5e3f
+@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
+@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
+@ IN CAA 0 iodef "mailto:caa@grapheneos.org"
+@ 86400 IN HTTPS 1 . alpn=h2
+@ IN SSHFP 4 2 079a217e085877ea780d77a0bf0cd4ef226b4b27b8f8b954ee7821f2a1cbaf8c
+
+@ IN TXT "google-site-verification=1udi6RI56KjPtFGO38lCQImhEmY6XFxX1hVsdEK4_gw"
+@ IN TXT "yandex-verification: ec33ee307706436f"
+@ IN TXT "facebook-domain-verification=nn8qfg6l9xhnqkkizdgn97taizy6hj"
+
+_443._tcp IN TLSA 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546c81c87c8
+
+_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.social; ruf=mailto:dmarc@grapheneos.social"
+_smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.social"
+
+www IN A 51.222.159.14
+www IN AAAA 2607:5300:205:200::5e3f
+www IN HTTPS 1 . alpn=h2
+www IN MX 0 .
+www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+www IN TXT "v=spf1 -all"
+
+_443._tcp.www IN TLSA 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546c81c87c8

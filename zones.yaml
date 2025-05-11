@@ -786,6 +786,7 @@ domains:
       _mta-sts.seamlessupdate.app: *_mta-sts
       _smtp._tls.seamlessupdate.app:
         - txt: "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
+      default._bimi.seamlessupdate.app: *grapheneos_bimi
       default._domainkey.seamlessupdate.app: *grapheneos_dkim
       mta-sts.seamlessupdate.app: *mta_sts_subdomain
       www.seamlessupdate.app:

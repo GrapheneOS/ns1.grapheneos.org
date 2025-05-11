@@ -1,0 +1,199 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+domains=(
+    attestation.app
+    grapheneos.app
+    grapheneos.ca
+    grapheneos.com
+    grapheneos.dev
+    grapheneos.foundation
+    grapheneos.info
+    grapheneos.net
+    grapheneos.network
+    grapheneos.org
+    grapheneos.online
+    grapheneos.ovh
+    grapheneos.page
+    grapheneos.social
+    seamlessupdate.app
+    vanadium.app
+)
+
+subdomains=(
+    ""
+    _443._tcp.
+
+    ns1.
+    _443._tcp.ns1.
+    _853._tcp.ns1.
+
+    ns2.
+    _443._tcp.ns2.
+    _853._tcp.ns2.
+
+    www.
+    _443._tcp.www.
+
+    mta-sts.
+    _443._tcp.mta-sts.
+
+    _mta-sts.
+    _dmarc.
+    default._domainkey.
+    default._bimi.
+    _smtp._tls.
+)
+
+extras=(
+    {0..3}.grapheneos.network
+
+    connectivitycheck.grapheneos.network
+    connectivitycheck.grapheneos.network
+    _443._tcp.connectivitycheck.grapheneos.online
+    _443._tcp.connectivitycheck.grapheneos.online
+
+    staging.attestation.app
+    _443._tcp.staging.attestation.app
+
+    ns1.staging.attestation.app
+    _443._tcp.ns1.staging.attestation.app
+    _853._tcp.ns1.staging.attestation.app
+    ns2.staging.attestation.app
+    _443._tcp.ns2.staging.attestation.app
+    _853._tcp.ns2.staging.attestation.app
+
+    {0..3}.ns1.grapheneos.org
+    {0..2}.ns2.grapheneos.org
+
+    {0..3}.grapheneos.org
+
+    mail.grapheneos.org
+    _25._tcp.mail.grapheneos.org
+    _443._tcp.mail.grapheneos.org
+    _465._tcp.mail.grapheneos.org
+    _993._tcp.mail.grapheneos.org
+
+    mta-sts.mail.grapheneos.org
+    _443._tcp.mta-sts.mail.grapheneos.org
+
+    _mta-sts.mail.grapheneos.org
+    default._domainkey.mail.grapheneos.org
+    default._bimi.mail.grapheneos.org
+    _smtp._tls.mail.grapheneos.org
+
+    releases.grapheneos.org
+    _443._tcp.releases.grapheneos.org
+
+    apps.grapheneos.org
+    _443._tcp.apps.grapheneos.org
+
+    time.grapheneos.org
+    _443._tcp.time.grapheneos.org
+
+    remoteprovisioning.grapheneos.org
+    _443._tcp.remoteprovisioning.grapheneos.org
+
+    widevineprovisioning.grapheneos.org
+    _443._tcp.widevineprovisioning.grapheneos.org
+
+    broadcom.psds.grapheneos.org
+    _443._tcp.broadcom.psds.grapheneos.org
+
+    samsung.psds.grapheneos.org
+    _443._tcp.samsung.psds.grapheneos.org
+
+    qualcomm.psds.grapheneos.org
+    _443._tcp.qualcomm.psds.grapheneos.org
+
+    supl.grapheneos.org
+    _443._tcp.supl.grapheneos.org
+    _7275._tcp.supl.grapheneos.org
+
+    nominatim.grapheneos.org
+    _443._tcp.nominatim.grapheneos.org
+
+    gs-loc.apple.grapheneos.org
+    _443._tcp.gs-loc.apple.grapheneos.org
+
+    discuss.grapheneos.org
+    _443._tcp.discuss.grapheneos.org
+
+    mta-sts.discuss.grapheneos.org
+    _443._tcp.mta-sts.discuss.grapheneos.org
+
+    _mta-sts.discuss.grapheneos.org
+    default._domainkey.discuss.grapheneos.org
+    default._bimi.discuss.grapheneos.org
+    _smtp._tls.discuss.grapheneos.org
+
+    matrix.grapheneos.org
+    _443._tcp.matrix.grapheneos.org
+
+    mta-sts.matrix.grapheneos.org
+    _443._tcp.mta-sts.matrix.grapheneos.org
+
+    _mta-sts.matrix.grapheneos.org
+    default._domainkey.matrix.grapheneos.org
+    default._bimi.matrix.grapheneos.org
+    _smtp._tls.matrix.grapheneos.org
+
+    element.grapheneos.org
+    _443._tcp.element.grapheneos.org
+
+    staging.grapheneos.org
+    _443._tcp.staging.grapheneos.org
+
+    ns1.staging.grapheneos.org
+    _443._tcp.ns1.staging.grapheneos.org
+    _853._tcp.ns1.staging.grapheneos.org
+    ns2.staging.grapheneos.org
+    _443._tcp.ns2.staging.grapheneos.org
+    _853._tcp.ns2.staging.grapheneos.org
+
+    dnscheck.grapheneos.org
+    abcdef.dnscheck.grapheneos.org
+
+    geoip.grapheneos.org
+    _atproto.grapheneos.org
+
+    {4..6}.releases.grapheneos.org
+
+    dl.vanadium.app
+    _443._tcp.dl.vanadium.app
+    update.vanadium.app
+    _443._tcp.update.vanadium.app
+
+    mail.grapheneos.net
+    _25._tcp.mail.grapheneos.net
+    _443._tcp.mail.grapheneos.net
+    _465._tcp.mail.grapheneos.net
+    _993._tcp.mail.grapheneos.net
+)
+
+rm -rf compare-tmp
+mkdir compare-tmp
+
+for domain in "${domains[@]}"; do
+
+    for subdomain in "${subdomains[@]}"; do
+        echo ${subdomain}${domain}
+
+        before=$(dig +tcp +nottlid +noall +answer @ns1.grapheneos.org ${subdomain}${domain} ANY | sort)
+        after=$(dig +tcp +nottlid +noall +answer @ns1.staging.grapheneos.org ${subdomain}${domain} ANY | sort)
+
+        git --no-pager diff --no-index --color-words <(echo -n $before) <(echo -n $after) || true
+    done
+
+    echo
+done
+
+for domain in "${extras[@]}"; do
+    echo ${domain}
+
+    before=$(dig +tcp +nottlid +noall +answer @ns1.grapheneos.org ${domain} ANY | sort)
+    after=$(dig +tcp +nottlid +noall +answer @ns1.staging.grapheneos.org ${domain} ANY | sort)
+
+    git --no-pager diff --no-index --color-words <(echo -n $before) <(echo -n $after) || true
+done

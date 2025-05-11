@@ -1,4 +1,4 @@
-$TTL 3600
+$TTL 60
 
 @ 86400 IN SOA ns1.grapheneos.org. hostmaster.grapheneos.org. {{serial}} 3600 1800 1209600 3600
 

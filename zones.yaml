@@ -711,7 +711,7 @@ domains:
             ttl: *dynamic_ttl
         - caa: &releases_caa 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
         - caa: &releases_caa_staging 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
-        - caa: &releases_iodef 0 iodef "mailto:caa@grapheneos.org"
+        - caa: *caa_iodef
         - https: *https
         - mx: *null_mx
         - sshfp: *null_sshfp

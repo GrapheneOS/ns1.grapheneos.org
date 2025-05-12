@@ -2,6 +2,12 @@ $TTL 3600
 
 $INCLUDE grapheneos-domain.zone
 
+$INCLUDE lua-grapheneos.zone
+
+$ORIGIN www.grapheneos.app.
+$INCLUDE lua-grapheneos.zone
+$ORIGIN grapheneos.app.
+
 @ IN TXT "google-site-verification=9SR3Ol5Vtsn-T1o-SNKjdwBME_ljhDGVmA1q429Tddg"
 @ IN TXT "yandex-verification: 7aae471af36dc967"
 @ IN TXT "facebook-domain-verification=8ozq60jp4da846m4inbg84vznj4w2a"

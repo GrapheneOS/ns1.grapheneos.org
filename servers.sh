@@ -16,3 +16,33 @@ declare -A addresses=(
     [1.ns2.grapheneos.org]="205.185.124.155 198.251.90.93 2605:6400:20:1c8f:a0c9:372d:482e:945b"
     [2.ns2.grapheneos.org]="107.189.3.168 198.251.90.93 2605:6400:30:ec25:102c:af6d:5be:1eb8"
 )
+
+declare -A continents=(
+    [0.ns1.grapheneos.org]=na
+    [1.ns1.grapheneos.org]=na
+    [2.ns1.grapheneos.org]=eu
+    [3.ns1.grapheneos.org]=as
+    [0.ns2.grapheneos.org]=na
+    [1.ns2.grapheneos.org]=na
+    [2.ns2.grapheneos.org]=eu
+)
+
+declare -A countries=(
+    [0.ns1.grapheneos.org]=us
+    [1.ns1.grapheneos.org]=us
+    [2.ns1.grapheneos.org]=de
+    [3.ns1.grapheneos.org]=sg
+    [0.ns2.grapheneos.org]=us
+    [1.ns2.grapheneos.org]=us
+    [2.ns2.grapheneos.org]=lu
+)
+
+declare -A regions=(
+    [0.ns1.grapheneos.org]=ny
+    [1.ns1.grapheneos.org]=wa
+    [2.ns1.grapheneos.org]=he
+    [3.ns1.grapheneos.org]=--
+    [0.ns2.grapheneos.org]=ny
+    [1.ns2.grapheneos.org]=ca
+    [2.ns2.grapheneos.org]=--
+)

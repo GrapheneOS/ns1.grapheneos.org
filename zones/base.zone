@@ -48,7 +48,7 @@ mta-sts IN AAAA 2607:5300:205:200::472f
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
 mta-sts IN CAA 0 iodef "mailto:caa@grapheneos.org"
-mta-sts IN HTTPS 1 . alpn=h2
+mta-sts 86400 IN HTTPS 1 . alpn=h2
 mta-sts IN MX 0 .
 mta-sts IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 mta-sts IN TXT "v=spf1 -all"

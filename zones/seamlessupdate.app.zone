@@ -93,7 +93,7 @@ www 300 IN LUA AAAA (";"
 "    ips = {ips_na_east, ips_na_west, ips_eu}"
 "  end"
 "  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]")
-www IN HTTPS 1 . alpn=h2
+www 86400 IN HTTPS 1 . alpn=h2
 www IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"

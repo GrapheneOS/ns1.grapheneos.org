@@ -96,7 +96,7 @@ www 300 IN LUA AAAA ( ";"
 "    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
 "  end"
 "  return ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})[1]")
-www IN HTTPS 1 . alpn=h2
+www 86400 IN HTTPS 1 . alpn=h2
 www IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"

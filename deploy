@@ -37,7 +37,7 @@ if [[ ${old_serial:0:8} = ${serial} ]]; then
     [[ $old_sequence -eq 99 ]] && old_sequence=0
     serial+=$(printf %02d $(( $old_sequence + 1 )))
 else
-    serial+=01
+    serial+=00
 fi
 echo serial: $serial
 echo

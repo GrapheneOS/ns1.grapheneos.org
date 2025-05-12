@@ -50,8 +50,9 @@ extras=(
     {0..3}.grapheneos.network
 
     connectivitycheck.grapheneos.network
-    connectivitycheck.grapheneos.network
-    _443._tcp.connectivitycheck.grapheneos.online
+    _443._tcp.connectivitycheck.grapheneos.network
+
+    connectivitycheck.grapheneos.online
     _443._tcp.connectivitycheck.grapheneos.online
 
     staging.attestation.app

@@ -6,7 +6,23 @@ $TTL 60
 @ 86400 IN NS ns2.grapheneos.org.
 
 @ IN LUA TXT ( ";"
-"  local cn = continentCode()"
-"  local cc = countryCode()"
-"  local re = regionCode()"
-"  return 'ip: ' .. bestwho:toString() .. ', region: ' .. re .. ', country: ' .. cc .. ', continent: ' .. cn" )
+"  local ip = who:toString()"
+"  local client = ''"
+"  if ecswho then"
+"    local ip = ecswho:getNetwork():toString()"
+"    local cn = geoiplookup(ip, 2)"
+"    if cn == 'unknown' then cn = '--' end"
+"    local cc = geoiplookup(ip, 3)"
+"    if cc == 'unknown' then cc = '--' end"
+"    local re = geoiplookup(ip, 6)"
+"    if re == 'unknown' then re = '--' end"
+"    client = string.format(', client: %s %s %s (%s)', cn, cc, re, ip)"
+"  end"
+"  local ip = who:toString()"
+"  local cn = geoiplookup(ip, 2)"
+"  if cn == 'unknown' then cn = '--' end"
+"  local cc = geoiplookup(ip, 3)"
+"  if cc == 'unknown' then cc = '--' end"
+"  local re = geoiplookup(ip, 6)"
+"  if re == 'unknown' then re = '--' end"
+"  return string.format('resolver: %s %s %s (%s)%s, nameserver: {{ns}} {{continent}} {{country}} {{region}}', cn, cc, re, ip, client)" )

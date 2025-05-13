@@ -63,7 +63,12 @@ for server in ${servers[@]}; do
 
     rm -rf zones.tmp
     cp -r zones zones.tmp
-    sed -i "s/{{serial}}/$serial/g;s/{{continent}}/${continents[$server]}/g;s/{{country}}/${countries[$server]}/g;s/{{region}}/${regions[$server]}/g" zones.tmp/*.zone
+    if [[ $server == *.ns1.grapheneos.org ]]; then
+        subdomain=ns1
+    else
+        subdomain=ns2
+    fi
+    sed -i "s/{{serial}}/$serial/g;s/{{continent}}/${continents[$server]}/g;s/{{country}}/${countries[$server]}/g;s/{{region}}/${regions[$server]}/g;s/{{ns}}/$subdomain/g" zones.tmp/*.zone
     rsync -prcv --chmod=D755,F644 --delete --fsync --preallocate zones.tmp/ $remote:/etc/powerdns/zones/
     rm -rf zones.tmp
 

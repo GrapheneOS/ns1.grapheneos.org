@@ -1,0 +1,12 @@
+$TTL 60
+
+@ 86400 IN SOA ns1.grapheneos.org. hostmaster.grapheneos.org. {{serial}} 3600 1800 1209600 3600
+
+@ 86400 IN NS ns1.grapheneos.org.
+@ 86400 IN NS ns2.grapheneos.org.
+
+@ IN LUA TXT ( ";"
+"  local cn = continentCode()"
+"  local cc = countryCode()"
+"  local re = regionCode()"
+"  return 'ip: ' .. bestwho:toString() .. ', region: ' .. re .. ', country: ' .. cc .. ', continent: ' .. cn" )

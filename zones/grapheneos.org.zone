@@ -86,15 +86,13 @@ _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
 
 _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 
-geoip 60 IN LUA TXT ( ";"
-"  local cn = continentCode()"
-"  local cc = countryCode()"
-"  local re = regionCode()"
-"  return 'ip: ' .. bestwho:toString() .. ', region: ' .. re .. ', country: ' .. cc .. ', continent: ' .. cn" )
-
 ; special zone without DNSSEC since results are unused and queries are randomized
 dnscheck 86400 IN NS ns1.grapheneos.org.
 dnscheck 86400 IN NS ns2.grapheneos.org.
+
+; special zone without DNSSEC for debugging GeoDNS
+geoip 86400 IN NS ns1
+geoip 86400 IN NS ns2
 
 ; Macarne Amsterdam
 4.releases IN A 45.90.185.33

@@ -8,6 +8,8 @@ ns1 IN A 185.187.152.9
 ns1 IN AAAA 2a05:b0c4:1::8
 ns1 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
 ns1 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
+ns1 IN CAA 0 issuemail ";"
+ns1 IN CAA 0 issuevmc ";"
 ns1 IN CAA 0 iodef "mailto:caa@grapheneos.org"
 ns1 86400 IN HTTPS 1 . alpn=h2
 ns1 IN MX 0 .
@@ -24,6 +26,8 @@ ns2 IN AAAA 2605:6400:20:1c8f:a0c9:372d:482e:945b
 ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
+ns2 IN CAA 0 issuemail ";"
+ns2 IN CAA 0 issuevmc ";"
 ns2 IN CAA 0 iodef "mailto:caa@grapheneos.org"
 ns2 86400 IN HTTPS 1 . alpn=h2
 ns2 IN MX 0 .
@@ -47,6 +51,8 @@ mta-sts IN A 192.99.98.22
 mta-sts IN AAAA 2607:5300:205:200::472f
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mta-sts IN CAA 0 issuemail ";"
+mta-sts IN CAA 0 issuevmc ";"
 mta-sts IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mta-sts 86400 IN HTTPS 1 . alpn=h2
 mta-sts IN MX 0 .

@@ -19,6 +19,8 @@ mail IN A 192.99.98.22
 mail IN AAAA 2607:5300:205:200::472f
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mail IN CAA 0 issuemail ";"
+mail IN CAA 0 issuevmc ";"
 mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mail 86400 IN HTTPS 1 . alpn=h2
 mail IN MX 0 .

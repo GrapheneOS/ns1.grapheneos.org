@@ -21,6 +21,8 @@ $ORIGIN vanadium.app
 
 dl IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 dl IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+dl IN CAA 0 issuemail ";"
+dl IN CAA 0 issuevmc ";"
 dl IN CAA 0 iodef "mailto:caa@grapheneos.org"
 dl 86400 IN HTTPS 1 . alpn=h2
 dl IN MX 0 .
@@ -35,6 +37,8 @@ $ORIGIN vanadium.app
 
 update IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 update IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+update IN CAA 0 issuemail ";"
+update IN CAA 0 issuevmc ";"
 update IN CAA 0 iodef "mailto:caa@grapheneos.org"
 update 86400 IN HTTPS 1 . alpn=h2
 update IN MX 0 .

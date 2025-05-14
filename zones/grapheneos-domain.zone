@@ -2,6 +2,8 @@ $INCLUDE base.zone
 
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
+@ IN CAA 0 issuemail ";"
+@ IN CAA 0 issuevmc ";"
 @ IN CAA 0 iodef "mailto:caa@grapheneos.org"
 @ 86400 IN HTTPS 1 . alpn=h2
 @ IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000

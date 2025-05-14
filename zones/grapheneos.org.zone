@@ -119,6 +119,8 @@ $ORIGIN grapheneos.org.
 
 releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
 releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
+releases IN CAA 0 issuemail ";"
+releases IN CAA 0 issuevmc ";"
 releases IN CAA 0 iodef "mailto:caa@grapheneos.org"
 releases 86400 IN HTTPS 1 . alpn=h2
 releases IN MX 0 .
@@ -133,6 +135,8 @@ $ORIGIN grapheneos.org.
 
 apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130107283"
 apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20259697"
+apps IN CAA 0 issuemail ";"
+apps IN CAA 0 issuevmc ";"
 apps IN CAA 0 iodef "mailto:caa@grapheneos.org"
 apps 86400 IN HTTPS 1 . alpn=h2
 apps IN MX 0 .
@@ -147,6 +151,8 @@ $ORIGIN grapheneos.org.
 
 time IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 time IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+time IN CAA 0 issuemail ";"
+time IN CAA 0 issuevmc ";"
 time IN CAA 0 iodef "mailto:caa@grapheneos.org"
 time 86400 IN HTTPS 1 . alpn=h2
 time IN MX 0 .
@@ -161,6 +167,8 @@ $ORIGIN grapheneos.org.
 
 remoteprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 remoteprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+remoteprovisioning IN CAA 0 issuemail ";"
+remoteprovisioning IN CAA 0 issuevmc ";"
 remoteprovisioning IN CAA 0 iodef "mailto:caa@grapheneos.org"
 remoteprovisioning 86400 IN HTTPS 1 . alpn=h2
 remoteprovisioning IN MX 0 .
@@ -175,6 +183,8 @@ $ORIGIN grapheneos.org.
 
 widevineprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 widevineprovisioning IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+widevineprovisioning IN CAA 0 issuemail ";"
+widevineprovisioning IN CAA 0 issuevmc ";"
 widevineprovisioning IN CAA 0 iodef "mailto:caa@grapheneos.org"
 widevineprovisioning 86400 IN HTTPS 1 . alpn=h2
 widevineprovisioning IN MX 0 .
@@ -189,6 +199,8 @@ $ORIGIN grapheneos.org.
 
 broadcom.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 broadcom.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+broadcom.psds IN CAA 0 issuemail ";"
+broadcom.psds IN CAA 0 issuevmc ";"
 broadcom.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
 broadcom.psds 86400 IN HTTPS 1 . alpn=h2
 broadcom.psds IN MX 0 .
@@ -203,6 +215,8 @@ $ORIGIN grapheneos.org.
 
 samsung.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 samsung.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+samsung.psds IN CAA 0 issuemail ";"
+samsung.psds IN CAA 0 issuevmc ";"
 samsung.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
 samsung.psds 86400 IN HTTPS 1 . alpn=h2
 samsung.psds IN MX 0 .
@@ -217,6 +231,8 @@ $ORIGIN grapheneos.org.
 
 qualcomm.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 qualcomm.psds IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+qualcomm.psds IN CAA 0 issuemail ";"
+qualcomm.psds IN CAA 0 issuevmc ";"
 qualcomm.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
 qualcomm.psds 86400 IN HTTPS 1 . alpn=h2
 qualcomm.psds IN MX 0 .
@@ -231,6 +247,8 @@ $ORIGIN grapheneos.org.
 
 supl IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 supl IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+supl IN CAA 0 issuemail ";"
+supl IN CAA 0 issuevmc ";"
 supl IN CAA 0 iodef "mailto:caa@grapheneos.org"
 supl 86400 IN HTTPS 1 . alpn=h2
 supl IN MX 0 .
@@ -246,6 +264,8 @@ $ORIGIN grapheneos.org.
 
 nominatim IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 nominatim IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+nominatim IN CAA 0 issuemail ";"
+nominatim IN CAA 0 issuevmc ";"
 nominatim IN CAA 0 iodef "mailto:caa@grapheneos.org"
 nominatim 86400 IN HTTPS 1 . alpn=h2
 nominatim IN MX 0 .
@@ -260,6 +280,8 @@ $ORIGIN grapheneos.org.
 
 gs-loc.apple IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
 gs-loc.apple IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+gs-loc.apple IN CAA 0 issuemail ";"
+gs-loc.apple IN CAA 0 issuevmc ";"
 gs-loc.apple IN CAA 0 iodef "mailto:caa@grapheneos.org"
 gs-loc.apple 86400 IN HTTPS 1 . alpn=h2
 gs-loc.apple IN MX 0 .
@@ -272,6 +294,8 @@ mail IN A 192.99.98.22
 mail IN AAAA 2607:5300:205:200::472f
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mail IN CAA 0 issuemail ";"
+mail IN CAA 0 issuevmc ";"
 mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mail 86400 IN HTTPS 1 . alpn=h2
 mail 86400 IN MX 0 mail.grapheneos.org.
@@ -306,6 +330,8 @@ discuss IN A 51.79.52.38
 ;discuss IN AAAA 2607:5300:205:200::3c4
 discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
 discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
+discuss IN CAA 0 issuemail ";"
+discuss IN CAA 0 issuevmc ";"
 discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
 discuss 86400 IN HTTPS 1 . alpn=h2
 discuss 86400 IN MX 0 mail.grapheneos.org.
@@ -327,6 +353,8 @@ mta-sts.discuss IN A 192.99.98.22
 mta-sts.discuss IN AAAA 2607:5300:205:200::472f
 mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mta-sts.discuss IN CAA 0 issuemail ";"
+mta-sts.discuss IN CAA 0 issuevmc ";"
 mta-sts.discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mta-sts.discuss 86400 IN HTTPS 1 . alpn=h2
 mta-sts.discuss IN MX 0 .
@@ -339,6 +367,8 @@ matrix IN A 51.79.51.42
 matrix IN AAAA 2607:5300:205:200::26e1
 matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
 matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
+matrix IN CAA 0 issuemail ";"
+matrix IN CAA 0 issuevmc ";"
 matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
 matrix 86400 IN HTTPS 1 . alpn=h2
 matrix 86400 IN MX 0 mail.grapheneos.org.
@@ -360,6 +390,8 @@ mta-sts.matrix IN A 192.99.98.22
 mta-sts.matrix IN AAAA 2607:5300:205:200::472f
 mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
+mta-sts.matrix IN CAA 0 issuemail ";"
+mta-sts.matrix IN CAA 0 issuevmc ";"
 mta-sts.matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mta-sts.matrix 86400 IN HTTPS 1 . alpn=h2
 mta-sts.matrix IN MX 0 .
@@ -372,6 +404,8 @@ element IN A 51.79.51.42
 element IN AAAA 2607:5300:205:200::26e1
 element IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
 element IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
+element IN CAA 0 issuemail ";"
+element IN CAA 0 issuevmc ";"
 element IN CAA 0 iodef "mailto:caa@grapheneos.org"
 element 86400 IN HTTPS 1 . alpn=h2
 element IN MX 0 .
@@ -384,6 +418,8 @@ staging IN A 199.195.250.78
 staging IN AAAA 2605:6400:10:9d6:6d84:e183:acda:16d7
 staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1172126677"
 staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108221874"
+staging IN CAA 0 issuemail ";"
+staging IN CAA 0 issuevmc ";"
 staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
 staging 86400 IN HTTPS 1 . alpn=h2
 staging IN MX 0 .

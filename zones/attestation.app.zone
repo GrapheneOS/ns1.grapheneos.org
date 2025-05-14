@@ -6,6 +6,8 @@ $INCLUDE base.zone
 @ IN AAAA 2607:5300:205:200::7e9
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130076561"
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20256460"
+@ IN CAA 0 issuemail ";"
+@ IN CAA 0 issuevmc ";"
 @ IN CAA 0 iodef "mailto:caa@grapheneos.org"
 @ 86400 IN HTTPS 1 . alpn=h2
 @ IN SSHFP 4 2 3c03c6c4ebc5ca097d55d4b2941ad581e840f230a6927c58755522c0ec3e98c6
@@ -32,6 +34,8 @@ staging IN A 198.98.57.157
 staging IN AAAA 2605:6400:10:aa9:1c0f:44d3:da15:c0ec
 staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1182490537"
 staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108989964"
+staging IN CAA 0 issuemail ";"
+staging IN CAA 0 issuevmc ";"
 staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
 staging 86400 IN HTTPS 1 . alpn=h2
 staging IN MX 0 .

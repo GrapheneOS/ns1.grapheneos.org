@@ -79,7 +79,7 @@ for server in ${servers[@]}; do
         ssh $remote 'systemctl enable --now geoipupdate.timer pdns.service && systemctl daemon-reload && systemctl restart pdns'
         ssh $remote 'systemctl is-enabled bird.service >/dev/null && systemctl start bird || true'
     else
-        ssh $remote pdns_control reload
+        ssh $remote 'pdns_control rediscover && pdns_control reload'
     fi
 
     echo

@@ -36,7 +36,7 @@
 "    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
 "  end"
 "  return ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})[1]")
-@ 300 IN LUA AAAA ( ";"
+@ 300 IN LUA AAAA (";"
 "  local ips_na_east = {'2607:5300:205:200::2584'}"
 "  local ips_na_west = {'2605:6400:20:387:72d4:dab9:a369:f351'}"
 "  local ips_eu = {'2001:41d0:304:200::b109'}"

@@ -5,7 +5,7 @@ $TTL 60
 @ 86400 IN NS ns1.grapheneos.org.
 @ 86400 IN NS ns2.grapheneos.org.
 
-@ IN LUA TXT ( ";"
+@ IN LUA TXT (";"
 "  local ip = who:toString()"
 "  local client = ''"
 "  if ecswho then"
@@ -25,4 +25,4 @@ $TTL 60
 "  if cc == 'unknown' then cc = '--' end"
 "  local re = geoiplookup(ip, 6)"
 "  if re == 'unknown' then re = '--' end"
-"  return string.format('resolver: %s %s %s (%s)%s, nameserver: {{ns}} {{continent}} {{country}} {{region}}', cn, cc, re, ip, client)" )
+"  return string.format('resolver: %s %s %s (%s)%s, nameserver: {{ns}} {{continent}} {{country}} {{region}}', cn, cc, re, ip, client)")

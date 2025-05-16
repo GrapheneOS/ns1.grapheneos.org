@@ -1,4 +1,4 @@
-@ 300 IN LUA A ( ";"
+@ 300 IN LUA A (";"
 "  local ips_na_east = {'51.222.156.101'}"
 "  local ips_na_west = {'209.141.35.164'}"
 "  local ips_eu = {'54.37.41.188'}"
@@ -36,7 +36,7 @@
 "    ips = {ips_na_east, ips_na_west, ips_eu, ips_sg}"
 "  end"
 "  return ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})[1]")
-@ 300 IN LUA AAAA ( ";"
+@ 300 IN LUA AAAA (";"
 "  local ips_na_east = {'2607:5300:205:200::29c6'}"
 "  local ips_na_west = {'2605:6400:20:1131:8088:e08:84e6:632'}"
 "  local ips_eu = {'2001:41d0:304:200::902f'}"

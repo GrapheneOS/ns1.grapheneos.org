@@ -23,7 +23,7 @@ mail IN CAA 0 issuemail ";"
 mail IN CAA 0 issuevmc ";"
 mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mail 86400 IN HTTPS 1 . alpn=h2
-mail IN MX 0 .
+mail 86400 IN MX 0 .
 mail IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 mail IN TXT "v=spf1 -all"
 

@@ -24,7 +24,7 @@ _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@attestation.app"
 www IN A 51.79.66.27
 www IN AAAA 2607:5300:205:200::7e9
 www 86400 IN HTTPS 1 . alpn=h2
-www IN MX 0 .
+www 86400 IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"
 
@@ -38,7 +38,7 @@ staging IN CAA 0 issuemail ";"
 staging IN CAA 0 issuevmc ";"
 staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
 staging 86400 IN HTTPS 1 . alpn=h2
-staging IN MX 0 .
+staging 86400 IN MX 0 .
 staging IN SSHFP 4 2 ef4b234f6dc92f2feef6e334ab38c50d299eea13bb12739fff17e8175c53573b
 staging IN TXT "v=spf1 -all"
 

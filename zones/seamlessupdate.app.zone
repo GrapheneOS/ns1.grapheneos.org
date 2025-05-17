@@ -26,7 +26,7 @@ $INCLUDE lua-releases.zone
 $ORIGIN seamlessupdate.app.
 
 www 86400 IN HTTPS 1 . alpn=h2
-www IN MX 0 .
+www 86400 IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"
 

@@ -3,69 +3,69 @@ $TTL 3600
 ; OVH Beauharnois (anycast via Rage4 New York City)
 0.ns1 IN A 51.161.34.158
 0.ns1 IN AAAA 2607:5300:205:200::eaa
-0.ns1 IN MX 0 .
+0.ns1 86400 IN MX 0 .
 0.ns1 IN SSHFP 4 2 26f6b833fb1d0ab8fa5d2341f3dc37418e5240382dbaff61ce862f4e47ebe3d8
 0.ns1 IN TXT "v=spf1 -all"
 ; OVH Hillsboro (anycast via Rage4 Seattle)
 1.ns1 IN A 15.204.8.153
 1.ns1 IN AAAA 2604:2dc0:202:300::23a6
-1.ns1 IN MX 0 .
+1.ns1 86400 IN MX 0 .
 1.ns1 IN SSHFP 4 2 6f0888de5c4ac8bbdd2b03216b37a9c48cc44fc6d7933197355b6bf556d465a3
 1.ns1 IN TXT "v=spf1 -all"
 ; OVH Frankfurt (anycast via Rage4 Frankfurt)
 2.ns1 IN A 57.129.65.223
 2.ns1 IN AAAA 2001:41d0:701:1100::245b
-2.ns1 IN MX 0 .
+2.ns1 86400 IN MX 0 .
 2.ns1 IN SSHFP 4 2 76ffed3f684b061297bbde024495366b077a6136573f3d6cc583af1bdbc9251f
 2.ns1 IN TXT "v=spf1 -all"
 ; OVH Singapore (anycast via Rage4 Singapore)
 3.ns1 IN A 15.235.197.61
 3.ns1 IN AAAA 2402:1f00:8000:800::3966
-3.ns1 IN MX 0 .
+3.ns1 86400 IN MX 0 .
 3.ns1 IN SSHFP 4 2 ba031328000779a7c0663d39eda0351941e56649ecda737d6fdb5465d3805e8d
 3.ns1 IN TXT "v=spf1 -all"
 
 ; BuyVM New York
 0.ns2 IN A 198.98.53.141
 0.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
-0.ns2 IN MX 0 .
+0.ns2 86400 IN MX 0 .
 0.ns2 IN SSHFP 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
 0.ns2 IN TXT "v=spf1 -all"
 ; BuyVM Las Vegas
 1.ns2 IN A 205.185.124.155
 1.ns2 IN AAAA 2605:6400:20:1c8f:a0c9:372d:482e:945b
-1.ns2 IN MX 0 .
+1.ns2 86400 IN MX 0 .
 1.ns2 IN SSHFP 4 2 07a7a4b03d7d7b3108e1cf028e4c10aac8ef0e140c982ed4864512ca65ae56f0
 1.ns2 IN TXT "v=spf1 -all"
 ; BuyVM Luxembourg
 2.ns2 IN A 107.189.3.168
 2.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
-2.ns2 IN MX 0 .
+2.ns2 86400 IN MX 0 .
 2.ns2 IN SSHFP 4 2 1bc33eb5d8949b53a2a2cab1163e1ba2543506ae579c4a9e1a37b3e1a3234edd
 2.ns2 IN TXT "v=spf1 -all"
 
 ; OVH Beauharnois
 0 IN A 51.222.156.101
 0 IN AAAA 2607:5300:205:200::29c6
-0 IN MX 0 .
+0 86400 IN MX 0 .
 0 IN SSHFP 4 2 ef9845da6e542a593cbb666026935eb90b8eefe7b70a17d5edfc024985b39306
 0 IN TXT "v=spf1 -all"
 ; BuyVM Las Vegas
 1 IN A 209.141.35.164
 1 IN AAAA 2605:6400:20:1131:8088:e08:84e6:632
-1 IN MX 0 .
+1 86400 IN MX 0 .
 1 IN SSHFP 4 2 5a17966350748c352a3a8869a9609b2b2686786cc197de30bbae5f0cc3cc96bf
 1 IN TXT "v=spf1 -all"
 ; OVH Gravelines
 2 IN A 54.37.41.188
 2 IN AAAA 2001:41d0:304:200::902f
-2 IN MX 0 .
+2 86400 IN MX 0 .
 2 IN SSHFP 4 2 7bb4e86336e9917eeea775b73c94a12b627e135b8fba73829b8866faf0a4075e
 2 IN TXT "v=spf1 -all"
 ; OVH Singapore
 3 IN A 51.79.160.50
 3 IN AAAA 2402:1f00:8000:800::16d6
-3 IN MX 0 .
+3 86400 IN MX 0 .
 3 IN SSHFP 4 2 67bbc371b74adb54907bf5f5f5918c85a0a6a9b50c88050950c3a56aac334100
 3 IN TXT "v=spf1 -all"
 
@@ -97,19 +97,19 @@ geoip 86400 IN NS ns2
 ; Macarne Amsterdam
 4.releases IN A 45.90.185.33
 4.releases IN AAAA 2a14:3f87:6920:250::100
-4.releases IN MX 0 .
+4.releases 86400 IN MX 0 .
 4.releases IN SSHFP 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf
 4.releases IN TXT "v=spf1 -all"
 ; ReliableSite Miami
 5.releases IN A 172.96.172.37
 5.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
-5.releases IN MX 0 .
+5.releases 86400 IN MX 0 .
 5.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
 5.releases IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
 6.releases IN A 104.194.8.203
 6.releases IN AAAA 2605:9880:200:20::113
-6.releases IN MX 0 .
+6.releases 86400 IN MX 0 .
 6.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
 6.releases IN TXT "v=spf1 -all"
 
@@ -123,7 +123,7 @@ releases IN CAA 0 issuemail ";"
 releases IN CAA 0 issuevmc ";"
 releases IN CAA 0 iodef "mailto:caa@grapheneos.org"
 releases 86400 IN HTTPS 1 . alpn=h2
-releases IN MX 0 .
+releases 86400 IN MX 0 .
 releases IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 releases IN TXT "v=spf1 -all"
 
@@ -139,7 +139,7 @@ apps IN CAA 0 issuemail ";"
 apps IN CAA 0 issuevmc ";"
 apps IN CAA 0 iodef "mailto:caa@grapheneos.org"
 apps 86400 IN HTTPS 1 . alpn=h2
-apps IN MX 0 .
+apps 86400 IN MX 0 .
 apps IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 apps IN TXT "v=spf1 -all"
 
@@ -155,7 +155,7 @@ time IN CAA 0 issuemail ";"
 time IN CAA 0 issuevmc ";"
 time IN CAA 0 iodef "mailto:caa@grapheneos.org"
 time 86400 IN HTTPS 1 . alpn=h2
-time IN MX 0 .
+time 86400 IN MX 0 .
 time IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 time IN TXT "v=spf1 -all"
 
@@ -171,7 +171,7 @@ remoteprovisioning IN CAA 0 issuemail ";"
 remoteprovisioning IN CAA 0 issuevmc ";"
 remoteprovisioning IN CAA 0 iodef "mailto:caa@grapheneos.org"
 remoteprovisioning 86400 IN HTTPS 1 . alpn=h2
-remoteprovisioning IN MX 0 .
+remoteprovisioning 86400 IN MX 0 .
 remoteprovisioning IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 remoteprovisioning IN TXT "v=spf1 -all"
 
@@ -187,7 +187,7 @@ widevineprovisioning IN CAA 0 issuemail ";"
 widevineprovisioning IN CAA 0 issuevmc ";"
 widevineprovisioning IN CAA 0 iodef "mailto:caa@grapheneos.org"
 widevineprovisioning 86400 IN HTTPS 1 . alpn=h2
-widevineprovisioning IN MX 0 .
+widevineprovisioning 86400 IN MX 0 .
 widevineprovisioning IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 widevineprovisioning IN TXT "v=spf1 -all"
 
@@ -203,7 +203,7 @@ broadcom.psds IN CAA 0 issuemail ";"
 broadcom.psds IN CAA 0 issuevmc ";"
 broadcom.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
 broadcom.psds 86400 IN HTTPS 1 . alpn=h2
-broadcom.psds IN MX 0 .
+broadcom.psds 86400 IN MX 0 .
 broadcom.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 broadcom.psds IN TXT "v=spf1 -all"
 
@@ -219,7 +219,7 @@ samsung.psds IN CAA 0 issuemail ";"
 samsung.psds IN CAA 0 issuevmc ";"
 samsung.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
 samsung.psds 86400 IN HTTPS 1 . alpn=h2
-samsung.psds IN MX 0 .
+samsung.psds 86400 IN MX 0 .
 samsung.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 samsung.psds IN TXT "v=spf1 -all"
 
@@ -235,7 +235,7 @@ qualcomm.psds IN CAA 0 issuemail ";"
 qualcomm.psds IN CAA 0 issuevmc ";"
 qualcomm.psds IN CAA 0 iodef "mailto:caa@grapheneos.org"
 qualcomm.psds 86400 IN HTTPS 1 . alpn=h2
-qualcomm.psds IN MX 0 .
+qualcomm.psds 86400 IN MX 0 .
 qualcomm.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 qualcomm.psds IN TXT "v=spf1 -all"
 
@@ -251,7 +251,7 @@ supl IN CAA 0 issuemail ";"
 supl IN CAA 0 issuevmc ";"
 supl IN CAA 0 iodef "mailto:caa@grapheneos.org"
 supl 86400 IN HTTPS 1 . alpn=h2
-supl IN MX 0 .
+supl 86400 IN MX 0 .
 supl IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 supl IN TXT "v=spf1 -all"
 
@@ -268,7 +268,7 @@ nominatim IN CAA 0 issuemail ";"
 nominatim IN CAA 0 issuevmc ";"
 nominatim IN CAA 0 iodef "mailto:caa@grapheneos.org"
 nominatim 86400 IN HTTPS 1 . alpn=h2
-nominatim IN MX 0 .
+nominatim 86400 IN MX 0 .
 nominatim IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 nominatim IN TXT "v=spf1 -all"
 
@@ -284,7 +284,7 @@ gs-loc.apple IN CAA 0 issuemail ";"
 gs-loc.apple IN CAA 0 issuevmc ";"
 gs-loc.apple IN CAA 0 iodef "mailto:caa@grapheneos.org"
 gs-loc.apple 86400 IN HTTPS 1 . alpn=h2
-gs-loc.apple IN MX 0 .
+gs-loc.apple 86400 IN MX 0 .
 gs-loc.apple IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 gs-loc.apple IN TXT "v=spf1 -all"
 
@@ -319,7 +319,7 @@ _mta-sts.mail IN TXT "v=STSv1; id=2023062500"
 mta-sts.mail IN A 192.99.98.22
 mta-sts.mail IN AAAA 2607:5300:205:200::472f
 mta-sts.mail 86400 IN HTTPS 1 . alpn=h2
-mta-sts.mail IN MX 0 .
+mta-sts.mail 86400 IN MX 0 .
 mta-sts.mail IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 mta-sts.mail IN TXT "v=spf1 -all"
 
@@ -357,7 +357,7 @@ mta-sts.discuss IN CAA 0 issuemail ";"
 mta-sts.discuss IN CAA 0 issuevmc ";"
 mta-sts.discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mta-sts.discuss 86400 IN HTTPS 1 . alpn=h2
-mta-sts.discuss IN MX 0 .
+mta-sts.discuss 86400 IN MX 0 .
 mta-sts.discuss IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 mta-sts.discuss IN TXT "v=spf1 -all"
 
@@ -394,7 +394,7 @@ mta-sts.matrix IN CAA 0 issuemail ";"
 mta-sts.matrix IN CAA 0 issuevmc ";"
 mta-sts.matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mta-sts.matrix 86400 IN HTTPS 1 . alpn=h2
-mta-sts.matrix IN MX 0 .
+mta-sts.matrix 86400 IN MX 0 .
 mta-sts.matrix IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 mta-sts.matrix IN TXT "v=spf1 -all"
 
@@ -408,7 +408,7 @@ element IN CAA 0 issuemail ";"
 element IN CAA 0 issuevmc ";"
 element IN CAA 0 iodef "mailto:caa@grapheneos.org"
 element 86400 IN HTTPS 1 . alpn=h2
-element IN MX 0 .
+element 86400 IN MX 0 .
 element IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 element IN TXT "v=spf1 -all"
 
@@ -422,7 +422,7 @@ staging IN CAA 0 issuemail ";"
 staging IN CAA 0 issuevmc ";"
 staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
 staging 86400 IN HTTPS 1 . alpn=h2
-staging IN MX 0 .
+staging 86400 IN MX 0 .
 staging IN SSHFP 4 2 ba61a88c88b406e2266dab834c99fa4159f11c5b2d840223e2930fed5be4fcef
 staging IN TXT "v=spf1 -all"
 

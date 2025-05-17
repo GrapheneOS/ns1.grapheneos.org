@@ -24,7 +24,7 @@ _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.social"
 www IN A 51.222.159.14
 www IN AAAA 2607:5300:205:200::5e3f
 www 86400 IN HTTPS 1 . alpn=h2
-www IN MX 0 .
+www 86400 IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"
 

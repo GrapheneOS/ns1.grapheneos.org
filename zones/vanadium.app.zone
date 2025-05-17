@@ -25,7 +25,7 @@ dl IN CAA 0 issuemail ";"
 dl IN CAA 0 issuevmc ";"
 dl IN CAA 0 iodef "mailto:caa@grapheneos.org"
 dl 86400 IN HTTPS 1 . alpn=h2
-dl IN MX 0 .
+dl 86400 IN MX 0 .
 dl IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 dl IN TXT "v=spf1 -all"
 
@@ -41,7 +41,7 @@ update IN CAA 0 issuemail ";"
 update IN CAA 0 issuevmc ";"
 update IN CAA 0 iodef "mailto:caa@grapheneos.org"
 update 86400 IN HTTPS 1 . alpn=h2
-update IN MX 0 .
+update 86400 IN MX 0 .
 update IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 update IN TXT "v=spf1 -all"
 

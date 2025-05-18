@@ -41,3 +41,7 @@ $ORIGIN grapheneos.network.
 
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.network; ruf=mailto:dmarc@grapheneos.network"
 _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.network"
+
+; special zone without DNSSEC for debugging GeoDNS
+geoip 86400 IN NS ns1
+geoip 86400 IN NS ns2

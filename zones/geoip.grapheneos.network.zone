@@ -1,9 +1,9 @@
 $TTL 60
 
-@ 86400 IN SOA ns1.grapheneos.org. hostmaster.grapheneos.org. {{serial}} 3600 1800 1209600 3600
+@ 86400 IN SOA ns1.grapheneos.network. hostmaster.grapheneos.network. {{serial}} 3600 1800 1209600 3600
 
-@ 86400 IN NS ns1.grapheneos.org.
-@ 86400 IN NS ns2.grapheneos.org.
+@ 86400 IN NS ns1.grapheneos.network.
+@ 86400 IN NS ns2.grapheneos.network.
 
 @ IN LUA TXT (";"
 "  local ip = who:toString()"

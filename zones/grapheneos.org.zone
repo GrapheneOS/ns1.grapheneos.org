@@ -90,10 +90,6 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 dnscheck 86400 IN NS ns1
 dnscheck 86400 IN NS ns2
 
-; special zone without DNSSEC for debugging GeoDNS
-geoip 86400 IN NS ns1
-geoip 86400 IN NS ns2
-
 ; Macarne Amsterdam
 4.releases IN A 45.90.185.33
 4.releases IN AAAA 2a14:3f87:6920:250::100

@@ -62,10 +62,11 @@ for server in ${servers[@]}; do
         sed -i "s/{{addresses}}/${addresses[$server]}/g;s/{{receiver_threads}}/${receiver_threads[$server]:-1}/g" pdns.conf.tmp
         rsync -pcv --chmod=644 --fsync --preallocate pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
         rm pdns.conf.tmp
-        rsync -pcv --chmod=644 --fsync --preallocate named.conf $remote:/etc/powerdns/named.conf
         rsync -pcv --chown root:geoipupdate --chmod=F640 --fsync --preallocate GeoIP.conf $remote:/etc/GeoIP.conf
         rsync -prcv --delete --chmod=D755,F644 --fsync --preallocate systemd/system/{geoipupdate.service.d,geoipupdate.timer.d,pdns.service.d} $remote:/etc/systemd/system/
     fi
+
+    rsync -pcv --chmod=644 --fsync --preallocate named.conf $remote:/etc/powerdns/named.conf
 
     rm -rf zones.tmp
     cp -r zones zones.tmp

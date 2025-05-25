@@ -87,14 +87,14 @@ _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
 _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 
 ; RFC 5735 TEST-NET-1
-*.dnscheck 60 IN A 192.0.2.1
+*.dnscheck IN A 192.0.2.1
 
 ; RFC 6666 Discard Prefix
-*.dnscheck 60 IN AAAA 100::1
+*.dnscheck IN AAAA 100::1
 
-*.dnscheck 60 IN MX 0 .
-*.dnscheck 60 IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
-*.dnscheck 60 IN TXT "v=spf1 -all"
+*.dnscheck IN MX 0 .
+*.dnscheck IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+*.dnscheck IN TXT "v=spf1 -all"
 
 ; Macarne Amsterdam
 4.releases IN A 45.90.185.33

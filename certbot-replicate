@@ -18,7 +18,7 @@ for replica in ${replicas[@]}; do
     echo
 
     rsync -rpcvl --delete --fsync --preallocate /etc/letsencrypt/ $replica:/etc/letsencrypt &&
-        ssh root@$replica "nginx -s reload; rsync -rLvc --delete --chmod=D750,F640 --chown root:dnsdist /etc/letsencrypt/live/ /etc/letsencrypt/dnsdist/; dnsdist -c -e 'reloadAllCertificates()'" ||
+        ssh root@$replica "nginx -s reload; dnsdist -c -e 'reloadAllCertificates()'" ||
         status=1
 done
 

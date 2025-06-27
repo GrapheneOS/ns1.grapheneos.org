@@ -13,6 +13,7 @@ for server in ${servers_ns1[@]}; do
 
     rsync -rpcv --chmod=D755,F644 iproute2 $remote:/etc/
 
+    rsync -pcv --chmod=644 zerotier-one/local.conf $remote:/var/lib/zerotier-one/local.conf
     rsync -pcv --chmod=755 rage4-zerotier-connect.$server $remote:/usr/local/bin/rage4-zerotier-connect
 
     rsync -pcv --chmod=644 systemd/system/rage4-setup.service $remote:/etc/systemd/system/

@@ -37,7 +37,7 @@ $TTL 3600
 1.ns2 86400 IN MX 0 .
 1.ns2 IN SSHFP 4 2 07a7a4b03d7d7b3108e1cf028e4c10aac8ef0e140c982ed4864512ca65ae56f0
 1.ns2 IN TXT "v=spf1 -all"
-; BuyVM Luxembourg
+; BuyVM Zurich
 2.ns2 IN A 107.189.3.168
 2.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
 2.ns2 86400 IN MX 0 .

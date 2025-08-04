@@ -97,23 +97,23 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 *.dnscheck IN TXT "v=spf1 -all"
 
 ; Macarne Amsterdam
-4.releases IN A 45.90.185.33
-4.releases IN AAAA 2a14:3f87:6920:250::100
-4.releases 86400 IN MX 0 .
-4.releases IN SSHFP 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf
-4.releases IN TXT "v=spf1 -all"
+0.releases IN A 45.90.185.33
+0.releases IN AAAA 2a14:3f87:6920:250::100
+0.releases 86400 IN MX 0 .
+0.releases IN SSHFP 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf
+0.releases IN TXT "v=spf1 -all"
 ; ReliableSite Miami
-5.releases IN A 172.96.172.37
-5.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
-5.releases 86400 IN MX 0 .
-5.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
-5.releases IN TXT "v=spf1 -all"
+1.releases IN A 172.96.172.37
+1.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
+1.releases 86400 IN MX 0 .
+1.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
+1.releases IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
-6.releases IN A 104.194.8.203
-6.releases IN AAAA 2605:9880:200:20::113
-6.releases 86400 IN MX 0 .
-6.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
-6.releases IN TXT "v=spf1 -all"
+2.releases IN A 104.194.8.203
+2.releases IN AAAA 2605:9880:200:20::113
+2.releases 86400 IN MX 0 .
+2.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
+2.releases IN TXT "v=spf1 -all"
 
 $ORIGIN releases.grapheneos.org.
 $INCLUDE lua-releases.zone

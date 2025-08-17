@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v5
     - uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.13'
         cache: pip
     - run: 'pip install --require-hashes --only-binary :all: -r requirements.txt'
     - run: gixy nginx/nginx.conf

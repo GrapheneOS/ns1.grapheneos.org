@@ -23,7 +23,7 @@ for server in ${servers[@]}; do
     fi
 
     cp dnsdist.conf dnsdist.conf.tmp
-    sed -i s/{{subdomain}}/$subdomain/g dnsdist.conf.tmp
+    sed -i "s/{{subdomain}}/$subdomain/g;s/{{threads}}/${threads[$server]:-1}/g" dnsdist.conf.tmp
     rsync -pcv --chmod=F644 --fsync --preallocate dnsdist.conf.tmp $remote:/etc/dnsdist.conf
     rm dnsdist.conf.tmp
 

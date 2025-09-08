@@ -22,13 +22,6 @@ elif [[ $# -ne 0 ]]; then
     exit 1
 fi
 
-declare -A threads=(
-    [0.ns1.grapheneos.org]=2
-    [1.ns1.grapheneos.org]=2
-    [2.ns1.grapheneos.org]=2
-    [3.ns1.grapheneos.org]=2
-)
-
 # use YYYYMMDDSS SOA serial format
 old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date -u +"%Y%m%d00"))
 serial=$(date -u +"%Y%m%d")

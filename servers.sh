@@ -7,6 +7,13 @@ servers=(
     {0..2}.ns2.grapheneos.org
 )
 
+declare -A threads=(
+    [0.ns1.grapheneos.org]=2
+    [1.ns1.grapheneos.org]=2
+    [2.ns1.grapheneos.org]=2
+    [3.ns1.grapheneos.org]=2
+)
+
 declare -A addresses=(
     [0.ns1.grapheneos.org]="51.161.34.158 185.187.152.9 2607:5300:205:200::eaa 2a05:b0c4:1::8"
     [1.ns1.grapheneos.org]="15.204.8.153 185.187.152.9 2604:2dc0:202:300::23a6 2a05:b0c4:1::8"

@@ -1,20 +1,20 @@
-servers_ns1=(
+readonly servers_ns1=(
     {0..3}.ns1.grapheneos.org
 )
 
-servers=(
+readonly servers=(
     "${servers_ns1[@]}"
     {0..2}.ns2.grapheneos.org
 )
 
-declare -A threads=(
+declare -Ar threads=(
     [0.ns1.grapheneos.org]=2
     [1.ns1.grapheneos.org]=2
     [2.ns1.grapheneos.org]=2
     [3.ns1.grapheneos.org]=2
 )
 
-declare -A addresses=(
+declare -Ar addresses=(
     [0.ns1.grapheneos.org]="51.161.34.158 185.187.152.9 2607:5300:205:200::eaa 2a05:b0c4:1::8"
     [1.ns1.grapheneos.org]="15.204.8.153 185.187.152.9 2604:2dc0:202:300::23a6 2a05:b0c4:1::8"
     [2.ns1.grapheneos.org]="57.129.65.223 185.187.152.9 2001:41d0:701:1100::245b 2a05:b0c4:1::8"
@@ -24,7 +24,7 @@ declare -A addresses=(
     [2.ns2.grapheneos.org]="107.189.3.168 198.251.90.93 2605:6400:30:ec25:102c:af6d:5be:1eb8"
 )
 
-declare -A continents=(
+declare -Ar continents=(
     [0.ns1.grapheneos.org]=na
     [1.ns1.grapheneos.org]=na
     [2.ns1.grapheneos.org]=eu
@@ -34,7 +34,7 @@ declare -A continents=(
     [2.ns2.grapheneos.org]=eu
 )
 
-declare -A countries=(
+declare -Ar countries=(
     [0.ns1.grapheneos.org]=us
     [1.ns1.grapheneos.org]=us
     [2.ns1.grapheneos.org]=de
@@ -44,7 +44,7 @@ declare -A countries=(
     [2.ns2.grapheneos.org]=lu
 )
 
-declare -A regions=(
+declare -Ar regions=(
     [0.ns1.grapheneos.org]=ny
     [1.ns1.grapheneos.org]=wa
     [2.ns1.grapheneos.org]=he

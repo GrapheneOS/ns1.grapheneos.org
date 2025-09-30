@@ -9,7 +9,7 @@ $INCLUDE lua-releases.zone
 @ IN CAA 0 issuemail ";"
 @ IN CAA 0 issuevmc ";"
 @ IN CAA 0 iodef "mailto:caa@grapheneos.org"
-@ 86400 IN HTTPS 1 . alpn=h2
+@ 86400 IN HTTPS 1 .
 @ IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 
 @ IN TXT "google-site-verification=aYDRbuNH4up3btfMlzLQvaHtNjCPtBwyJiMvKDr1-5M"
@@ -25,7 +25,7 @@ $ORIGIN www.seamlessupdate.app.
 $INCLUDE lua-releases.zone
 $ORIGIN seamlessupdate.app.
 
-www 86400 IN HTTPS 1 . alpn=h2
+www 86400 IN HTTPS 1 .
 www 86400 IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"

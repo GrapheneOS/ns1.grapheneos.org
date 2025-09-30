@@ -124,7 +124,7 @@ releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=
 releases IN CAA 0 issuemail ";"
 releases IN CAA 0 issuevmc ";"
 releases IN CAA 0 iodef "mailto:caa@grapheneos.org"
-releases 86400 IN HTTPS 1 . alpn=h2
+releases 86400 IN HTTPS 1 .
 releases 86400 IN MX 0 .
 releases IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 releases IN TXT "v=spf1 -all"
@@ -140,7 +140,7 @@ apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=http
 apps IN CAA 0 issuemail ";"
 apps IN CAA 0 issuevmc ";"
 apps IN CAA 0 iodef "mailto:caa@grapheneos.org"
-apps 86400 IN HTTPS 1 . alpn=h2
+apps 86400 IN HTTPS 1 .
 apps 86400 IN MX 0 .
 apps IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 apps IN TXT "v=spf1 -all"

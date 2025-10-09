@@ -1,7 +1,7 @@
 @ 300 IN LUA A (";"
-"  local ips_na_east = {'172.96.172.37'}"
-"  local ips_na_west = {'104.194.8.203'}"
-"  local ips_eu = {'45.90.185.33'}"
+"  local ips_na_east = {'172.96.172.37', '172.96.172.37'}"
+"  local ips_na_west = {'104.194.8.203', '104.194.8.203'}"
+"  local ips_eu = {'45.90.185.33', '45.88.230.12'}"
 "  local ips"
 "  local cn = continentCode()"
 "  local cc"
@@ -32,7 +32,8 @@
 "  else"
 "    ips = {ips_na_east, ips_na_west, ips_eu}"
 "  end"
-"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})[1]")
+"  local all = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
+"  return {all[1], all[2]}")
 @ 300 IN LUA AAAA (";"
 "  local ips_na_east = {'2605:9880:400:1100:15:1240:515:6e'}"
 "  local ips_na_west = {'2605:9880:200:20::113'}"

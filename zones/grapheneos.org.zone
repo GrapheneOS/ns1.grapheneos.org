@@ -114,6 +114,11 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 2.releases 86400 IN MX 0 .
 2.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
 2.releases IN TXT "v=spf1 -all"
+; Tempest London
+3.releases IN A 45.88.230.12
+3.releases 86400 IN MX 0 .
+3.releases IN SSHFP 4 2 bd9ee2931dfbb87293c71b4c2ab0d5ae6fa770034846f12ce76e8691379d0455
+3.releases IN TXT "v=spf1 -all"
 
 $ORIGIN releases.grapheneos.org.
 $INCLUDE lua-releases.zone

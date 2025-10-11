@@ -97,7 +97,8 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 *.dnscheck IN TXT "v=spf1 -all"
 
 ; Macarne Amsterdam
-0.releases IN A 45.90.185.33
+0.releases IN A 185.225.24.20
+0.releases IN A 185.225.24.21
 0.releases IN AAAA 2a14:3f87:6920:250::100
 0.releases 86400 IN MX 0 .
 0.releases IN SSHFP 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf

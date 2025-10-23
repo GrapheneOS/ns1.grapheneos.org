@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -o errexit
+
+drill -Qp 54 grapheneos.network @127.0.0.1 >/dev/null
+drill -Qp 54 grapheneos.org @127.0.0.1 >/dev/null
+drill -Qp 54 releases.grapheneos.org @127.0.0.1 >/dev/null

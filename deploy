@@ -71,7 +71,7 @@ for server in ${servers[@]}; do
     if (( reconfigure )); then
         ssh $remote 'systemctl is-enabled bird.service >/dev/null && systemctl stop bird || true'
         sleep 5
-        ssh $remote 'systemctl enable --now geoipupdate.timer pdns.service pdns-trigger-health-checks.timer && systemctl daemon-reload && systemctl restart pdns'
+        ssh $remote 'systemctl daemon-reload && systemctl enable --now geoipupdate.timer pdns.service pdns-trigger-health-checks.timer && systemctl restart pdns'
         ssh $remote 'systemctl is-enabled bird.service >/dev/null && systemctl start bird || true'
     else
         ssh $remote 'pdns_control rediscover && pdns_control reload'

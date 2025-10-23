@@ -1,0 +1,12 @@
+[Unit]
+Description=Trigger PowerDNS health checks every 4 minutes
+After=pdns.service
+Requires=pdns.service
+
+[Timer]
+AccuracySec=1s
+OnActiveSec=4m
+OnUnitActiveSec=4m
+
+[Install]
+WantedBy=timers.target

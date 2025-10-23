@@ -1,0 +1,9 @@
+[Unit]
+Description=Trigger PowerDNS health checks
+After=pdns.service
+Requires=pdns.service
+
+[Service]
+ExecStart=/usr/local/bin/pdns-trigger-health-checks
+User=powerdns
+Type=oneshot

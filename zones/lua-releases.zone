@@ -36,7 +36,7 @@
 "  if #result > 3 then return ips[1] else return result end")
 @ 300 IN LUA AAAA (";"
 "  local ips_na_east = {'2605:9880:400:1100:15:1240:515:6e'}"
-"  local ips_na_west = {'2605:9880:200:20::113'}"
+"  local ips_na_west = {'2605:9880:200:400:135:7700:ef0a:81'}"
 "  local ips_eu = {'2a14:3f87:6920:250::100', '2a14:3f87:6920:250::101'}"
 "  local ips"
 "  local cn = continentCode()"

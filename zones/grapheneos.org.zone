@@ -112,7 +112,7 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 1.releases IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
 2.releases IN A 104.194.8.203
-2.releases IN AAAA 2605:9880:200:20::113
+2.releases IN AAAA 2605:9880:200:400:135:7700:ef0a:81
 2.releases 86400 IN MX 0 .
 2.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
 2.releases IN TXT "v=spf1 -all"

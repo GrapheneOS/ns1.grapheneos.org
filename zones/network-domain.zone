@@ -1,8 +1,8 @@
 $INCLUDE base.zone
 
 $INCLUDE lua-network.zone
-@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130087249"
-@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257739"
+@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130081862"
+@ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20257076"
 @ IN CAA 0 issuemail ";"
 @ IN CAA 0 issuevmc ";"
 @ IN CAA 0 iodef "mailto:caa@grapheneos.org"

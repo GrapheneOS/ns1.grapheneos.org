@@ -108,14 +108,6 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 1.releases 86400 IN MX 0 .
 1.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
 1.releases IN TXT "v=spf1 -all"
-; Macarne Amsterdam
-2.releases IN A 185.225.24.20
-2.releases IN A 185.225.24.21
-2.releases IN AAAA 2a14:3f87:6920:250::100
-2.releases IN AAAA 2a14:3f87:6920:250::101
-2.releases 86400 IN MX 0 .
-2.releases IN SSHFP 4 2 d31e77152d7271a91008275d0c9ab4709aedc151b7327f860fe109b9ae7f1daf
-2.releases IN TXT "v=spf1 -all"
 ; Tempest London
 3.releases IN A 45.88.230.12
 3.releases 86400 IN MX 0 .

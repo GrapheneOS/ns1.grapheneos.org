@@ -387,3 +387,10 @@ _443._tcp.staging IN TLSA 3 1 1 5df9fbeb15ef8a94396b91c08836270c897ae2499c50e27e
 $INCLUDE ns-staging.zone
 
 ns1.staging IN SSHFP 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81
+
+; Hetzner Helsinki
+0.build IN A 157.180.106.242
+0.build IN AAAA 2a01:4f9:3090:13cc::1
+0.build 86400 IN MX 0 .
+0.build IN SSHFP 4 2 fc44f4d979a41c39a71d7f7785bd351c8a6485a56d6a192dcb973641c8093d0e
+0.build IN TXT "v=spf1 -all"

@@ -96,23 +96,23 @@ _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 *.dnscheck IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 *.dnscheck IN TXT "v=spf1 -all"
 
-; ReliableSite Miami
-0.releases IN A 172.96.172.37
-0.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
-0.releases 86400 IN MX 0 .
-0.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
-0.releases IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
-1.releases IN A 104.194.8.203
-1.releases IN AAAA 2605:9880:200:400:135:7700:ef0a:81
-1.releases 86400 IN MX 0 .
-1.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
-1.releases IN TXT "v=spf1 -all"
+lax.releases IN A 104.194.8.203
+lax.releases IN AAAA 2605:9880:200:400:135:7700:ef0a:81
+lax.releases 86400 IN MX 0 .
+lax.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
+lax.releases IN TXT "v=spf1 -all"
 ; Tempest London
-3.releases IN A 45.88.230.12
-3.releases 86400 IN MX 0 .
-3.releases IN SSHFP 4 2 bd9ee2931dfbb87293c71b4c2ab0d5ae6fa770034846f12ce76e8691379d0455
-3.releases IN TXT "v=spf1 -all"
+lon.releases IN A 45.88.230.12
+lon.releases 86400 IN MX 0 .
+lon.releases IN SSHFP 4 2 bd9ee2931dfbb87293c71b4c2ab0d5ae6fa770034846f12ce76e8691379d0455
+lon.releases IN TXT "v=spf1 -all"
+; ReliableSite Miami
+mia.releases IN A 172.96.172.37
+mia.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
+mia.releases 86400 IN MX 0 .
+mia.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
+mia.releases IN TXT "v=spf1 -all"
 
 $ORIGIN releases.grapheneos.org.
 $INCLUDE lua-releases.zone

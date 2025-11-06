@@ -160,7 +160,7 @@ extras=(
 
     _atproto.grapheneos.org
 
-    {4..6}.releases.grapheneos.org
+    {lax,lon,mia}.releases.grapheneos.org
 
     dl.vanadium.app
     _443._tcp.dl.vanadium.app

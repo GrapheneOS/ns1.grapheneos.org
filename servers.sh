@@ -41,7 +41,7 @@ declare -Ar countries=(
     [3.ns1.grapheneos.org]=sg
     [0.ns2.grapheneos.org]=us
     [1.ns2.grapheneos.org]=us
-    [2.ns2.grapheneos.org]=lu
+    [2.ns2.grapheneos.org]=ch
 )
 
 declare -Ar regions=(
@@ -51,5 +51,5 @@ declare -Ar regions=(
     [3.ns1.grapheneos.org]=--
     [0.ns2.grapheneos.org]=ny
     [1.ns2.grapheneos.org]=ca
-    [2.ns2.grapheneos.org]=--
+    [2.ns2.grapheneos.org]=be
 )

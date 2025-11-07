@@ -66,7 +66,7 @@ extras=(
     _853._tcp.ns2.staging.attestation.app
 
     {0..3}.ns1.grapheneos.org
-    {0..2}.ns2.grapheneos.org
+    {brn,las,nyc}.ns2.grapheneos.org
 
     {0..3}.grapheneos.org
 

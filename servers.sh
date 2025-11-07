@@ -4,7 +4,7 @@ readonly servers_ns1=(
 
 readonly servers=(
     "${servers_ns1[@]}"
-    {0..2}.ns2.grapheneos.org
+    {brn,las,nyc}.ns2.grapheneos.org
 )
 
 declare -Ar threads=(
@@ -19,9 +19,9 @@ declare -Ar addresses=(
     [1.ns1.grapheneos.org]="15.204.8.153 185.187.152.9 2604:2dc0:202:300::23a6 2a05:b0c4:1::8"
     [2.ns1.grapheneos.org]="57.129.65.223 185.187.152.9 2001:41d0:701:1100::245b 2a05:b0c4:1::8"
     [3.ns1.grapheneos.org]="15.235.197.61 185.187.152.9 2402:1f00:8000:800::3966 2a05:b0c4:1::8"
-    [0.ns2.grapheneos.org]="198.98.53.141 198.251.90.93 2605:6400:10:102e:95bc:89ef:2e7f:49bb"
-    [1.ns2.grapheneos.org]="205.185.124.155 198.251.90.93 2605:6400:20:1c8f:a0c9:372d:482e:945b"
-    [2.ns2.grapheneos.org]="107.189.3.168 198.251.90.93 2605:6400:30:ec25:102c:af6d:5be:1eb8"
+    [brn.ns2.grapheneos.org]="107.189.3.168 198.251.90.93 2605:6400:30:ec25:102c:af6d:5be:1eb8"
+    [las.ns2.grapheneos.org]="205.185.124.155 198.251.90.93 2605:6400:20:1c8f:a0c9:372d:482e:945b"
+    [nyc.ns2.grapheneos.org]="198.98.53.141 198.251.90.93 2605:6400:10:102e:95bc:89ef:2e7f:49bb"
 )
 
 declare -Ar continents=(
@@ -29,9 +29,9 @@ declare -Ar continents=(
     [1.ns1.grapheneos.org]=na
     [2.ns1.grapheneos.org]=eu
     [3.ns1.grapheneos.org]=as
-    [0.ns2.grapheneos.org]=na
-    [1.ns2.grapheneos.org]=na
-    [2.ns2.grapheneos.org]=eu
+    [brn.ns2.grapheneos.org]=eu
+    [las.ns2.grapheneos.org]=na
+    [nyc.ns2.grapheneos.org]=na
 )
 
 declare -Ar countries=(
@@ -39,9 +39,9 @@ declare -Ar countries=(
     [1.ns1.grapheneos.org]=us
     [2.ns1.grapheneos.org]=de
     [3.ns1.grapheneos.org]=sg
-    [0.ns2.grapheneos.org]=us
-    [1.ns2.grapheneos.org]=us
-    [2.ns2.grapheneos.org]=ch
+    [brn.ns2.grapheneos.org]=ch
+    [las.ns2.grapheneos.org]=us
+    [nyc.ns2.grapheneos.org]=us
 )
 
 declare -Ar regions=(
@@ -49,7 +49,7 @@ declare -Ar regions=(
     [1.ns1.grapheneos.org]=wa
     [2.ns1.grapheneos.org]=he
     [3.ns1.grapheneos.org]=--
-    [0.ns2.grapheneos.org]=ny
-    [1.ns2.grapheneos.org]=ca
-    [2.ns2.grapheneos.org]=be
+    [brn.ns2.grapheneos.org]=be
+    [las.ns2.grapheneos.org]=ca
+    [nyc.ns2.grapheneos.org]=ny
 )

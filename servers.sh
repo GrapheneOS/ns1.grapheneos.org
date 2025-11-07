@@ -15,6 +15,7 @@ declare -Ar threads=(
 )
 
 declare -Ar addresses=(
+    [ns1.staging.grapheneos.org]="198.98.56.238 2605:6400:10:c41:de92:c534:326a:711a"
     [0.ns1.grapheneos.org]="51.161.34.158 185.187.152.9 2607:5300:205:200::eaa 2a05:b0c4:1::8"
     [1.ns1.grapheneos.org]="15.204.8.153 185.187.152.9 2604:2dc0:202:300::23a6 2a05:b0c4:1::8"
     [2.ns1.grapheneos.org]="57.129.65.223 185.187.152.9 2001:41d0:701:1100::245b 2a05:b0c4:1::8"
@@ -25,6 +26,7 @@ declare -Ar addresses=(
 )
 
 declare -Ar continents=(
+    [ns1.staging.grapheneos.org]=na
     [0.ns1.grapheneos.org]=na
     [1.ns1.grapheneos.org]=na
     [2.ns1.grapheneos.org]=eu
@@ -35,6 +37,7 @@ declare -Ar continents=(
 )
 
 declare -Ar countries=(
+    [ns1.staging.grapheneos.org]=us
     [0.ns1.grapheneos.org]=us
     [1.ns1.grapheneos.org]=us
     [2.ns1.grapheneos.org]=de
@@ -45,6 +48,7 @@ declare -Ar countries=(
 )
 
 declare -Ar regions=(
+    [ns1.staging.grapheneos.org]=ny
     [0.ns1.grapheneos.org]=ny
     [1.ns1.grapheneos.org]=wa
     [2.ns1.grapheneos.org]=he

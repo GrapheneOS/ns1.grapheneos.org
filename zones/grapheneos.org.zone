@@ -24,6 +24,12 @@ $TTL 3600
 3.ns1 86400 IN MX 0 .
 3.ns1 IN SSHFP 4 2 ba031328000779a7c0663d39eda0351941e56649ecda737d6fdb5465d3805e8d
 3.ns1 IN TXT "v=spf1 -all"
+; Vultr Miami
+mia.ns1 IN A 45.32.173.220
+mia.ns1 IN AAAA 2001:19f0:9002:2981:5400:05ff:fec1:65c4
+mia.ns1 86400 IN MX 0 .
+mia.ns1 IN SSHFP 4 2 71d7bfba2a328189753abb0fc7026683dd117df8c0adc54254bba921ca6ed1cd
+mia.ns1 IN TXT "v=spf1 -all"
 
 ; BuyVM Bern
 brn.ns2 IN A 107.189.3.168

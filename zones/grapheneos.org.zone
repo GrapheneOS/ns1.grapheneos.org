@@ -390,28 +390,23 @@ element IN TXT "v=spf1 -all"
 
 _443._tcp.element IN TLSA 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
 
-staging IN A 199.195.250.78
-staging IN AAAA 2605:6400:10:9d6:6d84:e183:acda:16d7
 staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1172126677"
 staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/108221874"
 staging IN CAA 0 issuemail ";"
 staging IN CAA 0 issuevmc ";"
 staging IN CAA 0 iodef "mailto:caa@grapheneos.org"
-staging 86400 IN HTTPS 1 . alpn=h2
-staging 86400 IN MX 0 .
+
+$ORIGIN staging.grapheneos.org.
+$INCLUDE staging.zone
+$ORIGIN grapheneos.org.
+
 staging IN SSHFP 4 2 ba61a88c88b406e2266dab834c99fa4159f11c5b2d840223e2930fed5be4fcef
-staging IN TXT "v=spf1 -all"
 
-_443._tcp.staging IN TLSA 3 1 1 5df9fbeb15ef8a94396b91c08836270c897ae2499c50e27e433ce74dc9111782
+$ORIGIN nominatim.staging.grapheneos.org.
+$INCLUDE staging.zone
+$ORIGIN grapheneos.org.
 
-nominatim.staging IN A 199.195.250.78
-nominatim.staging IN AAAA 2605:6400:10:9d6:6d84:e183:acda:16d7
-nominatim.staging 86400 IN HTTPS 1 . alpn=h2
-nominatim.staging 86400 IN MX 0 .
-nominatim.staging IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
-nominatim.staging IN TXT "v=spf1 -all"
-
-_443._tcp.nominatim.staging IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+@ IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 
 $INCLUDE ns-staging.zone
 

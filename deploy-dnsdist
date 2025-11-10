@@ -27,5 +27,9 @@ for server in ${servers[@]}; do
     rsync -pcv --chmod=F644 --fsync --preallocate dnsdist.conf.tmp $remote:/etc/dnsdist.conf
     rm dnsdist.conf.tmp
 
-    ssh $remote 'usermod -aG tls dnsdist && systemctl enable dnsdist.service && systemctl restart dnsdist.service'
+    ssh $remote 'usermod -aG tls dnsdist &&
+mkdir -pm750 /etc/dnsdist.conf.d &&
+chown root:dnsdist /etc/dnsdist.conf.d &&
+systemctl enable dnsdist.service &&
+systemctl restart dnsdist.service'
 done

@@ -9,6 +9,7 @@ rm -f /var/lib/powerdns/bind-dnssec-db.sqlite3
 
 pdnsutil create-bind-db /var/lib/powerdns/bind-dnssec-db.sqlite3
 
-for key in /etc/powerdns/keys/*.key; do
-    pdnsutil import-zone-key $(basename $key | cut -d . -f 1-2) $key
+cd /etc/powerdns/keys
+for key in *.key; do
+    pdnsutil import-zone-key ${key%.key} $key
 done

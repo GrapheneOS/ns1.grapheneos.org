@@ -1,9 +1,10 @@
 readonly servers_ns1=(
-    {{2..3},lax,mia,nyc,sea}.ns1.grapheneos.org
+    {lax,mia,nyc,sea}.ns1.grapheneos.org
 )
 
 readonly servers=(
     "${servers_ns1[@]}"
+    {2,3}.ns1.grapheneos.org
     {brn,las,nyc}.ns2.grapheneos.org
 )
 

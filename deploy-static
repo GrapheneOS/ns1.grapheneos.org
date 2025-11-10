@@ -11,7 +11,7 @@ if ! flock -n $fd; then
     exit 1
 fi
 
-rsync -pcv --chmod=F644 --fsync --preallocate mirrors.ns1 root@0.ns1.grapheneos.org:/etc/mirrors
+rsync -pcv --chmod=F644 --fsync --preallocate mirrors.ns1 root@nyc.ns1.grapheneos.org:/etc/mirrors
 rsync -pcv --chmod=F644 --fsync --preallocate mirrors.ns2 root@nyc.ns2.grapheneos.org:/etc/mirrors
 
 . servers.sh

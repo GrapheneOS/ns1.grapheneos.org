@@ -1,11 +1,5 @@
 $TTL 3600
 
-; OVH Hillsboro (anycast via Rage4 Seattle)
-1.ns1 IN A 15.204.8.153
-1.ns1 IN AAAA 2604:2dc0:202:300::23a6
-1.ns1 86400 IN MX 0 .
-1.ns1 IN SSHFP 4 2 6f0888de5c4ac8bbdd2b03216b37a9c48cc44fc6d7933197355b6bf556d465a3
-1.ns1 IN TXT "v=spf1 -all"
 ; OVH Frankfurt (anycast via Rage4 Frankfurt)
 2.ns1 IN A 57.129.65.223
 2.ns1 IN AAAA 2001:41d0:701:1100::245b
@@ -36,6 +30,12 @@ nyc.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21
 nyc.ns1 86400 IN MX 0 .
 nyc.ns1 IN SSHFP 4 2 0bcda36fdffa9d6be5c6f7ed6d324dc4307a484afc3cdbcb6030c25af62f2286
 nyc.ns1 IN TXT "v=spf1 -all"
+; Vultr Seattle
+sea.ns1 IN A 66.42.74.68
+sea.ns1 IN AAAA 2001:19f0:8001:0438:5400:05ff:fec1:9dbd
+sea.ns1 86400 IN MX 0 .
+sea.ns1 IN SSHFP 4 2 e46045387987b21de85db98ee4f65ae55ac756c5b63cbaff6a3a84a2319a80cf
+sea.ns1 IN TXT "v=spf1 -all"
 
 ; BuyVM Bern
 brn.ns2 IN A 107.189.3.168

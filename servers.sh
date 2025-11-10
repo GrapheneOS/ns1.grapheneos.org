@@ -1,5 +1,5 @@
 readonly servers_ns1=(
-    {{1..3},mia,nyc}.ns1.grapheneos.org
+    {{1..3},lax,mia,nyc}.ns1.grapheneos.org
 )
 
 readonly servers=(
@@ -18,6 +18,7 @@ declare -Ar addresses=(
     [1.ns1.grapheneos.org]="15.204.8.153 185.187.152.9 2604:2dc0:202:300::23a6 2a05:b0c4:1::8"
     [2.ns1.grapheneos.org]="57.129.65.223 185.187.152.9 2001:41d0:701:1100::245b 2a05:b0c4:1::8"
     [3.ns1.grapheneos.org]="15.235.197.61 185.187.152.9 2402:1f00:8000:800::3966 2a05:b0c4:1::8"
+    [lax.ns1.grapheneos.org]="140.82.23.46 185.187.152.9 2001:19f0:6000:2dcd:5400:05ff:fec1:97db 2a05:b0c4:1::8"
     [mia.ns1.grapheneos.org]="45.32.173.220 185.187.152.9 2001:19f0:9002:2981:5400:05ff:fec1:65c4 2a05:b0c4:1::8"
     [nyc.ns1.grapheneos.org]="66.135.8.22 185.187.152.9 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21 2a05:b0c4:1::8"
     [brn.ns2.grapheneos.org]="107.189.3.168 198.251.90.93 2605:6400:30:ec25:102c:af6d:5be:1eb8"
@@ -30,6 +31,7 @@ declare -Ar continents=(
     [1.ns1.grapheneos.org]=na
     [2.ns1.grapheneos.org]=eu
     [3.ns1.grapheneos.org]=as
+    [lax.ns1.grapheneos.org]=na
     [mia.ns1.grapheneos.org]=na
     [nyc.ns1.grapheneos.org]=na
     [brn.ns2.grapheneos.org]=eu
@@ -42,6 +44,7 @@ declare -Ar countries=(
     [1.ns1.grapheneos.org]=us
     [2.ns1.grapheneos.org]=de
     [3.ns1.grapheneos.org]=sg
+    [lax.ns1.grapheneos.org]=us
     [mia.ns1.grapheneos.org]=us
     [nyc.ns1.grapheneos.org]=us
     [brn.ns2.grapheneos.org]=ch
@@ -54,6 +57,7 @@ declare -Ar regions=(
     [1.ns1.grapheneos.org]=wa
     [2.ns1.grapheneos.org]=he
     [3.ns1.grapheneos.org]=--
+    [lax.ns1.grapheneos.org]=ca
     [mia.ns1.grapheneos.org]=fl
     [nyc.ns1.grapheneos.org]=ny
     [brn.ns2.grapheneos.org]=be

@@ -2,10 +2,14 @@ readonly servers_ns1=(
     {lax,mia,nyc,sea}.ns1.grapheneos.org
 )
 
+readonly servers_ns2=(
+    {brn,las,nyc}.ns2.grapheneos.org
+)
+
 readonly servers=(
     "${servers_ns1[@]}"
     {2,3}.ns1.grapheneos.org
-    {brn,las,nyc}.ns2.grapheneos.org
+    "${servers_ns2[@]}"
 )
 
 declare -Ar threads=(

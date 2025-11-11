@@ -1,4 +1,4 @@
-/bird.*.conf
+/bird.*.*.conf
 /dnsdist-lock
 /dnsdist.conf.tmp
 /GeoIP.conf

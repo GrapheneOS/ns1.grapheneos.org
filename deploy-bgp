@@ -22,7 +22,7 @@ for server in ${servers_ns1[@]}; do
     ssh $remote 'systemctl enable zerotier-one.service rage4-setup.service && systemctl start zerotier-one.service'
 
     ssh $remote 'id -u bird &>/dev/null || useradd -r bird -d /'
-    rsync -pcv --chmod=644 bird.conf $remote:/etc/
+    rsync -pcv --chmod=644 bird.ns1.conf $remote:/etc/bird.conf
     rsync -pcv --chmod=644 bird.$server.conf $remote:/etc/bird.local.conf
     rsync -rpcv --chmod=D755,F644 systemd/system/bird.service.d $remote:/etc/systemd/system/
 

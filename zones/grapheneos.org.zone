@@ -1,17 +1,11 @@
 $TTL 3600
 
-; OVH Frankfurt (anycast via Rage4 Frankfurt)
-2.ns1 IN A 57.129.65.223
-2.ns1 IN AAAA 2001:41d0:701:1100::245b
-2.ns1 86400 IN MX 0 .
-2.ns1 IN SSHFP 4 2 76ffed3f684b061297bbde024495366b077a6136573f3d6cc583af1bdbc9251f
-2.ns1 IN TXT "v=spf1 -all"
-; OVH Singapore (anycast via Rage4 Singapore)
-3.ns1 IN A 15.235.197.61
-3.ns1 IN AAAA 2402:1f00:8000:800::3966
-3.ns1 86400 IN MX 0 .
-3.ns1 IN SSHFP 4 2 ba031328000779a7c0663d39eda0351941e56649ecda737d6fdb5465d3805e8d
-3.ns1 IN TXT "v=spf1 -all"
+; Vultr Frankfurt
+fra.ns1 IN A 80.240.20.200
+fra.ns1 IN AAAA 2a05:f480:1800:2acd:5400:05ff:fec2:23a1
+fra.ns1 86400 IN MX 0 .
+fra.ns1 IN SSHFP 4 2 51d5813e3792330a22374e7ef0ad64a8632f77b4cd5e913365217acb87ead9c1
+fra.ns1 IN TXT "v=spf1 -all"
 ; Vultr Los Angeles
 lax.ns1 IN A 140.82.23.46
 lax.ns1 IN AAAA 2001:19f0:6000:2dcd:5400:05ff:fec1:97db
@@ -36,6 +30,12 @@ sea.ns1 IN AAAA 2001:19f0:8001:0438:5400:05ff:fec1:9dbd
 sea.ns1 86400 IN MX 0 .
 sea.ns1 IN SSHFP 4 2 e46045387987b21de85db98ee4f65ae55ac756c5b63cbaff6a3a84a2319a80cf
 sea.ns1 IN TXT "v=spf1 -all"
+; Vultr Singapore
+sin.ns1 IN A 139.180.154.140
+sin.ns1 IN AAAA 2401:c080:1400:4890:5400:05ff:fec2:23b0
+sin.ns1 86400 IN MX 0 .
+sin.ns1 IN SSHFP 4 2 8829752de44fc9d365bf05282d17e7b26f188fd678f01b646b59e3eb4d9726b6
+sin.ns1 IN TXT "v=spf1 -all"
 
 ; BuyVM Bern
 brn.ns2 IN A 107.189.3.168

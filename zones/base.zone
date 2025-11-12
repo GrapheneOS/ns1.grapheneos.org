@@ -19,11 +19,9 @@ ns1 IN TXT "v=spf1 -all"
 _443._tcp.ns1 IN TLSA 3 1 1 1892a7db35f1a969ec5fa8aaef9fdcc7978a9bf503f7631e7e5ed65f09f7b8f1
 _853._tcp.ns1 IN TLSA 3 1 1 1892a7db35f1a969ec5fa8aaef9fdcc7978a9bf503f7631e7e5ed65f09f7b8f1
 
-; BuyVM New York, BuyVM Las Vegas and BuyVM Zurich with anycast IPv4
+; BuyVM anycast for IPv4 and GrapheneOS IPv6 anycast
 ns2 IN A 198.251.90.93
-ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
-ns2 IN AAAA 2605:6400:20:1c8f:a0c9:372d:482e:945b
-ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
+ns2 IN AAAA 2602:f4d9:1::1
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
 ns2 IN CAA 0 issuemail ";"

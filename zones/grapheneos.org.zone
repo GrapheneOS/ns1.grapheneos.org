@@ -43,6 +43,12 @@ brn.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
 brn.ns2 86400 IN MX 0 .
 brn.ns2 IN SSHFP 4 2 1bc33eb5d8949b53a2a2cab1163e1ba2543506ae579c4a9e1a37b3e1a3234edd
 brn.ns2 IN TXT "v=spf1 -all"
+; BuyVM Miami
+mia.ns2 IN A 45.61.188.113
+mia.ns2 IN AAAA 2605:6400:40:ffbd:14e7:d270:fd75:600c
+mia.ns2 86400 IN MX 0 .
+mia.ns2 IN SSHFP 4 2 f7834fdb4ff2b75291a05df3040746214b27e29bea1369cc95744bcf3bdcff52
+mia.ns2 IN TXT "v=spf1 -all"
 ; BuyVM New York
 nyc.ns2 IN A 198.98.53.141
 nyc.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb

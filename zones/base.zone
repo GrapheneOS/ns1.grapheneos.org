@@ -19,8 +19,8 @@ ns1 IN TXT "v=spf1 -all"
 _443._tcp.ns1 IN TLSA 3 1 1 1892a7db35f1a969ec5fa8aaef9fdcc7978a9bf503f7631e7e5ed65f09f7b8f1
 _853._tcp.ns1 IN TLSA 3 1 1 1892a7db35f1a969ec5fa8aaef9fdcc7978a9bf503f7631e7e5ed65f09f7b8f1
 
-; BuyVM anycast for IPv4 and GrapheneOS IPv6 anycast
-ns2 IN A 198.251.90.93
+; AS40806 (GrapheneOS) IPv4 and IPv6 anycast IPs
+ns2 IN A 23.149.124.1
 ns2 IN AAAA 2602:f4d9:1::1
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396399226"
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"

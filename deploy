@@ -70,10 +70,10 @@ for server in ${servers[@]}; do
     rm -rf zones.tmp
 
     if (( reconfigure )); then
-        ssh $remote 'systemctl is-enabled bird.service >/dev/null && systemctl stop bird || true'
+        ssh $remote 'systemctl stop bird'
         sleep 5
         ssh $remote 'systemctl daemon-reload && systemctl enable --now geoipupdate.timer pdns.service pdns-trigger-health-checks.timer && systemctl restart pdns'
-        ssh $remote 'systemctl is-enabled bird.service >/dev/null && systemctl start bird || true'
+        ssh $remote 'systemctl start bird'
     else
         ssh $remote 'pdns_control rediscover && pdns_control reload'
     fi

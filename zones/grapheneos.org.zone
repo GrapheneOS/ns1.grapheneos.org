@@ -12,6 +12,12 @@ lax.ns1 IN AAAA 2001:19f0:6000:2dcd:5400:05ff:fec1:97db
 lax.ns1 86400 IN MX 0 .
 lax.ns1 IN SSHFP 4 2 a6aebfac1d6817e7908699486fb1a64290c13365ec338f5c2602f1a4272e72e3
 lax.ns1 IN TXT "v=spf1 -all"
+; Vultr London
+lon.ns1 IN A 192.248.159.52
+lon.ns1 IN AAAA 2001:19f0:7400:8669:5400:05ff:fec3:f3f8
+lon.ns1 86400 IN MX 0 .
+lon.ns1 IN SSHFP 4 2 9f94dc9f25ca15f57de14808203d59c0be8fca8a975aa8bcfee9a3c7bfae573e
+lon.ns1 IN TXT "v=spf1 -all"
 ; Vultr Miami
 mia.ns1 IN A 45.32.173.220
 mia.ns1 IN AAAA 2001:19f0:9002:2981:5400:05ff:fec1:65c4

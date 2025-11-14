@@ -7,7 +7,8 @@ set -o errexit -o nounset -o pipefail
 alias rsync='rsync --fsync --preallocate'
 
 deploy_bird() {
-    local remote=$1
+    local server=$1
+    local remote=root@$1
     local ns=$2
 
     ssh $remote 'id -u bird &>/dev/null || useradd -r bird -d /'
@@ -31,7 +32,7 @@ for server in ${servers_ns1[@]}; do
 
     ssh $remote 'systemctl enable zerotier-one.service rage4-setup.service && systemctl start zerotier-one.service'
 
-    deploy_bird $remote ns1
+    deploy_bird $server ns1
 
     echo
 done
@@ -39,7 +40,7 @@ done
 for server in ${servers_ns2[@]}; do
     echo $server
 
-    deploy_bird root@$server ns2
+    deploy_bird $server ns2
 
     echo
 done

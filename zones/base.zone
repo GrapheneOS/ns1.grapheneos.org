@@ -3,9 +3,9 @@
 @ 86400 IN NS ns1
 @ 86400 IN NS ns2
 
-; Rage4 Anycast IP
+; Rage4 IPv4 anycast IP and AS40806 (GrapheneOS) IPv6 anycast IP
 ns1 IN A 185.187.152.9
-ns1 IN AAAA 2a05:b0c4:1::8
+ns1 IN AAAA 2602:f4d9::1
 ns1 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396393346"
 ns1 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
 ns1 IN CAA 0 issuemail ";"

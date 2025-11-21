@@ -37,7 +37,7 @@
 @ 300 IN LUA AAAA (";"
 "  local ips_na_east = {'2605:9880:400:1100:15:1240:515:6e'}"
 "  local ips_na_west = {'2605:9880:200:400:135:7700:ef0a:81'}"
-"  local ips_eu = {'2605:9880:400:1100:15:1240:515:6e'}"
+"  local ips_eu = ips_na_east"
 "  local ips"
 "  local cn = continentCode()"
 "  local cc"

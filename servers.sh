@@ -1,3 +1,5 @@
+. bgp-password.sh
+
 readonly servers_ns1=(
     {bom,fra,lax,lon,mia,nyc,sea,sin,syd,tyo}.ns1.grapheneos.org
 )

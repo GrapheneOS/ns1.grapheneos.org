@@ -1,4 +1,4 @@
-/bird.*.*.conf
+/bgp-password.sh
 /dnsdist-lock
 /dnsdist.conf.tmp
 /GeoIP.conf
@@ -11,5 +11,6 @@
 /rage4-zerotier-connect.*
 /serial.txt
 /serial-staging.txt
+/bird.local.conf
 /venv/
 /zones.tmp

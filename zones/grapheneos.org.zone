@@ -127,6 +127,12 @@ sin IN AAAA 2001:19f0:4400:2c24:5400:05ff:fec7:4cdc
 sin 86400 IN MX 0 .
 sin IN SSHFP 4 2 82e9bb8f1f96f6f499c58593e21cfc1910c0abcd1db32f99ea970066849be346
 sin IN TXT "v=spf1 -all"
+; Vultr Sydney
+syd IN A 107.191.57.135
+syd IN AAAA 2401:c080:1800:1c40:5400:05ff:fec7:c902
+syd 86400 IN MX 0 .
+syd IN SSHFP 4 2 f0355a876df1bdfb414ec80bb4f98ba7fa2618f85781387b9ec1c5c31d7108b1
+syd IN TXT "v=spf1 -all"
 
 $INCLUDE grapheneos-domain.zone
 

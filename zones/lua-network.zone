@@ -1,5 +1,5 @@
 @ 300 IN LUA A (";"
-"  local ips_na_east = {'51.222.156.101', '51.222.159.116'}"
+"  local ips_na_east = {'51.222.156.101'}"
 "  local ips_na_west = {'15.204.8.153', '209.141.37.35'}"
 "  local ips_eu = {'57.129.65.223', '54.37.41.188'}"
 "  local ips_sg = {'66.42.50.166'}"
@@ -41,7 +41,7 @@
 "  local result = ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  if #result > 2 then return ips[1] else return result end")
 @ 300 IN LUA AAAA (";"
-"  local ips_na_east = {'2607:5300:205:200::29c6', '2607:5300:205:200::2584'}"
+"  local ips_na_east = {'2607:5300:205:200::29c6'}"
 "  local ips_na_west = {'2604:2dc0:202:300::23a6', '2605:6400:20:387:72d4:dab9:a369:f351'}"
 "  local ips_eu = {'2001:41d0:701:1100::245b', '2001:41d0:304:200::902f'}"
 "  local ips_sg = {'2001:19f0:4400:2c24:5400:05ff:fec7:4cdc'}"

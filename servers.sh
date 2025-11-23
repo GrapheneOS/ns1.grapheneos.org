@@ -1,16 +1,13 @@
 . config.sh
 
 readonly servers_ns1=(
-    {bom,chi,dal,ewr,fra,lax,lon,mad,mia,sao,sea,sin,sto,syd,tyo,waw}.ns1.grapheneos.org
 )
 
 readonly servers_ns2=(
-    {ams,ber,dal,fra,iad,lon,mia,sea,sjc,sin,tyo,yto}.ns2.grapheneos.org
 )
 
 readonly servers=(
-    "${servers_ns1[@]}"
-    "${servers_ns2[@]}"
+    ns1.staging.grapheneos.org
 )
 
 declare -Ar threads=(

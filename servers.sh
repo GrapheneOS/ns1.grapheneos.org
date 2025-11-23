@@ -1,14 +1,13 @@
 . bgp-password.sh
 
 readonly servers_ns1=(
-    {bom,ewr,fra,lax,lon,mia,sao,sea,sin,syd,tyo}.ns1.grapheneos.org
 )
 
 readonly servers_ns2=(
-    {ber,iad,lon,mia,sea,sjc,sin,tyo,yto}.ns2.grapheneos.org
 )
 
 readonly servers=(
+    ns1.staging.grapheneos.org
     "${servers_ns1[@]}"
     "${servers_ns2[@]}"
 )

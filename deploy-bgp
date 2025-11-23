@@ -21,6 +21,8 @@ for server in ${servers[@]}; do
         subdomain=ns2
     fi
 
+    subdomain=staging
+
     ssh $remote 'id -u bird &>/dev/null || useradd -r bird -d /'
     rsync -rpcv --chmod=D755,F644 systemd/system/bird.service.d $remote:/etc/systemd/system/
     rsync -pcv --chmod=644 bird.$subdomain.conf $remote:/etc/bird.conf

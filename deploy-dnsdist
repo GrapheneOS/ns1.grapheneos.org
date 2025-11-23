@@ -16,11 +16,7 @@ for server in ${servers[@]}; do
 
     remote=root@$server
 
-    if [[ $server == *.ns1.grapheneos.org ]]; then
-        subdomain=ns1
-    else
-        subdomain=ns2
-    fi
+    subdomain=ns1.staging
 
     cp dnsdist.conf dnsdist.conf.tmp
     sed -i "s/{{subdomain}}/$subdomain/g;s/{{threads}}/${threads[$server]:-1}/g" dnsdist.conf.tmp

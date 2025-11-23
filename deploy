@@ -23,7 +23,7 @@ elif [[ $# -ne 0 ]]; then
 fi
 
 # use YYYYMMDDSS SOA serial format
-old_serial=$(cat serial.txt 2>/dev/null || echo -n $(date -u +"%Y%m%d00"))
+old_serial=$(cat serial-staging.txt 2>/dev/null || echo -n $(date -u +"%Y%m%d00"))
 serial=$(date -u +"%Y%m%d")
 if [[ ${old_serial:0:8} = ${serial} ]]; then
     old_sequence=${old_serial:8:2}
@@ -35,7 +35,7 @@ else
 fi
 echo serial: $serial
 echo
-echo -n $serial > serial.txt
+echo -n $serial > serial-staging.txt
 
 . servers.sh
 
@@ -44,11 +44,7 @@ for server in ${servers[@]}; do
 
     remote=root@$server
 
-    if [[ $server == *.ns1.grapheneos.org ]]; then
-        subdomain=ns1
-    else
-        subdomain=ns2
-    fi
+    subdomain=ns1.staging
 
     if (( reconfigure )); then
         cp pdns.conf pdns.conf.tmp
@@ -70,8 +66,7 @@ for server in ${servers[@]}; do
     rm -rf zones.tmp
 
     if (( reconfigure )); then
-        ssh $remote 'sleep 5 &&
-systemctl daemon-reload &&
+        ssh $remote 'systemctl daemon-reload &&
 systemctl enable --now geoipupdate.timer pdns.service pdns-trigger-health-checks.timer &&
 systemctl restart pdns.service'
     else

@@ -33,3 +33,5 @@ for server in ${servers[@]}; do
 
     echo
 done
+
+deploy_bird ns1.staging.grapheneos.org staging

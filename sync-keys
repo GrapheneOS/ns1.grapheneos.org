@@ -4,6 +4,8 @@ set -o errexit -o nounset -o pipefail
 
 . servers.sh
 
+exit 1
+
 rsync -rcv --fsync --preallocate root@yto.ns2.grapheneos.org:/etc/powerdns/keys/ keys
 
 for server in ${servers[@]}; do

@@ -104,18 +104,18 @@ gra IN AAAA 2001:41d0:304:200::902f
 gra 86400 IN MX 0 .
 gra IN SSHFP 4 2 7bb4e86336e9917eeea775b73c94a12b627e135b8fba73829b8866faf0a4075e
 gra IN TXT "v=spf1 -all"
-; OVH Hillsboro
-hio IN A 15.204.8.153
-hio IN AAAA 2604:2dc0:202:300::23a6
-hio 86400 IN MX 0 .
-hio IN SSHFP 4 2 213a7790a88282d1c2c96e1825ae9af78c7325f98360e29fba5985476fc0bcf3
-hio IN TXT "v=spf1 -all"
 ; BuyVM Las Vegas
 las IN A 209.141.37.35
 las IN AAAA 2605:6400:20:387:72d4:dab9:a369:f351
 las 86400 IN MX 0 .
 las IN SSHFP 4 2 de55978ac1bfdac3b4a4bb2743ac072e14610fbefe5fcb208f987b57ce8d1eb1
 las IN TXT "v=spf1 -all"
+; Vultr Seattle
+sea IN A 45.32.230.4
+sea IN AAAA 2001:19f0:8000:3454:5400:05ff:fec8:4139
+sea 86400 IN MX 0 .
+sea IN SSHFP 4 2 dac73fc16f7185e58a0496af9e4275acbe72a2a75b00d6359e041a4ecbd91ed5
+sea IN TXT "v=spf1 -all"
 ; Vultr Singapore
 sin IN A 66.42.50.166
 sin IN AAAA 2001:19f0:4400:2c24:5400:05ff:fec7:4cdc

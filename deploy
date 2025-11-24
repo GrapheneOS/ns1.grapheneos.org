@@ -65,7 +65,7 @@ for server in ${servers[@]}; do
 
     rm -rf zones.tmp
     cp -r zones zones.tmp
-    sed -i "s/{{serial}}/$serial/g;s/{{continent}}/${continents[$server]}/g;s/{{country}}/${countries[$server]}/g;s/{{region}}/${regions[$server]}/g;s/{{ns}}/$subdomain/g" zones.tmp/*.zone
+    sed -i "s/{{serial}}/$serial/g;s/{{continent}}/${continents[$server]}/g;s/{{country}}/${countries[$server]}/g;s/{{region}}/${regions[$server]}/g;s/{{us_west}}/${us_west[$server]:-false}/g;s/{{ns}}/$subdomain/g" zones.tmp/*.zone
     rsync -prcv --chmod=D755,F644 --delete --fsync --preallocate zones.tmp/ $remote:/etc/powerdns/zones/
     rm -rf zones.tmp
 

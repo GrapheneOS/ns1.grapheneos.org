@@ -94,3 +94,9 @@ declare -Ar regions=(
     [mia.ns2.grapheneos.org]=fl
     [nyc.ns2.grapheneos.org]=ny
 )
+
+declare -Ar us_west=(
+    [lax.ns1.grapheneos.org]=true
+    [sea.ns1.grapheneos.org]=true
+    [las.ns2.grapheneos.org]=true
+)

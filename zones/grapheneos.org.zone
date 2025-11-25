@@ -86,24 +86,30 @@ las.ns2 86400 IN MX 0 .
 las.ns2 IN SSHFP 4 2 07a7a4b03d7d7b3108e1cf028e4c10aac8ef0e140c982ed4864512ca65ae56f0
 las.ns2 IN TXT "v=spf1 -all"
 
-; OVH Beauharnois
-bhs IN A 51.222.156.101
-bhs IN AAAA 2607:5300:205:200::29c6
-bhs 86400 IN MX 0 .
-bhs IN SSHFP 4 2 ef9845da6e542a593cbb666026935eb90b8eefe7b70a17d5edfc024985b39306
-bhs IN TXT "v=spf1 -all"
-; OVH Frankfurt
-fra IN A 57.129.65.223
-fra IN AAAA 2001:41d0:701:1100::245b
-fra 86400 IN MX 0 .
-fra IN SSHFP 4 2 f319bff065adfbaa13d55f8016d18a771c194d2ff7421942945f6cca2076700d
-fra IN TXT "v=spf1 -all"
+; BuyVM Bern
+brn IN A 107.189.14.16
+brn IN AAAA 2605:6400:0030:fbfc:064d:dafb:d00a:5d19
+brn 86400 IN MX 0 .
+brn IN SSHFP 4 2 478345428a2797fcf39dcf4b1942205b937ae74024e0079f98674c83f5ca07a9
+brn IN TXT "v=spf1 -all"
 ; BuyVM Las Vegas
 las IN A 209.141.37.35
 las IN AAAA 2605:6400:20:387:72d4:dab9:a369:f351
 las 86400 IN MX 0 .
 las IN SSHFP 4 2 de55978ac1bfdac3b4a4bb2743ac072e14610fbefe5fcb208f987b57ce8d1eb1
 las IN TXT "v=spf1 -all"
+; BuyVM Miami
+mia IN A 45.61.186.223
+mia IN AAAA 2605:6400:40:ffb4:40e3:e5c8:9b96:614b
+mia 86400 IN MX 0 .
+mia IN SSHFP 4 2 8f69bcdd6b422cfb1b4bfb1bccedc121764ffb5ac4c0f46969c6034c1e129eaa
+mia IN TXT "v=spf1 -all"
+; BuyVM New York City
+nyc IN A 198.98.62.94
+nyc IN AAAA 2605:6400:10:50:20a1:d9ea:5c10:a895
+nyc 86400 IN MX 0 .
+nyc IN SSHFP 4 2 8352e1002eea81a0b2ee25a70205b4ee90e4048c1ffb186f956fb47ba1543b07
+nyc IN TXT "v=spf1 -all"
 ; Vultr Seattle
 sea IN A 45.32.230.4
 sea IN AAAA 2001:19f0:8000:3454:5400:05ff:fec8:4139

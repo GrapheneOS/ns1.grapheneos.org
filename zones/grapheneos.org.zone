@@ -215,7 +215,7 @@ time 86400 IN MX 0 .
 time IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 time IN TXT "v=spf1 -all"
 
-_443._tcp.time IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.time IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN remoteprovisioning.grapheneos.org.
 $include lua-network.zone
@@ -226,7 +226,7 @@ remoteprovisioning 86400 IN MX 0 .
 remoteprovisioning IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 remoteprovisioning IN TXT "v=spf1 -all"
 
-_443._tcp.remoteprovisioning IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.remoteprovisioning IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN widevineprovisioning.grapheneos.org.
 $include lua-network.zone
@@ -237,7 +237,7 @@ widevineprovisioning 86400 IN MX 0 .
 widevineprovisioning IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 widevineprovisioning IN TXT "v=spf1 -all"
 
-_443._tcp.widevineprovisioning IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.widevineprovisioning IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN broadcom.psds.grapheneos.org.
 $include lua-network.zone
@@ -248,7 +248,7 @@ broadcom.psds 86400 IN MX 0 .
 broadcom.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 broadcom.psds IN TXT "v=spf1 -all"
 
-_443._tcp.broadcom.psds IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.broadcom.psds IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN samsung.psds.grapheneos.org.
 $include lua-network.zone
@@ -259,7 +259,7 @@ samsung.psds 86400 IN MX 0 .
 samsung.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 samsung.psds IN TXT "v=spf1 -all"
 
-_443._tcp.samsung.psds IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.samsung.psds IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN qualcomm.psds.grapheneos.org.
 $include lua-network.zone
@@ -270,7 +270,7 @@ qualcomm.psds 86400 IN MX 0 .
 qualcomm.psds IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 qualcomm.psds IN TXT "v=spf1 -all"
 
-_443._tcp.qualcomm.psds IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.qualcomm.psds IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN supl.grapheneos.org.
 $include lua-network.zone
@@ -281,8 +281,8 @@ supl 86400 IN MX 0 .
 supl IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 supl IN TXT "v=spf1 -all"
 
-_443._tcp.supl IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
-_7275._tcp.supl IN TLSA 3 1 1 71615ea3c0c223a68cb3d1f1d2957d58b2aa0740db5684ff31a54381631711e7
+_443._tcp.supl IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
+_7275._tcp.supl IN TLSA 3 1 1 aa2800832facd98549d6693062c6181f8a8ba5cc6016d7b64366e97b1fc10dc7
 
 $ORIGIN nominatim.grapheneos.org.
 $include lua-network.zone
@@ -293,7 +293,7 @@ nominatim 86400 IN MX 0 .
 nominatim IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 nominatim IN TXT "v=spf1 -all"
 
-_443._tcp.nominatim IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.nominatim IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 $ORIGIN gs-loc.apple.grapheneos.org.
 $include lua-network.zone
@@ -304,7 +304,7 @@ gs-loc.apple 86400 IN MX 0 .
 gs-loc.apple IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 gs-loc.apple IN TXT "v=spf1 -all"
 
-_443._tcp.gs-loc.apple IN TLSA 3 1 1 41ad2febc559633f6e153afa21dbfbdb7c1395f21ed79fb88a89a89c864f29a3
+_443._tcp.gs-loc.apple IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
 mail IN A 192.99.98.22
 mail IN AAAA 2607:5300:205:200::472f

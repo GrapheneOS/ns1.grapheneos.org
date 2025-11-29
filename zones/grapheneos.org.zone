@@ -441,6 +441,7 @@ $INCLUDE staging.zone
 $ORIGIN grapheneos.org.
 
 staging IN SSHFP 4 2 ba61a88c88b406e2266dab834c99fa4159f11c5b2d840223e2930fed5be4fcef
+_443._tcp.staging IN TLSA 3 1 1 5df9fbeb15ef8a94396b91c08836270c897ae2499c50e27e433ce74dc9111782
 
 $ORIGIN nominatim.staging.grapheneos.org.
 $INCLUDE staging.zone
@@ -451,6 +452,7 @@ nominatim.staging IN SSHFP 4 2 0000000000000000000000000000000000000000000000000
 $INCLUDE ns-staging.zone
 
 ns1.staging IN SSHFP 4 2 10d4eff8189e9b5f83066b0f70260fd379fd0657f8012c27abf8df6e53c9fd81
+_443._tcp.nominatim.staging IN TLSA 3 1 1 f235d17b4efe4a1f41f5dc2c4a028f197dc29eea88678f0c7c611ea88d5af80a
 
 ; Hetzner Helsinki
 0.build IN A 157.180.106.242

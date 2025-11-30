@@ -1,7 +1,7 @@
 . bgp-password.sh
 
 readonly servers_ns1=(
-    {bom,fra,lax,lon,mia,nyc,sea,sin,syd,tyo}.ns1.grapheneos.org
+    {bom,fra,lax,lon,mia,nyc,sao,sea,sin,syd,tyo}.ns1.grapheneos.org
 )
 
 readonly servers_ns2=(
@@ -31,6 +31,7 @@ declare -Ar addresses=(
     [lon.ns1.grapheneos.org]="192.248.159.52 $ns1_rage4_ipv4 2001:19f0:7400:8669:5400:05ff:fec3:f3f8 $ns1_ipv6"
     [mia.ns1.grapheneos.org]="45.32.173.220 $ns1_rage4_ipv4 2001:19f0:9002:2981:5400:05ff:fec1:65c4 $ns1_ipv6"
     [nyc.ns1.grapheneos.org]="66.135.8.22 $ns1_rage4_ipv4 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21 $ns1_ipv6"
+    [sao.ns1.grapheneos.org]="216.238.118.134 $ns1_rage4_ipv4 2001:19f0:b800:14a9:5400:05ff:feca:f136 $ns1_ipv6"
     [sea.ns1.grapheneos.org]="66.42.74.68 $ns1_rage4_ipv4 2001:19f0:8001:0438:5400:05ff:fec1:9dbd $ns1_ipv6"
     [sin.ns1.grapheneos.org]="139.180.154.140 $ns1_rage4_ipv4 2401:c080:1400:4890:5400:05ff:fec2:23b0 $ns1_ipv6"
     [syd.ns1.grapheneos.org]="45.63.28.82 $ns1_rage4_ipv4 2401:c080:1800:141d:5400:05ff:fec5:d41b $ns1_ipv6"
@@ -49,6 +50,7 @@ declare -Ar continents=(
     [lon.ns1.grapheneos.org]=eu
     [mia.ns1.grapheneos.org]=na
     [nyc.ns1.grapheneos.org]=na
+    [sao.ns1.grapheneos.org]=sa
     [sea.ns1.grapheneos.org]=na
     [sin.ns1.grapheneos.org]=as
     [syd.ns1.grapheneos.org]=oc
@@ -67,6 +69,7 @@ declare -Ar countries=(
     [lon.ns1.grapheneos.org]=gb
     [mia.ns1.grapheneos.org]=us
     [nyc.ns1.grapheneos.org]=us
+    [sao.ns1.grapheneos.org]=br
     [sea.ns1.grapheneos.org]=us
     [sin.ns1.grapheneos.org]=sg
     [syd.ns1.grapheneos.org]=au
@@ -85,6 +88,7 @@ declare -Ar regions=(
     [lon.ns1.grapheneos.org]=eng
     [mia.ns1.grapheneos.org]=fl
     [nyc.ns1.grapheneos.org]=ny
+    [sao.ns1.grapheneos.org]=sp
     [sea.ns1.grapheneos.org]=wa
     [sin.ns1.grapheneos.org]=--
     [syd.ns1.grapheneos.org]=nsw

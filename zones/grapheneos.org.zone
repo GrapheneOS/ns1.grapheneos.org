@@ -36,6 +36,12 @@ nyc.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21
 nyc.ns1 86400 IN MX 0 .
 nyc.ns1 IN SSHFP 4 2 0bcda36fdffa9d6be5c6f7ed6d324dc4307a484afc3cdbcb6030c25af62f2286
 nyc.ns1 IN TXT "v=spf1 -all"
+; Vultr São Paulo
+sao.ns1 IN A 216.238.118.134
+sao.ns1 IN AAAA 2001:19f0:b800:14a9:5400:05ff:feca:f136
+sao.ns1 86400 IN MX 0 .
+sao.ns1 IN SSHFP 4 2 f87f6f8da84d464b4e61176694986df752e677f0dcc2710a13b7a812341f61ec
+sao.ns1 IN TXT "v=spf1 -all"
 ; Vultr Seattle
 sea.ns1 IN A 66.42.74.68
 sea.ns1 IN AAAA 2001:19f0:8001:0438:5400:05ff:fec1:9dbd

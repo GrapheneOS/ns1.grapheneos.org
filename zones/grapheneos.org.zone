@@ -30,7 +30,7 @@ mia.ns1 IN AAAA 2001:19f0:9002:2981:5400:05ff:fec1:65c4
 mia.ns1 86400 IN MX 0 .
 mia.ns1 IN SSHFP 4 2 71d7bfba2a328189753abb0fc7026683dd117df8c0adc54254bba921ca6ed1cd
 mia.ns1 IN TXT "v=spf1 -all"
-; Vultr New Jersey
+; Vultr New York City
 nyc.ns1 IN A 66.135.8.22
 nyc.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21
 nyc.ns1 86400 IN MX 0 .

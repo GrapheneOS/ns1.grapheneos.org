@@ -385,8 +385,8 @@ mta-sts.discuss IN TXT "v=spf1 -all"
 
 _443._tcp.mta-sts.discuss IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
 
-matrix IN A 51.79.51.42
-matrix IN AAAA 2607:5300:205:200::26e1
+matrix IN A 152.53.39.88
+matrix IN AAAA 2a0a:4cc0:2000:dbc::1
 matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
 matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
 matrix IN CAA 0 issuemail ";"
@@ -395,7 +395,7 @@ matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
 matrix 86400 IN HTTPS 1 . alpn=h2
 matrix 86400 IN MX 0 mail.grapheneos.org.
 matrix 86400 IN MX 10 mail.grapheneos.net.
-matrix IN SSHFP 4 2 1ee56669970c01bfd289a466e21062312afd7536d6f63d09e11778010aba41cc
+matrix IN SSHFP 4 2 2e9e1cdceadf8afd697e84b970594096113b51c71ed163b37c24c22f8d312c1e
 matrix IN TXT "v=spf1 a:mail.grapheneos.org -all"
 
 _443._tcp.matrix IN TLSA 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
@@ -422,8 +422,8 @@ mta-sts.matrix IN TXT "v=spf1 -all"
 
 _443._tcp.mta-sts.matrix IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
 
-element IN A 51.79.51.42
-element IN AAAA 2607:5300:205:200::26e1
+element IN A 152.53.39.88
+element IN AAAA 2a0a:4cc0:2000:dbc::1
 element IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/124662806"
 element IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/19642445"
 element IN CAA 0 issuemail ";"

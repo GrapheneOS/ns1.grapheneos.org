@@ -47,7 +47,7 @@
 "    ips = {ips_na_south_east, ips_na_north_east, ips_na_south_west, ips_na_north_west, ips_eu, ips_as_south_east, ips_oc}"
 "  end"
 "  local result = ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
-"  if #result > 2 then return ips[1] else return result end")
+"  if #result > 1 then return ips[1] else return result end")
 @ 300 IN LUA AAAA (";"
 "  local ips_na_south_east = {'2605:6400:40:ffb4:40e3:e5c8:9b96:614b'}"
 "  local ips_na_north_east = {'2605:6400:10:50:20a1:d9ea:5c10:a895'}"
@@ -97,4 +97,4 @@
 "    ips = {ips_na_south_east, ips_na_north_east, ips_na_south_west, ips_na_north_west, ips_eu, ips_as_south_east, ips_oc}"
 "  end"
 "  local result = ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
-"  if #result > 2 then return ips[1] else return result end")
+"  if #result > 1 then return ips[1] else return result end")

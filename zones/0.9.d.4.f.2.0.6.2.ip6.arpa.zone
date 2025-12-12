@@ -1,0 +1,9 @@
+$TTL 3600
+
+@ 86400 IN SOA ns1.grapheneos.org. hostmaster.grapheneos.org. {{serial}} 3600 1800 1209600 3600
+
+@ 86400 IN NS ns1.grapheneos.org.
+@ 86400 IN NS ns2.grapheneos.org.
+
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.9.d.4.f.2.0.6.2.ip6.arpa. IN PTR ns1.grapheneos.org.
+1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.1.0.0.0.9.d.4.f.2.0.6.2.ip6.arpa. IN PTR ns2.grapheneos.org.

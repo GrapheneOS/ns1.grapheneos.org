@@ -17,15 +17,15 @@ declare -Ar threads=(
 )
 
 readonly ns1_ipv4=23.149.124.1
-readonly ns1_ipv6=2602:f4d9::1
+readonly ns1_ipv6='2602:f4d9::1 2602:f4d9:2::1'
 readonly ns1_rage4_ipv4=185.187.152.9
 
 readonly ns2_ipv4=23.149.125.1
-readonly ns2_ipv6=2602:f4d9:1::1
+readonly ns2_ipv6='2602:f4d9:1::1 2602:f4d9:3::1'
 readonly ns2_buyvm_ipv4=198.251.90.93
 
 declare -Ar addresses=(
-    [ns1.staging.grapheneos.org]="198.98.56.238 2605:6400:10:c41:de92:c534:326a:711a"
+    [ns1.staging.grapheneos.org]="198.98.56.238 2605:6400:10:c41:de92:c534:326a:711a 2602:f4d9:4::1"
     [bom.ns1.grapheneos.org]="65.20.91.33 $ns1_ipv4 $ns1_rage4_ipv4 2401:c080:2400:1814:5400:05ff:fec5:d503 $ns1_ipv6"
     [fra.ns1.grapheneos.org]="80.240.20.200 $ns1_ipv4 $ns1_rage4_ipv4 2a05:f480:1800:2acd:5400:05ff:fec2:23a1 $ns1_ipv6"
     [lax.ns1.grapheneos.org]="140.82.23.46 $ns1_ipv4 $ns1_rage4_ipv4 2001:19f0:6000:2dcd:5400:05ff:fec1:97db $ns1_ipv6"

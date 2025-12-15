@@ -2,15 +2,15 @@ $TTL 3600
 
 $INCLUDE base.zone
 
-@ IN A 51.222.159.14
-@ IN AAAA 2607:5300:205:200::5e3f
+@ IN A 152.53.168.159
+@ IN AAAA 2a0a:4cc0:2000:a62d::1
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/843621317"
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/77600664"
 @ IN CAA 0 issuemail ";"
 @ IN CAA 0 issuevmc ";"
 @ IN CAA 0 iodef "mailto:caa@grapheneos.org"
 @ 86400 IN HTTPS 1 . alpn=h2
-@ IN SSHFP 4 2 079a217e085877ea780d77a0bf0cd4ef226b4b27b8f8b954ee7821f2a1cbaf8c
+@ IN SSHFP 4 2 1784321a36128eb48d4fc657414107863cb705a69611c0cd0dd0f211e30e7857
 
 @ IN TXT "google-site-verification=1udi6RI56KjPtFGO38lCQImhEmY6XFxX1hVsdEK4_gw"
 @ IN TXT "yandex-verification: ec33ee307706436f"

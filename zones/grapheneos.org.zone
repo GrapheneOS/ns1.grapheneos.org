@@ -353,7 +353,7 @@ mta-sts.mail IN TXT "v=spf1 -all"
 
 _443._tcp.mta-sts.mail IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
 
-discuss IN A 51.79.52.38
+discuss IN A 152.53.168.153
 ; IPv6 interacts badly with IP-based spam filtering
 ;discuss IN AAAA 2607:5300:205:200::3c4
 discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
@@ -364,7 +364,7 @@ discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
 discuss 86400 IN HTTPS 1 . alpn=h2
 discuss 86400 IN MX 0 mail.grapheneos.org.
 discuss 86400 IN MX 10 mail.grapheneos.net.
-discuss IN SSHFP 4 2 8191c5fa45eba387c4626f69cbe36d87ed23a01ae69b9f223831c1673a438f60
+discuss IN SSHFP 4 2 4cd45b291dfb241461cfe2add29e43fbdcc0362ae51dcb836df1ebc190d9b8b5
 discuss IN TXT "v=spf1 a:mail.grapheneos.org -all"
 
 _443._tcp.discuss IN TLSA 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81

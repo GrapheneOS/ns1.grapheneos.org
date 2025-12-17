@@ -361,7 +361,7 @@ _443._tcp.mta-sts.mail IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4d
 
 discuss IN A 152.53.168.153
 ; IPv6 interacts badly with IP-based spam filtering
-;discuss IN AAAA 2607:5300:205:200::3c4
+;discuss IN AAAA 2a0a:4cc0:2000:aa27::1
 discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/581421616"
 discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/56904264"
 discuss IN CAA 0 issuemail ";"

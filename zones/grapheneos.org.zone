@@ -185,6 +185,12 @@ mia.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e
 mia.releases 86400 IN MX 0 .
 mia.releases IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
 mia.releases IN TXT "v=spf1 -all"
+; Xenyth Toronto
+yto.releases IN A 207.174.104.20
+yto.releases IN AAAA 2602:fd50:1a1:20::2
+yto.releases 86400 IN MX 0 .
+yto.releases IN SSHFP 4 2 af1d5aaad371582f44ad7a84a8bbaf90825c54c8f41bc4a5fd390c988ead900d
+yto.releases IN TXT "v=spf1 -all"
 
 $ORIGIN releases.grapheneos.org.
 $INCLUDE lua-releases.zone

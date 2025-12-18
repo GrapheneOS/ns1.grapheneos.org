@@ -16,35 +16,20 @@ deploy_bird() {
     rsync -pcv --chmod=644 bird.$ns.conf $remote:/etc/bird.conf
     cp bird.$server.conf bird.local.conf
     sed -i "s/{{bgp_password}}/${bgp_password[$server]}/g" bird.local.conf
-    sed -i "s/{{rage4_bgp_password}}/${rage4_bgp_password[$server]:-}/g" bird.local.conf
     rsync -pcv --chmod=644 bird.local.conf $remote:/etc/bird.local.conf
     rm bird.local.conf
 }
 
-for server in ${servers_ns1[@]}; do
+for server in ${servers[@]}; do
     echo $server
 
-    remote=root@$server
+    if [[ $server == *.ns1.grapheneos.org ]]; then
+        subdomain=ns1
+    else
+        subdomain=ns2
+    fi
 
-    rsync -rpcv --chmod=D755,F644 iproute2 $remote:/etc/
-
-    rsync -pcv --chmod=644 zerotier-one/local.conf $remote:/var/lib/zerotier-one/local.conf
-    rsync -pcv --chmod=755 rage4-zerotier-connect.$server $remote:/usr/local/bin/rage4-zerotier-connect
-
-    rsync -pcv --chmod=644 systemd/system/rage4-setup.service $remote:/etc/systemd/system/
-    rsync -pcv --chmod=755 rage4-setup.$server $remote:/usr/local/bin/rage4-setup
-
-    ssh $remote 'systemctl enable zerotier-one.service rage4-setup.service && systemctl start zerotier-one.service'
-
-    deploy_bird $server ns1
-
-    echo
-done
-
-for server in ${servers_ns2[@]}; do
-    echo $server
-
-    deploy_bird $server ns2
+    deploy_bird $server $subdomain
 
     echo
 done

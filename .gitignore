@@ -7,8 +7,6 @@
 /nginx-lock
 /nginx-tmp
 /pdns.conf.tmp
-/rage4-setup.*
-/rage4-zerotier-connect.*
 /serial.txt
 /serial-staging.txt
 /bird.local.conf

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+touch dnsdist-lock
+exec {fd}< dnsdist-lock
+if ! flock -n $fd; then
+    echo already deploying >&2
+    exit 1
+fi
+
+. servers.sh
+
+for server in ${servers[@]}; do
+    echo $server
+
+    remote=root@$server
+
+    echo -n 'setKey("' > control-key.conf
+    head -c 32 /dev/random | base64 -w 0 >> control-key.conf
+    echo '")' >> control-key.conf
+    rsync -pctv --chmod=750 --chown=root:dnsdist control-key.conf $remote:/etc/dnsdist.conf.d/control-key.conf
+    rm console-key.conf
+done

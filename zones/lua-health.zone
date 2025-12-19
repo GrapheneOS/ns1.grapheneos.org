@@ -1,0 +1,33 @@
+health 300 IN LUA TXT (";"
+"  if who:toString() ~= '127.0.0.1' then"
+"      return ''"
+"  end"
+"  local ips"
+"  ips = {'45.61.186.223'," ; Miami
+"         '198.98.62.94'," ; New York City
+"         '209.141.37.35'," ; Las Vegas
+"         '45.32.230.4'," ; Seattle
+"         '216.238.116.202'," ; São Paulo
+"         '107.189.14.16'," ; Bern
+"         '66.42.50.166'," ; Singapore
+"         '107.191.57.135'}" ; Sydney
+"  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
+"  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
+"  ips = {'2605:6400:40:ffb4:40e3:e5c8:9b96:614b'," ; Miami
+"         '2605:6400:10:50:20a1:d9ea:5c10:a895'," ; New York City
+"         '2605:6400:20:387:72d4:dab9:a369:f351'," ; Las Vegas
+"         '2001:19f0:8000:3454:5400:05ff:fec8:4139'," ; Seattle
+"         '2001:19f0:b800:1f13:5400:05ff:fed0:8ea7'," ; São Paulo
+"         '2605:6400:0030:fbfc:064d:dafb:d00a:5d19'," ; Bern
+"         '2001:19f0:4400:2c24:5400:05ff:fec7:4cdc'," ; Singapore
+"         '2401:c080:1800:1c40:5400:05ff:fec7:c902'}" ; Sydney
+"  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
+"  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
+"  ips = {'172.96.172.37'," ; Miami
+"         '104.194.8.203'," ; Los Angeles
+"         '45.88.230.12'}" ; London
+"  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
+"  ips = {'2605:9880:400:1100:15:1240:515:6e'," ; Miami
+"         '2605:9880:200:400:135:7700:ef0a:81'}" ; Los Angeles
+"  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
+"  return 'success'")

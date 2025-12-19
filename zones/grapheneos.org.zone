@@ -1,5 +1,7 @@
 $TTL 3600
 
+$INCLUDE lua-health.zone
+
 ; Vultr Mumbai
 bom.ns1 IN A 65.20.91.33
 bom.ns1 IN AAAA 2401:c080:2400:1814:5400:05ff:fec5:d503

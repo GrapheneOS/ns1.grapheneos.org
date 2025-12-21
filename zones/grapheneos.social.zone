@@ -21,8 +21,8 @@ _443._tcp IN TLSA 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.social; ruf=mailto:dmarc@grapheneos.social"
 _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.social"
 
-www IN A 51.222.159.14
-www IN AAAA 2607:5300:205:200::5e3f
+www IN A 152.53.168.159
+www IN AAAA 2a0a:4cc0:2000:a62d::1
 www 86400 IN HTTPS 1 . alpn=h2
 www 86400 IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000

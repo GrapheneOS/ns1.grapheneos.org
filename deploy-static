@@ -28,7 +28,7 @@ for server in ${servers[@]}; do
     else
         sed -i s/{{subdomain}}/ns2/g nginx-tmp/nginx.conf
     fi
-    gixy --skips low_keepalive_requests nginx-tmp/nginx.conf
+    gixy nginx-tmp/nginx.conf
     rsync -rpcv --chmod=D755,F644 --delete --fsync --preallocate nginx-tmp/{nginx.conf,mime.types} $remote:/etc/nginx/
     ssh $remote systemctl reload nginx
 

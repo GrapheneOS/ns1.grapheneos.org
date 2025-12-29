@@ -13,4 +13,4 @@ jobs:
         python-version: '3.13'
         cache: pip
     - run: 'pip install --require-hashes --only-binary :all: -r requirements.txt'
-    - run: gixy --skips low_keepalive_requests nginx/nginx.conf
+    - run: gixy nginx/nginx.conf

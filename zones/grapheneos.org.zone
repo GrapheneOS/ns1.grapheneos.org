@@ -182,11 +182,6 @@ lax.releases IN AAAA 2605:9880:200:400:135:7700:ef0a:81
 lax.releases 86400 IN MX 0 .
 lax.releases IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
 lax.releases IN TXT "v=spf1 -all"
-; Tempest London
-lon.releases IN A 45.88.230.12
-lon.releases 86400 IN MX 0 .
-lon.releases IN SSHFP 4 2 bd9ee2931dfbb87293c71b4c2ab0d5ae6fa770034846f12ce76e8691379d0455
-lon.releases IN TXT "v=spf1 -all"
 ; ReliableSite Miami
 mia.releases IN A 172.96.172.37
 mia.releases IN AAAA 2605:9880:400:1100:15:1240:515:6e

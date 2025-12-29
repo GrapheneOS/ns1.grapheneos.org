@@ -24,8 +24,7 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {'172.96.172.37'," ; Miami
-"         '104.194.8.203'," ; Los Angeles
-"         '45.88.230.12'}" ; London
+"         '104.194.8.203'}" ; Los Angeles
 "  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
 "  ips = {'2605:9880:400:1100:15:1240:515:6e'," ; Miami
 "         '2605:9880:200:400:135:7700:ef0a:81'}" ; Los Angeles

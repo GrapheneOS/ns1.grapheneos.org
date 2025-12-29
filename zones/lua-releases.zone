@@ -2,7 +2,7 @@
 "  local ips_na_south_east = {'172.96.172.37'}"
 "  local ips_na_north_east = {'207.174.104.20'}"
 "  local ips_na_west = {'104.194.8.203'}"
-"  local ips_eu = {'45.88.230.12'}"
+"  local ips_eu = ips_na_north_east"
 "  local ips"
 "  local cn = continentCode()"
 "  local cc"

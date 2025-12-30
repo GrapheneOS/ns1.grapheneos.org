@@ -199,8 +199,8 @@ $ORIGIN releases.grapheneos.org.
 $INCLUDE lua-releases.zone
 $ORIGIN grapheneos.org.
 
-releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/2779503386"
-releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/240863253"
+releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/2919943146"
+releases IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/254068453"
 releases IN CAA 0 issuemail ";"
 releases IN CAA 0 issuevmc ";"
 releases IN CAA 0 iodef "mailto:caa@grapheneos.org"
@@ -215,8 +215,8 @@ $ORIGIN apps.grapheneos.org.
 $INCLUDE lua-releases.zone
 $ORIGIN grapheneos.org.
 
-apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/2779503386"
-apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/240863253"
+apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/2919943146"
+apps IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/254068453"
 apps IN CAA 0 issuemail ";"
 apps IN CAA 0 issuevmc ";"
 apps IN CAA 0 iodef "mailto:caa@grapheneos.org"

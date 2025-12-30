@@ -16,7 +16,7 @@ $INCLUDE lua-releases.zone
 @ IN TXT "yandex-verification: cba8ef4619bc43f5"
 @ IN TXT "facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y"
 
-_443._tcp IN TLSA 3 1 1 cbe8eb84ee334066e49067b2f67239d27b9c932c6b4af45337511b52d9e2053a
+_443._tcp IN TLSA 3 1 1 81dbb2ac173e74192010fb85d34b615daeff8d2506a31920bac76c99b792062f
 
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
 _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@seamlessupdate.app"
@@ -30,4 +30,4 @@ www 86400 IN MX 0 .
 www IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 www IN TXT "v=spf1 -all"
 
-_443._tcp.www IN TLSA 3 1 1 cbe8eb84ee334066e49067b2f67239d27b9c932c6b4af45337511b52d9e2053a
+_443._tcp.www IN TLSA 3 1 1 81dbb2ac173e74192010fb85d34b615daeff8d2506a31920bac76c99b792062f

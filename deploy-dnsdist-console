@@ -20,5 +20,5 @@ for server in ${servers[@]}; do
     head -c 32 /dev/random | base64 -w 0 >> control-key.conf
     echo '")' >> control-key.conf
     rsync -pctv --chmod=750 --chown=root:dnsdist control-key.conf $remote:/etc/dnsdist.conf.d/control-key.conf
-    rm console-key.conf
+    rm control-key.conf
 done

@@ -69,6 +69,12 @@ tyo.ns1 86400 IN MX 0 .
 tyo.ns1 IN SSHFP 4 2 666684ed69085f621b48a48e6bff18120af76364766836cd147a39c3179c6849
 tyo.ns1 IN TXT "v=spf1 -all"
 
+; Misaka Berlin
+ber.ns2 IN A 194.156.154.116
+ber.ns2 IN AAAA 2a12:8d02:2100:176:26a3:f0ff:fe49:eda8
+ber.ns2 86400 IN MX 0 .
+ber.ns2 IN SSHFP 4 2 4cc18c958fee3e15b10d574306639d074abad3de30458d8719396ea59df1f19c
+ber.ns2 IN TXT "v=spf1 -all"
 ; BuyVM Bern
 brn.ns2 IN A 107.189.3.168
 brn.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8

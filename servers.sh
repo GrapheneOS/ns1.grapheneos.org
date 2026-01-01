@@ -5,7 +5,7 @@ readonly servers_ns1=(
 )
 
 readonly servers_ns2=(
-    {ber,brn,las,mia,nyc}.ns2.grapheneos.org
+    {ber,brn,las,mia,nyc,sin}.ns2.grapheneos.org
 )
 
 readonly servers=(
@@ -41,6 +41,7 @@ declare -Ar addresses=(
     [las.ns2.grapheneos.org]="205.185.124.155 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:20:1c8f:a0c9:372d:482e:945b $ns2_ipv6"
     [mia.ns2.grapheneos.org]="45.61.188.113 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:0040:ffbd:14e7:d270:fd75:600c $ns2_ipv6"
     [nyc.ns2.grapheneos.org]="198.98.53.141 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:10:102e:95bc:89ef:2e7f:49bb $ns2_ipv6"
+    [sin.ns2.grapheneos.org]="194.156.163.89 $ns2_ipv4 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06 $ns2_ipv6"
 )
 
 declare -Ar continents=(
@@ -61,6 +62,7 @@ declare -Ar continents=(
     [las.ns2.grapheneos.org]=na
     [mia.ns2.grapheneos.org]=na
     [nyc.ns2.grapheneos.org]=na
+    [sin.ns2.grapheneos.org]=as
 )
 
 declare -Ar countries=(
@@ -81,6 +83,7 @@ declare -Ar countries=(
     [las.ns2.grapheneos.org]=us
     [mia.ns2.grapheneos.org]=us
     [nyc.ns2.grapheneos.org]=us
+    [sin.ns2.grapheneos.org]=sg
 )
 
 declare -Ar regions=(
@@ -101,6 +104,7 @@ declare -Ar regions=(
     [las.ns2.grapheneos.org]=ca
     [mia.ns2.grapheneos.org]=fl
     [nyc.ns2.grapheneos.org]=ny
+    [sin.ns2.grapheneos.org]=--
 )
 
 declare -Ar us_west=(

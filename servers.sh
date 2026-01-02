@@ -5,7 +5,7 @@ readonly servers_ns1=(
 )
 
 readonly servers_ns2=(
-    {ber,brn,las,lon,mia,nyc,sin}.ns2.grapheneos.org
+    {ber,brn,iad,las,lon,mia,nyc,sin}.ns2.grapheneos.org
 )
 
 readonly servers=(
@@ -38,6 +38,7 @@ declare -Ar addresses=(
     [tyo.ns1.grapheneos.org]="66.42.42.15 $ns1_ipv4 2001:19f0:7001:5695:5400:05ff:fec4:e394 $ns1_ipv6"
     [ber.ns2.grapheneos.org]="194.156.154.116 $ns2_ipv4 2a12:8d02:2100:176:26a3:f0ff:fe49:eda8 $ns2_ipv6"
     [brn.ns2.grapheneos.org]="107.189.3.168 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:30:ec25:102c:af6d:5be:1eb8 $ns2_ipv6"
+    [iad.ns2.grapheneos.org]="38.175.99.47 $ns2_ipv4 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec $ns2_ipv6"
     [las.ns2.grapheneos.org]="205.185.124.155 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:20:1c8f:a0c9:372d:482e:945b $ns2_ipv6"
     [lon.ns2.grapheneos.org]="45.142.244.163 $ns2_ipv4 2a0f:3b03:101:2d3:26a3:f0ff:fe4a:594 $ns2_ipv6"
     [mia.ns2.grapheneos.org]="45.61.188.113 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:0040:ffbd:14e7:d270:fd75:600c $ns2_ipv6"
@@ -60,6 +61,7 @@ declare -Ar continents=(
     [tyo.ns1.grapheneos.org]=as
     [ber.ns2.grapheneos.org]=eu
     [brn.ns2.grapheneos.org]=eu
+    [iad.ns2.grapheneos.org]=na
     [las.ns2.grapheneos.org]=na
     [lon.ns2.grapheneos.org]=eu
     [mia.ns2.grapheneos.org]=na
@@ -82,6 +84,7 @@ declare -Ar countries=(
     [tyo.ns1.grapheneos.org]=jp
     [ber.ns2.grapheneos.org]=de
     [brn.ns2.grapheneos.org]=ch
+    [iad.ns2.grapheneos.org]=us
     [las.ns2.grapheneos.org]=us
     [lon.ns2.grapheneos.org]=gb
     [mia.ns2.grapheneos.org]=us
@@ -104,6 +107,7 @@ declare -Ar regions=(
     [tyo.ns1.grapheneos.org]=13
     [ber.ns2.grapheneos.org]=be
     [brn.ns2.grapheneos.org]=be
+    [iad.ns2.grapheneos.org]=va
     [las.ns2.grapheneos.org]=ca
     [lon.ns2.grapheneos.org]=eng
     [mia.ns2.grapheneos.org]=fl

@@ -81,6 +81,12 @@ brn.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
 brn.ns2 86400 IN MX 0 .
 brn.ns2 IN SSHFP 4 2 1bc33eb5d8949b53a2a2cab1163e1ba2543506ae579c4a9e1a37b3e1a3234edd
 brn.ns2 IN TXT "v=spf1 -all"
+; Misaka Ashburn
+iad.ns2 IN A 38.175.99.47
+iad.ns2 IN AAAA 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec
+iad.ns2 86400 IN MX 0 .
+iad.ns2 IN SSHFP 4 2 4267257b13745b5f125cbf858e524d286be85a41f7e1ffacc49d5971f774f6f2
+iad.ns2 IN TXT "v=spf1 -all"
 ; BuyVM Miami
 mia.ns2 IN A 45.61.188.113
 mia.ns2 IN AAAA 2605:6400:40:ffbd:14e7:d270:fd75:600c

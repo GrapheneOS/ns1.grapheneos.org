@@ -87,18 +87,6 @@ iad.ns2 IN AAAA 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec
 iad.ns2 86400 IN MX 0 .
 iad.ns2 IN SSHFP 4 2 4267257b13745b5f125cbf858e524d286be85a41f7e1ffacc49d5971f774f6f2
 iad.ns2 IN TXT "v=spf1 -all"
-; BuyVM Miami
-mia.ns2 IN A 45.61.188.113
-mia.ns2 IN AAAA 2605:6400:40:ffbd:14e7:d270:fd75:600c
-mia.ns2 86400 IN MX 0 .
-mia.ns2 IN SSHFP 4 2 f7834fdb4ff2b75291a05df3040746214b27e29bea1369cc95744bcf3bdcff52
-mia.ns2 IN TXT "v=spf1 -all"
-; BuyVM New York City
-nyc.ns2 IN A 198.98.53.141
-nyc.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
-nyc.ns2 86400 IN MX 0 .
-nyc.ns2 IN SSHFP 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
-nyc.ns2 IN TXT "v=spf1 -all"
 ; BuyVM Las Vegas
 las.ns2 IN A 205.185.124.155
 las.ns2 IN AAAA 2605:6400:20:1c8f:a0c9:372d:482e:945b
@@ -111,6 +99,18 @@ lon.ns2 IN AAAA 2a0f:3b03:101:2d3:26a3:f0ff:fe4a:594
 lon.ns2 86400 IN MX 0 .
 lon.ns2 IN SSHFP 4 2 f23e96877a3bebe6161fe9177ea20229639d6a6742988246ed5f693836b4193e
 lon.ns2 IN TXT "v=spf1 -all"
+; BuyVM Miami
+mia.ns2 IN A 45.61.188.113
+mia.ns2 IN AAAA 2605:6400:40:ffbd:14e7:d270:fd75:600c
+mia.ns2 86400 IN MX 0 .
+mia.ns2 IN SSHFP 4 2 f7834fdb4ff2b75291a05df3040746214b27e29bea1369cc95744bcf3bdcff52
+mia.ns2 IN TXT "v=spf1 -all"
+; BuyVM New York City
+nyc.ns2 IN A 198.98.53.141
+nyc.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
+nyc.ns2 86400 IN MX 0 .
+nyc.ns2 IN SSHFP 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
+nyc.ns2 IN TXT "v=spf1 -all"
 ; Misaka Singapore
 sin.ns2 IN A 194.156.163.89
 sin.ns2 IN AAAA 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06

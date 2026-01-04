@@ -111,6 +111,12 @@ nyc.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
 nyc.ns2 86400 IN MX 0 .
 nyc.ns2 IN SSHFP 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
 nyc.ns2 IN TXT "v=spf1 -all"
+; Misaka San Jose
+sjc.ns2 IN A 38.175.105.122
+sjc.ns2 IN AAAA 2a0e:6901:410:ab:26a3:f0ff:fe4a:c8d6
+sjc.ns2 86400 IN MX 0 .
+sjc.ns2 IN SSHFP 4 2 868b2980abd5132ed68d247b6f91038138741a8bff408f4f01561f278cdfb046
+sjc.ns2 IN TXT "v=spf1 -all"
 ; Misaka Singapore
 sin.ns2 IN A 194.156.163.89
 sin.ns2 IN AAAA 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06

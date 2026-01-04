@@ -8,6 +8,12 @@ bom.ns1 IN AAAA 2401:c080:2400:1814:5400:05ff:fec5:d503
 bom.ns1 86400 IN MX 0 .
 bom.ns1 IN SSHFP 4 2 e155a32ce2d9c9d5f21610255a6030d7c6e99775d6dc348404f02d79bde49d27
 bom.ns1 IN TXT "v=spf1 -all"
+; Vultr Piscataway
+ewr.ns1 IN A 66.135.8.22
+ewr.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21
+ewr.ns1 86400 IN MX 0 .
+ewr.ns1 IN SSHFP 4 2 0bcda36fdffa9d6be5c6f7ed6d324dc4307a484afc3cdbcb6030c25af62f2286
+ewr.ns1 IN TXT "v=spf1 -all"
 ; Vultr Frankfurt
 fra.ns1 IN A 80.240.20.200
 fra.ns1 IN AAAA 2a05:f480:1800:2acd:5400:05ff:fec2:23a1
@@ -32,12 +38,6 @@ mia.ns1 IN AAAA 2001:19f0:9002:2981:5400:05ff:fec1:65c4
 mia.ns1 86400 IN MX 0 .
 mia.ns1 IN SSHFP 4 2 71d7bfba2a328189753abb0fc7026683dd117df8c0adc54254bba921ca6ed1cd
 mia.ns1 IN TXT "v=spf1 -all"
-; Vultr New York City
-nyc.ns1 IN A 66.135.8.22
-nyc.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21
-nyc.ns1 86400 IN MX 0 .
-nyc.ns1 IN SSHFP 4 2 0bcda36fdffa9d6be5c6f7ed6d324dc4307a484afc3cdbcb6030c25af62f2286
-nyc.ns1 IN TXT "v=spf1 -all"
 ; Vultr São Paulo
 sao.ns1 IN A 216.238.118.134
 sao.ns1 IN AAAA 2001:19f0:b800:14a9:5400:05ff:feca:f136

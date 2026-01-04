@@ -1,7 +1,7 @@
 . bgp-password.sh
 
 readonly servers_ns1=(
-    {bom,fra,lax,lon,mia,nyc,sao,sea,sin,syd,tyo}.ns1.grapheneos.org
+    {bom,ewr,fra,lax,lon,mia,sao,sea,sin,syd,tyo}.ns1.grapheneos.org
 )
 
 readonly servers_ns2=(
@@ -26,11 +26,11 @@ readonly ns2_buyvm_ipv4=198.251.90.93
 declare -Ar addresses=(
     [ns1.staging.grapheneos.org]="198.98.56.238 2605:6400:10:c41:de92:c534:326a:711a 2602:f4d9:4::1"
     [bom.ns1.grapheneos.org]="65.20.91.33 $ns1_ipv4 2401:c080:2400:1814:5400:05ff:fec5:d503 $ns1_ipv6"
+    [ewr.ns1.grapheneos.org]="66.135.8.22 $ns1_ipv4 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21 $ns1_ipv6"
     [fra.ns1.grapheneos.org]="80.240.20.200 $ns1_ipv4 2a05:f480:1800:2acd:5400:05ff:fec2:23a1 $ns1_ipv6"
     [lax.ns1.grapheneos.org]="140.82.23.46 $ns1_ipv4 2001:19f0:6000:2dcd:5400:05ff:fec1:97db $ns1_ipv6"
     [lon.ns1.grapheneos.org]="192.248.159.52 $ns1_ipv4 2001:19f0:7400:8669:5400:05ff:fec3:f3f8 $ns1_ipv6"
     [mia.ns1.grapheneos.org]="45.32.173.220 $ns1_ipv4 2001:19f0:9002:2981:5400:05ff:fec1:65c4 $ns1_ipv6"
-    [nyc.ns1.grapheneos.org]="66.135.8.22 $ns1_ipv4 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21 $ns1_ipv6"
     [sao.ns1.grapheneos.org]="216.238.118.134 $ns1_ipv4 2001:19f0:b800:14a9:5400:05ff:feca:f136 $ns1_ipv6"
     [sea.ns1.grapheneos.org]="66.42.74.68 $ns1_ipv4 2001:19f0:8001:0438:5400:05ff:fec1:9dbd $ns1_ipv6"
     [sin.ns1.grapheneos.org]="139.180.154.140 $ns1_ipv4 2401:c080:1400:4890:5400:05ff:fec2:23b0 $ns1_ipv6"
@@ -49,11 +49,11 @@ declare -Ar addresses=(
 declare -Ar continents=(
     [ns1.staging.grapheneos.org]=na
     [bom.ns1.grapheneos.org]=as
+    [ewr.ns1.grapheneos.org]=na
     [fra.ns1.grapheneos.org]=eu
     [lax.ns1.grapheneos.org]=na
     [lon.ns1.grapheneos.org]=eu
     [mia.ns1.grapheneos.org]=na
-    [nyc.ns1.grapheneos.org]=na
     [sao.ns1.grapheneos.org]=sa
     [sea.ns1.grapheneos.org]=na
     [sin.ns1.grapheneos.org]=as
@@ -72,11 +72,11 @@ declare -Ar continents=(
 declare -Ar countries=(
     [ns1.staging.grapheneos.org]=us
     [bom.ns1.grapheneos.org]=in
+    [ewr.ns1.grapheneos.org]=us
     [fra.ns1.grapheneos.org]=de
     [lax.ns1.grapheneos.org]=us
     [lon.ns1.grapheneos.org]=gb
     [mia.ns1.grapheneos.org]=us
-    [nyc.ns1.grapheneos.org]=us
     [sao.ns1.grapheneos.org]=br
     [sea.ns1.grapheneos.org]=us
     [sin.ns1.grapheneos.org]=sg
@@ -95,11 +95,11 @@ declare -Ar countries=(
 declare -Ar regions=(
     [ns1.staging.grapheneos.org]=ny
     [bom.ns1.grapheneos.org]=mh
+    [ewr.ns1.grapheneos.org]=nj
     [fra.ns1.grapheneos.org]=he
     [lax.ns1.grapheneos.org]=ca
     [lon.ns1.grapheneos.org]=eng
     [mia.ns1.grapheneos.org]=fl
-    [nyc.ns1.grapheneos.org]=ny
     [sao.ns1.grapheneos.org]=sp
     [sea.ns1.grapheneos.org]=wa
     [sin.ns1.grapheneos.org]=--

@@ -11,7 +11,7 @@ if ! flock -n $fd; then
     exit 1
 fi
 
-rsync -pcv --chmod=F644 --fsync --preallocate mirrors.ns1 root@nyc.ns1.grapheneos.org:/etc/mirrors
+rsync -pcv --chmod=F644 --fsync --preallocate mirrors.ns1 root@ewr.ns1.grapheneos.org:/etc/mirrors
 rsync -pcv --chmod=F644 --fsync --preallocate mirrors.ns2 root@nyc.ns2.grapheneos.org:/etc/mirrors
 
 . servers.sh
@@ -24,9 +24,9 @@ for server in ${servers[@]}; do
     rm -rf nginx-tmp
     cp -a nginx nginx-tmp
     if [[ $server == *.ns1.grapheneos.org ]]; then
-        sed -i s/{{subdomain}}/ns1/g nginx-tmp/nginx.conf
+        sed -i 's/{{subdomain}}/ns1/g; s/{{primary}}/ewr/g' nginx-tmp/nginx.conf
     else
-        sed -i s/{{subdomain}}/ns2/g nginx-tmp/nginx.conf
+        sed -i 's/{{subdomain}}/ns2/g; s/{{primary}}/nyc/g' nginx-tmp/nginx.conf
     fi
     gixy nginx-tmp/nginx.conf
     rsync -rpcv --chmod=D755,F644 --delete --fsync --preallocate nginx-tmp/{nginx.conf,mime.types} $remote:/etc/nginx/

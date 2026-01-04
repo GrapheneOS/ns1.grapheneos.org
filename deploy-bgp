@@ -25,7 +25,7 @@ for server in ${servers[@]}; do
 
     if [[ $server == *.ns1.grapheneos.org ]]; then
         subdomain=ns1
-    elif [[ $server == @(ber.ns2.grapheneos.org|iad.ns2.grapheneos.org|lon.ns2.grapheneos.org|sin.ns2.grapheneos.org) ]]; then
+    elif [[ $server == @(ber.ns2.grapheneos.org|iad.ns2.grapheneos.org|lon.ns2.grapheneos.org|sjc.ns2.grapheneos.org|sin.ns2.grapheneos.org) ]]; then
         subdomain=misaka
     else
         subdomain=ns2

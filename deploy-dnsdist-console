@@ -21,4 +21,5 @@ for server in ${servers[@]}; do
     echo '")' >> control-key.conf
     rsync -pctv --chmod=750 --chown=root:dnsdist control-key.conf $remote:/etc/dnsdist.conf.d/control-key.conf
     rm control-key.conf
+    ssh $remote systemctl restart dnsdist.service
 done

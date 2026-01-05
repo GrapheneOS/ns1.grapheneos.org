@@ -75,42 +75,18 @@ ber.ns2 IN AAAA 2a12:8d02:2100:176:26a3:f0ff:fe49:eda8
 ber.ns2 86400 IN MX 0 .
 ber.ns2 IN SSHFP 4 2 4cc18c958fee3e15b10d574306639d074abad3de30458d8719396ea59df1f19c
 ber.ns2 IN TXT "v=spf1 -all"
-; BuyVM Bern
-brn.ns2 IN A 107.189.3.168
-brn.ns2 IN AAAA 2605:6400:30:ec25:102c:af6d:5be:1eb8
-brn.ns2 86400 IN MX 0 .
-brn.ns2 IN SSHFP 4 2 1bc33eb5d8949b53a2a2cab1163e1ba2543506ae579c4a9e1a37b3e1a3234edd
-brn.ns2 IN TXT "v=spf1 -all"
 ; Misaka Ashburn
 iad.ns2 IN A 38.175.99.47
 iad.ns2 IN AAAA 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec
 iad.ns2 86400 IN MX 0 .
 iad.ns2 IN SSHFP 4 2 4267257b13745b5f125cbf858e524d286be85a41f7e1ffacc49d5971f774f6f2
 iad.ns2 IN TXT "v=spf1 -all"
-; BuyVM Las Vegas
-las.ns2 IN A 205.185.124.155
-las.ns2 IN AAAA 2605:6400:20:1c8f:a0c9:372d:482e:945b
-las.ns2 86400 IN MX 0 .
-las.ns2 IN SSHFP 4 2 07a7a4b03d7d7b3108e1cf028e4c10aac8ef0e140c982ed4864512ca65ae56f0
-las.ns2 IN TXT "v=spf1 -all"
 ; Misaka London
 lon.ns2 IN A 45.142.244.163
 lon.ns2 IN AAAA 2a0f:3b03:101:2d3:26a3:f0ff:fe4a:594
 lon.ns2 86400 IN MX 0 .
 lon.ns2 IN SSHFP 4 2 f23e96877a3bebe6161fe9177ea20229639d6a6742988246ed5f693836b4193e
 lon.ns2 IN TXT "v=spf1 -all"
-; BuyVM Miami
-mia.ns2 IN A 45.61.188.113
-mia.ns2 IN AAAA 2605:6400:40:ffbd:14e7:d270:fd75:600c
-mia.ns2 86400 IN MX 0 .
-mia.ns2 IN SSHFP 4 2 f7834fdb4ff2b75291a05df3040746214b27e29bea1369cc95744bcf3bdcff52
-mia.ns2 IN TXT "v=spf1 -all"
-; BuyVM New York City
-nyc.ns2 IN A 198.98.53.141
-nyc.ns2 IN AAAA 2605:6400:10:102e:95bc:89ef:2e7f:49bb
-nyc.ns2 86400 IN MX 0 .
-nyc.ns2 IN SSHFP 4 2 666cd41b78b171fbe617146547e5312a9210ce9f471b61303c3da7864eda32bc
-nyc.ns2 IN TXT "v=spf1 -all"
 ; Misaka San Jose
 sjc.ns2 IN A 38.175.105.122
 sjc.ns2 IN AAAA 2a0e:6901:410:ab:26a3:f0ff:fe4a:c8d6
@@ -123,12 +99,6 @@ sin.ns2 IN AAAA 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06
 sin.ns2 86400 IN MX 0 .
 sin.ns2 IN SSHFP 4 2 7e0519b40635eeb0826cecebabc4e3f3c8ec5ff557d78f098d0395984f5aa749
 sin.ns2 IN TXT "v=spf1 -all"
-
-; BuyVM IPv4 anycast IP (fallback)
-buyvm.ns2 IN A 198.251.90.93
-buyvm.ns2 86400 IN MX 0 .
-buyvm.ns2 IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
-buyvm.ns2 IN TXT "v=spf1 -all"
 
 ; BuyVM Bern
 brn IN A 107.189.14.16

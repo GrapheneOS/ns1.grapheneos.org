@@ -5,7 +5,7 @@ readonly servers_ns1=(
 )
 
 readonly servers_ns2=(
-    {ber,brn,iad,las,lon,mia,nyc,sjc,sin}.ns2.grapheneos.org
+    {ber,iad,lon,sjc,sin}.ns2.grapheneos.org
 )
 
 readonly servers=(
@@ -21,7 +21,6 @@ readonly ns1_ipv6='2602:f4d9::1 2602:f4d9:2::1'
 
 readonly ns2_ipv4=23.149.125.1
 readonly ns2_ipv6='2602:f4d9:1::1 2602:f4d9:3::1'
-readonly ns2_buyvm_ipv4=198.251.90.93
 
 declare -Ar addresses=(
     [ns1.staging.grapheneos.org]="198.98.56.238 2605:6400:10:c41:de92:c534:326a:711a 2602:f4d9:4::1"
@@ -37,12 +36,8 @@ declare -Ar addresses=(
     [syd.ns1.grapheneos.org]="45.63.28.82 $ns1_ipv4 2401:c080:1800:141d:5400:05ff:fec5:d41b $ns1_ipv6"
     [tyo.ns1.grapheneos.org]="66.42.42.15 $ns1_ipv4 2001:19f0:7001:5695:5400:05ff:fec4:e394 $ns1_ipv6"
     [ber.ns2.grapheneos.org]="194.156.154.116 $ns2_ipv4 2a12:8d02:2100:176:26a3:f0ff:fe49:eda8 $ns2_ipv6"
-    [brn.ns2.grapheneos.org]="107.189.3.168 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:30:ec25:102c:af6d:5be:1eb8 $ns2_ipv6"
     [iad.ns2.grapheneos.org]="38.175.99.47 $ns2_ipv4 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec $ns2_ipv6"
-    [las.ns2.grapheneos.org]="205.185.124.155 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:20:1c8f:a0c9:372d:482e:945b $ns2_ipv6"
     [lon.ns2.grapheneos.org]="45.142.244.163 $ns2_ipv4 2a0f:3b03:101:2d3:26a3:f0ff:fe4a:594 $ns2_ipv6"
-    [mia.ns2.grapheneos.org]="45.61.188.113 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:0040:ffbd:14e7:d270:fd75:600c $ns2_ipv6"
-    [nyc.ns2.grapheneos.org]="198.98.53.141 $ns2_ipv4 $ns2_buyvm_ipv4 2605:6400:10:102e:95bc:89ef:2e7f:49bb $ns2_ipv6"
     [sjc.ns2.grapheneos.org]="38.175.105.122 $ns2_ipv4 2a0e:6901:410:ab:26a3:f0ff:fe4a:c8d6 $ns2_ipv6"
     [sin.ns2.grapheneos.org]="194.156.163.89 $ns2_ipv4 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06 $ns2_ipv6"
 )
@@ -61,12 +56,8 @@ declare -Ar continents=(
     [syd.ns1.grapheneos.org]=oc
     [tyo.ns1.grapheneos.org]=as
     [ber.ns2.grapheneos.org]=eu
-    [brn.ns2.grapheneos.org]=eu
     [iad.ns2.grapheneos.org]=na
-    [las.ns2.grapheneos.org]=na
     [lon.ns2.grapheneos.org]=eu
-    [mia.ns2.grapheneos.org]=na
-    [nyc.ns2.grapheneos.org]=na
     [sjc.ns2.grapheneos.org]=na
     [sin.ns2.grapheneos.org]=as
 )
@@ -85,12 +76,8 @@ declare -Ar countries=(
     [syd.ns1.grapheneos.org]=au
     [tyo.ns1.grapheneos.org]=jp
     [ber.ns2.grapheneos.org]=de
-    [brn.ns2.grapheneos.org]=ch
     [iad.ns2.grapheneos.org]=us
-    [las.ns2.grapheneos.org]=us
     [lon.ns2.grapheneos.org]=gb
-    [mia.ns2.grapheneos.org]=us
-    [nyc.ns2.grapheneos.org]=us
     [sjc.ns2.grapheneos.org]=us
     [sin.ns2.grapheneos.org]=sg
 )
@@ -109,12 +96,8 @@ declare -Ar regions=(
     [syd.ns1.grapheneos.org]=nsw
     [tyo.ns1.grapheneos.org]=13
     [ber.ns2.grapheneos.org]=be
-    [brn.ns2.grapheneos.org]=be
     [iad.ns2.grapheneos.org]=va
-    [las.ns2.grapheneos.org]=ca
     [lon.ns2.grapheneos.org]=eng
-    [mia.ns2.grapheneos.org]=fl
-    [nyc.ns2.grapheneos.org]=ny
     [sjc.ns2.grapheneos.org]=ca
     [sin.ns2.grapheneos.org]=--
 )

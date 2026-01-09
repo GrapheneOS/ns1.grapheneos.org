@@ -25,10 +25,10 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {'172.96.172.37'," ; Miami
 "         '104.194.8.203'," ; Los Angeles
-"         '207.174.104.20'}" ; Toronto
+"         '91.246.30.2'}" ; Toronto
 "  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
 "  ips = {'2605:9880:400:1100:15:1240:515:6e'," ; Miami
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; Los Angeles
-"         '2602:fd50:1a1:20::2'}" ; Toronto
+"         '2602:f4d9:5:1::1'}" ; Toronto
 "  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
 "  return 'success'")

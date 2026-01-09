@@ -1,6 +1,6 @@
 health 300 IN LUA TXT (";"
 "  if who:toString() ~= '127.0.0.1' then"
-"      return ''"
+"      return 'v=spf1 -all'"
 "  end"
 "  local ips"
 "  ips = {'45.61.186.223'," ; Miami

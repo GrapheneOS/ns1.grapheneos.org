@@ -167,6 +167,10 @@ $ORIGIN grapheneos.org.
 @ IN TXT "yandex-verification: 10fdf27f68b946c5"
 @ IN TXT "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
 
+; OpenAlias for Monero and Bitcoin
+@ IN TXT "oa1:xmr recipient_address=862CebHaBpFPgYoNC6zw4U8rsXrDjD8s5LMJNS7yVCRHMUKr9dDi7adMSLUMjkDYJ85xahQTCJHHyK5RCvvRJu9x7iSzN9D; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
+@ IN TXT "oa1:btc recipient_address=bc1prqf5hks5dnd4j87wxw3djn20559yhj7wvvcv6fqxpwlg96udkzgqtamhry; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
+
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
 _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
 

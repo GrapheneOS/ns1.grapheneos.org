@@ -16,6 +16,10 @@ $INCLUDE base.zone
 @ IN TXT "yandex-verification: aafc5b649d6fa07d"
 @ IN TXT "facebook-domain-verification=flutp8v6yshxc45wrvr6iozw08ek1j"
 
+; OpenAlias for Monero and Bitcoin
+@ IN TXT "oa1:xmr recipient_address=85zgRCPkTaoDuBCaUGG3vnfBKnpZL1e42KGUaLqfGVr4hsiJxq4hkHvEpUb3prUwgPVZvX5QtfLbyhD4vs5UoL99MKV9LNP; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
+@ IN TXT "oa1:btc recipient_address=bc1p5uclzxueyfadgnzxg2afl9rpj4xaxcjnn4aqxj22h5674893uddqn95vtm; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
+
 _443._tcp IN TLSA 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
 
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"

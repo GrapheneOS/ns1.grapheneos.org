@@ -5,7 +5,7 @@ readonly servers_ns1=(
 )
 
 readonly servers_ns2=(
-    {ber,iad,lon,mia,sjc,sin}.ns2.grapheneos.org
+    {ber,iad,lon,mia,sea,sjc,sin,tyo}.ns2.grapheneos.org
 )
 
 readonly servers=(
@@ -39,8 +39,10 @@ declare -Ar addresses=(
     [iad.ns2.grapheneos.org]="38.175.99.47 $ns2_ipv4 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec $ns2_ipv6"
     [lon.ns2.grapheneos.org]="45.142.244.163 $ns2_ipv4 2a0f:3b03:101:2d3:26a3:f0ff:fe4a:594 $ns2_ipv6"
     [mia.ns2.grapheneos.org]="38.175.100.57 $ns2_ipv4 2a0e:6902:5010:d9:26a3:f0ff:fe48:de47 $ns2_ipv6"
+    [sea.ns2.grapheneos.org]="38.175.103.38 $ns2_ipv4 2a0e:6901:201:dd:26a3:f0ff:fe48:6091 $ns2_ipv6"
     [sjc.ns2.grapheneos.org]="38.175.105.122 $ns2_ipv4 2a0e:6901:410:ab:26a3:f0ff:fe4a:c8d6 $ns2_ipv6"
     [sin.ns2.grapheneos.org]="194.156.163.89 $ns2_ipv4 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06 $ns2_ipv6"
+    [tyo.ns2.grapheneos.org]="103.170.233.149 $ns2_ipv4 2407:b9c0:1:2af:26a3:f0ff:fe46:bede $ns2_ipv6"
 )
 
 declare -Ar continents=(
@@ -60,8 +62,10 @@ declare -Ar continents=(
     [iad.ns2.grapheneos.org]=na
     [lon.ns2.grapheneos.org]=eu
     [mia.ns2.grapheneos.org]=na
+    [sea.ns2.grapheneos.org]=na
     [sjc.ns2.grapheneos.org]=na
     [sin.ns2.grapheneos.org]=as
+    [tyo.ns2.grapheneos.org]=as
 )
 
 declare -Ar countries=(
@@ -81,8 +85,10 @@ declare -Ar countries=(
     [iad.ns2.grapheneos.org]=us
     [lon.ns2.grapheneos.org]=gb
     [mia.ns2.grapheneos.org]=us
+    [sea.ns2.grapheneos.org]=us
     [sjc.ns2.grapheneos.org]=us
     [sin.ns2.grapheneos.org]=sg
+    [tyo.ns2.grapheneos.org]=jp
 )
 
 declare -Ar regions=(
@@ -102,13 +108,16 @@ declare -Ar regions=(
     [iad.ns2.grapheneos.org]=va
     [lon.ns2.grapheneos.org]=eng
     [mia.ns2.grapheneos.org]=fl
+    [sea.ns2.grapheneos.org]=wa
     [sjc.ns2.grapheneos.org]=ca
     [sin.ns2.grapheneos.org]=--
+    [tyo.ns2.grapheneos.org]=13
 )
 
 declare -Ar us_west=(
     [lax.ns1.grapheneos.org]=true
     [sea.ns1.grapheneos.org]=true
     [las.ns2.grapheneos.org]=true
+    [sea.ns2.grapheneos.org]=true
     [sjc.ns2.grapheneos.org]=true
 )

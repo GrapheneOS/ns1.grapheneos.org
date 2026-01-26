@@ -99,12 +99,24 @@ sjc.ns2 IN AAAA 2a0e:6901:410:ab:26a3:f0ff:fe4a:c8d6
 sjc.ns2 86400 IN MX 0 .
 sjc.ns2 IN SSHFP 4 2 868b2980abd5132ed68d247b6f91038138741a8bff408f4f01561f278cdfb046
 sjc.ns2 IN TXT "v=spf1 -all"
+; Misaka Seattle
+sea.ns2 IN A 38.175.103.38
+sea.ns2 IN AAAA 2a0e:6901:201:dd:26a3:f0ff:fe48:6091
+sea.ns2 86400 IN MX 0 .
+sea.ns2 IN SSHFP 4 2 bb3814d2020b29105566dd379a388e033a238c9c232fd406d49a04ed24daa284
+sea.ns2 IN TXT "v=spf1 -all"
 ; Misaka Singapore
 sin.ns2 IN A 194.156.163.89
 sin.ns2 IN AAAA 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06
 sin.ns2 86400 IN MX 0 .
 sin.ns2 IN SSHFP 4 2 7e0519b40635eeb0826cecebabc4e3f3c8ec5ff557d78f098d0395984f5aa749
 sin.ns2 IN TXT "v=spf1 -all"
+; Misaka Tokyo
+tyo.ns2 IN A 103.170.233.149
+tyo.ns2 IN AAAA 2407:b9c0:1:2af:26a3:f0ff:fe46:bede
+tyo.ns2 86400 IN MX 0 .
+tyo.ns2 IN SSHFP 4 2 c40764eda3cc12714ce6ad1107d9a16cd0cc111737021de4aac5c4fa9614aaa4
+tyo.ns2 IN TXT "v=spf1 -all"
 
 ; BuyVM Bern
 brn IN A 107.189.14.16

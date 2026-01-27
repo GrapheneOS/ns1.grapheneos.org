@@ -166,6 +166,12 @@ syd IN AAAA 2401:c080:1800:1c40:5400:05ff:fec7:c902
 syd 86400 IN MX 0 .
 syd IN SSHFP 4 2 f0355a876df1bdfb414ec80bb4f98ba7fa2618f85781387b9ec1c5c31d7108b1
 syd IN TXT "v=spf1 -all"
+; Vultr Tokyo
+tyo IN A 207.148.108.82
+tyo IN AAAA 2401:c080:1000:13f8:5400:05ff:fee8:3c8b
+tyo 86400 IN MX 0 .
+tyo IN SSHFP 4 2 831f9be47ec221642294d41ada734b2623dadbe37f18784495a8d7bdbdc6dc62
+tyo IN TXT "v=spf1 -all"
 
 $INCLUDE grapheneos-domain.zone
 

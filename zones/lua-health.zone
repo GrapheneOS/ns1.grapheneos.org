@@ -10,7 +10,8 @@ health 300 IN LUA TXT (";"
 "         '216.238.116.202'," ; São Paulo
 "         '107.189.14.16'," ; Bern
 "         '66.42.50.166'," ; Singapore
-"         '107.191.57.135'}" ; Sydney
+"         '107.191.57.135'," ; Sydney
+"         '207.148.108.82'}" ; Tokyo
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {'2605:6400:40:ffb4:40e3:e5c8:9b96:614b'," ; Miami
@@ -20,7 +21,8 @@ health 300 IN LUA TXT (";"
 "         '2001:19f0:b800:1f13:5400:05ff:fed0:8ea7'," ; São Paulo
 "         '2605:6400:0030:fbfc:064d:dafb:d00a:5d19'," ; Bern
 "         '2001:19f0:4400:2c24:5400:05ff:fec7:4cdc'," ; Singapore
-"         '2401:c080:1800:1c40:5400:05ff:fec7:c902'}" ; Sydney
+"         '2401:c080:1800:1c40:5400:05ff:fec7:c902'," ; Sydney
+"         '2401:c080:1000:13f8:5400:05ff:fee8:3c8b'}" ; Tokyo
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {'172.96.172.37'," ; Miami

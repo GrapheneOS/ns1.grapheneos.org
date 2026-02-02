@@ -118,12 +118,6 @@ tyo.ns2 86400 IN MX 0 .
 tyo.ns2 IN SSHFP 4 2 c40764eda3cc12714ce6ad1107d9a16cd0cc111737021de4aac5c4fa9614aaa4
 tyo.ns2 IN TXT "v=spf1 -all"
 
-; BuyVM Bern
-brn IN A 107.189.14.16
-brn IN AAAA 2605:6400:0030:fbfc:064d:dafb:d00a:5d19
-brn 86400 IN MX 0 .
-brn IN SSHFP 4 2 478345428a2797fcf39dcf4b1942205b937ae74024e0079f98674c83f5ca07a9
-brn IN TXT "v=spf1 -all"
 ; BuyVM Las Vegas
 las IN A 209.141.37.35
 las IN AAAA 2605:6400:20:387:72d4:dab9:a369:f351
@@ -136,6 +130,12 @@ mia IN AAAA 2605:6400:40:ffb4:40e3:e5c8:9b96:614b
 mia 86400 IN MX 0 .
 mia IN SSHFP 4 2 8f69bcdd6b422cfb1b4bfb1bccedc121764ffb5ac4c0f46969c6034c1e129eaa
 mia IN TXT "v=spf1 -all"
+; netcup Nuremberg
+nue IN A 159.195.46.80
+nue IN AAAA 2a0a:4cc0:c1:9de2::1
+nue 86400 IN MX 0 .
+nue IN SSHFP 4 2 207210710708cad2f373601e8e3a5960a4f08218cc86e790118934f606435e70
+nue IN TXT "v=spf1 -all"
 ; BuyVM New York City
 nyc IN A 198.98.62.94
 nyc IN AAAA 2605:6400:10:50:20a1:d9ea:5c10:a895

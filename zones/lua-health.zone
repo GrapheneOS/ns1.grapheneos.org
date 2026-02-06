@@ -3,7 +3,7 @@ health 300 IN LUA TXT (";"
 "      return 'v=spf1 -all'"
 "  end"
 "  local ips"
-"  ips = {'45.61.186.223'," ; Miami
+"  ips = {'104.207.147.19'," ; Miami
 "         '198.98.62.94'," ; New York City
 "         '209.141.37.35'," ; Las Vegas
 "         '45.32.230.4'," ; Seattle
@@ -14,7 +14,7 @@ health 300 IN LUA TXT (";"
 "         '207.148.108.82'}" ; Tokyo
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
-"  ips = {'2605:6400:40:ffb4:40e3:e5c8:9b96:614b'," ; Miami
+"  ips = {'2001:19f0:9000:2605:5400:05ff:feed:7df5'," ; Miami
 "         '2605:6400:10:50:20a1:d9ea:5c10:a895'," ; New York City
 "         '2605:6400:20:387:72d4:dab9:a369:f351'," ; Las Vegas
 "         '2001:19f0:8000:3454:5400:05ff:fec8:4139'," ; Seattle

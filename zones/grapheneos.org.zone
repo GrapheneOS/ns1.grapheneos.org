@@ -124,11 +124,11 @@ las IN AAAA 2605:6400:20:387:72d4:dab9:a369:f351
 las 86400 IN MX 0 .
 las IN SSHFP 4 2 de55978ac1bfdac3b4a4bb2743ac072e14610fbefe5fcb208f987b57ce8d1eb1
 las IN TXT "v=spf1 -all"
-; BuyVM Miami
-mia IN A 45.61.186.223
-mia IN AAAA 2605:6400:40:ffb4:40e3:e5c8:9b96:614b
+; Vultr Miami
+mia IN A 104.207.147.19
+mia IN AAAA 2001:19f0:9000:2605:5400:05ff:feed:7df5
 mia 86400 IN MX 0 .
-mia IN SSHFP 4 2 8f69bcdd6b422cfb1b4bfb1bccedc121764ffb5ac4c0f46969c6034c1e129eaa
+mia IN SSHFP 4 2 097fcdea75eedd4b00b55ac57d9709c2fe3f8d57320881a3b2fcf4df6c4aa24f
 mia IN TXT "v=spf1 -all"
 ; netcup Nuremberg
 nue IN A 159.195.46.80

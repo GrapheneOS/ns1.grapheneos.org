@@ -118,12 +118,12 @@ tyo.ns2 86400 IN MX 0 .
 tyo.ns2 IN SSHFP 4 2 c40764eda3cc12714ce6ad1107d9a16cd0cc111737021de4aac5c4fa9614aaa4
 tyo.ns2 IN TXT "v=spf1 -all"
 
-; BuyVM Las Vegas
-las IN A 209.141.37.35
-las IN AAAA 2605:6400:20:387:72d4:dab9:a369:f351
-las 86400 IN MX 0 .
-las IN SSHFP 4 2 de55978ac1bfdac3b4a4bb2743ac072e14610fbefe5fcb208f987b57ce8d1eb1
-las IN TXT "v=spf1 -all"
+; Vultr Los Angeles
+lax IN A 149.248.15.194
+lax IN AAAA 2001:19f0:6000:3d01:5400:5ff:feed:bc8e
+lax 86400 IN MX 0 .
+lax IN SSHFP 4 2 a022ebc589ac4c6c4b3d41b10ae7e9e2049f0ef57f84cace1e25548ea49d2257
+lax IN TXT "v=spf1 -all"
 ; Vultr Miami
 mia IN A 104.207.147.19
 mia IN AAAA 2001:19f0:9000:2605:5400:05ff:feed:7df5

@@ -5,4 +5,4 @@ $TTL 3600
 @ 86400 IN NS ns1.grapheneos.org.
 @ 86400 IN NS ns2.grapheneos.org.
 
-2 IN PTR yto.releases.grapheneos.org.
+2 IN PTR yto.grapheneos.org.

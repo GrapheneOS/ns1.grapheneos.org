@@ -4,28 +4,28 @@ health 300 IN LUA TXT (";"
 "  end"
 "  local ips"
 "  ips = {"
-"         '149.248.15.194'," ; lax
-"         '104.207.147.19'," ; mia
+"         '104.194.8.203'," ; lax
+"         '172.96.172.37'," ; mia
 "         '159.195.46.80'," ; nue
-"         '198.98.62.94'," ; nyc
 "         '216.238.116.202'," ; sao
 "         '45.32.230.4'," ; sea
 "         '66.42.50.166'," ; sin
 "         '107.191.57.135'," ; syd
 "         '207.148.108.82'," ; tyo
+"         '91.246.30.2'," ; yto
 "        }"
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {"
-"         '2001:19f0:6000:3d01:5400:5ff:feed:bc8e'," ; lax
-"         '2001:19f0:9000:2605:5400:05ff:feed:7df5'," ; mia
+"         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
+"         '2605:9880:400:1100:15:1240:515:6e'," ; mia
 "         '2a0a:4cc0:c1:9de2::1'," ; nue
-"         '2605:6400:10:50:20a1:d9ea:5c10:a895'," ; nyc
 "         '2001:19f0:b800:1f13:5400:05ff:fed0:8ea7'," ; sao
 "         '2001:19f0:8000:3454:5400:05ff:fec8:4139'," ; sea
 "         '2001:19f0:4400:2c24:5400:05ff:fec7:4cdc'," ; sin
 "         '2401:c080:1800:1c40:5400:05ff:fec7:c902'," ; syd
 "         '2401:c080:1000:13f8:5400:05ff:fee8:3c8b'," ; tyo
+"         '2602:f4d9:5:1::1'," ; yto
 "        }"
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"

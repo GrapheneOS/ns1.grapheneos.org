@@ -118,17 +118,17 @@ tyo.ns2 86400 IN MX 0 .
 tyo.ns2 IN SSHFP 4 2 c40764eda3cc12714ce6ad1107d9a16cd0cc111737021de4aac5c4fa9614aaa4
 tyo.ns2 IN TXT "v=spf1 -all"
 
-; Vultr Los Angeles
-lax IN A 149.248.15.194
-lax IN AAAA 2001:19f0:6000:3d01:5400:5ff:feed:bc8e
+; ReliableSite Los Angeles
+lax IN A 104.194.8.203
+lax IN AAAA 2605:9880:200:400:135:7700:ef0a:81
 lax 86400 IN MX 0 .
-lax IN SSHFP 4 2 a022ebc589ac4c6c4b3d41b10ae7e9e2049f0ef57f84cace1e25548ea49d2257
+lax IN SSHFP 4 2 8d38a340245e80f3f2b111b4b7750d88300ddb8ce76974e2070f3a3f8b49711c
 lax IN TXT "v=spf1 -all"
-; Vultr Miami
-mia IN A 104.207.147.19
-mia IN AAAA 2001:19f0:9000:2605:5400:05ff:feed:7df5
+; ReliableSite Miami
+mia IN A 172.96.172.37
+mia IN AAAA 2605:9880:400:1100:15:1240:515:6e
 mia 86400 IN MX 0 .
-mia IN SSHFP 4 2 097fcdea75eedd4b00b55ac57d9709c2fe3f8d57320881a3b2fcf4df6c4aa24f
+mia IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790c
 mia IN TXT "v=spf1 -all"
 ; netcup Nuremberg
 nue IN A 159.195.46.80
@@ -136,12 +136,6 @@ nue IN AAAA 2a0a:4cc0:c1:9de2::1
 nue 86400 IN MX 0 .
 nue IN SSHFP 4 2 207210710708cad2f373601e8e3a5960a4f08218cc86e790118934f606435e70
 nue IN TXT "v=spf1 -all"
-; BuyVM New York City
-nyc IN A 198.98.62.94
-nyc IN AAAA 2605:6400:10:50:20a1:d9ea:5c10:a895
-nyc 86400 IN MX 0 .
-nyc IN SSHFP 4 2 8352e1002eea81a0b2ee25a70205b4ee90e4048c1ffb186f956fb47ba1543b07
-nyc IN TXT "v=spf1 -all"
 ; Vultr São Paulo
 sao IN A 216.238.116.202
 sao IN AAAA 2001:19f0:b800:1f13:5400:05ff:fed0:8ea7
@@ -172,6 +166,17 @@ tyo IN AAAA 2401:c080:1000:13f8:5400:05ff:fee8:3c8b
 tyo 86400 IN MX 0 .
 tyo IN SSHFP 4 2 831f9be47ec221642294d41ada734b2623dadbe37f18784495a8d7bdbdc6dc62
 tyo IN TXT "v=spf1 -all"
+; Xenyth Toronto
+yto IN A 91.246.30.2
+yto IN AAAA 2602:f4d9:5:1::1
+yto 86400 IN MX 0 .
+yto IN SSHFP 4 2 af1d5aaad371582f44ad7a84a8bbaf90825c54c8f41bc4a5fd390c988ead900d
+yto IN TXT "v=spf1 -all"
+fallback.yto IN A 207.174.104.20
+fallback.yto IN AAAA 2602:fd50:1a1:20::2
+fallback.yto 86400 IN MX 0 .
+fallback.yto IN SSHFP 4 2 af1d5aaad371582f44ad7a84a8bbaf90825c54c8f41bc4a5fd390c988ead900d
+fallback.yto IN TXT "v=spf1 -all"
 
 $INCLUDE grapheneos-domain.zone
 
@@ -222,11 +227,6 @@ yto.releases IN AAAA 2602:f4d9:5:1::1
 yto.releases 86400 IN MX 0 .
 yto.releases IN SSHFP 4 2 af1d5aaad371582f44ad7a84a8bbaf90825c54c8f41bc4a5fd390c988ead900d
 yto.releases IN TXT "v=spf1 -all"
-fallback.yto.releases IN A 207.174.104.20
-fallback.yto.releases IN AAAA 2602:fd50:1a1:20::2
-fallback.yto.releases 86400 IN MX 0 .
-fallback.yto.releases IN SSHFP 4 2 af1d5aaad371582f44ad7a84a8bbaf90825c54c8f41bc4a5fd390c988ead900d
-fallback.yto.releases IN TXT "v=spf1 -all"
 
 $ORIGIN releases.grapheneos.org.
 $INCLUDE lua-releases.zone

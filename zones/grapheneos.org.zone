@@ -33,10 +33,10 @@ lon.ns1 86400 IN MX 0 .
 lon.ns1 IN SSHFP 4 2 9f94dc9f25ca15f57de14808203d59c0be8fca8a975aa8bcfee9a3c7bfae573e
 lon.ns1 IN TXT "v=spf1 -all"
 ; Vultr Miami
-mia.ns1 IN A 45.32.173.220
-mia.ns1 IN AAAA 2001:19f0:9002:2981:5400:05ff:fec1:65c4
+mia.ns1 IN A 104.207.147.19
+mia.ns1 IN AAAA 2001:19f0:9000:2605:5400:05ff:feed:7df5
 mia.ns1 86400 IN MX 0 .
-mia.ns1 IN SSHFP 4 2 71d7bfba2a328189753abb0fc7026683dd117df8c0adc54254bba921ca6ed1cd
+mia.ns1 IN SSHFP 4 2 09de84b1eac1395882a4cb1cad76dd7262e6b7eee8f116e7b9262b7ef1cec893
 mia.ns1 IN TXT "v=spf1 -all"
 ; Vultr São Paulo
 sao.ns1 IN A 216.238.118.134

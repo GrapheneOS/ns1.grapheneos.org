@@ -1,5 +1,5 @@
 ns1.staging IN A 198.98.56.238
-ns1.staging IN AAAA 2605:6400:10:c41:de92:c534:326a:711a
+ns1.staging IN AAAA 2602:f4d9:4::1
 ns1.staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/1396615276"
 ns1.staging IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124333884"
 ns1.staging IN CAA 0 issuemail ";"

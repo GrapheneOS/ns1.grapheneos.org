@@ -24,6 +24,9 @@ deploy_bird() {
 for server in ${servers[@]}; do
     echo $server
 
+    # handled by yto.grapheneos.org host for now
+    [[ $server == yto.ns2.grapheneos.org ]] && continue
+
     if [[ $server == *.ns1.grapheneos.org ]]; then
         subdomain=ns1
     else

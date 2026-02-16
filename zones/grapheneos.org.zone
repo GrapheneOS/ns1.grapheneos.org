@@ -180,6 +180,16 @@ fallback.yto IN TXT "v=spf1 -all"
 
 $INCLUDE grapheneos-domain.zone
 
+testing.ns1 IN AAAA 2602:f4d9:2::1
+testing.ns1 86400 IN MX 0 .
+testing.ns1 IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+testing.ns1 IN TXT "v=spf1 -all"
+
+testing.ns2 IN AAAA 2602:f4d9:3::1
+testing.ns2 86400 IN MX 0 .
+testing.ns2 IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+testing.ns2 IN TXT "v=spf1 -all"
+
 $INCLUDE lua-grapheneos.zone
 
 $ORIGIN www.grapheneos.org.

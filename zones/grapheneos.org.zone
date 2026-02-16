@@ -117,6 +117,12 @@ tyo.ns2 IN AAAA 2407:b9c0:1:2af:26a3:f0ff:fe46:bede
 tyo.ns2 86400 IN MX 0 .
 tyo.ns2 IN SSHFP 4 2 c40764eda3cc12714ce6ad1107d9a16cd0cc111737021de4aac5c4fa9614aaa4
 tyo.ns2 IN TXT "v=spf1 -all"
+; Xenyth Toronto
+yto.ns2 IN A 91.246.30.3
+yto.ns2 IN AAAA 2602:f4d9:5:2::1
+yto.ns2 86400 IN MX 0 .
+yto.ns2 IN SSHFP 4 2 87348e56c2c682181d32d5c704d0f97a70124c1e74ba1b5d5853e660ecaf9f6e
+yto.ns2 IN TXT "v=spf1 -all"
 
 ; ReliableSite Los Angeles
 lax IN A 104.194.8.203

@@ -87,7 +87,7 @@ lon.ns2 IN AAAA 2a0f:3b03:101:2d3:26a3:f0ff:fe4a:594
 lon.ns2 86400 IN MX 0 .
 lon.ns2 IN SSHFP 4 2 f23e96877a3bebe6161fe9177ea20229639d6a6742988246ed5f693836b4193e
 lon.ns2 IN TXT "v=spf1 -all"
-; Misaka London
+; Misaka Miami
 mia.ns2 IN A 38.175.100.57
 mia.ns2 IN AAAA 2a0e:6902:5010:d9:26a3:f0ff:fe48:de47
 mia.ns2 86400 IN MX 0 .

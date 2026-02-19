@@ -5,6 +5,7 @@ health 300 IN LUA TXT (";"
 "  local ips"
 "  ips = {"
 "         '104.194.8.203'," ; lax
+"         '185.44.76.161'," ; lon
 "         '172.96.172.37'," ; mia
 "         '159.195.46.80'," ; nue
 "         '216.238.116.202'," ; sao
@@ -31,12 +32,14 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {"
 "         '104.194.8.203'," ; lax
+"         '185.44.76.161'," ; lon
 "         '172.96.172.37'," ; mia
 "         '91.246.30.2'," ; yto
 "        }"
 "  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
 "  ips = {"
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
+"         '2a01:4020:0:52::2'," ; lon
 "         '2605:9880:400:1100:15:1240:515:6e'," ; mia
 "         '2602:f4d9:5:1::1'," ; yto
 "        }"

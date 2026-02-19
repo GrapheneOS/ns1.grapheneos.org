@@ -124,6 +124,12 @@ yto.ns2 86400 IN MX 0 .
 yto.ns2 IN SSHFP 4 2 87348e56c2c682181d32d5c704d0f97a70124c1e74ba1b5d5853e660ecaf9f6e
 yto.ns2 IN TXT "v=spf1 -all"
 
+; Cherry Servers Amsterdam
+ams IN A 84.32.64.33
+;ams IN AAAA ::1
+ams 86400 IN MX 0 .
+ams IN SSHFP 4 2 c891dd175d10e0b8c107aa786a1ab49cea94ec01d9506d093c9c65fa818d4b0f
+ams IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
 lax IN A 104.194.8.203
 lax IN AAAA 2605:9880:200:400:135:7700:ef0a:81

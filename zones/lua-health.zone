@@ -4,6 +4,7 @@ health 300 IN LUA TXT (";"
 "  end"
 "  local ips"
 "  ips = {"
+"         '84.32.64.33'," ; ams
 "         '104.194.8.203'," ; lax
 "         '185.44.76.161'," ; lon
 "         '172.96.172.37'," ; mia
@@ -31,6 +32,7 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {"
+"         '84.32.64.33'," ; ams
 "         '104.194.8.203'," ; lax
 "         '185.44.76.161'," ; lon
 "         '172.96.172.37'," ; mia

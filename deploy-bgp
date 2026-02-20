@@ -7,22 +7,10 @@ shopt -s expand_aliases
 
 alias rsync='rsync --fsync --preallocate'
 
-deploy_bird() {
-    local server=$1
-    local remote=root@$1
-    local ns=$2
-
-    ssh $remote 'id -u bird &>/dev/null || useradd -r bird -d /'
-    rsync -rpcv --chmod=D755,F644 systemd/system/bird.service.d $remote:/etc/systemd/system/
-    rsync -pcv --chmod=644 bird.$ns.conf $remote:/etc/bird.conf
-    cp bird.$server.conf bird.local.conf
-    sed -i "s/{{bgp_password}}/${bgp_password[$server]}/g" bird.local.conf
-    rsync -pcv --chmod=644 bird.local.conf $remote:/etc/bird.local.conf
-    rm bird.local.conf
-}
-
 for server in ${servers[@]}; do
     echo $server
+
+    remote=root@$server
 
     # handled by yto.grapheneos.org host for now
     [[ $server == yto.ns2.grapheneos.org ]] && continue
@@ -33,7 +21,13 @@ for server in ${servers[@]}; do
         subdomain=ns2
     fi
 
-    deploy_bird $server $subdomain
+    ssh $remote 'id -u bird &>/dev/null || useradd -r bird -d /'
+    rsync -rpcv --chmod=D755,F644 systemd/system/bird.service.d $remote:/etc/systemd/system/
+    rsync -pcv --chmod=644 bird.$subdomain.conf $remote:/etc/bird.conf
+    cp bird.$server.conf bird.local.conf
+    sed -i "s/{{bgp_password}}/${bgp_password[$server]}/g" bird.local.conf
+    rsync -pcv --chmod=644 bird.local.conf $remote:/etc/bird.local.conf
+    rm bird.local.conf
 
     echo
 done

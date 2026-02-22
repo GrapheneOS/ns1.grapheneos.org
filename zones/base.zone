@@ -45,8 +45,8 @@ default._bimi IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
 
 _mta-sts IN TXT "v=STSv1; id=2023062500"
 
-mta-sts IN A 192.99.98.22
-mta-sts IN AAAA 2607:5300:205:200::472f
+mta-sts IN A 91.246.30.4
+mta-sts IN AAAA 2602:f4d9:5:3::1
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
 mta-sts IN CAA 0 issuemail ";"

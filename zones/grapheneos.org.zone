@@ -371,8 +371,8 @@ gs-loc.apple IN TXT "v=spf1 -all"
 
 _443._tcp.gs-loc.apple IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
-mail IN A 192.99.98.22
-mail IN AAAA 2607:5300:205:200::472f
+mail IN A 91.246.30.4
+mail IN AAAA 2602:f4d9:5:3::1
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
 mail IN CAA 0 issuemail ";"
@@ -381,7 +381,7 @@ mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mail 86400 IN HTTPS 1 . alpn=h2
 mail 86400 IN MX 0 mail.grapheneos.org.
 mail 86400 IN MX 10 mail.grapheneos.net.
-mail IN SSHFP 4 2 d81687f26b1ef2a856585afe45e96e8e28aef4144d040ad070eb56df2267cd02
+mail IN SSHFP 4 2 5b5d561f8d13b4424645e728a418342e5a2a880d1ede75e8f9ff13fba7a95833
 mail IN TXT "v=spf1 a:mail.grapheneos.org -all"
 
 _25._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
@@ -397,8 +397,8 @@ _smtp._tls.mail IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@mail.grapheneos.org"
 
 _mta-sts.mail IN TXT "v=STSv1; id=2023062500"
 
-mta-sts.mail IN A 192.99.98.22
-mta-sts.mail IN AAAA 2607:5300:205:200::472f
+mta-sts.mail IN A 91.246.30.4
+mta-sts.mail IN AAAA 2602:f4d9:5:3::1
 mta-sts.mail 86400 IN HTTPS 1 . alpn=h2
 mta-sts.mail 86400 IN MX 0 .
 mta-sts.mail IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
@@ -430,8 +430,8 @@ _smtp._tls.discuss IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@discuss.grapheneos.org
 
 _mta-sts.discuss IN TXT "v=STSv1; id=2023062500"
 
-mta-sts.discuss IN A 192.99.98.22
-mta-sts.discuss IN AAAA 2607:5300:205:200::472f
+mta-sts.discuss IN A 91.246.30.4
+mta-sts.discuss IN AAAA 2602:f4d9:5:3::1
 mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
 mta-sts.discuss IN CAA 0 issuemail ";"
@@ -467,8 +467,8 @@ _smtp._tls.matrix IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@matrix.grapheneos.org"
 
 _mta-sts.matrix IN TXT "v=STSv1; id=2023062500"
 
-mta-sts.matrix IN A 192.99.98.22
-mta-sts.matrix IN AAAA 2607:5300:205:200::472f
+mta-sts.matrix IN A 91.246.30.4
+mta-sts.matrix IN AAAA 2602:f4d9:5:3::1
 mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
 mta-sts.matrix IN CAA 0 issuemail ";"

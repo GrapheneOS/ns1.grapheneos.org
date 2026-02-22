@@ -7,3 +7,4 @@ $TTL 3600
 
 2 IN PTR yto.grapheneos.org.
 3 IN PTR yto.ns2.grapheneos.org.
+4 IN PTR mail.grapheneos.org.

@@ -1,7 +1,7 @@
 . bgp-password.sh
 
 readonly servers_ns1=(
-    {bom,ewr,fra,lax,lon,mia,sao,sea,sin,syd,tyo}.ns1.grapheneos.org
+    {bom,dfw,ewr,fra,lax,lon,mia,sao,sea,sin,syd,tyo}.ns1.grapheneos.org
 )
 
 readonly servers_ns2=(
@@ -25,6 +25,7 @@ readonly ns2_ipv6='2602:f4d9:1::1 2602:f4d9:3::1'
 declare -Ar addresses=(
     [ns1.staging.grapheneos.org]="198.98.56.238 2605:6400:10:c41:de92:c534:326a:711a 2602:f4d9:4::1"
     [bom.ns1.grapheneos.org]="65.20.91.33 $ns1_ipv4 2401:c080:2400:1814:5400:05ff:fec5:d503 $ns1_ipv6"
+    [dfw.ns1.grapheneos.org]="149.28.240.214 $ns1_ipv4 2001:19f0:6401:1802:5400:05ff:fef7:7b7e $ns1_ipv6"
     [ewr.ns1.grapheneos.org]="66.135.8.22 $ns1_ipv4 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21 $ns1_ipv6"
     [fra.ns1.grapheneos.org]="80.240.20.200 $ns1_ipv4 2a05:f480:1800:2acd:5400:05ff:fec2:23a1 $ns1_ipv6"
     [lax.ns1.grapheneos.org]="140.82.23.46 $ns1_ipv4 2001:19f0:6000:2dcd:5400:05ff:fec1:97db $ns1_ipv6"
@@ -49,6 +50,7 @@ declare -Ar addresses=(
 declare -Ar continents=(
     [ns1.staging.grapheneos.org]=na
     [bom.ns1.grapheneos.org]=as
+    [dfw.ns1.grapheneos.org]=na
     [ewr.ns1.grapheneos.org]=na
     [fra.ns1.grapheneos.org]=eu
     [lax.ns1.grapheneos.org]=na
@@ -73,6 +75,7 @@ declare -Ar continents=(
 declare -Ar countries=(
     [ns1.staging.grapheneos.org]=us
     [bom.ns1.grapheneos.org]=in
+    [dfw.ns1.grapheneos.org]=us
     [ewr.ns1.grapheneos.org]=us
     [fra.ns1.grapheneos.org]=de
     [lax.ns1.grapheneos.org]=us
@@ -97,6 +100,7 @@ declare -Ar countries=(
 declare -Ar regions=(
     [ns1.staging.grapheneos.org]=ny
     [bom.ns1.grapheneos.org]=mh
+    [dfw.ns1.grapheneos.org]=tx
     [ewr.ns1.grapheneos.org]=nj
     [fra.ns1.grapheneos.org]=he
     [lax.ns1.grapheneos.org]=ca

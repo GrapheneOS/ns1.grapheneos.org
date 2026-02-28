@@ -364,7 +364,7 @@ nominatim 86400 IN MX 0 .
 nominatim IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 nominatim IN TXT "v=spf1 -all"
 
-_443._tcp.nominatim IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
+_443._tcp.nominatim IN TLSA 3 1 1 4703f3bf903ebf7986bf19b3b2482f3ca9183b5e65e8179cc767e20e95d33089
 
 $ORIGIN gs-loc.apple.grapheneos.org.
 $include lua-network.zone

@@ -355,6 +355,19 @@ supl IN TXT "v=spf1 -all"
 _443._tcp.supl IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 _7275._tcp.supl IN TLSA 3 1 1 aa2800832facd98549d6693062c6181f8a8ba5cc6016d7b64366e97b1fc10dc7
 
+; Cherry Servers Amsterdam
+ams.nominatim IN A 84.32.64.35
+;ams.nominatim IN AAAA ::1
+ams.nominatim IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/3111542312"
+ams.nominatim IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/270747693"
+ams.nominatim IN CAA 0 issuemail ";"
+ams.nominatim IN CAA 0 issuevmc ";"
+ams.nominatim IN CAA 0 iodef "mailto:caa@grapheneos.org"
+ams.nominatim 86400 IN HTTPS 1 .
+ams.nominatim 86400 IN MX 0 .
+ams.nominatim IN SSHFP 4 2 99eb5ccdcb2fbdfac510a5837aa96f46df49e527cf6e360fda01f39f9901f47f
+ams.nominatim IN TXT "v=spf1 -all"
+
 $ORIGIN nominatim.grapheneos.org.
 $include lua-network.zone
 $ORIGIN grapheneos.org.

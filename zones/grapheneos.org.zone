@@ -38,6 +38,12 @@ lon.ns1 IN AAAA 2001:19f0:7400:8669:5400:05ff:fec3:f3f8
 lon.ns1 86400 IN MX 0 .
 lon.ns1 IN SSHFP 4 2 9f94dc9f25ca15f57de14808203d59c0be8fca8a975aa8bcfee9a3c7bfae573e
 lon.ns1 IN TXT "v=spf1 -all"
+; Vultr Madrid
+mad.ns1 IN A 208.85.20.188
+mad.ns1 IN AAAA 2a05:f480:2800:24b7:5400:06ff:fe01:ce01
+mad.ns1 86400 IN MX 0 .
+mad.ns1 IN SSHFP 4 2 68d3ca3ebb222ab4c11df514c072ba1bbeeb2808243bc532e9317bd156332a9f
+mad.ns1 IN TXT "v=spf1 -all"
 ; Vultr Miami
 mia.ns1 IN A 104.207.147.19
 mia.ns1 IN AAAA 2001:19f0:9000:2605:5400:05ff:feed:7df5

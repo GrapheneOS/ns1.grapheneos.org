@@ -3,7 +3,7 @@
 /dnsdist.conf.tmp
 /geoip-subdomain.txt
 /geoip-subdomain-staging.txt
-/GeoIP.conf
+/ipinfo-token.txt
 /keys/
 /lock
 /nginx-lock

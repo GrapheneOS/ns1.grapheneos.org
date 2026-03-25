@@ -58,9 +58,9 @@ for server in ${servers[@]}; do
         rsync -pcv --chmod=644 --fsync --preallocate pdns.conf.tmp $remote:/etc/powerdns/pdns.conf
         rm pdns.conf.tmp
         ssh $remote 'id -u geoipupdate &>/dev/null || useradd -r geoipupdate -d /var/lib/GeoIP && chown -R geoipupdate:geoipupdate /var/lib/GeoIP'
-        rsync -pcv --chown root:geoipupdate --chmod=F640 --fsync --preallocate GeoIP.conf $remote:/etc/GeoIP.conf
-        rsync -pcv --chmod=F755 pdns-trigger-health-checks $remote:/usr/local/bin/
-        rsync -prcv --chmod=D755,F644 --fsync --preallocate systemd/system/{geoipupdate.service.d,geoipupdate.timer.d,pdns.service.d,pdns-trigger-health-checks.{service,timer}} $remote:/etc/systemd/system/
+        rsync -pcv --chmod=755 --fsync --preallocate ipinfo-update pdns-trigger-health-checks $remote:/usr/local/bin/
+        rsync -pcv --chown root:geoipupdate --chmod=F640 --fsync --preallocate ipinfo-token.txt $remote:/etc/ipinfo-token.txt
+        rsync -prcv --chmod=D755,F644 --fsync --preallocate systemd/system/{ipinfo-update.service,ipinfo-update.timer,pdns-trigger-health-checks.{service,timer}} $remote:/etc/systemd/system/
     fi
 
     rsync -pcv --chmod=644 --fsync --preallocate named.conf $remote:/etc/powerdns/named.conf
@@ -74,7 +74,7 @@ for server in ${servers[@]}; do
     if (( reconfigure )); then
         ssh $remote 'sleep 5 &&
 systemctl daemon-reload &&
-systemctl enable --now geoipupdate.timer pdns.service pdns-trigger-health-checks.timer &&
+systemctl enable --now ipinfo-update.timer pdns.service pdns-trigger-health-checks.timer &&
 systemctl restart pdns.service'
     else
         ssh $remote 'pdns_control rediscover && pdns_control reload'

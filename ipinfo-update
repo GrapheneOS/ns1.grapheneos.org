@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -o errexit -o nounset -o pipefail
+
+token="$(cat /etc/ipinfo-token.txt)"
+
+curl -sSL --fail-with-body "https://ipinfo.io/data/ipinfo_location.mmdb?token=$token" -o ipinfo_location.mmdb.new
+mmdblookup --file ipinfo_location.mmdb.new --ip 23.149.124.1 >/dev/null
+mv ipinfo_location.mmdb.new ipinfo_location.mmdb

@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily IPinfo data update
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

@@ -1,6 +1,8 @@
 /bgp-password.sh
 /dnsdist-lock
 /dnsdist.conf.tmp
+/geoip-subdomain.txt
+/geoip-subdomain-staging.txt
 /GeoIP.conf
 /keys/
 /lock

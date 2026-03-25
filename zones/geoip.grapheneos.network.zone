@@ -5,7 +5,7 @@ $TTL 60
 @ 86400 IN NS ns1.grapheneos.network.
 @ 86400 IN NS ns2.grapheneos.network.
 
-@ IN LUA TXT (";"
+{{geoip_subdomain}} IN LUA TXT (";"
 "  local ip = who:toString()"
 "  local client = ''"
 "  if ecswho then"

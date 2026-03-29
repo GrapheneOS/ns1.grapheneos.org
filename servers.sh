@@ -14,6 +14,7 @@ readonly servers=(
 )
 
 declare -Ar threads=(
+    [yto.ns2.grapheneos.org]=4
 )
 
 readonly ns1_ipv4=23.149.124.1

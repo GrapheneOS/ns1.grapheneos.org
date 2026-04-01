@@ -15,11 +15,11 @@ chi.ns1 86400 IN MX 0 .
 chi.ns1 IN SSHFP 4 2 fcb73726cbe769e11e3ba6a40fb02ed83543e5aed2694d33e76751aa6a22c365
 chi.ns1 IN TXT "v=spf1 -all"
 ; Vultr Dallas
-dfw.ns1 IN A 149.28.240.214
-dfw.ns1 IN AAAA 2001:19f0:6401:1802:5400:05ff:fef7:7b7e
-dfw.ns1 86400 IN MX 0 .
-dfw.ns1 IN SSHFP 4 2 f9c81899e354048e5aabc04b40beab29f85051f899e523f43011eba384f09bc2
-dfw.ns1 IN TXT "v=spf1 -all"
+dal.ns1 IN A 149.28.240.214
+dal.ns1 IN AAAA 2001:19f0:6401:1802:5400:05ff:fef7:7b7e
+dal.ns1 86400 IN MX 0 .
+dal.ns1 IN SSHFP 4 2 f9c81899e354048e5aabc04b40beab29f85051f899e523f43011eba384f09bc2
+dal.ns1 IN TXT "v=spf1 -all"
 ; Vultr Piscataway
 ewr.ns1 IN A 66.135.8.22
 ewr.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21

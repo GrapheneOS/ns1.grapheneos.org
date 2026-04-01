@@ -8,6 +8,12 @@ bom.ns1 IN AAAA 2401:c080:2400:1814:5400:05ff:fec5:d503
 bom.ns1 86400 IN MX 0 .
 bom.ns1 IN SSHFP 4 2 e155a32ce2d9c9d5f21610255a6030d7c6e99775d6dc348404f02d79bde49d27
 bom.ns1 IN TXT "v=spf1 -all"
+; Vultr Chicago
+chi.ns1 IN A 45.76.227.130
+chi.ns1 IN AAAA 2001:19f0:5c00:446d:5400:06ff:fe0b:0e77
+chi.ns1 86400 IN MX 0 .
+chi.ns1 IN SSHFP 4 2 fcb73726cbe769e11e3ba6a40fb02ed83543e5aed2694d33e76751aa6a22c365
+chi.ns1 IN TXT "v=spf1 -all"
 ; Vultr Dallas
 dfw.ns1 IN A 149.28.240.214
 dfw.ns1 IN AAAA 2001:19f0:6401:1802:5400:05ff:fef7:7b7e

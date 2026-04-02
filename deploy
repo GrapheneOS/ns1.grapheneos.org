@@ -40,6 +40,7 @@ echo -n $serial > serial.txt
 . servers.sh
 
 geoip_subdomain=$(tr -cd a-z0-9 </dev/random | head -c 20 | tee geoip-subdomain.txt) || [[ ${PIPESTATUS[0]} -eq 141 ]]
+echo >> geoip-subdomain.txt
 
 for server in ${servers[@]}; do
     echo $server

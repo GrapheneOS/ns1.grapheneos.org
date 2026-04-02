@@ -74,6 +74,12 @@ sin.ns1 IN AAAA 2401:c080:1400:4890:5400:05ff:fec2:23b0
 sin.ns1 86400 IN MX 0 .
 sin.ns1 IN SSHFP 4 2 8829752de44fc9d365bf05282d17e7b26f188fd678f01b646b59e3eb4d9726b6
 sin.ns1 IN TXT "v=spf1 -all"
+; Vultr Stockholm
+sto.ns1 IN A 70.34.206.66
+sto.ns1 IN AAAA 2a05:f480:2000:2941:5400:06ff:fe0b:d01f
+sto.ns1 86400 IN MX 0 .
+sto.ns1 IN SSHFP 4 2 b1e9c7c73b22f815874c559d728988fb04a6df45b2e58aa30819f80077c8636a
+sto.ns1 IN TXT "v=spf1 -all"
 ; Vultr Sydney
 syd.ns1 IN A 45.63.28.82
 syd.ns1 IN AAAA 2401:c080:1800:141d:5400:05ff:fec5:d41b

@@ -3,6 +3,7 @@ Description=Daily IPinfo data update
 
 [Timer]
 OnCalendar=daily
+Persistent=yes
 
 [Install]
 WantedBy=timers.target

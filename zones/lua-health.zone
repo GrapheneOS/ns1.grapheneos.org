@@ -20,6 +20,7 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {"
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
+"         '2001:19f0:7400:8669:5400:05ff:fec3:f3f8'," ; lon
 "         '2605:9880:400:1100:15:1240:515:6e'," ; mia
 "         '2a0a:4cc0:c1:9de2::1'," ; nue
 "         '2001:19f0:b800:1f13:5400:05ff:fed0:8ea7'," ; sao

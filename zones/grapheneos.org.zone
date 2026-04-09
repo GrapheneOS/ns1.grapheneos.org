@@ -160,6 +160,12 @@ ams IN A 84.32.64.33
 ams 86400 IN MX 0 .
 ams IN SSHFP 4 2 c891dd175d10e0b8c107aa786a1ab49cea94ec01d9506d093c9c65fa818d4b0f
 ams IN TXT "v=spf1 -all"
+; DataPacket Dallas
+dal IN A 121.127.40.19
+dal IN AAAA 2a02:6ea0:d206::1
+dal 86400 IN MX 0 .
+dal IN SSHFP 4 2 43e37ae0c91a1a7b6a98af2485b7894e72c1b649d8cbe6abeacfb000342f33e4
+dal IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
 lax IN A 104.194.8.203
 lax IN AAAA 2605:9880:200:400:135:7700:ef0a:81

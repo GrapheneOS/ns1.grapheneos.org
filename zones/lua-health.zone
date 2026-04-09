@@ -5,6 +5,7 @@ health 300 IN LUA TXT (";"
 "  local ips"
 "  ips = {"
 "         '84.32.64.33'," ; ams
+"         '121.127.40.19'," ; dal
 "         '104.194.8.203'," ; lax
 "         '185.44.76.161'," ; lon
 "         '172.96.172.37'," ; mia
@@ -19,6 +20,7 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {"
+"         '2a02:6ea0:d206::1'," ; dal
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
 "         '2001:19f0:7400:8669:5400:05ff:fec3:f3f8'," ; lon
 "         '2605:9880:400:1100:15:1240:515:6e'," ; mia
@@ -34,6 +36,7 @@ health 300 IN LUA TXT (";"
 "  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
 "  ips = {"
 "         '84.32.64.33'," ; ams
+"         '121.127.40.19'," ; dal
 "         '104.194.8.203'," ; lax
 "         '185.44.76.161'," ; lon
 "         '172.96.172.37'," ; mia
@@ -41,6 +44,7 @@ health 300 IN LUA TXT (";"
 "        }"
 "  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
 "  ips = {"
+"         '2a02:6ea0:d206::1'," ; dal
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
 "         '2a01:4020:0:52::2'," ; lon
 "         '2605:9880:400:1100:15:1240:515:6e'," ; mia

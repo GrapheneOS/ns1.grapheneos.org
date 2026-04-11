@@ -105,6 +105,12 @@ ber.ns2 IN AAAA 2a12:8d02:2100:176:26a3:f0ff:fe49:eda8
 ber.ns2 86400 IN MX 0 .
 ber.ns2 IN SSHFP 4 2 4cc18c958fee3e15b10d574306639d074abad3de30458d8719396ea59df1f19c
 ber.ns2 IN TXT "v=spf1 -all"
+; DataPacket Dallas
+dal.ns2 IN A 121.127.40.57
+dal.ns2 IN AAAA 2a02:6ea0:d207::1
+dal.ns2 86400 IN MX 0 .
+dal.ns2 IN SSHFP 4 2 e5a5463aae3868ae78458a13bc2c396dc0fee2eab8e25fe226059f1d0832a8cc
+dal.ns2 IN TXT "v=spf1 -all"
 ; Misaka Ashburn
 iad.ns2 IN A 38.175.99.47
 iad.ns2 IN AAAA 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec

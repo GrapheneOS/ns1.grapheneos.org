@@ -6,4 +6,6 @@ token="$(cat /etc/ipinfo-token.txt)"
 
 curl -sSL --fail-with-body "https://ipinfo.io/data/ipinfo_location.mmdb?token=$token" -o ipinfo_location.mmdb.new
 mmdblookup --file ipinfo_location.mmdb.new --ip 23.149.124.1 >/dev/null
+sync ipinfo_location.mmdb.new
 mv ipinfo_location.mmdb.new ipinfo_location.mmdb
+sync .

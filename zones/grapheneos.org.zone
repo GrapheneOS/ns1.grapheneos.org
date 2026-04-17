@@ -99,6 +99,12 @@ waw.ns1 86400 IN MX 0 .
 waw.ns1 IN SSHFP 4 2 420e990d337b52dbb6bba5322eff60107664cf1d7c8053866625e7978644b1fa
 waw.ns1 IN TXT "v=spf1 -all"
 
+; Misaka Amsterdam
+ams.ns2 IN A 45.11.106.228
+ams.ns2 IN AAAA 2a12:8d05:100:340:26a3:f0ff:fe46:909f
+ams.ns2 86400 IN MX 0 .
+ams.ns2 IN SSHFP 4 2 bfcfe36bbcbbce58a8cda450b110765cbc6347a8871812e58ae5b216f790b019
+ams.ns2 IN TXT "v=spf1 -all"
 ; Misaka Berlin
 ber.ns2 IN A 194.156.154.116
 ber.ns2 IN AAAA 2a12:8d02:2100:176:26a3:f0ff:fe49:eda8

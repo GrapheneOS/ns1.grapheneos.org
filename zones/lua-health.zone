@@ -17,8 +17,8 @@ health 300 IN LUA TXT (";"
 "         '207.148.108.82'," ; tyo
 "         '91.246.30.2'," ; yto
 "        }"
-"  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
-"  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
+"  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='empty'})"
+"  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='empty'})"
 "  ips = {"
 "         '2a02:6ea0:d206::1'," ; dal
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
@@ -32,8 +32,8 @@ health 300 IN LUA TXT (";"
 "         '2401:c080:1000:13f8:5400:05ff:fee8:3c8b'," ; tyo
 "         '2602:f4d9:5:1::1'," ; yto
 "        }"
-"  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})"
-"  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
+"  ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='empty'})"
+"  ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='empty'})"
 "  ips = {"
 "         '84.32.64.33'," ; ams
 "         '121.127.40.19'," ; dal
@@ -42,7 +42,7 @@ health 300 IN LUA TXT (";"
 "         '172.96.172.37'," ; mia
 "         '91.246.30.2'," ; yto
 "        }"
-"  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
+"  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='empty', stringmatch='comet stable'})"
 "  ips = {"
 "         '2a02:6ea0:d206::1'," ; dal
 "         '2605:9880:200:400:135:7700:ef0a:81'," ; lax
@@ -50,5 +50,5 @@ health 300 IN LUA TXT (";"
 "         '2605:9880:400:1100:15:1240:515:6e'," ; mia
 "         '2602:f4d9:5:1::1'," ; yto
 "        }"
-"  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})"
+"  ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='empty', stringmatch='comet stable'})"
 "  return 'success'")

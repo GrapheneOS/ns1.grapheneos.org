@@ -86,8 +86,8 @@
 "      ips = {ips_sao, ips_mia, ips_south_central, ips_yto, ips_lax, ips_sea, ips_lon, ips_ams, ips_nue, ips_tyo, ips_sin, ips_syd}"
 "    end"
 "  end"
-"  local result = ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
-"  if #result > 1 then return ips[1] else return result end")
+"  local result = ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='empty'})"
+"  if #result == 0 then return ips[1] else return result end")
 @ 300 IN LUA AAAA (";"
 "  local ips_dal = {'2a02:6ea0:d206::1'}"
 "  local ips_mia = {'2605:9880:400:1100:15:1240:515:6e'}"
@@ -176,5 +176,5 @@
 "      ips = {ips_sao, ips_mia, ips_south_central, ips_yto, ips_lax, ips_sea, ips_lon, ips_ams, ips_nue, ips_tyo, ips_sin, ips_syd}"
 "    end"
 "  end"
-"  local result = ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='all'})"
-"  if #result > 1 then return ips[1] else return result end")
+"  local result = ifurlup('https://broadcom.psds.grapheneos.org/rtistatus.dat', ips, {selector='all', backupSelector='empty'})"
+"  if #result == 0 then return ips[1] else return result end")

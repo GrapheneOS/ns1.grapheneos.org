@@ -151,7 +151,6 @@ declare -Ar regions=(
 declare -Ar us_west=(
     [lax.ns1.grapheneos.org]=true
     [sea.ns1.grapheneos.org]=true
-    [las.ns2.grapheneos.org]=true
     [sea.ns2.grapheneos.org]=true
     [sjc.ns2.grapheneos.org]=true
 )

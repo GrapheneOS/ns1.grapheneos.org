@@ -178,6 +178,12 @@ dal IN AAAA 2a02:6ea0:d206::1
 dal 86400 IN MX 0 .
 dal IN SSHFP 4 2 43e37ae0c91a1a7b6a98af2485b7894e72c1b649d8cbe6abeacfb000342f33e4
 dal IN TXT "v=spf1 -all"
+; DataPacket Frankfurt
+fra IN A 87.249.129.100
+fra IN AAAA 2a02:6ea0:c75f::1
+fra 86400 IN MX 0 .
+fra IN SSHFP 4 2 96370913be83e6a10cc271c980460fb7b9253aeda0b271dcf8134186029b3c30
+fra IN TXT "v=spf1 -all"
 ; ReliableSite Los Angeles
 lax IN A 104.194.8.203
 lax IN AAAA 2605:9880:200:400:135:7700:ef0a:81

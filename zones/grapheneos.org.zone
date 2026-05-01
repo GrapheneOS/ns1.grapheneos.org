@@ -117,6 +117,12 @@ dal.ns2 IN AAAA 2a02:6ea0:d207::1
 dal.ns2 86400 IN MX 0 .
 dal.ns2 IN SSHFP 4 2 e5a5463aae3868ae78458a13bc2c396dc0fee2eab8e25fe226059f1d0832a8cc
 dal.ns2 IN TXT "v=spf1 -all"
+; DataPacket Frankfurt
+fra.ns2 IN A 87.249.129.102
+fra.ns2 IN AAAA 2a02:6ea0:c75f:1::1
+fra.ns2 86400 IN MX 0 .
+fra.ns2 IN SSHFP 4 2 572b30b0d1927c91a740adf849e70b8e948241c069825cbd7bc11c207ec7b373
+fra.ns2 IN TXT "v=spf1 -all"
 ; Misaka Ashburn
 iad.ns2 IN A 38.175.99.47
 iad.ns2 IN AAAA 2a0b:4342:1a32:db:26a3:f0ff:fe47:dfec

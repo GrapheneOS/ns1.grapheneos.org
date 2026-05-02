@@ -61,7 +61,7 @@ for server in ${servers[@]}; do
         ssh $remote 'id -u geoipupdate &>/dev/null || useradd -r geoipupdate -md /var/lib/GeoIP -s /usr/bin/nologin && chown -R geoipupdate:geoipupdate /var/lib/GeoIP && chmod 755 /var/lib/GeoIP'
         rsync -pcv --chmod=755 --fsync --preallocate ipinfo-update pdns-trigger-health-checks $remote:/usr/local/bin/
         rsync -pcv --chown root:geoipupdate --chmod=F640 --fsync --preallocate ipinfo-token.txt $remote:/etc/ipinfo-token.txt
-        rsync -prcv --chmod=D755,F644 --fsync --preallocate systemd/system/{ipinfo-update.service,ipinfo-update.timer,pdns-trigger-health-checks.{service,timer}} $remote:/etc/systemd/system/
+        rsync -prcv --chmod=D755,F644 --fsync --preallocate systemd/system/{ipinfo-update.service,ipinfo-update.timer,pdns.service.d,pdns-trigger-health-checks.{service,timer}} $remote:/etc/systemd/system/
     fi
 
     rsync -pcv --chmod=644 --fsync --preallocate named.conf $remote:/etc/powerdns/named.conf

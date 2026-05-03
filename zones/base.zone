@@ -1,4 +1,4 @@
-@ 86400 IN SOA ns1 hostmaster {{serial}} 3600 1800 1209600 3600
+@ 86400 IN SOA ns1 hostmaster.grapheneos.org. {{serial}} 3600 1800 1209600 3600
 
 @ 86400 IN NS ns1
 @ 86400 IN NS ns2

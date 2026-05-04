@@ -166,12 +166,6 @@ extras=(
     _443._tcp.dl.vanadium.app
     update.vanadium.app
     _443._tcp.update.vanadium.app
-
-    mail.grapheneos.net
-    _25._tcp.mail.grapheneos.net
-    _443._tcp.mail.grapheneos.net
-    _465._tcp.mail.grapheneos.net
-    _993._tcp.mail.grapheneos.net
 )
 
 rm -rf compare-tmp

@@ -447,7 +447,6 @@ mail IN CAA 0 issuevmc ";"
 mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
 mail 86400 IN HTTPS 1 . alpn=h2
 mail 86400 IN MX 0 mail.grapheneos.org.
-mail 86400 IN MX 10 mail.grapheneos.net.
 mail IN SSHFP 4 2 5b5d561f8d13b4424645e728a418342e5a2a880d1ede75e8f9ff13fba7a95833
 mail IN TXT "v=spf1 a:mail.grapheneos.org -all"
 
@@ -483,7 +482,6 @@ discuss IN CAA 0 issuevmc ";"
 discuss IN CAA 0 iodef "mailto:caa@grapheneos.org"
 discuss 86400 IN HTTPS 1 . alpn=h2
 discuss 86400 IN MX 0 mail.grapheneos.org.
-discuss 86400 IN MX 10 mail.grapheneos.net.
 discuss IN SSHFP 4 2 4cd45b291dfb241461cfe2add29e43fbdcc0362ae51dcb836df1ebc190d9b8b5
 discuss IN TXT "v=spf1 a:mail.grapheneos.org -all"
 
@@ -520,7 +518,6 @@ matrix IN CAA 0 issuevmc ";"
 matrix IN CAA 0 iodef "mailto:caa@grapheneos.org"
 matrix 86400 IN HTTPS 1 . alpn=h2
 matrix 86400 IN MX 0 mail.grapheneos.org.
-matrix 86400 IN MX 10 mail.grapheneos.net.
 matrix IN SSHFP 4 2 2e9e1cdceadf8afd697e84b970594096113b51c71ed163b37c24c22f8d312c1e
 matrix IN TXT "v=spf1 a:mail.grapheneos.org -all"
 

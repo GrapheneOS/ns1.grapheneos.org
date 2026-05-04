@@ -14,20 +14,3 @@ $ORIGIN grapheneos.net.
 
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
 _smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"
-
-mail IN A 91.246.30.4
-mail IN AAAA 2602:f4d9:5:3::1
-mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
-mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
-mail IN CAA 0 issuemail ";"
-mail IN CAA 0 issuevmc ";"
-mail IN CAA 0 iodef "mailto:caa@grapheneos.org"
-mail 86400 IN HTTPS 1 . alpn=h2
-mail 86400 IN MX 0 .
-mail IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
-mail IN TXT "v=spf1 -all"
-
-_25._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
-_443._tcp.mail IN TLSA 3 1 1 b8c9e403ed081e57cd43c8a924b8ce6311431640f4daff1e510cbe3b0c20f4cf
-_465._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81
-_993._tcp.mail IN TLSA 3 1 1 667717e5d9e5243904928cdff1349cba2072a70400278d4c5e282c32dd0b9f81

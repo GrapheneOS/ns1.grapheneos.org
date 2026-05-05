@@ -8,12 +8,12 @@ set -o errexit -o nounset -o pipefail
 
 # .switch_id == 2 is Kansas City
 # .switch_id == 4 is Calgary
-# .switch_id == 11 is Minneapolis
+# .switch_id == 10 is Minneapolis
 
 curl -s https://www.seattleix.net/autogen/participants.json | jq -r '
   [
     .member_list[]
-    | select(any(.connection_list[].if_list[]?; .switch_id == 2 or .switch_id == 11))
+    | select(any(.connection_list[].if_list[]?; .switch_id == 2 or .switch_id == 10))
     | .asnum
   ]
   | unique[]

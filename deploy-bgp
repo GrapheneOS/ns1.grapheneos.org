@@ -7,6 +7,13 @@ shopt -s expand_aliases
 
 alias rsync='rsync --fsync --preallocate'
 
+touch bgp-lock
+exec {fd}< bgp-lock
+if ! flock -n $fd; then
+    echo already deploying >&2
+    exit 1
+fi
+
 for server in ${servers[@]}; do
     echo $server
 

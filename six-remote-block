@@ -6,14 +6,14 @@ set -o errexit -o nounset -o pipefail
 # the time of writing there aren't any relevant remote peers in Calgary which
 # would be better off not receiving our routes.
 
-# .switch_id == 2 is Kansas City
-# .switch_id == 4 is Calgary
+# .switch_id == 3 is Kansas City
+# .switch_id == 5 is Calgary
 # .switch_id == 10 is Minneapolis
 
 curl -s https://www.seattleix.net/autogen/participants.json | jq -r '
   [
     .member_list[]
-    | select(any(.connection_list[].if_list[]?; .switch_id == 2 or .switch_id == 10))
+    | select(any(.connection_list[].if_list[]?; .switch_id == 3 or .switch_id == 10))
     | .asnum
   ]
   | unique[]

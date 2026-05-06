@@ -7,12 +7,21 @@ shopt -s expand_aliases
 
 alias rsync='rsync --fsync --preallocate'
 
+bird_local_conf=
+
+cleanup() {
+    if [[ -n $bird_local_conf ]]; then
+        rm -f "$bird_local_conf"
+    fi
+}
+
 touch bgp-lock
 exec {fd}< bgp-lock
 if ! flock -n $fd; then
     echo already deploying >&2
     exit 1
 fi
+trap cleanup EXIT
 
 for server in ${servers[@]}; do
     echo $server
@@ -28,10 +37,12 @@ for server in ${servers[@]}; do
     ssh $remote 'id -u bird &>/dev/null || useradd -r bird -d / -s /usr/bin/nologin'
     rsync -rpcv --chmod=D755,F644 systemd/system/bird.service.d $remote:/etc/systemd/system/
     rsync -pcv --chmod=644 bird.$subdomain.conf $remote:/etc/bird.conf
-    cp bird.$server.conf bird.local.conf
-    sed -i "s/{{bgp_password}}/${bgp_password[$server]}/g" bird.local.conf
-    rsync -pcv --chmod=644 bird.local.conf $remote:/etc/bird.local.conf
-    rm bird.local.conf
+    bird_local_conf=$(mktemp bird.local.conf.XXXXXXXXXX)
+    cp bird.$server.conf "$bird_local_conf"
+    sed -i "s/{{bgp_password}}/${bgp_password[$server]}/g" "$bird_local_conf"
+    rsync -pcv --chmod=644 "$bird_local_conf" $remote:/etc/bird.local.conf
+    rm "$bird_local_conf"
+    bird_local_conf=
 
     echo
 done

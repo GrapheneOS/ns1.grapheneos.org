@@ -86,10 +86,9 @@
 "      ips = {ips_sao, ips_mia, ips_dal, ips_yto, ips_lax, ips_sea, ips_lon, ips_ams, ips_fra, ips_tyo, ips_sin, ips_syd}"
 "    end"
 "  end"
-"  local result = ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='empty'})"
-"  if #result == 0 then return ips[1] else return result end")
+"  return ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})")
 @ 300 IN LUA AAAA (";"
-"  local ips_ams = {'2a02:6ea0:c75f::1'}"
+"  local ips_ams = {}"
 "  local ips_dal = {'2a02:6ea0:d206::1'}"
 "  local ips_fra = {'2a02:6ea0:c75f::1'}"
 "  local ips_lax = {'2605:9880:200:400:135:7700:ef0a:81'}"
@@ -176,5 +175,4 @@
 "      ips = {ips_sao, ips_mia, ips_dal, ips_yto, ips_lax, ips_sea, ips_lon, ips_ams, ips_fra, ips_tyo, ips_sin, ips_syd}"
 "    end"
 "  end"
-"  local result = ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='empty'})"
-"  if #result == 0 then return ips[1] else return result end")
+"  return ifurlup('https://grapheneos.org/robots.txt', ips, {selector='all', backupSelector='all'})")

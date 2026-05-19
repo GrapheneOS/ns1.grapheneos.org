@@ -65,10 +65,9 @@
 "  else"
 "    ips = {ips_mia, ips_dal, ips_yto, ips_lax, ips_ams, ips_fra, ips_lon}"
 "  end"
-"  local result = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='empty', stringmatch='comet stable'})"
-"  if #result == 0 then return ips[1] else return result end")
+"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})")
 @ 300 IN LUA AAAA (";"
-"  local ips_ams = {'2a02:6ea0:c75f::1'}"
+"  local ips_ams = {}"
 "  local ips_dal = {'2a02:6ea0:d206::1'}"
 "  local ips_fra = {'2a02:6ea0:c75f::1'}"
 "  local ips_lax = {'2605:9880:200:400:135:7700:ef0a:81'}"
@@ -134,5 +133,4 @@
 "  else"
 "    ips = {ips_mia, ips_dal, ips_yto, ips_lax, ips_ams, ips_fra, ips_lon}"
 "  end"
-"  local result = ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='empty', stringmatch='comet stable'})"
-"  if #result == 0 then return ips[1] else return result end")
+"  return ifurlup('https://releases.grapheneos.org/comet-stable', ips, {selector='all', backupSelector='all', stringmatch='comet stable'})")

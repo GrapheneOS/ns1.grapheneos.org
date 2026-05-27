@@ -484,6 +484,7 @@ discuss 86400 IN HTTPS 1 . alpn=h2
 discuss 86400 IN MX 0 mail.grapheneos.org.
 discuss IN SSHFP 4 2 4cd45b291dfb241461cfe2add29e43fbdcc0362ae51dcb836df1ebc190d9b8b5
 discuss IN TXT "v=spf1 a:mail.grapheneos.org -all"
+discuss IN TXT "yandex-verification: 10fdf27f68b946c5"
 
 _443._tcp.discuss IN TLSA 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81
 

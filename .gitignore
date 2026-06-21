@@ -2,6 +2,7 @@
 /bgp-lock
 /dnsdist-lock
 /dnsdist.conf.tmp
+/dnsdist.conf.tmp.*
 /geoip-subdomain.txt
 /geoip-subdomain-staging.txt
 /ipinfo-token.txt
@@ -10,8 +11,11 @@
 /nginx-lock
 /nginx-tmp
 /pdns.conf.tmp
+/pdns.conf.tmp.*
 /serial.txt
 /serial-staging.txt
 /bird.local.conf
+/bird.local.conf.*
 /venv/
 /zones.tmp
+/zones.tmp.*

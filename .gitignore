@@ -1,5 +1,6 @@
 /bgp-password.sh
 /bgp-lock
+/caa-iodef.txt
 /dnsdist-lock
 /dnsdist.conf.tmp
 /geoip-subdomain.txt

@@ -5,7 +5,7 @@ $INCLUDE lua-network.zone
 @ IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/254068453"
 @ IN CAA 0 issuemail ";"
 @ IN CAA 0 issuevmc ";"
-@ IN CAA 0 iodef "mailto:caa@grapheneos.org"
+@ IN CAA 0 iodef "{{caa_iodef}}"
 @ IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
 
 _443._tcp IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d

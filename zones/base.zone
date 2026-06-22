@@ -10,7 +10,7 @@ ns1 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https
 ns1 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323224"
 ns1 IN CAA 0 issuemail ";"
 ns1 IN CAA 0 issuevmc ";"
-ns1 IN CAA 0 iodef "mailto:caa@grapheneos.org"
+ns1 IN CAA 0 iodef "{{caa_iodef}}"
 ns1 86400 IN HTTPS 1 . alpn=h2
 ns1 86400 IN MX 0 .
 ns1 IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
@@ -26,7 +26,7 @@ ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https
 ns2 IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/124323954"
 ns2 IN CAA 0 issuemail ";"
 ns2 IN CAA 0 issuevmc ";"
-ns2 IN CAA 0 iodef "mailto:caa@grapheneos.org"
+ns2 IN CAA 0 iodef "{{caa_iodef}}"
 ns2 86400 IN HTTPS 1 . alpn=h2
 ns2 86400 IN MX 0 .
 ns2 IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
@@ -50,7 +50,7 @@ mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=h
 mta-sts IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
 mta-sts IN CAA 0 issuemail ";"
 mta-sts IN CAA 0 issuevmc ";"
-mta-sts IN CAA 0 iodef "mailto:caa@grapheneos.org"
+mta-sts IN CAA 0 iodef "{{caa_iodef}}"
 mta-sts 86400 IN HTTPS 1 . alpn=h2
 mta-sts 86400 IN MX 0 .
 mta-sts IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000

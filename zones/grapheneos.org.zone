@@ -336,6 +336,17 @@ time IN TXT "v=spf1 -all"
 
 _443._tcp.time IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
+$ORIGIN gstatic.grapheneos.org.
+$include lua-network.zone
+$ORIGIN grapheneos.org.
+
+gstatic 86400 IN HTTPS 1 . alpn=h2
+gstatic 86400 IN MX 0 .
+gstatic IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+gstatic IN TXT "v=spf1 -all"
+
+_443._tcp.gstatic IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
+
 $ORIGIN remoteprovisioning.grapheneos.org.
 $include lua-network.zone
 $ORIGIN grapheneos.org.

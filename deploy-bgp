@@ -30,7 +30,7 @@ for server in ${servers[@]}; do
     ssh $remote systemctl daemon-reload
     rsync -pcv --chmod=644 bird.$subdomain.conf $remote:/etc/bird.conf
     cp bird.$server.conf bird.local.conf
-    sed -i "s/{{bgp_password}}/${bgp_password[$server]}/g" bird.local.conf
+    sed -i "s/{{bgp_password}}/${bgp_password[$server]:-}/g" bird.local.conf
     rsync -pcv --chmod=644 bird.local.conf $remote:/etc/bird.local.conf
     rm bird.local.conf
 

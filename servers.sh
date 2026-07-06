@@ -1,4 +1,3 @@
-. bgp-password.sh
 . config.sh
 
 readonly servers_ns1=(

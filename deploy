@@ -37,8 +37,6 @@ echo serial: $serial
 echo
 echo -n $serial > serial.txt
 
-caa_iodef="$(cat caa-iodef.txt)"
-
 . servers.sh
 
 geoip_subdomain=$(tr -cd a-z0-9 </dev/random | head -c 20 | tee geoip-subdomain.txt) || [[ ${PIPESTATUS[0]} -eq 141 ]]

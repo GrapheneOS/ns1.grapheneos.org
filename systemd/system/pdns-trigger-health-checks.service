@@ -30,6 +30,6 @@ RestrictRealtime=yes
 RestrictSUIDSGID=yes
 SystemCallArchitectures=native
 SystemCallFilter=@system-service
-SystemCallFilter=~@obsolete @privileged @resources
+SystemCallFilter=~@privileged @resources
 Type=oneshot
 User=powerdns

@@ -6,6 +6,8 @@ Requires=pdns.service
 [Service]
 CapabilityBoundingSet=
 ExecStart=/usr/local/bin/pdns-trigger-health-checks
+IPAddressAllow=localhost
+IPAddressDeny=any
 LockPersonality=yes
 MemoryDenyWriteExecute=yes
 NoNewPrivileges=yes

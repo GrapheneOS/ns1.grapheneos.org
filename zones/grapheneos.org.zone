@@ -279,7 +279,6 @@ $ORIGIN grapheneos.org.
 _discord IN TXT "dh=93be86480e5fab75dd05608c33a14be227a22d61"
 
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
-_smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.org"
 
 _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 
@@ -471,7 +470,7 @@ default._domainkey.mail IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFA
 
 default._bimi.mail IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
 
-_smtp._tls.mail IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@mail.grapheneos.org"
+_smtp._tls.mail IN TXT "v=TLSRPTv1; rua={{tls_rpt_rua}}"
 
 _mta-sts.mail IN TXT "v=STSv1; id=2023062500"
 
@@ -504,7 +503,7 @@ default._domainkey.discuss IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQ
 
 default._bimi.discuss IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
 
-_smtp._tls.discuss IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@discuss.grapheneos.org"
+_smtp._tls.discuss IN TXT "v=TLSRPTv1; rua=mailto:{{tls_rpt_rua}}"
 
 _mta-sts.discuss IN TXT "v=STSv1; id=2023062500"
 
@@ -540,7 +539,7 @@ default._domainkey.matrix IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQE
 
 default._bimi.matrix IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
 
-_smtp._tls.matrix IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@matrix.grapheneos.org"
+_smtp._tls.matrix IN TXT "v=TLSRPTv1; rua=mailto:{{tls_rpt_rua}}"
 
 _mta-sts.matrix IN TXT "v=STSv1; id=2023062500"
 

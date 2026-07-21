@@ -42,6 +42,8 @@ default._domainkey IN TXT "v=DKIM1; k=rsa; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ
 
 default._bimi IN TXT "v=BIMI1; l=https://grapheneos.org/bimi.svg"
 
+_smtp._tls IN TXT "v=TLSRPTv1; rua={{tls_rpt_rua}}"
+
 _mta-sts IN TXT "v=STSv1; id=2023062500"
 
 mta-sts IN A 91.246.30.4

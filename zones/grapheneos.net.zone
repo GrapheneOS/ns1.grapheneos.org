@@ -13,4 +13,3 @@ $ORIGIN grapheneos.net.
 @ IN TXT "facebook-domain-verification=uno4ifzsrfe0uu7hw73pbivfiqflrh"
 
 _dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.net; ruf=mailto:dmarc@grapheneos.net"
-_smtp._tls IN TXT "v=TLSRPTv1; rua=mailto:tls-rpt@grapheneos.net"

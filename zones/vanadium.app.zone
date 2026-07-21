@@ -12,8 +12,6 @@ $ORIGIN vanadium.app.
 @ IN TXT "yandex-verification: 369dbb9acc84cb72"
 @ IN TXT "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"
 
-_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@vanadium.app; ruf=mailto:dmarc@vanadium.app"
-
 $ORIGIN dl.vanadium.app
 $INCLUDE lua-network.zone
 $ORIGIN vanadium.app

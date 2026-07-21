@@ -18,8 +18,6 @@ $INCLUDE lua-releases.zone
 
 _443._tcp IN TLSA 3 1 1 81dbb2ac173e74192010fb85d34b615daeff8d2506a31920bac76c99b792062f
 
-_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@seamlessupdate.app; ruf=mailto:dmarc@seamlessupdate.app"
-
 $ORIGIN www.seamlessupdate.app.
 $INCLUDE lua-releases.zone
 $ORIGIN seamlessupdate.app.

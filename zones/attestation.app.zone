@@ -22,8 +22,6 @@ $INCLUDE base.zone
 
 _443._tcp IN TLSA 3 1 1 6bf7ed5d90827ee9af90a2760fe788994a86d1b1eab392880c84c4b269330121
 
-_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@attestation.app; ruf=mailto:dmarc@attestation.app"
-
 www IN A 159.195.67.50
 www IN AAAA 2a0a:4cc0:c2:1cf3::1
 www 86400 IN HTTPS 1 . alpn=h2

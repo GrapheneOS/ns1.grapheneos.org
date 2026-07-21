@@ -278,7 +278,22 @@ $ORIGIN grapheneos.org.
 
 _discord IN TXT "dh=93be86480e5fab75dd05608c33a14be227a22d61"
 
-_dmarc IN TXT "v=DMARC1; p=reject; adkim=s; aspf=s; fo=1; rua=mailto:dmarc@grapheneos.org; ruf=mailto:dmarc@grapheneos.org"
+attestation.app._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.app._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.ca._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.com._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.dev._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.foundation._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.info._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.net._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.network._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.online._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.org._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.ovh._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.page._report._dmarc IN TXT "v=DMARC1;"
+grapheneos.social._report._dmarc IN TXT "v=DMARC1;"
+seamlessupdate.app._report._dmarc IN TXT "v=DMARC1;"
+vanadium.app._report._dmarc IN TXT "v=DMARC1;"
 
 _atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 

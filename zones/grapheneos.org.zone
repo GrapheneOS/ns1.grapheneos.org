@@ -276,6 +276,7 @@ $ORIGIN grapheneos.org.
 @ IN TXT "oa1:xmr recipient_address=862CebHaBpFPgYoNC6zw4U8rsXrDjD8s5LMJNS7yVCRHMUKr9dDi7adMSLUMjkDYJ85xahQTCJHHyK5RCvvRJu9x7iSzN9D; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
 @ IN TXT "oa1:btc recipient_address=bc1prqf5hks5dnd4j87wxw3djn20559yhj7wvvcv6fqxpwlg96udkzgqtamhry; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
 
+_atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 _discord IN TXT "dh=93be86480e5fab75dd05608c33a14be227a22d61"
 
 attestation.app._report._dmarc IN TXT "v=DMARC1;"
@@ -294,8 +295,6 @@ grapheneos.page._report._dmarc IN TXT "v=DMARC1;"
 grapheneos.social._report._dmarc IN TXT "v=DMARC1;"
 seamlessupdate.app._report._dmarc IN TXT "v=DMARC1;"
 vanadium.app._report._dmarc IN TXT "v=DMARC1;"
-
-_atproto IN TXT "did=did:plc:kym5w7pcv4v7xbz7lvbj24na"
 
 ; RFC 5735 TEST-NET-1
 *.dnscheck IN A 192.0.2.1

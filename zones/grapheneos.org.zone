@@ -157,7 +157,7 @@ sea.ns2 IN TXT "v=spf1 -all"
 sin.ns2 IN A 194.156.163.89
 sin.ns2 IN AAAA 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06
 sin.ns2 86400 IN MX 0 .
-sin.ns2 IN SSHFP 4 2 7e0519b40635eeb0826cecebabc4e3f3c8ec5ff557d78f098d0395984f5aa749
+sin.ns2 IN SSHFP 4 2 5ac4aed5847a7c847905ae87d09b12d184b01502c41a45ceeea461f32b8cb1ac
 sin.ns2 IN TXT "v=spf1 -all"
 ; Misaka Tokyo
 tyo.ns2 IN A 103.170.233.149

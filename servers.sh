@@ -54,7 +54,7 @@ declare -Ar addresses=(
     [sjc.ns2.grapheneos.org]="38.175.105.122 $ns2_ipv4 2a0e:6901:410:ab:26a3:f0ff:fe4a:c8d6 $ns2_ipv6"
     [sin.ns2.grapheneos.org]="194.156.163.89 $ns2_ipv4 2407:b9c0:e002:226:26a3:f0ff:fe47:8f06 $ns2_ipv6"
     [tyo.ns2.grapheneos.org]="103.170.233.149 $ns2_ipv4 2407:b9c0:1:2af:26a3:f0ff:fe46:bede $ns2_ipv6"
-    [yto.ns2.grapheneos.org]="91.246.30.3 $ns2_ipv4 2602:f4d9:5:2::1 $ns2_ipv6"
+    [yto.ns2.grapheneos.org]="206.220.120.3 $ns2_ipv4 2602:f4d9:5:2::1 $ns2_ipv6"
 )
 
 declare -Ar continents=(

@@ -166,7 +166,7 @@ tyo.ns2 86400 IN MX 0 .
 tyo.ns2 IN SSHFP 4 2 c40764eda3cc12714ce6ad1107d9a16cd0cc111737021de4aac5c4fa9614aaa4
 tyo.ns2 IN TXT "v=spf1 -all"
 ; Xenyth Toronto
-yto.ns2 IN A 91.246.30.3
+yto.ns2 IN A 206.220.120.3
 yto.ns2 IN AAAA 2602:f4d9:5:2::1
 yto.ns2 86400 IN MX 0 .
 yto.ns2 IN SSHFP 4 2 87348e56c2c682181d32d5c704d0f97a70124c1e74ba1b5d5853e660ecaf9f6e
@@ -239,7 +239,7 @@ tyo 86400 IN MX 0 .
 tyo IN SSHFP 4 2 831f9be47ec221642294d41ada734b2623dadbe37f18784495a8d7bdbdc6dc62
 tyo IN TXT "v=spf1 -all"
 ; Xenyth Toronto
-yto IN A 91.246.30.2
+yto IN A 206.220.120.2
 yto IN AAAA 2602:f4d9:5:1::1
 yto 86400 IN MX 0 .
 yto IN SSHFP 4 2 af1d5aaad371582f44ad7a84a8bbaf90825c54c8f41bc4a5fd390c988ead900d
@@ -463,7 +463,7 @@ gs-loc.apple IN TXT "v=spf1 -all"
 
 _443._tcp.gs-loc.apple IN TLSA 3 1 1 b4c655c27abcb8533ca652b3ac5dec06ca4f3f797605ca8bbdce21ed8fe5df2d
 
-mail IN A 91.246.30.4
+mail IN A 206.220.120.4
 mail IN AAAA 2602:f4d9:5:3::1
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mail IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
@@ -489,7 +489,7 @@ _smtp._tls.mail IN TXT "v=TLSRPTv1; rua={{tls_rpt_rua}}"
 
 _mta-sts.mail IN TXT "v=STSv1; id=2023062500"
 
-mta-sts.mail IN A 91.246.30.4
+mta-sts.mail IN A 206.220.120.4
 mta-sts.mail IN AAAA 2602:f4d9:5:3::1
 mta-sts.mail 86400 IN HTTPS 1 . alpn=h2
 mta-sts.mail 86400 IN MX 0 .
@@ -521,7 +521,7 @@ _smtp._tls.discuss IN TXT "v=TLSRPTv1; rua={{tls_rpt_rua}}"
 
 _mta-sts.discuss IN TXT "v=STSv1; id=2023062500"
 
-mta-sts.discuss IN A 91.246.30.4
+mta-sts.discuss IN A 206.220.120.4
 mta-sts.discuss IN AAAA 2602:f4d9:5:3::1
 mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts.discuss IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"
@@ -557,7 +557,7 @@ _smtp._tls.matrix IN TXT "v=TLSRPTv1; rua={{tls_rpt_rua}}"
 
 _mta-sts.matrix IN TXT "v=STSv1; id=2023062500"
 
-mta-sts.matrix IN A 91.246.30.4
+mta-sts.matrix IN A 206.220.120.4
 mta-sts.matrix IN AAAA 2602:f4d9:5:3::1
 mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/130207648"
 mta-sts.matrix IN CAA 0 issue "letsencrypt.org; validationmethods=http-01; accounturi=https://acme-staging-v02.api.letsencrypt.org/acme/acct/20271371"

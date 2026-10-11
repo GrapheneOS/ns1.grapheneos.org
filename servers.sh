@@ -26,7 +26,7 @@ readonly ns2_ipv4=23.149.125.1
 readonly ns2_ipv6='2602:f4d9:1::1 2602:f4d9:3::1'
 
 declare -Ar addresses=(
-    [ns1.staging.grapheneos.org]="149.248.59.190 2001:19f0:b002:90f:5400:6ff:fed0:2d00 2602:f4d9:4::1"
+    [ns1.staging.grapheneos.org]="149.248.59.190 2001:19f0:b002:90f:5400:6ff:fed0:2d00 2602:f4d9:4::1 2602:f4d9:4:1::1"
     [bom.ns1.grapheneos.org]="65.20.91.33 $ns1_ipv4 2401:c080:2400:1814:5400:05ff:fec5:d503 $ns1_ipv6"
     [chi.ns1.grapheneos.org]="45.76.227.130 $ns1_ipv4 2001:19f0:5c00:446d:5400:06ff:fe0b:0e77 $ns1_ipv6"
     [dal.ns1.grapheneos.org]="149.28.240.214 $ns1_ipv4 2001:19f0:6401:1802:5400:05ff:fef7:7b7e $ns1_ipv6"

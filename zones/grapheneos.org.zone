@@ -4,97 +4,97 @@ $INCLUDE lua-health.zone
 
 ; Vultr Mumbai
 bom.ns1 IN A 65.20.91.33
-bom.ns1 IN AAAA 2401:c080:2400:1814:5400:05ff:fec5:d503
+bom.ns1 IN AAAA 2401:c080:2400:1814:5400:5ff:fec5:d503
 bom.ns1 86400 IN MX 0 .
 bom.ns1 IN SSHFP 4 2 e155a32ce2d9c9d5f21610255a6030d7c6e99775d6dc348404f02d79bde49d27
 bom.ns1 IN TXT "v=spf1 -all"
 ; Vultr Chicago
 chi.ns1 IN A 45.76.227.130
-chi.ns1 IN AAAA 2001:19f0:5c00:446d:5400:06ff:fe0b:0e77
+chi.ns1 IN AAAA 2001:19f0:5c00:446d:5400:6ff:fe0b:e77
 chi.ns1 86400 IN MX 0 .
 chi.ns1 IN SSHFP 4 2 fcb73726cbe769e11e3ba6a40fb02ed83543e5aed2694d33e76751aa6a22c365
 chi.ns1 IN TXT "v=spf1 -all"
 ; Vultr Dallas
 dal.ns1 IN A 149.28.240.214
-dal.ns1 IN AAAA 2001:19f0:6401:1802:5400:05ff:fef7:7b7e
+dal.ns1 IN AAAA 2001:19f0:6401:1802:5400:5ff:fef7:7b7e
 dal.ns1 86400 IN MX 0 .
 dal.ns1 IN SSHFP 4 2 f9c81899e354048e5aabc04b40beab29f85051f899e523f43011eba384f09bc2
 dal.ns1 IN TXT "v=spf1 -all"
 ; Vultr Piscataway
 ewr.ns1 IN A 66.135.8.22
-ewr.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:05ff:fec1:7c21
+ewr.ns1 IN AAAA 2001:19f0:1000:c0d4:5400:5ff:fec1:7c21
 ewr.ns1 86400 IN MX 0 .
 ewr.ns1 IN SSHFP 4 2 0bcda36fdffa9d6be5c6f7ed6d324dc4307a484afc3cdbcb6030c25af62f2286
 ewr.ns1 IN TXT "v=spf1 -all"
 ; Vultr Frankfurt
 fra.ns1 IN A 80.240.20.200
-fra.ns1 IN AAAA 2a05:f480:1800:2acd:5400:05ff:fec2:23a1
+fra.ns1 IN AAAA 2a05:f480:1800:2acd:5400:5ff:fec2:23a1
 fra.ns1 86400 IN MX 0 .
 fra.ns1 IN SSHFP 4 2 51d5813e3792330a22374e7ef0ad64a8632f77b4cd5e913365217acb87ead9c1
 fra.ns1 IN TXT "v=spf1 -all"
 ; Vultr Los Angeles
 lax.ns1 IN A 140.82.23.46
-lax.ns1 IN AAAA 2001:19f0:6000:2dcd:5400:05ff:fec1:97db
+lax.ns1 IN AAAA 2001:19f0:6000:2dcd:5400:5ff:fec1:97db
 lax.ns1 86400 IN MX 0 .
 lax.ns1 IN SSHFP 4 2 a6aebfac1d6817e7908699486fb1a64290c13365ec338f5c2602f1a4272e72e3
 lax.ns1 IN TXT "v=spf1 -all"
 ; Vultr London
 lon.ns1 IN A 192.248.159.52
-lon.ns1 IN AAAA 2001:19f0:7400:8669:5400:05ff:fec3:f3f8
+lon.ns1 IN AAAA 2001:19f0:7400:8669:5400:5ff:fec3:f3f8
 lon.ns1 86400 IN MX 0 .
 lon.ns1 IN SSHFP 4 2 9f94dc9f25ca15f57de14808203d59c0be8fca8a975aa8bcfee9a3c7bfae573e
 lon.ns1 IN TXT "v=spf1 -all"
 ; Vultr Madrid
 mad.ns1 IN A 208.85.20.188
-mad.ns1 IN AAAA 2a05:f480:2800:24b7:5400:06ff:fe01:ce01
+mad.ns1 IN AAAA 2a05:f480:2800:24b7:5400:6ff:fe01:ce01
 mad.ns1 86400 IN MX 0 .
 mad.ns1 IN SSHFP 4 2 68d3ca3ebb222ab4c11df514c072ba1bbeeb2808243bc532e9317bd156332a9f
 mad.ns1 IN TXT "v=spf1 -all"
 ; Vultr Miami
 mia.ns1 IN A 104.207.147.19
-mia.ns1 IN AAAA 2001:19f0:9000:2605:5400:05ff:feed:7df5
+mia.ns1 IN AAAA 2001:19f0:9000:2605:5400:5ff:feed:7df5
 mia.ns1 86400 IN MX 0 .
 mia.ns1 IN SSHFP 4 2 09de84b1eac1395882a4cb1cad76dd7262e6b7eee8f116e7b9262b7ef1cec893
 mia.ns1 IN TXT "v=spf1 -all"
 ; Vultr São Paulo
 sao.ns1 IN A 216.238.118.134
-sao.ns1 IN AAAA 2001:19f0:b800:14a9:5400:05ff:feca:f136
+sao.ns1 IN AAAA 2001:19f0:b800:14a9:5400:5ff:feca:f136
 sao.ns1 86400 IN MX 0 .
 sao.ns1 IN SSHFP 4 2 f87f6f8da84d464b4e61176694986df752e677f0dcc2710a13b7a812341f61ec
 sao.ns1 IN TXT "v=spf1 -all"
 ; Vultr Seattle
 sea.ns1 IN A 66.42.74.68
-sea.ns1 IN AAAA 2001:19f0:8001:0438:5400:05ff:fec1:9dbd
+sea.ns1 IN AAAA 2001:19f0:8001:438:5400:5ff:fec1:9dbd
 sea.ns1 86400 IN MX 0 .
 sea.ns1 IN SSHFP 4 2 e46045387987b21de85db98ee4f65ae55ac756c5b63cbaff6a3a84a2319a80cf
 sea.ns1 IN TXT "v=spf1 -all"
 ; Vultr Singapore
 sin.ns1 IN A 139.180.154.140
-sin.ns1 IN AAAA 2401:c080:1400:4890:5400:05ff:fec2:23b0
+sin.ns1 IN AAAA 2401:c080:1400:4890:5400:5ff:fec2:23b0
 sin.ns1 86400 IN MX 0 .
 sin.ns1 IN SSHFP 4 2 8829752de44fc9d365bf05282d17e7b26f188fd678f01b646b59e3eb4d9726b6
 sin.ns1 IN TXT "v=spf1 -all"
 ; Vultr Stockholm
 sto.ns1 IN A 70.34.206.66
-sto.ns1 IN AAAA 2a05:f480:2000:2941:5400:06ff:fe0b:d01f
+sto.ns1 IN AAAA 2a05:f480:2000:2941:5400:6ff:fe0b:d01f
 sto.ns1 86400 IN MX 0 .
 sto.ns1 IN SSHFP 4 2 b1e9c7c73b22f815874c559d728988fb04a6df45b2e58aa30819f80077c8636a
 sto.ns1 IN TXT "v=spf1 -all"
 ; Vultr Sydney
 syd.ns1 IN A 45.63.28.82
-syd.ns1 IN AAAA 2401:c080:1800:141d:5400:05ff:fec5:d41b
+syd.ns1 IN AAAA 2401:c080:1800:141d:5400:5ff:fec5:d41b
 syd.ns1 86400 IN MX 0 .
 syd.ns1 IN SSHFP 4 2 ff5c778ed7def72ed8eeb1326b4bb74aceeb822c6dd37d14a0f467877067fe0b
 syd.ns1 IN TXT "v=spf1 -all"
 ; Vultr Tokyo
 tyo.ns1 IN A 66.42.42.15
-tyo.ns1 IN AAAA 2001:19f0:7001:5695:5400:05ff:fec4:e394
+tyo.ns1 IN AAAA 2001:19f0:7001:5695:5400:5ff:fec4:e394
 tyo.ns1 86400 IN MX 0 .
 tyo.ns1 IN SSHFP 4 2 666684ed69085f621b48a48e6bff18120af76364766836cd147a39c3179c6849
 tyo.ns1 IN TXT "v=spf1 -all"
 ; Vultr Warsaw
 waw.ns1 IN A 70.34.242.58
-waw.ns1 IN AAAA 2a05:f480:2400:17ce:5400:06ff:fe00:15a2
+waw.ns1 IN AAAA 2a05:f480:2400:17ce:5400:6ff:fe00:15a2
 waw.ns1 86400 IN MX 0 .
 waw.ns1 IN SSHFP 4 2 420e990d337b52dbb6bba5322eff60107664cf1d7c8053866625e7978644b1fa
 waw.ns1 IN TXT "v=spf1 -all"
@@ -210,31 +210,31 @@ mia IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790
 mia IN TXT "v=spf1 -all"
 ; Vultr São Paulo
 sao IN A 216.238.116.202
-sao IN AAAA 2001:19f0:b800:1f13:5400:05ff:fed0:8ea7
+sao IN AAAA 2001:19f0:b800:1f13:5400:5ff:fed0:8ea7
 sao 86400 IN MX 0 .
 sao IN SSHFP 4 2 15e010376649a315abf4be4d206d4c141a99321919963b284cf212d589dcafa9
 sao IN TXT "v=spf1 -all"
 ; Vultr Seattle
 sea IN A 45.32.230.4
-sea IN AAAA 2001:19f0:8000:3454:5400:05ff:fec8:4139
+sea IN AAAA 2001:19f0:8000:3454:5400:5ff:fec8:4139
 sea 86400 IN MX 0 .
 sea IN SSHFP 4 2 dac73fc16f7185e58a0496af9e4275acbe72a2a75b00d6359e041a4ecbd91ed5
 sea IN TXT "v=spf1 -all"
 ; Vultr Singapore
 sin IN A 66.42.50.166
-sin IN AAAA 2001:19f0:4400:2c24:5400:05ff:fec7:4cdc
+sin IN AAAA 2001:19f0:4400:2c24:5400:5ff:fec7:4cdc
 sin 86400 IN MX 0 .
 sin IN SSHFP 4 2 82e9bb8f1f96f6f499c58593e21cfc1910c0abcd1db32f99ea970066849be346
 sin IN TXT "v=spf1 -all"
 ; Vultr Sydney
 syd IN A 107.191.57.135
-syd IN AAAA 2401:c080:1800:1c40:5400:05ff:fec7:c902
+syd IN AAAA 2401:c080:1800:1c40:5400:5ff:fec7:c902
 syd 86400 IN MX 0 .
 syd IN SSHFP 4 2 f0355a876df1bdfb414ec80bb4f98ba7fa2618f85781387b9ec1c5c31d7108b1
 syd IN TXT "v=spf1 -all"
 ; Vultr Tokyo
 tyo IN A 207.148.108.82
-tyo IN AAAA 2401:c080:1000:13f8:5400:05ff:fee8:3c8b
+tyo IN AAAA 2401:c080:1000:13f8:5400:5ff:fee8:3c8b
 tyo 86400 IN MX 0 .
 tyo IN SSHFP 4 2 831f9be47ec221642294d41ada734b2623dadbe37f18784495a8d7bdbdc6dc62
 tyo IN TXT "v=spf1 -all"

@@ -15,6 +15,7 @@ $INCLUDE lua-releases.zone
 @ IN TXT "google-site-verification=aYDRbuNH4up3btfMlzLQvaHtNjCPtBwyJiMvKDr1-5M"
 @ IN TXT "yandex-verification: cba8ef4619bc43f5"
 @ IN TXT "facebook-domain-verification=dmk338rg4stydpqilfadoob4skfx7y"
+@ IN TXT "yahoo-verification-key=0R629ZEewsMZHOHBeYkeFzPpIldwt0e/LYfvVumUMQ4="
 
 _443._tcp IN TLSA 3 1 1 81dbb2ac173e74192010fb85d34b615daeff8d2506a31920bac76c99b792062f
 

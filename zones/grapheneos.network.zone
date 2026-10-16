@@ -13,6 +13,7 @@ $ORIGIN grapheneos.network.
 @ IN TXT "google-site-verification=vrIeCpGv-UOSpkXfnoTy-zixDMTrIrJq1KRU77ctlaQ"
 @ IN TXT "yandex-verification: b3fce6bedf3d57f9"
 @ IN TXT "facebook-domain-verification=2oqt2pmvl6hqiagmm7zpn46bfogvcq"
+@ IN TXT "yahoo-verification-key=mRPYRzo+10ZQiviljCPM+PbywYUkXSlwO6z68C02+0c="
 
 ; special zone without DNSSEC for debugging GeoDNS
 geoip 86400 IN NS ns1

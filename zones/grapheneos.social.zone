@@ -15,6 +15,7 @@ $INCLUDE base.zone
 @ IN TXT "google-site-verification=1udi6RI56KjPtFGO38lCQImhEmY6XFxX1hVsdEK4_gw"
 @ IN TXT "yandex-verification: ec33ee307706436f"
 @ IN TXT "facebook-domain-verification=nn8qfg6l9xhnqkkizdgn97taizy6hj"
+@ IN TXT "yahoo-verification-key=lNVJnKAJKcBnnWM4vICHQXH0/oXhw1AjFUpEj11HyZU="
 
 _443._tcp IN TLSA 3 1 1 5e41e70cf0af6198da8129d34a83696cd1edbbd36886cec5a4f04546c81c87c8
 

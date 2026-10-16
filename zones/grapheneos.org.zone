@@ -271,6 +271,7 @@ $ORIGIN grapheneos.org.
 @ IN TXT "google-site-verification=QCDUfSSfeAUufP-H3m4f5uvhknjIZVBVVmMSDaFRdz0"
 @ IN TXT "yandex-verification: 10fdf27f68b946c5"
 @ IN TXT "facebook-domain-verification=jv1fv1fh38fz7v1yi5jai9e0c6sid2"
+@ IN TXT "yahoo-verification-key=JsboIic0rqO52xO8DXuUJVhpVKzDAFqZShULoL7zyFg="
 
 ; OpenAlias for Monero and Bitcoin
 @ IN TXT "oa1:xmr recipient_address=862CebHaBpFPgYoNC6zw4U8rsXrDjD8s5LMJNS7yVCRHMUKr9dDi7adMSLUMjkDYJ85xahQTCJHHyK5RCvvRJu9x7iSzN9D; recipient_name=GrapheneOS Foundation; tx_description=Donation to GrapheneOS Foundation;"
@@ -475,6 +476,7 @@ mail 86400 IN HTTPS 1 . alpn=h2
 mail 86400 IN MX 0 mail.grapheneos.org.
 mail IN SSHFP 4 2 5b5d561f8d13b4424645e728a418342e5a2a880d1ede75e8f9ff13fba7a95833
 mail IN TXT "v=spf1 a:mail.grapheneos.org -all"
+mail IN TXT "yahoo-verification-key=Pz9yPXL8kTHm1IqjtyCIiFRFfRJmeLvEToYj9u84AmE="
 
 _25._tcp.mail IN TLSA 3 1 1 8fb55b31c001115c51f6191366f0541954ae15aafb573e27a9ec42269d5d3837
 _25._tcp.mail IN TLSA 3 1 1 1576c43508929d176844f1e34006f7f8ee9c68319ef738619cfb348fa9803398
@@ -511,6 +513,7 @@ discuss 86400 IN MX 0 mail.grapheneos.org.
 discuss IN SSHFP 4 2 4cd45b291dfb241461cfe2add29e43fbdcc0362ae51dcb836df1ebc190d9b8b5
 discuss IN TXT "v=spf1 a:mail.grapheneos.org -all"
 discuss IN TXT "yandex-verification: 10fdf27f68b946c5"
+discuss IN TXT "yahoo-verification-key=fgqc5++TDRBYd8vdPtddROOfcCOktAaHPen6LxMGHs8="
 
 _443._tcp.discuss IN TLSA 3 1 1 d78f2102f1286335fdbcfc50bb6b633b7ea5ee2e4d25fc4cd24168808a63ef81
 
@@ -547,6 +550,7 @@ matrix 86400 IN HTTPS 1 . alpn=h2
 matrix 86400 IN MX 0 mail.grapheneos.org.
 matrix IN SSHFP 4 2 2e9e1cdceadf8afd697e84b970594096113b51c71ed163b37c24c22f8d312c1e
 matrix IN TXT "v=spf1 a:mail.grapheneos.org -all"
+matrix IN TXT "yahoo-verification-key=nJ+mHpCIigh0n5ttMRFUKtScLfliLsSpJxWTbyyszsw="
 
 _443._tcp.matrix IN TLSA 3 1 1 5fdbac0be6ee09e8b118df22392f90cc0421eaa05993900da27b8be543120dd8
 

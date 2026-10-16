@@ -11,6 +11,7 @@ $ORIGIN vanadium.app.
 @ IN TXT "google-site-verification=zh9p055UIIdC1M-I6zo36hEpnuiHntOHbMC2hDGXdtA"
 @ IN TXT "yandex-verification: 369dbb9acc84cb72"
 @ IN TXT "facebook-domain-verification=copj7wgy2hwkf6cowe6o2s699d46o6"
+@ IN TXT "yahoo-verification-key=rR6Sr0CcYz9o9N7lTUfSx/WFOQt0nbINwB2B4+vBJwk="
 
 $ORIGIN dl.vanadium.app
 $INCLUDE lua-network.zone

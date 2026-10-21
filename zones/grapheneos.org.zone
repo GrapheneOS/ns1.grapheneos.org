@@ -210,31 +210,31 @@ mia IN SSHFP 4 2 0decd3969913117880989249045f538562923afad7f24c973588ef2d3146790
 mia IN TXT "v=spf1 -all"
 ; Vultr São Paulo
 sao IN A 216.238.116.202
-sao IN AAAA 2001:19f0:b800:1f13:5400:5ff:fed0:8ea7
+sao IN AAAA 2602:f4d9:a:1::1
 sao 86400 IN MX 0 .
 sao IN SSHFP 4 2 15e010376649a315abf4be4d206d4c141a99321919963b284cf212d589dcafa9
 sao IN TXT "v=spf1 -all"
 ; Vultr Seattle
 sea IN A 45.32.230.4
-sea IN AAAA 2001:19f0:8000:3454:5400:5ff:fec8:4139
+sea IN AAAA 2602:f4d9:9:1::1
 sea 86400 IN MX 0 .
 sea IN SSHFP 4 2 dac73fc16f7185e58a0496af9e4275acbe72a2a75b00d6359e041a4ecbd91ed5
 sea IN TXT "v=spf1 -all"
 ; Vultr Singapore
 sin IN A 66.42.50.166
-sin IN AAAA 2001:19f0:4400:2c24:5400:5ff:fec7:4cdc
+sin IN AAAA 2602:f4d9:b:1::1
 sin 86400 IN MX 0 .
 sin IN SSHFP 4 2 82e9bb8f1f96f6f499c58593e21cfc1910c0abcd1db32f99ea970066849be346
 sin IN TXT "v=spf1 -all"
 ; Vultr Sydney
 syd IN A 107.191.57.135
-syd IN AAAA 2401:c080:1800:1c40:5400:5ff:fec7:c902
+syd IN AAAA 2602:f4d9:d:1::1
 syd 86400 IN MX 0 .
 syd IN SSHFP 4 2 f0355a876df1bdfb414ec80bb4f98ba7fa2618f85781387b9ec1c5c31d7108b1
 syd IN TXT "v=spf1 -all"
 ; Vultr Tokyo
 tyo IN A 207.148.108.82
-tyo IN AAAA 2401:c080:1000:13f8:5400:5ff:fee8:3c8b
+tyo IN AAAA 2602:f4d9:c:1::1
 tyo 86400 IN MX 0 .
 tyo IN SSHFP 4 2 831f9be47ec221642294d41ada734b2623dadbe37f18784495a8d7bdbdc6dc62
 tyo IN TXT "v=spf1 -all"

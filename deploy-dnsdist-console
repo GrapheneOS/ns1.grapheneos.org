@@ -19,7 +19,7 @@ for server in ${servers[@]}; do
     echo -n 'setKey("' > control-key.conf
     head -c 32 /dev/random | base64 -w 0 >> control-key.conf
     echo '")' >> control-key.conf
-    rsync -pctv --chmod=750 --chown=root:dnsdist control-key.conf $remote:/etc/dnsdist.conf.d/control-key.conf
+    rsync -pctv --chmod=640 --chown=root:dnsdist control-key.conf $remote:/etc/dnsdist.conf.d/control-key.conf
     rm control-key.conf
     ssh $remote systemctl restart dnsdist.service
 done

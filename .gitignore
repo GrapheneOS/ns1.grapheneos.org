@@ -1,5 +1,6 @@
 /bgp-lock
 /config.sh
+/control-key.conf
 /dnsdist-lock
 /dnsdist.conf.tmp
 /geoip-subdomain.txt

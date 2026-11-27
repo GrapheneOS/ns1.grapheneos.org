@@ -33,6 +33,7 @@ RestrictSUIDSGID=yes
 SystemCallArchitectures=native
 SystemCallFilter=@system-service
 SystemCallFilter=~@keyring @privileged @resources
+TimeoutStartSec=30min
 Type=oneshot
 User=geoipupdate
 WorkingDirectory=/var/lib/GeoIP

@@ -4,7 +4,7 @@ set -o errexit -o nounset -o pipefail
 
 . servers.sh
 
-rsync -rcv --fsync --preallocate root@yto.ns2.grapheneos.org:/etc/powerdns/keys/ keys
+rsync -rcpv --chmod=D700,F600 --fsync --preallocate root@yto.ns2.grapheneos.org:/etc/powerdns/keys/ keys
 
 for server in ${servers[@]}; do
     echo $server

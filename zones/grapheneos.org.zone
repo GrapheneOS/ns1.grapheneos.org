@@ -239,6 +239,11 @@ tyo 86400 IN MX 0 .
 tyo IN SSHFP 4 2 831f9be47ec221642294d41ada734b2623dadbe37f18784495a8d7bdbdc6dc62
 tyo IN TXT "v=spf1 -all"
 ; Xenyth Toronto
+gateway.yto IN A 206.220.120.1
+gateway.yto IN AAAA 2602:f4d9:5::1
+gateway.yto 86400 IN MX 0 .
+gateway.yto IN SSHFP 4 2 0000000000000000000000000000000000000000000000000000000000000000
+gateway.yto IN TXT "v=spf1 -all"
 yto IN A 206.220.120.2
 yto IN AAAA 2602:f4d9:5:1::1
 yto 86400 IN MX 0 .

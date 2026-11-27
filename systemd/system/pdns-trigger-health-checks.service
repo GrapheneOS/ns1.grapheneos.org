@@ -33,5 +33,6 @@ RestrictSUIDSGID=yes
 SystemCallArchitectures=native
 SystemCallFilter=@system-service
 SystemCallFilter=~@keyring @privileged @resources
+TimeoutStartSec=30s
 Type=oneshot
 User=powerdns

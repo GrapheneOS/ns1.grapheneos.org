@@ -31,7 +31,7 @@ for server in ${servers[@]}; do
     rsync -pcv --chmod=644 bird.$subdomain.conf $remote:/etc/bird.pool.conf
     cp bird.$server.conf bird.local.conf
     sed -i "s/{{bgp_password}}/${bgp_password[$server]:-}/g" bird.local.conf
-    rsync -pcv --chmod=644 bird.conf bird.local.conf $remote:/etc/
+    rsync -pcv --chmod=640 --chown=root:bird bird.conf bird.local.conf $remote:/etc/
     rm bird.local.conf
 
     echo
